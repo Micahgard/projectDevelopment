@@ -5,7 +5,7 @@ class Payment
 {
     public $paymentcode;
     public $paymentdate;
-    public $role;
+    public $amount;
     private $dbconn;
 
 
