@@ -16,18 +16,18 @@ class Student
         $this->username = $username;
         $this->password = $password;
         //
+
     }
     public  function save(){
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
-            $query = "insert into student values (null, '$this->name', '$this->username', '$this->password')";
-            echo $query;
-            mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update student SET name = '$this->name' where id = $this->id";
-            mysqli_query($query);
-        }
+    }
+
+    public function edit(){
+
+    }
+
+    public function delete(){
 
     }
 }

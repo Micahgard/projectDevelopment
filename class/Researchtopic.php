@@ -22,10 +22,23 @@ class Researchtopic
             $query = "insert into Researchtopic values (null, '$this->description', '$this->level')";
             echo $query;
             mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update Researchtopic SET name = '$this->description' where id = $this->id";
-            mysqli_query($query);
         }
-
+        $this->dbconn->close();
+    }
+    public function update(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "UPDATE Researchtopic SET description='$this->description', level='$this->level' WHERE WardID=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+    public function delete(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "DELETE FROM Researchtopic WHERE ResearchtopicID=$this->>id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
     }
 }

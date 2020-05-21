@@ -20,12 +20,24 @@ class Medication
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Medication values (null, '$this->name', '$this->cost')";
-            echo $query;
             mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update Medication SET name = '$this->name' where id = $this->id";
-            mysqli_query($query);
         }
-
+        $this->dbconn->close();
+    }
+    public function update(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "UPDATE Medication SET name='$this->name', cost='$this->cost' WHERE WardID=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+    public function delete(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "DELETE FROM Medication WHERE MedicationID=$this->>id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
     }
 }
