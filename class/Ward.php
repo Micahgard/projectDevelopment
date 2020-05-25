@@ -15,19 +15,32 @@ class Ward
         $this->name = $name;
         $this->location = $location;
         $this->capacity = $capacity;
-        //
     }
-    public  function save(){
+    public function save(){
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
-            $query = "insert into Ward values (null, '$this->name', '$this->location', '$this->capacity')";
-            echo $query;
+            $query = "insert into Ward values (null, '$this->name', '$this->location', $this->capacity)";
             mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update Ward SET name = '$this->name' where id = $this->id";
-            mysqli_query($query);
         }
+        $this->dbconn->close();
+    }
 
+    public function update(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "UPDATE Ward SET name='$this->name', location='$this->location', capacity='$this->capacity' WHERE WardID=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+
+    public function delete(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "DELETE FROM Ward WHERE WardID=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
     }
 }

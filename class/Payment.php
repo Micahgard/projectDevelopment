@@ -13,19 +13,33 @@ class Payment
         $this->id = $id;
         $this->paymentdate = $paymentdate;
         $this->amount = $amount;
-        //
     }
-    public  function save(){
+
+    public function save(){
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
-            $query = "insert into Payment values (null, '$this->paymentdate', '$this->amount')";
-            echo $query;
+            $query = "insert into Payment values (null, '$this->paymentdate', $this->amount)";
             mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update Payment SET name = '$this->paymentdate' where id = $this->id";
-            mysqli_query($query);
         }
+        $this->dbconn->close();
+    }
 
+    public function update(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "UPDATE Payment SET paymentdate='$this->maymentdate', amount=$this->amount WHERE Paymentcode=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+
+    public function delete(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "DELETE FROM Payment WHERE Paymentcode=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
     }
 }
