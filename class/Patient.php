@@ -14,6 +14,7 @@ class Patient
     public $insurcode;
     public $dbconn;
 
+
     public function __construct($id, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode)
     {
         $this->id = $id;

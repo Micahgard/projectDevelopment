@@ -8,6 +8,7 @@ class Allocation
     public $role;
     public $dbconn;
 
+
     public function __construct($id, $fee, $role)
     {
         $this->id = $id;
