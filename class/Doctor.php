@@ -31,13 +31,29 @@ class Doctor
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
-            $query = "insert into Doctor values (null, '$this->lastname', '$this->firstname', '$this->street', '$this->suburb', '$this->password', '$this->city', '$this->phone', '$this->specialty', '$this->salary')";
-            echo $query;
+            $query = "insert into Doctor values (null, '$this->lastname',
+ '$this->firstname', '$this->street', '$this->suburb','$this->city', '$this->phone',
+  '$this->specialty', $this->salary)";
             mysqli_query($this->dbconn, $query);
-        }else{
-            $query = "Update Doctor SET name = '$this->lastname' where id = $this->id";
-            mysqli_query($query);
         }
-
+        $this->dbconn->close();
+    }
+    public function update(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "UPDATE Doctor SET lastname='$this->lastname', firstname='$this->firstname', 
+street=$this->street', suburb=$this->suburb', city=$this->city', phone=$this->phone', 
+specialty=$this->specialty', salary=$this->salary' WHERE WardID=$this->id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+    public function delete(){
+        $this->dbconn = (new DB())->conn ;
+        if (is_null($this->id)){
+            $query = "DELETE FROM Doctor WHERE DoctorID=$this->>id";
+            mysqli_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
     }
 }
