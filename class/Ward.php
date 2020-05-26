@@ -42,7 +42,7 @@ class Ward
 
     public function delete(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "DELETE FROM Ward WHERE WardID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
