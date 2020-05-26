@@ -15,6 +15,11 @@ if (isset($_SESSION['id'])) {
     $name = $_POST['name'];
     $location = $_POST['location'];
     $capacity = $_POST['capacity'];
-    $ward = new Ward();
-    $ward->update($id, $name, $location, $capacity);
+    $ward = new Ward($id, $name, $location, $capacity);
+    $ward->update();
+    $msg = "ward updated";
+}else{
+    $msg = "ward not updated";
 }
+$msg = json_encode($msg);
+echo $msg;
