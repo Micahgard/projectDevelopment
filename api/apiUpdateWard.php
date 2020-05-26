@@ -6,11 +6,9 @@
  * Purpose: api for updating ward
  */
 
-session_start();
-
 include_once "../class/Ward.php";
 
-if (isset($_SESSION['id'])) {
+if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $name = $_POST['name'];
     $location = $_POST['location'];
