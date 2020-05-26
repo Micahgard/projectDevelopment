@@ -33,8 +33,8 @@ class Ward
 
     public function update(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
-            $query = "UPDATE Ward SET name='$this->name', location='$this->location', capacity='$this->capacity' WHERE WardID=$this->id";
+        if (!is_null($this->id)){
+            $query = "UPDATE Ward SET name='$this->name', location='$this->location', capacity=$this->capacity WHERE WardID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
