@@ -8,8 +8,8 @@
 
 session_start();
 
-if (isset($_SESSION['id'])) {
+if (isset($_GET['id'])) {
     include_once "../class/Ward.php";
-    $ward = new Ward();
-    $ward->delete($_GET["id"]);
+    $ward = new Ward($_GET["id"], "", "", "");
+    $ward->delete();
 }
