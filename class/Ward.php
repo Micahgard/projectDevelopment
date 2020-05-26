@@ -5,7 +5,7 @@
  * Version: 1.0
  * Purpose: class for ward
  */
-
+include_once "DB.php";
 class Ward
 {
     public $id;
