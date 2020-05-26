@@ -12,4 +12,9 @@ if (isset($_GET['id'])) {
     include_once "../class/Ward.php";
     $ward = new Ward($_GET["id"], "", "", "");
     $ward->delete();
+    $msg = "ward deleted";
+}else{
+    $msg = "ward not deleted";
 }
+$msg = json_encode($msg);
+echo $msg;
