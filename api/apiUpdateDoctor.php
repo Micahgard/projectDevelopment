@@ -8,8 +8,8 @@
 
 if (isset($_POST["lastname"])){      /*check the name of doctor if it already existed in database*/
     include_once "../class/Doctor.php";
-    $admission = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["specialty"], $_POST["salary"]);
-    $admission =save();
+    $doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["specialty"], $_POST["salary"]);
+    $doctor =save();
     $msg = "new doctor updated";
 }else{
     $msg = "doctor already existed";

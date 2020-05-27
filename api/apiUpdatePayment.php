@@ -8,8 +8,8 @@
 
 if (isset($_POST["paymentdate"])){      /*check the name of payment if it already existed in database*/
     include_once "../class/Payment.php";
-    $admission = new Payment(null, $_POST["paymentdate"], $_POST["amount"]);
-    $admission =save();
+    $payment = new Payment(null, $_POST["paymentdate"], $_POST["amount"]);
+    $payment =save();
     $msg = "new payment updated";
 }else{
     $msg = "doctor already existed";
