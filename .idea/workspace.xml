@@ -10,7 +10,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="" />
+    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
-      <workItem from="1590557398393" duration="905000" />
+      <workItem from="1590557398393" duration="2224000" />
     </task>
     <servers />
   </component>
@@ -70,5 +72,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="517" y="327" key="NewPhpFileDialog" timestamp="1590562082954">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="517" y="327" key="NewPhpFileDialog/0.40.1366.728@0.40.1366.728" timestamp="1590562082954" />
   </component>
 </project>
