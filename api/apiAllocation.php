@@ -6,7 +6,7 @@
  * Purpose: api for Allocating a Doctor
  */
 
-include_once "../Allocation.php";
+include_once "../class/Allocation.php";
 
 if (isset($_POST["name"])) {
     $allocation = new Allocation(null, $_POST["fee"], $_POST["role"]);
