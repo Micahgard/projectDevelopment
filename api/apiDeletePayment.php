@@ -6,14 +6,16 @@
  * Purpose: api for deleting payment
  */
 
-if (isset($_POST["paymentdate"])){      /*check the name of payment if it already existed in database*/
-    include_once "../class/Payment.php";
-    $Payment = new Payment(null, $_POST["paymentdate"], $_POST["amount"]);
-    $Payment =save();
-    $msg = "new payment deleted";
+include_once "../class/Payment.php";
+
+if (isset($_GET['id'])) {
+    $payment = new Payment($_GET["id"], "", "");
+    $payment->delete();
+    $msg = "payment deleted";
 }else{
-    $msg = "doctor already existed";
+    $msg = "payment not deleted";
 }
 $msg = json_encode($msg);
 echo $msg;
+
 
