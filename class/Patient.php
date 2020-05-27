@@ -38,7 +38,7 @@ class Patient
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Patient values (null, '$this->lastname', '$this->firstname', '$this->street',
-                     '$this->suburb', '$this->city', '$this->email', '$this->phone', '$this->insurcode'";
+                     '$this->suburb', '$this->city', '$this->email', '$this->phone', '$this->insurcode')";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
