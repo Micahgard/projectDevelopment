@@ -10,8 +10,8 @@ include_once "../class/Prescription.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $lastname = $_POST['prescriptiondate'];
-    $firstname = $_POST['amount'];
+    $prescriptiondate = $_POST['prescriptiondate'];
+    $amount = $_POST['amount'];
     $prescription = new Prescription($id, $prescriptiondate, $amount);
     $prescription->update();
     $msg = "prescription updated";

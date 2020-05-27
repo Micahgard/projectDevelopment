@@ -10,8 +10,8 @@ include_once "../class/Allocation.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $lastname = $_POST['fee'];
-    $firstname = $_POST['role'];
+    $fee = $_POST['fee'];
+    $role = $_POST['role'];
     $allocation = new Allocation($id, $fee, $role);
     $allocation->update();
     $msg = "allocation updated";
