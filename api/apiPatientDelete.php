@@ -11,9 +11,9 @@ include_once "../class/Patient.php";
 if (isset($_GET['id'])) {
     $patient = new Patient($_GET["id"], "", "", "");
     $patient->delete();
-    $patient = "ward deleted";
+    $patient = "patient deleted";
 }else{
-    $msg = "ward not deleted";
+    $msg = "patient not deleted";
 }
 $msg = json_encode($msg);
 echo $msg;
