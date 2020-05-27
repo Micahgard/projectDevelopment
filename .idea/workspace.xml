@@ -3,19 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiAddWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddWard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiDeleteWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeleteWard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiUpdateWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateWard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Admission.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Admission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Allocation.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Allocation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Doctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Medication.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Medication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Patient.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Prescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Prescription.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Researchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Researchproject.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Researchtopic.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Researchtopic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Ward.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Ward.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +14,13 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +36,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HTCS5607JOEL2020" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
@@ -73,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
-      <workItem from="1590466074272" duration="20039000" />
+      <workItem from="1590466074272" duration="21761000" />
     </task>
     <servers />
   </component>
