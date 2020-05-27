@@ -6,14 +6,17 @@
  * Purpose: api for updating payment
  */
 
-if (isset($_POST["paymentdate"])){      /*check the name of payment if it already existed in database*/
-    include_once "../class/Payment.php";
-    $payment = new Payment(null, $_POST["paymentdate"], $_POST["amount"]);
-    $payment =save();
-    $msg = "new payment updated";
+include_once "../class/Payment.php";
+
+if (isset($_POST['id'])){
+    $id = $_POST['id'];
+    $paymentdate = $_POST['paymentdate'];
+    $amount = $_POST['amount'];
+    $payment = new Payment($id, $paymentdate, $amount);
+    $payment->update();
+    $msg = "payment updated";
 }else{
-    $msg = "doctor already existed";
+    $msg = "payment not updated";
 }
 $msg = json_encode($msg);
 echo $msg;
-
