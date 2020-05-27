@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="" />
+    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddWard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeleteWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeleteWard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdateWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateWard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Admission.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Admission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Allocation.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Allocation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Doctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Doctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Medication.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Medication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Patient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Prescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Prescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Researchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Researchproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Researchtopic.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Researchtopic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Ward.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Ward.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +42,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\5607projectJOEL\api" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
-      <workItem from="1590466074272" duration="3156000" />
+      <workItem from="1590466074272" duration="20039000" />
     </task>
     <servers />
   </component>

@@ -1,11 +1,11 @@
 <?php
 /**
  * Author: Joel
- * Date: 25/05/2020
- * Version: 1.0
+ * Date: 27/05/2020
+ * Version: 1.1
  * Purpose: class for patient
  */
-
+include_once "DB.php";
 class Patient
 {
     public $id;
@@ -46,7 +46,7 @@ class Patient
 
     public function update(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "UPDATE Patient SET lastname='$this->lastname', firstname='$this->firstname', street='$this->street',
                       suburb='$this->suburb', city='$this->city', email='$this->email', phone='$this->phone', insurcode='$this->insurcode' 
                       WHERE PatientID=$this->id";
@@ -57,7 +57,7 @@ class Patient
 
     public function delete(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "DELETE FROM Patient WHERE PatientID=$this->id";
             mysqli_query($this->dbconn, $query);
         }

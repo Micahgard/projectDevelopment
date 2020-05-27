@@ -1,15 +1,19 @@
 <?php
 /**
  * Author: Joel
- * Date: 25/05/2020
- * Version: 1.0
+ * Date: 26/05/2020
+ * Version: 1.1
  * Purpose: api for deleting ward
  */
 
-session_start();
+include_once "../class/Ward.php";
 
-if (isset($_SESSION['id'])) {
-    include_once "../class/Ward.php";
-    $ward = new Ward();
-    $ward->delete($_GET["id"]);
+if (isset($_GET['id'])) {
+    $ward = new Ward($_GET["id"], "", "", "");
+    $ward->delete();
+    $msg = "ward deleted";
+}else{
+    $msg = "ward not deleted";
 }
+$msg = json_encode($msg);
+echo $msg;
