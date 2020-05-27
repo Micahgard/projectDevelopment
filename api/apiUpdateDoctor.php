@@ -6,17 +6,23 @@
  * Purpose: api for updating payment
  */
 
-include_once "../class/Payment.php";
+include_once "../class/Doctor.php";
 
 if (isset($_POST['id'])){
     $id = $_POST['id'];
-    $paymentdate = $_POST['paymentdate'];
-    $amount = $_POST['amount'];
-    $payment = new Payment($id, $paymentdate, $amount);
+    $lastname = $_POST['lastname '];
+    $firstname = $_POST['firstname'];
+    $street = $_POST['street'];
+    $suburb = $_POST['suburb'];
+    $city = $_POST['city'];
+    $phone = $_POST['phone'];
+    $specialty = $_POST['specialty'];
+    $salary = $_POST['salary'];
+    $payment = new Payment($id, $lastname, $firstname,$street, $suburb, $city, $phone, $specialty, $salary);
     $payment->update();
-    $msg = "payment updated";
+    $msg = "doctor updated";
 }else{
-    $msg = "payment not updated";
+    $msg = "doctor not updated";
 }
 $msg = json_encode($msg);
 echo $msg;

@@ -6,13 +6,14 @@
  * Purpose: api for deleting doctor
  */
 
-if (isset($_POST["lastname"])){      /*check the name of doctor if it already existed in database*/
-    include_once "../class/Doctor.php";
-    $Doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["specialty"], $_POST["salary"]);
-    $Doctor =save();
-    $msg = "new doctor deleted";
+include_once "../class/Doctor.php";
+
+if (isset($_GET['id'])) {
+    $payment = new Doctor($_GET["id"], "", "", "", "", "", "", "", "");
+    $payment->delete();
+    $msg = "doctor deleted";
 }else{
-    $msg = "doctor already existed";
+    $msg = "doctor not deleted";
 }
 $msg = json_encode($msg);
 echo $msg;
