@@ -9,7 +9,7 @@
 include_once "../class/Patient.php";
 
 if (isset($_POST["lastname"])) {
-    $patient = new patient(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"],
+    $patient = new Patient(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"],
         $_POST["email"], $_POST["phone"], $_POST["insurcode"]);
     $patient->save();
     $msg = "patient added";
