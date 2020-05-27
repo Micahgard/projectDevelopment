@@ -1,11 +1,11 @@
 <?php
 /**
  * Author: Joel
- * Date: 25/05/2020
- * Version: 1.0
+ * Date: 27/05/2020
+ * Version: 1.1
  * Purpose: class for admission
  */
-
+include_once "DB.php";
 class Admission
 {
     public $id;
@@ -26,7 +26,7 @@ class Admission
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
-            $query = "insert into Admission values (null, '$this->description', '$this->admissiondate)', $this->status";
+            $query = "insert into Admission values (null, '$this->description', '$this->admissiondate', '$this->status')";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
@@ -34,7 +34,7 @@ class Admission
 
     public function update(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "UPDATE Admission SET description='$this->description', admissiondate='$this->admissiondate', status='$this->status' WHERE AdmissionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
@@ -44,7 +44,7 @@ class Admission
     public function delete()
     {
         $this->dbconn = (new DB())->conn;
-        if (is_null($this->id)) {
+        if (!is_null($this->id)) {
             $query = "DELETE FROM Admission WHERE AdmissionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }

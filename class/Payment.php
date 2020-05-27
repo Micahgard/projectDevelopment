@@ -1,11 +1,11 @@
 <?php
 /**
  * Author: Joel
- * Date: 25/05/2020
- * Version: 1.0
+ * Date: 27/05/2020
+ * Version: 1.1
  * Purpose: class for payment
  */
-
+include_once "DB.php";
 class Payment
 {
     public $id;
@@ -13,7 +13,7 @@ class Payment
     public $amount;
     public $dbconn;
 
-    public function  __construct($id, $paymentdate, $amount)
+    public function __construct($id, $paymentdate, $amount)
     {
         $this->id = $id;
         $this->paymentdate = $paymentdate;
@@ -32,8 +32,8 @@ class Payment
 
     public function update(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
-            $query = "UPDATE Payment SET paymentdate='$this->maymentdate', amount=$this->amount WHERE Paymentcode=$this->id";
+        if (!is_null($this->id)){
+            $query = "UPDATE Payment SET paymentdate='$this->paymentdate', amount=$this->amount WHERE Paymentcode=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
@@ -41,7 +41,7 @@ class Payment
 
     public function delete(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "DELETE FROM Payment WHERE Paymentcode=$this->id";
             mysqli_query($this->dbconn, $query);
         }

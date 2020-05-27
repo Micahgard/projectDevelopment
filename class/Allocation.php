@@ -1,11 +1,11 @@
 <?php
 /**
  * Author: Joel
- * Date: 25/05/2020
- * Version: 1.0
+ * Date: 27/05/2020
+ * Version: 1.1
  * Purpose: class for allocation
  */
-
+include_once "DB.php";
 class Allocation
 {
     public $id;
@@ -33,7 +33,7 @@ class Allocation
 
     public function update(){
         $this->dbconn = (new DB())->conn ;
-        if (is_null($this->id)){
+        if (!is_null($this->id)){
             $query = "UPDATE Allocation SET fee=$this->fee, role='$this->role' WHERE AllocationID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
@@ -43,7 +43,7 @@ class Allocation
     public function delete()
     {
         $this->dbconn = (new DB())->conn;
-        if (is_null($this->id)) {
+        if (!is_null($this->id)) {
             $query = "DELETE FROM Allocation WHERE AllocationID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
