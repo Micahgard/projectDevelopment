@@ -17,7 +17,7 @@ if (isset($_POST['id'])) {
     $city = $_POST['city'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $insurcode = $_POST['insurancecode'];
+    $insurcode = $_POST['insurcode'];
     $patient = new Patient($id, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode);
     $patient->update();
     $msg = "patient updated";
