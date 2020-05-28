@@ -10,15 +10,15 @@ include_once "../class/Patient.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $lastname = $_POST['last name'];
-    $firstname = $_POST['first name'];
-    $street = $_POST['street address'];
+    $lastname = $_POST['lastname'];
+    $firstname = $_POST['firstname'];
+    $street = $_POST['street'];
     $suburb = $_POST['suburb'];
     $city = $_POST['city'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $insurcode = $_POST['insurancecode'];
-    $patient = new Ward($id, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode);
+    $patient = new Patient($id, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode);
     $patient->update();
     $msg = "patient updated";
 }else{
