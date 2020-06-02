@@ -8,7 +8,7 @@
 
 include_once "../class/Admission.php";
 
-if (isset($_POST["name"])) {
+if (isset($_POST["description"])) {
     $admission = new Admission(null, $_POST["description"], $_POST["admissiondate"], $_POST["status"]);
     $admission->save();
     $msg = "Admission added";
