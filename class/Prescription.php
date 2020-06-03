@@ -13,22 +13,22 @@ class Prescription
     public $amount;
     public $dbconn;
     public $medicationID;
-    public $admissioinID;
+    public $admissionID;
 
-    public function __construct($id, $prescriptiondate, $amount, $medicationID, $admissioinID)
+    public function __construct($id, $prescriptiondate, $amount, $medicationID, $admissionID)
     {
         $this->id = $id;
         $this->prescriptiondate = $prescriptiondate;
         $this->amount = $amount;
         $this->medicationID = $medicationID;
-        $this->admissioinID = $admissioinID;
+        $this->admissionID = $admissionID;
     }
 
     public function save(){
         //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
-            $query = "insert into Prescription values (null, '$this->prescriptiondate', $this->amount, $this->medicationID, $this->admissioinID)";
+            $query = "insert into Prescription values (null, '$this->prescriptiondate', $this->amount, $this->medicationID, $this->admissionID)";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
@@ -38,7 +38,7 @@ class Prescription
         $this->dbconn = (new DB())->conn ;
         if (!is_null($this->id)){
             $query = "UPDATE Prescription SET prescriptiondate='$this->prescriptiondate', amount=$this->amount, medicationID=$this->medicationID,
-            admissionID=$this->admissioinID WHERE PrescriptionID=$this->id";
+            admissionID=$this->admissionID WHERE PrescriptionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
