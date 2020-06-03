@@ -24,6 +24,7 @@ class Researchtopic
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Researchtopic values (null, '$this->description', $this->level)";
+            echo $query;
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
