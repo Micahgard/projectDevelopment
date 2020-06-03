@@ -11,7 +11,7 @@ include_once "../class/Admission.php";
 if (isset($_GET['admissionID'])) {
     $admission = new Admission($_GET["admissionID"], "", "", "", "","" );
     $admission->delete();
-    $admission = "admission deleted";
+    $msg = "admission deleted";
 }else{
     $msg = "admission not deleted";
 }
