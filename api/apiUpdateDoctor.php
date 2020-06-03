@@ -10,7 +10,7 @@ include_once "../class/Doctor.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
-    $lastname = $_POST['la stname'];
+    $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $street = $_POST['street'];
     $suburb = $_POST['suburb'];
