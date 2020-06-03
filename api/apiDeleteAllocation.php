@@ -9,7 +9,7 @@
 include_once "../class/Allocation.php";
 
 if (isset($_GET['id'])) {
-    $allocation = new Allocation($_GET["id"], "", "");
+    $allocation = new Allocation($_GET["id"], "", "", "", "");
     $allocation->delete();
     $msg = "allocation deleted";
 }else{
