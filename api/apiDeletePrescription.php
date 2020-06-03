@@ -9,7 +9,7 @@
 include_once "../class/Prescription.php";
 
 if (isset($_GET['prescriptionID'])) {
-    $prescription = new Prescription($_GET["id"], "", "", "", "");
+    $prescription = new Prescription($_GET["prescriptionID"], "", "", "", "");
     $prescription->delete();
     $msg = "prescription deleted";
 }else{
