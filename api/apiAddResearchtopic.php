@@ -9,8 +9,8 @@
 include_once "../class/Researchtopic.php";
 
 if (isset($_POST["description"])) {
-    $researchtopic = new researchtopic(null, $_POST["description"], $_POST["level"]);
-    $researchtopic->save();
+    $topic = new Researchtopic(null, $_POST["description"], $_POST["level"]);
+    $topic->save();
     $msg = "research topic added";
 }else{
     $msg = "research topic not added";

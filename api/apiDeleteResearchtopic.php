@@ -8,8 +8,8 @@
 
 include_once "../class/Researchtopic.php";
 
-if (isset($_GET['TopicID'])) {
-    $topic = new topic($_GET["TopicID"], "", "", "");
+if (isset($_GET['topicID'])) {
+    $topic = new Researchtopic($_GET["topicID"], "", "");
     $topic->delete();
     $msg = "research topic deleted";
 }else{
