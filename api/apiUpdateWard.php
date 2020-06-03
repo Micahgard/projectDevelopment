@@ -8,8 +8,8 @@
 
 include_once "../class/Ward.php";
 
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+if (isset($_POST['WardID'])) {
+    $id = $_POST['WardID'];
     $name = $_POST['name'];
     $location = $_POST['location'];
     $capacity = $_POST['capacity'];

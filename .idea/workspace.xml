@@ -2,7 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apiDeleteMedication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/apiUpdateMedication.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/login.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/class/Administrator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddAdmission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddMedication.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddMedication.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddPrescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddPrescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiAddResearchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddResearchproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeleteAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeleteAdmission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeletePatient.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeletePatient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeletePayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeletePayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeletePrescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeletePrescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeleteResearchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeleteResearchproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiDeleteWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiDeleteWard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdateAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateAdmission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdateDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateDoctor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdatePatient.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdatePatient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdatePayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdatePayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdatePrescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdatePrescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdateResearchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateResearchproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/apiUpdateWard.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateWard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Admission.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Admission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Patient.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Patient.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Payment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Prescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Prescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/class/Researchproject.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Researchproject.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,10 +40,48 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project5607" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project5607" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project5607" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="umpablvyo92sy9r5: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project5607" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="umpablvyo92sy9r5: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="Admin: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -35,12 +103,15 @@
   <component name="ProjectId" id="1cNqcP6f03fFDKRKv6hq5nLUHv1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HTCS5607JOEL2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Project5607Joel\api" />
       <recent name="C:\xampp\htdocs\5607projectJOEL\api" />
     </key>
   </component>
@@ -56,6 +127,26 @@
       </list>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2fd1a133" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@2fd1a133" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@660e79af" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -68,6 +159,9 @@
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590466074272" duration="21761000" />
+      <workItem from="1590636587437" duration="2725000" />
+      <workItem from="1590652772712" duration="1433000" />
+      <workItem from="1591071563979" duration="26478000" />
     </task>
     <servers />
   </component>

@@ -8,11 +8,12 @@
 
 include_once "../class/Payment.php";
 
-if (isset($_POST['id'])){
-    $id = $_POST['id'];
+if (isset($_POST['paymentcode'])){
+    $id = $_POST['paymentcode'];
     $paymentdate = $_POST['paymentdate'];
     $amount = $_POST['amount'];
-    $payment = new Payment($id, $paymentdate, $amount);
+    $admissionID = $_POST['admissionID'];
+    $payment = new Payment($id, $paymentdate, $amount, $admissionID);
     $payment->update();
     $msg = "payment updated";
 }else{

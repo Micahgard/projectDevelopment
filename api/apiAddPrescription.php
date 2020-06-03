@@ -1,15 +1,15 @@
 <?php
 /**
  * Author: Mojeeb
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for adding prescription
  */
 
 include_once "../class/Prescription.php";
 
-if (isset($_POST["name"])) {
-    $prescription = new Prescription(null, $_POST["prescriptiondate"], $_POST["amount"]);
+if (isset($_POST["amount"])) {
+    $prescription = new Prescription(null, $_POST["prescriptiondate"], $_POST["amount"], $_POST["medicationID"], $_POST["admissionID"]);
     $prescription->save();
     $msg = "prescription added";
 }else{

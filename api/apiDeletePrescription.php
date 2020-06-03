@@ -1,15 +1,15 @@
 <?php
 /**
  * Author: Mojeeb
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for deleting prescription
  */
 
 include_once "../class/Prescription.php";
 
-if (isset($_GET['id'])) {
-    $prescription = new Prescription($_GET["id"], "", "");
+if (isset($_GET['prescriptionID'])) {
+    $prescription = new Prescription($_GET["prescriptionID"], "", "", "", "");
     $prescription->delete();
     $msg = "prescription deleted";
 }else{

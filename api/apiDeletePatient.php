@@ -8,10 +8,10 @@
 
 include_once "../class/Patient.php";
 
-if (isset($_GET['id'])) {
-    $patient = new Patient($_GET["id"], "", "", "");
+if (isset($_GET['PatientID'])) {
+    $patient = new Patient($_GET["PatientID"], "", "", "", "", "", "", "", "");
     $patient->delete();
-    $patient = "patient deleted";
+    $msg = "patient deleted";
 }else{
     $msg = "patient not deleted";
 }
