@@ -12,6 +12,8 @@ class Researchproject
     public $enddate;
     public $outcome;
     public $budget;
+    public $doctorID;
+    public $topicID;
     public $dbconn;
 
     public function __construct($id, $enddate, $outcome, $budget, $doctorID, $topicID)
