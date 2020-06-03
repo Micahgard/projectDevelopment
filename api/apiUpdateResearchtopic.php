@@ -1,22 +1,22 @@
 <?php
 /**
- * Author: Aaron
- * Date: 27/05/2020
+ * Author: Joel
+ * Date: 03/06/2020
  * Version: 1.0
- * Purpose: api for updating researchtopic
+ * Purpose: api for updating research topic
  */
 
-include_once "../class/Payment.php";
+include_once "../class/Researchtopic.php";
 
-if (isset($_POST['id'])){
-    $id = $_POST['id'];
+if (isset($_POST['TopicID'])){
+    $id = $_POST['TopicID'];
     $description = $_POST['description'];
-    $level= $_POST['level'];
-    $researchtopic = new Researchtopic($id, $description, $level);
-    $researchtopic->update();
-    $msg = "researchtopic updated";
+    $level = $_POST['level'];
+    $topic = new topic($id, $description, $level);
+    $topic->update();
+    $msg = "research topic updated";
 }else{
-    $msg = "researchtopic not updated";
+    $msg = "research topic not updated";
 }
 $msg = json_encode($msg);
 echo $msg;

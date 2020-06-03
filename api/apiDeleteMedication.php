@@ -8,8 +8,8 @@
 
 include_once "../class/Medication.php";
 
-if (isset($_GET['id'])) {
-    $medication = new Medication($_GET["id"], "", "");
+if (isset($_GET['MedicationID'])) {
+    $medication = new Medication($_GET["MedicationID"], "", "");
     $medication->delete();
     $msg = "medication deleted";
 }else{

@@ -9,7 +9,6 @@
 include_once "../class/Medication.php";
 
 if (isset($_POST["name"])) {
-    include_once "../class/Medication.php";
     $ward = new Medication(null, $_POST["name"], $_POST["cost"]);
     $ward->save();
     $msg = "medication added";
