@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>addDoctor</title>
+</head>
+<body>
+<div class="container">
+    <form action="/action_page.php">
+        <h2>Add Doctor</h2>
+        <table class="table-sm table-borderless">
+            <tbody>
+            <tr>
+                <td><label for="doctorId">Doctor ID: </label></td>
+                <td><input type="text" id="doctorId" name="doctorId" size="3"></td>
+            </tr>
+            <tr>
+                <td><label for="lastname">Lastname:* </label></td>
+                <td><input type="text" id="lastname" name="lastname" size="30"></td>
+            </tr>
+            <tr>
+                <td><label for="firstname">Firstname:* </label></td>
+                <td><input type="text" id="firstname" name="firstname" size="30"></td>
+            </tr>
+            <tr>
+                <td><label for="street">Street:* </label></td>
+                <td><input type="text" id="street" name="street" size="50"></td>
+            </tr>
+            <tr>
+                <td><label for="suburb">Suburb:* </label></td>
+                <td><input type="text" id="suburb" name="suburb" size="25"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:* </label></td>
+                <td><input type="text" id="city" name="city" size="15"></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone:* </label></td>
+                <td><input type="text" id="phone" name="phone" size="15"></td>
+            </tr>
+            <tr>
+                <td><label for="specialty">Specialty:* </label></td>
+                <td><input type="text" id="specialty" name="specialty" size="15"></td>
+            </tr>
+            <tr>
+                <td><label for="salary">Salary:* </label></td>
+                <td><input type="text" id="salary" name="salary" size="15"></td>
+            </tr>
+            </tbody>
+        </table>
+        <i style="color: red">* Required Fields</i><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
