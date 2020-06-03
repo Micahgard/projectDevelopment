@@ -21,6 +21,7 @@ class Allocation
         $this->id = $id;
         $this->fee = $fee;
         $this->role = $role;
+        $this->doctorid = $doctorid;
     }
 
     public function save(){
