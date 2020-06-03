@@ -1,8 +1,8 @@
 <?php
 /**
  * Author: Micah
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for updating admission
  */
 
@@ -10,9 +10,9 @@ include_once "../class/Admission.php";
 
 if (isset($_POST['admissionID'])) {
     $id = $_POST['admissionID'];
-    $description = $_POST['last name'];
-    $admissiondate = $_POST['first name'];
-    $status = $_POST['street address'];
+    $description = $_POST['description'];
+    $admissiondate = $_POST['admissiondate'];
+    $status = $_POST['status'];
     $patientID = $_POST['patientID'];
     $wardID = $_POST['wardID'];
     $admission = new Admission($id, $description, $admissiondate, $status, $patientID, $wardID);

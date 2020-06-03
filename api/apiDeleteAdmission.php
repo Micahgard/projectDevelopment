@@ -1,12 +1,12 @@
 <?php
 /**
  * Author: Micah
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for deleting admission
  */
 
-include_once "../class/Patient.php";
+include_once "../class/Admission.php.php";
 
 if (isset($_GET['admissionID'])) {
     $admission = new Admission($_GET["admissionID"], "", "", "");
