@@ -8,8 +8,8 @@
 
 include_once "../class/Payment.php";
 
-if (isset($_GET['id'])) {
-    $payment = new Payment($_GET["id"], "", "");
+if (isset($_GET['paymentcode'])) {
+    $payment = new Payment($_GET["paymentcode"], "", "", "");
     $payment->delete();
     $msg = "payment deleted";
 }else{

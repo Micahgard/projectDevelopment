@@ -1,18 +1,20 @@
 <?php
 /**
  * Author: Mojeeb
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for updating prescription
  */
 
 include_once "../class/Prescription.php";
 
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+if (isset($_POST['prescriptionID'])) {
+    $id = $_POST['prescriptionID'];
     $prescriptiondate = $_POST['prescriptiondate'];
     $amount = $_POST['amount'];
-    $prescription = new Prescription($id, $prescriptiondate, $amount);
+    $medicationID = $_POST['medicationID'];
+    $admissionID = $_POST['admissionID'];
+    $prescription = new Prescription($id, $prescriptiondate, $amount, $medicationID, $admissionID);
     $prescription->update();
     $msg = "prescription updated";
 }else{
