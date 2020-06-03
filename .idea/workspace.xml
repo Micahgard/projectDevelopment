@@ -11,8 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/addAdmission.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/addAdmission.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addAdmission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +52,16 @@
       <recent name="E:\Tutorials\NZ Diploma in Information Systems L5\HTCS5607 IS Application Project\Assessment\projectDevelopment\api" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="addAdmission.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/5607JoelDevelopment/pages/addAdmission.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.addAdmission.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -64,7 +74,7 @@
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
-      <workItem from="1591157880166" duration="823000" />
+      <workItem from="1591157880166" duration="2290000" />
     </task>
     <servers />
   </component>
