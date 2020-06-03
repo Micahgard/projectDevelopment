@@ -31,6 +31,7 @@ class Researchproject
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Researchproject values (null, '$this->enddate', '$this->outcome', $this->budget, $this->doctorID, $this->topicID)";
+            echo $query;
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
