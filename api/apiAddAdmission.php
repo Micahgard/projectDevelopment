@@ -1,8 +1,8 @@
 <?php
 /**
  * Author: Micah
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for adding an admission
  */
 
