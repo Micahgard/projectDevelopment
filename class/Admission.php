@@ -31,6 +31,7 @@ class Admission
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Admission values (null, '$this->description', '$this->admissiondate', '$this->status', $this->patientID, $this->wardID)";
+            echo $query;
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
