@@ -8,8 +8,8 @@
 
 include_once "../class/Patient.php";
 
-if (isset($_GET['id'])) {
-    $admission = new Admission($_GET["id"], "", "", "");
+if (isset($_GET['admissionID'])) {
+    $admission = new Admission($_GET["admissionID"], "", "", "");
     $admission->delete();
     $admission = "admission deleted";
 }else{
