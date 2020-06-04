@@ -1,8 +1,8 @@
 <?php
 /**
  * Author: Mojeeb
- * Date: 27/05/2020
- * Version: 1.0
+ * Date: 03/06/2020
+ * Version: 1.1
  * Purpose: api for updating doctor
  */
 
@@ -16,9 +16,9 @@ if (isset($_POST['id'])) {
     $suburb = $_POST['suburb'];
     $city = $_POST['city'];
     $phone = $_POST['phone'];
-    $speciality = $_POST['speciality'];
+    $specialty = $_POST['specialty'];
     $salary = $_POST['salary'];
-    $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
+    $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $specialty, $salary);
     $doctor->update();
     $msg = "doctor updated";
 }else{

@@ -1,8 +1,9 @@
 <?php
 /**
  * Author: Mojeeb
+ * Update Micah
  * Date: 27/05/2020
- * Version: 1.0
+ * Version: 1.1
  * Purpose: api for updating prescription
  */
 
@@ -12,7 +13,9 @@ if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $prescriptiondate = $_POST['prescriptiondate'];
     $amount = $_POST['amount'];
-    $prescription = new Prescription($id, $prescriptiondate, $amount);
+    $admissionid = $_POST['admissionid'];
+    $medicationid = $_POST['medicationid'];
+    $prescription = new Prescription($id, $prescriptiondate, $amount, $admissionid, $medicationid);
     $prescription->update();
     $msg = "prescription updated";
 }else{

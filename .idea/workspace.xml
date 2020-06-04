@@ -11,12 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiAddAllocation.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddAllocation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiAddDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiAddDoctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/apiUpdateDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/apiUpdateDoctor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/Allocation.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/Allocation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/addAdmission.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addAdmission.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +21,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -58,17 +52,15 @@
       <recent name="E:\Tutorials\NZ Diploma in Information Systems L5\HTCS5607 IS Application Project\Assessment\projectDevelopment\api" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="RunManager">
+    <configuration name="addAdmission.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/5607JoelDevelopment/pages/addAdmission.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <item itemvalue="JavaScript Debug.addAdmission.html" />
       </list>
-    </option>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -82,7 +74,7 @@
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
-      <workItem from="1591157880166" duration="823000" />
+      <workItem from="1591157880166" duration="2290000" />
     </task>
     <servers />
   </component>
@@ -94,13 +86,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="327" key="NewPhpFileDialog" timestamp="1590562082954">

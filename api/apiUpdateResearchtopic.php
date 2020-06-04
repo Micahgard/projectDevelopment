@@ -8,11 +8,11 @@
 
 include_once "../class/Researchtopic.php";
 
-if (isset($_POST['TopicID'])){
-    $id = $_POST['TopicID'];
+if (isset($_POST['topicID'])){
+    $id = $_POST['topicID'];
     $description = $_POST['description'];
     $level = $_POST['level'];
-    $topic = new topic($id, $description, $level);
+    $topic = new Researchtopic($id, $description, $level);
     $topic->update();
     $msg = "research topic updated";
 }else{

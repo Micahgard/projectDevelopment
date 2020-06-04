@@ -12,7 +12,9 @@ if (isset($_POST['id'])) {
     $id = $_POST['id'];
     $fee = $_POST['fee'];
     $role = $_POST['role'];
-    $allocation = new Allocation($id, $fee, $role);
+    $doctorid = $_POST['doctorid'];
+    $admissionid = $_POST['admissionid'];
+    $allocation = new Allocation($id, $fee, $role, $doctorid, $admissionid);
     $allocation->update();
     $msg = "allocation updated";
 }else{
