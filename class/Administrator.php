@@ -26,8 +26,9 @@ class Administrator
 
     public function login($username, $password)
     {
+      $conn = (new DB())->conn;
         $query = "select * from Admin where username = '$username'";   // check if the username exists
-        $result = mysqli_query($this->conn, $query);  //  run the query
+        $result = mysqli_query($conn, $query);  //  run the query
         if ($result->num_rows == 1) {    // if the username exists, check the password
             while ($row = $result->fetch_assoc()) {   //  fetching the data
                 if ($row['password'] == $password) {  //  if username and password are correct, I set information to this administrator login
@@ -40,5 +41,6 @@ class Administrator
                 }
             }
         }
+        $conn->close();
     }
 }
