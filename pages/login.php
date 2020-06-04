@@ -3,7 +3,7 @@ include_once 'head.php';
 ?>
 
 <form action="../api/login.php" method="post">
-    <h2>Update Admission</h2>
+    <h2>Login</h2>
     <table class="table-sm table-borderless">
         <tbody>
         <tr>
