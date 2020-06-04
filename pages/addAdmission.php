@@ -45,10 +45,13 @@
                         <option value="audi">Audi</option>
                     </select></td>
                 </tr>
+                <tr><td><i style="color: red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><button type="button">Return</button></td>
+                    <td><button type="button">Add Admission</button></td>
+                </tr>
                 </tbody>
             </table>
-            <i style="color: red">* Required Fields</i><br><br>
-            <input type="submit" value="Submit">
         </form>
     </div>
 </body>
