@@ -9,12 +9,14 @@ if (!empty($username) && !empty($password)) {
   $login = new Administrator();
   $login->login($username, $password);
 
-  switch($login->role) {
+  echo $role;
+
+  /*switch($login->role) {
     case 'senior':
       echo 'senior';
       break;
     case 'assistant':
       echo 'assistant';
       break;
-  }
+  }*/
 }
