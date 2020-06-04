@@ -11,8 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/head.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/addAdmission.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addAdmission.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/updateAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updateAdmission.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1cNqcP6f03fFDKRKv6hq5nLUHv1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -53,12 +60,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="addAdmission.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/5607JoelDevelopment/pages/addAdmission.html" useBuiltInWebServerPort="true">
+    <configuration name="addAdmission.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/5607JoelDevelopment/pages/addAdmission.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.addAdmission.html" />
+        <item itemvalue="JavaScript Debug.addAdmission.php" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +81,8 @@
       <updated>1590379477266</updated>
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
-      <workItem from="1591157880166" duration="2290000" />
+      <workItem from="1591157880166" duration="3840000" />
+      <workItem from="1591245635116" duration="411000" />
     </task>
     <servers />
   </component>
@@ -94,9 +102,33 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="517" y="327" key="NewPhpFileDialog" timestamp="1590562082954">
+    <state x="263" y="59" key="#CLI_Interpreters" timestamp="1591246046087">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="517" y="327" key="NewPhpFileDialog/0.40.1366.728@0.40.1366.728" timestamp="1590562082954" />
+    <state x="263" y="59" key="#CLI_Interpreters/0.40.1366.728@0.40.1366.728" timestamp="1591246046087" />
+    <state x="390" y="47" key="#PHP" timestamp="1591246047440">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="390" y="47" key="#PHP/0.40.1366.728@0.40.1366.728" timestamp="1591246047440" />
+    <state x="421" y="206" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591161025884">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="421" y="206" key="#com.intellij.fileTypes.FileTypeChooser/0.40.1366.728@0.40.1366.728" timestamp="1591161025884" />
+    <state x="462" y="159" key="FileChooserDialogImpl" timestamp="1591246020366">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="462" y="159" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1591246020366" />
+    <state x="517" y="327" key="NewPhpFileDialog" timestamp="1591245738468">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="517" y="327" key="NewPhpFileDialog/0.40.1366.728@0.40.1366.728" timestamp="1591245738468" />
+    <state x="492" y="318" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591161011953">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="492" y="318" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.40.1366.728@0.40.1366.728" timestamp="1591161011953" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1591160907887">
+      <screen x="0" y="40" width="1366" height="728" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.40.1366.728@0.40.1366.728" timestamp="1591160907887" />
   </component>
 </project>
