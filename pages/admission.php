@@ -151,7 +151,7 @@ if (isset($_POST['addAdmissionBtn'])) {
     </form>
 <?php
 }else {
-
+    
 }
 include_once 'foot.php';
 ?>

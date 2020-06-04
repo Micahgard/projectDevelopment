@@ -11,11 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/foot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/addAdmission.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updateAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/admission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admission.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
       <workItem from="1591157880166" duration="3840000" />
-      <workItem from="1591245635116" duration="3564000" />
+      <workItem from="1591245635116" duration="4014000" />
     </task>
     <servers />
   </component>
