@@ -16,5 +16,17 @@ if (!empty($username) && !empty($password)) {
     case 'assistant':
       echo 'assistant';
       break;
+    case 'facility':
+      echo 'facility';
+      break;
+    case 'pharmacy':
+      echo 'pharmacy';
+      break;
+    case 'research':
+      echo 'research';
+      break;
+    case 'clerk':
+      echo 'clerk';
+      break;
   }
 }
