@@ -11,12 +11,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/apiLogin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/foot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/addAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addAdmission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/addAdmission.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/updateAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/updateAdmission.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/updateAdmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/admission.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
       <workItem from="1591157880166" duration="3840000" />
-      <workItem from="1591245635116" duration="1629000" />
+      <workItem from="1591245635116" duration="3564000" />
     </task>
     <servers />
   </component>
@@ -120,10 +119,10 @@
       <screen x="0" y="40" width="1366" height="728" />
     </state>
     <state x="462" y="159" key="FileChooserDialogImpl/0.40.1366.728@0.40.1366.728" timestamp="1591246020366" />
-    <state x="517" y="327" key="NewPhpFileDialog" timestamp="1591246881363">
+    <state x="517" y="327" key="NewPhpFileDialog" timestamp="1591247745871">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
-    <state x="517" y="327" key="NewPhpFileDialog/0.40.1366.728@0.40.1366.728" timestamp="1591246881363" />
+    <state x="517" y="327" key="NewPhpFileDialog/0.40.1366.728@0.40.1366.728" timestamp="1591247745871" />
     <state x="492" y="318" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591161011953">
       <screen x="0" y="40" width="1366" height="728" />
     </state>
