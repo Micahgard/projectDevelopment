@@ -2,7 +2,7 @@
 include_once 'head.php';
 ?>
 
-<form action="../api/login.php" method="post">
+<form action="../api/apiLogin.php" method="post">
     <h2>Login</h2>
     <table class="table-sm table-borderless">
         <tbody>
@@ -12,7 +12,7 @@ include_once 'head.php';
         </tr>
         <tr>
             <td><label for="password">Password: </label></td>
-            <td><input type="text" id="password" name="password"></td>
+            <td><input type="password" id="password" name="password"></td>
         </tr>
         <tr>
             <td><input type="submit" name="submit" value="Submit"></td>
