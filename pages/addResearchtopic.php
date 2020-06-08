@@ -16,7 +16,7 @@
                 <td><select name="level">
                         <?php
                         $i = 1;
-                        while ($i<=20){
+                        while ($i<=10){
                             echo "<option value='".$i."'>".$i."</option>";
                             $i = $i + 1;
                         }
