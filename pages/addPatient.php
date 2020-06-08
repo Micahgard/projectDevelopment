@@ -3,7 +3,7 @@
 ?>
 
 <form action="../api/apiAddPatient.php" method="post">
-    <h2>Add Admission</h2>
+    <h2>Add Patient</h2>
     <table class="table-sm table-borderless">
         <tbody>
         <tr>
@@ -48,7 +48,7 @@
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
-            <td><input type="submit" name="addAdmission" value="Add Admission"/></td>
+            <td><input type="submit" name="addPatient" value="Add Patient"/></td>
             <td><input type="submit" name="return" value="Return"></td>
         </tr>
         </tbody>
