@@ -18,10 +18,6 @@ if (!empty($username) && !empty($password)) {
             ?>
             <div class="block">
                 <p><a href="../pages/addPatient.php">Add Patient</a></p>
-                <p><a href="page/admissionReport.php">Admission Report</a></p>
-                <p><a href="page/updateAdmission.php">Update Admission</a></p>
-                <p><a href="page/closeAdmission.php">Close Admission</a></p>
-                <p><a href="page/deleteAdmission.php">Delete Admission</a></p>
             </div>
             <?php
             break;
@@ -30,12 +26,22 @@ if (!empty($username) && !empty($password)) {
             break;
         case 'pharmacy':
             echo 'pharmacy';
+            ?>
+            <div class="block">
+                <p><a href="../pages/addMedication.php">Add Medication</a></p>
+            </div>
+            <?php
             break;
         case 'research':
             echo 'research';
             break;
         case 'clerk':
             echo 'clerk';
+            ?>
+            <div class="block">
+                <p><a href="../pages/addDoctor.php">Add Doctor</a></p>
+            </div>
+            <?php
             break;
     }
 }
