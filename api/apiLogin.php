@@ -14,7 +14,7 @@ if (!empty($username) && !empty($password)) {
             echo 'senior';
             break;
         case 'assistant':
-            echo 'assistant';
+            echo 'Welcome assistant administrator';
             ?>
             <div class="block">
                 <p><a href="../pages/addPatient.php">Add Patient</a></p>
@@ -22,10 +22,15 @@ if (!empty($username) && !empty($password)) {
             <?php
             break;
         case 'facility':
-            echo 'facility';
+            echo 'Welcome facility administrator';
+            ?>
+            <div class="block">
+                <p><a href="../pages/addWard.php">Add Ward</a></p>
+            </div>
+            <?php
             break;
         case 'pharmacy':
-            echo 'pharmacy';
+            echo 'Welcome pharmacy administrator';
             ?>
             <div class="block">
                 <p><a href="../pages/addMedication.php">Add Medication</a></p>
@@ -33,10 +38,15 @@ if (!empty($username) && !empty($password)) {
             <?php
             break;
         case 'research':
-            echo 'research';
+            echo 'Welcome research administrator';
+            ?>
+            <div class="block">
+                <p><a href="../pages/addResearchtopic.php">Add Research Topic</a></p>
+            </div>
+            <?php
             break;
         case 'clerk':
-            echo 'clerk';
+            echo 'Welcome payroll clerk';
             ?>
             <div class="block">
                 <p><a href="../pages/addDoctor.php">Add Doctor</a></p>
