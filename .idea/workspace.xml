@@ -10,8 +10,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/addDoctor.php" afterDir="false" />
+    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="aa">
+      <change afterPath="$PROJECT_DIR$/pages/addResearchtopic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/addDoctor.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/addDoctor.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +114,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="aa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="263" y="59" key="#CLI_Interpreters" timestamp="1591246046087">
