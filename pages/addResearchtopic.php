@@ -27,7 +27,7 @@
 
             <tr><td><i style="color: red">* Required Fields</i></td></tr>
             <tr>
-                <td><input type="submit" name="addPatient" value="Add Patient"/></td>
+                <td><input type="submit" name="researchtopic" value="Add research topic"/></td>
                 <td><input type="submit" name="return" value="Return"></td>
             </tr>
             </tbody>
