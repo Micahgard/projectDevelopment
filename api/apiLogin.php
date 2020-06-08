@@ -16,14 +16,14 @@ if (!empty($username) && !empty($password)) {
         case 'assistant':
             echo 'assistant';
             ?>
-    <div class="block">
-        <p><a href="page/addAdmission.php">Add Admission</a></p>
-        <p><a href="page/admissionReport.php">Admission Report</a></p>
-        <p><a href="page/updateAdmission.php">Update Admission</a></p>
-        <p><a href="page/closeAdmission.php">Close Admission</a></p>
-        <p><a href="page/deleteAdmission.php">Delete Admission</a></p>
-    </div>
-<?php
+            <div class="block">
+                <p><a href="../pages/addPatient.php">Add Patient</a></p>
+                <p><a href="page/admissionReport.php">Admission Report</a></p>
+                <p><a href="page/updateAdmission.php">Update Admission</a></p>
+                <p><a href="page/closeAdmission.php">Close Admission</a></p>
+                <p><a href="page/deleteAdmission.php">Delete Admission</a></p>
+            </div>
+            <?php
             break;
         case 'facility':
             echo 'facility';
@@ -39,4 +39,3 @@ if (!empty($username) && !empty($password)) {
             break;
     }
 }
-
