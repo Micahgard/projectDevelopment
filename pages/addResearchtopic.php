@@ -3,7 +3,7 @@
 ?>
 
     <form action="../api/apiAddPatient.php" method="post">
-        <h2>Add Patient</h2>
+        <h2>Add Research Topic</h2>
         <table class="table-sm table-borderless">
             <tbody>
             <tr>
