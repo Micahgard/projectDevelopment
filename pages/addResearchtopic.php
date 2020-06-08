@@ -2,7 +2,7 @@
 
 ?>
 
-    <form action="../api/apiAddPatient.php" method="post">
+    <form action="../api/apiAddResearchtopic.php" method="post">
         <h2>Add Research Topic</h2>
         <table class="table-sm table-borderless">
             <tbody>
