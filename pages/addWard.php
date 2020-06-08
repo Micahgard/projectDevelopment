@@ -22,10 +22,9 @@
                     <?php
                     $i = 1;
                     while ($i<=20){
-                        echo '<option value="$i">$i</option>';
+                        echo "<option value='".$i."'>".$i."</option>";
                         $i = $i + 1;
                     }
-
                     ?>
                 </select>
             </td>
