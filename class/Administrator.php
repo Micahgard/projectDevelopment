@@ -1,5 +1,6 @@
 <?php
 include_once ("DB.php");
+include_once "class/Admission.php";
 
 class Administrator
 {
@@ -43,4 +44,24 @@ class Administrator
         }
         $conn->close();
     }
+
+    /**
+     * @name showAdmission
+     * @return Admission array
+     */
+    public function showAdmission(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows>0){
+            while ($result->fetch_assoc()){
+                $admission = new Admission($row["id"], $row["description"], $row["admissiondate"], $row["admissionstatus"], $row["patientID"], $row["wardID"]);
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admission;
+    }
+
 }
