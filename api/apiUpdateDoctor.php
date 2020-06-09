@@ -16,9 +16,9 @@ if (isset($_POST['id'])) {
     $suburb = $_POST['suburb'];
     $city = $_POST['city'];
     $phone = $_POST['phone'];
-    $specialty = $_POST['specialty'];
+    $speciality = $_POST['speciality'];
     $salary = $_POST['salary'];
-    $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $specialty, $salary);
+    $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
     $doctor->update();
     $msg = "doctor updated";
 }else{

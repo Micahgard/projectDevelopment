@@ -10,9 +10,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="">
+    <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="aa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +21,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -56,6 +59,18 @@
       <recent name="E:\Tutorials\NZ Diploma in Information Systems L5\HTCS5607 IS Application Project\Assessment\projectDevelopment\api" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="addAdmission.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/5607JoelDevelopment/pages/addAdmission.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -79,6 +94,7 @@
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
       <workItem from="1591157880166" duration="3840000" />
+<<<<<<< HEAD
       <workItem from="1591245635116" duration="4642000" />
       <workItem from="1591682084246" duration="53000" />
       <workItem from="1591682194966" duration="100000" />
@@ -91,23 +107,32 @@
       <workItem from="1591682614093" duration="5000" />
       <workItem from="1591682645459" duration="2000" />
       <workItem from="1591682723203" duration="20000" />
+=======
+      <workItem from="1591245635116" duration="4014000" />
+      <workItem from="1591666713771" duration="4474000" />
+>>>>>>> 5e485834918e05367c67529ab88f16da09abe931
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="aa" />
+    <option name="LAST_COMMIT_MESSAGE" value="aa" />
   </component>
   <component name="WindowStateProjectService">
     <state x="263" y="59" key="#CLI_Interpreters" timestamp="1591246046087">

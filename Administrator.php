@@ -57,7 +57,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $row["wardID"]);
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row["wardID"]);
                 array_push($admissions,$admission);
             }
         }
@@ -65,16 +65,4 @@ class Administrator
         return $admissions;
     }
 
-    public function findPatientByPatientID($patientID){
-        $conn = (new DB())->conn;
-        $sql = "select * from Patient where PatientID = ".$patientID;
-        $result = $conn->query($sql);
-        if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
-                $patientName = $row["lastname"]." ".$row["firstname"];
-            }
-        }
-        $conn->close();
-        return $patientName;
-    }
 }

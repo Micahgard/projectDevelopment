@@ -15,11 +15,11 @@ class Doctor
     public $suburb;
     public $city;
     public $phone;
-    public $specialty;
+    public $speciality;
     public $salary;
     public $dbconn;
 
-    public function __construct($id, $lastname, $firstname, $street, $suburb, $city, $phone, $specialty, $salary)
+    public function __construct($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary)
     {
         $this->id = $id;
         $this->lastname = $lastname;
@@ -28,7 +28,7 @@ class Doctor
         $this->suburb = $suburb;
         $this->city = $city;
         $this->phone = $phone;
-        $this->specialty = $specialty;
+        $this->speciality = $speciality;
         $this->salary = $salary;
     }
 
@@ -38,7 +38,7 @@ class Doctor
         if (is_null($this->id)){
             $query = "insert into Doctor values (null, '$this->lastname',
  '$this->firstname', '$this->street', '$this->suburb','$this->city', '$this->phone',
-  '$this->specialty', $this->salary)";
+  '$this->speciality', $this->salary)";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
@@ -49,7 +49,7 @@ class Doctor
         if (!is_null($this->id)){
             $query = "UPDATE Doctor SET lastname='$this->lastname', firstname='$this->firstname', 
 street='$this->street', suburb='$this->suburb', city='$this->city', phone='$this->phone', 
-specialty='$this->specialty', salary=$this->salary WHERE DoctorID=$this->id";
+speciality='$this->speciality', salary=$this->salary WHERE DoctorID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
