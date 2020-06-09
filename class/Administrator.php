@@ -1,6 +1,6 @@
 <?php
 include_once ("DB.php");
-include_once "class/Admission.php";
+include_once "Admission.php";
 
 class Administrator
 {
@@ -27,7 +27,7 @@ class Administrator
 
     public function login($username, $password)
     {
-      $conn = (new DB())->conn;
+        $conn = (new DB())->conn;
         $query = "select * from Admin where username = '$username'";   // check if the username exists
         $result = mysqli_query($conn, $query);  //  run the query
         if ($result->num_rows == 1) {    // if the username exists, check the password
@@ -45,22 +45,20 @@ class Administrator
         $conn->close();
     }
 
+
     /**
      * @name showAdmission
-     * @return Admission array
+     * @return admission array
      */
     public function showAdmission(){
         $conn = (new DB())->conn;
         $sql = "select * from Admission";
-
         $admissions = array();
-//        $result = $conn->query($sql);
-        $result = mysqli_query($conn, $sql);
+        $result = $conn->query($sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row["wardID"]);
-                echo $row["AdmissionID"];
-                array_push($admissions, $admission);
+                $admission = new Admission($row["id"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row[wardID]);
+                array_push($admissions,$admission);
             }
         }
         $conn->close();
