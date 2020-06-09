@@ -1,14 +1,18 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-?>
+<head>
+    <title>Add Patient</title>
+    <?php include_once 'head.php'; ?>
+</head>
 
+<body>
 <form action="../api/apiAddPatient.php" method="post">
     <h2>Add Patient</h2>
-    <table class="table-sm table-borderless">
-        <tbody>
+    <table>
         <tr>
             <td><label>Last Name:* </label></td>
-            <td><input type="text" id="lastname" name="lastname" size="25" required></td>
+            <td><input type="text"  name="lastname" size="25" required></td>
         </tr>
 
         <tr>
@@ -42,15 +46,18 @@
         </tr>
 
         <tr>
-            <td><label>Insurance Code:* </label></td>
-            <td><input type="text" id="insurcode" name="insurcode" size="10" required></td>
+            <td><label>Insurance Code: </label></td>
+            <td><input type="text" id="insurcode" name="insurcode" size="10"></td>
         </tr>
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
-            <td><input type="submit" name="addPatient" value="Add Patient"/></td>
-            <td><input type="submit" name="return" value="Return"></td>
+            <td><input class="btn" type="submit" value="Add Patient"/></td>
+            <td><input class="btn" type="submit" value="Return"></td>
         </tr>
-        </tbody>
     </table>
 </form>
+
+<div class="foot">
+    <?php include_once 'foot.php'; ?>
+</div>
