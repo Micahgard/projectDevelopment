@@ -70,11 +70,26 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $patientName = $row["firstname"]." ".$row["lastname"];
+                $id = $row["PatientID"];
+                $lastname = $row["lastname"];
+                $firstname = $row["firstname"];
             }
         }
         $conn->close();
-        return $patientName;
+        return array($id, $lastname, $firstname);
+    }
+
+    public function findWardByWardID($wardID){
+        $conn = (new DB())->conn;
+        $sql = "select * from Ward where WardID = ".$wardID;
+        $result = $conn->query($sql);
+        if ($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+                $wardname = $row["lastname"].", ".$row["firstname"];
+            }
+        }
+        $conn->close();
+        return $wardname;
     }
 
 //    // doctors report start
