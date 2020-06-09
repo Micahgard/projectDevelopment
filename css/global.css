@@ -55,6 +55,14 @@ body {
 }
 /* menu end */
 
+.foot{
+    font-size: 20px;
+    color: rgba(0, 92, 191, 0.71);
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
 /* login page start */
 .login-icon {
     margin-bottom: 1.5rem;
