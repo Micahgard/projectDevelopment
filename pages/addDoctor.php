@@ -63,3 +63,4 @@
 <div class="foot">
     <?php include_once 'foot.php'; ?>
 </div>
+</body>
