@@ -55,11 +55,10 @@
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
             <td><input class="btn" type="submit" value="Add Patient"/></td>
+            <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
         </tr>
     </table>
 </form>
-
-<a href="../api/apiLogin.php"><input class="btn" type="submit" value="Return"></a> 
 
 <div class="foot">
     <?php include_once 'foot.php'; ?>
