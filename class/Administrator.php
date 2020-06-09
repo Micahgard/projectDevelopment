@@ -61,7 +61,7 @@ class Administrator
             }
         }
         $conn->close();
-        return $admission;
+        return $admissions;
     }
 
 }
