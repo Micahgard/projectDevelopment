@@ -55,14 +55,15 @@ class Administrator
         echo $sql;
         $admissions = array();
 //        $result = $conn->query($sql);
-//        if ($result->num_rows>0){
-//            while ($row = $result->fetch_assoc()){
-//                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row["wardID"]);
-//                array_push($admissions, $admission);
-//            }
-//        }
-//        $conn->close();
-//        return $admissions;
+        $result = mysqli_query($conn, $sql);
+        if ($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row["wardID"]);
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
     }
 
 }
