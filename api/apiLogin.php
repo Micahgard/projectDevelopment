@@ -18,7 +18,7 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/updatePatient.php">2. Update Patient</a></p>
                 <p><a href="../pages/deletePatient.php">3. Delete Patient</a></p>
                 <p><a href="../pages/patientsReport.php">4. Patients Report</a></p>
-                <p><a href="../pages/payment.php">5. Record Payment</a></p>
+                <p><a href="../pages/addPayment.php">5. Record Payment</a></p>
                 <p><a href="../pages/addDoctor.php">6. Add Doctor</a></p>
                 <p><a href="../pages/updateDoctor.php">7. Update Doctor</a></p>
                 <p><a href="../pages/deleteDoctor.php">8. Delete Doctor</a></p>
@@ -56,7 +56,7 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/updatePatient.php">Update Patient</a></p>
                 <p><a href="../pages/deletePatient.php">Delete Patient</a></p>
                 <p><a href="../pages/patientsReport.php">Patients Report</a></p>
-                <p><a href="../pages/payment.php">Record Payment</a></p>
+                <p><a href="../pages/addPayment.php">Record Payment</a></p>
                 <p><a href="../pages/invoice.php">Produce Invoice</a></p>
                 <p><a href="../pages/addAdmission.php">Add Admission</a></p>
                 <p><a href="../pages/updateAdmission.php">Update Admission</a></p>
