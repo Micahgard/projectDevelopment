@@ -44,7 +44,7 @@
         <tr>
             <td><label>Patient:* </label></td>
             <td><select name="patient">
-                    <div id="patient"></div>
+                    <option id="patient"></option>
                 </select>
             </td>
         </tr>
