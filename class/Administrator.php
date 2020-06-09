@@ -55,7 +55,7 @@ class Administrator
         $admissions = array();
         $result = $conn->query($sql);
         if ($result->num_rows>0){
-            while ($result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()){
                 $admission = new Admission($row["id"], $row["description"], $row["admissiondate"], $row["admissionstatus"], $row["patientID"], $row["wardID"]);
                 array_push($admissions, $admission);
             }
