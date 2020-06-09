@@ -1,5 +1,5 @@
 <?php
-include_once "class/Administrator.php";
+include_once "../class/Administrator.php";
 $admin = new Administrator();
 $admissions = $admin->showAdmission();
 
