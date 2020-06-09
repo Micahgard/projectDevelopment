@@ -27,20 +27,20 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/updateAdmission.php">11. Update Admission</a></p>
                 <p><a href="../pages/deleteAdmission.php">12. Delete Admission</a></p>
                 <p><a href="../pages/admissionsReport.php">13. Admissions Report</a></p>
-                <p><a href="../pages/prescribeMedication.php">14. Prescribe Medication</a></p>
-                <p><a href="../pages/removePrescription.php">15. Remove Prescription</a></p>
+                <p><a href="../pages/addPrescription.php">14. Prescribe Medication</a></p>
+                <p><a href="../pages/deletePrescription.php">15. Remove Prescription</a></p>
                 <p><a href="../pages/addMedication.php">16. Add Medication</a></p>
                 <p><a href="../pages/updateMedication.php">17. Update Medication</a></p>
                 <p><a href="../pages/deleteMedication.php">18. Delete Medication</a></p>
                 <p><a href="../pages/invoice.php">19. Produce Invoice</a></p>
-                <p><a href="../pages/allocateDoctor.php">20. Allocate doctor</a></p>
-                <p><a href="../pages/removeDoctor.php">21. Remove doctor</a></p>
+                <p><a href="../pages/addAllocation.php">20. Allocate doctor</a></p>
+                <p><a href="../pages/deleteAllocation.php">21. Remove doctor</a></p>
                 <p><a href="../pages/addWard.php">22. Add Ward</a></p>
                 <p><a href="../pages/updateWard.php">23. Update Ward</a></p>
                 <p><a href="../pages/deleteWard.php">24. Delete Ward</a></p>
                 <p><a href="../pages/closeAdmission.php">25. Close Admission</a></p>
                 <p><a href="../pages/addResearchproject.php">26. Add Research Project</a></p>
-                <p><a href="../pages/removeResearchproject.php">27. Remove Research Project</a></p>
+                <p><a href="../pages/deleteResearchproject.php">27. Remove Research Project</a></p>
                 <p><a href="../pages/addResearchtopic.php">28. Add Research Topic</a></p>
                 <p><a href="../pages/updateResearchtopic.php">29. Update Research Topic</a></p>
                 <p><a href="../pages/deleteResearchtopic.php">30. Delete Research Topic</a></p>
@@ -63,8 +63,8 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/deleteAdmission.php">Delete Admission</a></p>
                 <p><a href="../pages/admissionsReport.php">Admissions Report</a></p>
                 <p><a href="../pages/closeAdmission.php">Close Admission</a></p>
-                <p><a href="../pages/allocateDoctor.php">Allocate doctor</a></p>
-                <p><a href="../pages/removeDoctor.php">Remove doctor</a></p>
+                <p><a href="../pages/addAllocation.php">Allocate doctor</a></p>
+                <p><a href="../pages/deleteAllocation.php">Remove doctor</a></p>
             </div>
             <?php
             break;
@@ -87,8 +87,8 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/addMedication.php">Add Medication</a></p>
                 <p><a href="../pages/updateMedication.php">Update Medication</a></p>
                 <p><a href="../pages/deleteMedication.php">Delete Medication</a></p>
-                <p><a href="../pages/prescribeMedication.php">Prescribe Medication</a></p>
-                <p><a href="../pages/removePrescription.php">Remove Prescription</a></p>
+                <p><a href="../pages/addPrescription.php">Prescribe Medication</a></p>
+                <p><a href="../pages/deletePrescription.php">Remove Prescription</a></p>
             </div>
             <?php
             break;
@@ -101,7 +101,7 @@ if (!empty($username) && !empty($password)) {
                 <p><a href="../pages/updateResearchtopic.php">Update Research Topic</a></p>
                 <p><a href="../pages/deleteResearchtopic.php">Delete Research Topic</a></p>
                 <p><a href="../pages/addResearchproject.php">Add Research Project</a></p>
-                <p><a href="../pages/removeResearchproject.php">Remove Research Project</a></p>
+                <p><a href="../pages/deleteResearchproject.php">Remove Research Project</a></p>
             </div>
             <?php
             break;
