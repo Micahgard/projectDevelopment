@@ -58,8 +58,8 @@ body {
 .foot{
     font-size: 20px;
     color: rgba(0, 92, 191, 0.71);
-    position: absolute;
-    bottom: 10px;
+    position: relative;
+    bottom: -50px;
     width: 100%;
 }
 
@@ -80,6 +80,10 @@ input {
     border: 1px solid;
     border-color: #7abaff;
     border-radius: 0.25rem;
+    margin: 10px;
+}
+
+#username, #password {
     margin: 12px auto;
 }
 
