@@ -58,9 +58,13 @@ body {
 .foot{
     font-size: 20px;
     color: rgba(0, 92, 191, 0.71);
-    position: relative;
-    bottom: -50px;
+    position: absolute;
+    bottom: -150px;
     width: 100%;
+}
+
+.foot-login {
+    bottom: 10px;
 }
 
 /* login page start */
