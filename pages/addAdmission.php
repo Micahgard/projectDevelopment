@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Add Medication</title>
+    <title>Add Admission</title>
     <?php include_once 'head.php'; ?>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                dataType: "JSON",
+                success: function (data) {
+                    i = 0;
+                    while (i < data.length){
+                        $("#patient").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                        i = i+1;
+                    }
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
 
-<form action="../api/apiAddMedication.php" method="post">
+<form action="../api/apiAddAdmission.php" method="post">
 
-    <h2>Add Medication</h2>
+    <h2>Add Admission</h2>
     <table>
         <tr>
-            <td><label>Name:* </label></td>
-            <td><input type="text" id="name" name="name" size="30" required></td>
+            <td><label>Description:* </label></td>
+            <td><input type="text" id="description" name="description" size="30" required></td>
         </tr>
 
         <tr>
-            <td><label>Cost:* </label></td>
-            <td><input type="text" id="cost" name="cost" size="10" required></td>
+            <td><label>Admission Date:* </label></td>
+            <td><input type="date" id="admissiondate" name="admissiondate" required></td>
+        </tr>
+
+        <tr>
+            <td><label>Patient:* </label></td>
+            <td><select name="patient">
+                    <div id="patient"></div>
+                </select>
+            </td>
         </tr>
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
-            <td><input class="btn" type="submit" value="Add Medication"/></td>
+            <td><input class="btn" type="submit" value="Add Admission"/></td>
             <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
         </tr>
     </table>
