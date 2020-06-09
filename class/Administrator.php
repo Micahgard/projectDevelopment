@@ -52,13 +52,14 @@ class Administrator
     public function showAdmission(){
         $conn = (new DB())->conn;
         $sql = "select * from Admission";
-        echo $sql;
+
         $admissions = array();
 //        $result = $conn->query($sql);
         $result = mysqli_query($conn, $sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
                 $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $row["patientID"], $row["wardID"]);
+                echo $row["AdmissionID"];
                 array_push($admissions, $admission);
             }
         }
