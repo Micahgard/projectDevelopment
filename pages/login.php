@@ -15,7 +15,7 @@
         <button class="btn" type="submit">Log in</button>
     </form>
 
-<div class="foot">
+<div class="foot foot-login">
     <?php include_once 'foot.php'; ?>
 </div>
 </body>

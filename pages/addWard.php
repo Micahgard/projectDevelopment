@@ -1,19 +1,25 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-?>
+<head>
+    <title>Add Ward</title>
+    <?php include_once 'head.php'; ?>
+</head>
+
+<body>
 
 <form action="../api/apiAddWard.php" method="post">
+
     <h2>Add Ward</h2>
-    <table class="table-sm table-borderless">
-        <tbody>
+    <table>
         <tr>
             <td><label>Name:* </label></td>
-            <td><input type="text" id="name" name="name" size="20" required></td>
+            <td><input type="text" id="name" name="name" size="30" required></td>
         </tr>
 
         <tr>
             <td><label>Location:* </label></td>
-            <td><input type="text" id="location" name="location" size="30" required></td>
+            <td><input type="text" id="location" name="location" size="10" required></td>
         </tr>
 
         <tr>
@@ -32,9 +38,12 @@
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
-            <td><input type="submit" name="addWard" value="Add Ward"/></td>
-            <td><input type="submit" name="return" value="Return"></td>
+            <td><input class="btn" type="submit" value="Add Medication"/></td>
+            <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
         </tr>
-        </tbody>
     </table>
 </form>
+
+<div class="foot">
+    <?php include_once 'foot.php'; ?>
+</div>
