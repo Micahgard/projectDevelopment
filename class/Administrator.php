@@ -112,6 +112,7 @@ class Administrator
             }
         }
         $conn->close();
+        echo "Medications:".$medicationnames;
         return $medicationnames;
     }
 
