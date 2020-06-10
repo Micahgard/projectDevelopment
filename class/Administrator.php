@@ -45,12 +45,11 @@ class Administrator
         $conn->close();
     }
 
-
     /**
-     * @name showAdmission
+     * @name showAdmissions
      * @return admission array
      */
-    public function showAdmission(){
+    public function showAdmissions(){
         $conn = (new DB())->conn;
         $sql = "select * from Admission";
         $admissions = array();
@@ -71,10 +70,45 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $patientName = $row["lastname"]." ".$row["firstname"];
+                $id = $row["PatientID"];
+                $lastname = $row["lastname"];
+                $firstname = $row["firstname"];
             }
         }
         $conn->close();
-        return $patientName;
+        return array($id, $lastname, $firstname);
     }
+
+    public function findWardByWardID($wardID){
+        $conn = (new DB())->conn;
+        $sql = "select * from Ward where WardID = ".$wardID;
+        $result = $conn->query($sql);
+        if ($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+                $wardname = $row["lastname"].", ".$row["firstname"];
+            }
+        }
+        $conn->close();
+        return $wardname;
+    }
+
+//    // doctors report start
+//    /**
+//     * @name doctors
+//     * @return doctor array
+//     */
+//    public function showDoctors(){
+//        $conn = (new DB())->conn;
+//        $sql = "select * from Admission";
+//        $doctors = array();
+//        $result = $conn->query($sql);
+//        if ($result->num_rows>0){
+//            while ($row = $result->fetch_assoc()){
+//                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
+//                array_push($doctors,$doctor);
+//            }
+//        }
+//        $conn->close();
+//        return $doctors;
+//    }
 }

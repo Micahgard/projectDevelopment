@@ -11,8 +11,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a290be9e-7c02-4ab0-b24a-13b4a875b5f7" name="Default Changelist" comment="aa">
-      <change afterPath="$PROJECT_DIR$/api/apiAllPatients.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/patientsReport.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -96,8 +94,23 @@
       <workItem from="1590379478563" duration="932000" />
       <workItem from="1590557398393" duration="2887000" />
       <workItem from="1591157880166" duration="3840000" />
+<<<<<<< HEAD
+      <workItem from="1591245635116" duration="4642000" />
+      <workItem from="1591682084246" duration="53000" />
+      <workItem from="1591682194966" duration="100000" />
+      <workItem from="1591682335463" duration="22000" />
+      <workItem from="1591682390737" duration="14000" />
+      <workItem from="1591682419018" duration="8000" />
+      <workItem from="1591682444556" duration="49000" />
+      <workItem from="1591682507548" duration="2000" />
+      <workItem from="1591682568825" duration="2000" />
+      <workItem from="1591682614093" duration="5000" />
+      <workItem from="1591682645459" duration="2000" />
+      <workItem from="1591682723203" duration="20000" />
+=======
       <workItem from="1591245635116" duration="4014000" />
-      <workItem from="1591666713771" duration="9053000" />
+      <workItem from="1591666713771" duration="4474000" />
+>>>>>>> 5e485834918e05367c67529ab88f16da09abe931
     </task>
     <servers />
   </component>
