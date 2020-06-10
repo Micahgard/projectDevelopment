@@ -7,16 +7,16 @@
         <a class="nav-link active" data-toggle="tab" href="#addDoctor">Add Doctor</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#menu1">Menu 1</a>
+        <a class="nav-link" data-toggle="tab" href="#updateDoctor">Update Doctor</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#menu2">Menu 2</a>
+        <a class="nav-link" data-toggle="tab" href="#deleteDoctor">Delete Doctor</a>
     </li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-    <div id="home" class="container tab-pane active"><br>
+    <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
             <table>
@@ -68,11 +68,11 @@
             </table>
         </form>
     </div>
-    <div id="menu1" class="container tab-pane fade"><br>
+    <div id="updateDoctor" class="container tab-pane fade"><br>
         <h3>Menu 1</h3>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
-    <div id="menu2" class="container tab-pane fade"><br>
+    <div id="deleteDoctor" class="container tab-pane fade"><br>
         <h3>Menu 2</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
     </div>
