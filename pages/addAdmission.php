@@ -8,7 +8,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                url: "https://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -45,6 +45,7 @@
         <tr>
             <td><label>Patient:* </label></td>
             <td><select name="patient">
+
 <!--                    <option id="patient"></option>-->
                 </select>
             </td>
