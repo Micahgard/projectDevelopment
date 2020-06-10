@@ -15,6 +15,7 @@
                     while (i < data.length){
                         // $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
                         $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
+                        i = i + 1;
                     }
                 },
                 error: function () {
