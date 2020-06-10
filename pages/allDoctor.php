@@ -1,5 +1,6 @@
-<?php
-?>
+<title>Doctors</title>
+<?php include_once 'head.php'; ?>
+
 <!--Nav Tabs-->
 <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
@@ -28,3 +29,5 @@
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
     </div>
 </div>
+
+<?php include_once 'foot.php';?>
