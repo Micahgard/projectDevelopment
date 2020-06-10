@@ -104,11 +104,12 @@ class Administrator
     public function findMedicationsByAdmission($admissionID){
         $conn = (new DB())->conn;
         $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = ".$admissionID;
-        echo $sql;
+//        echo $sql;
         $result = $conn->query($sql);
         $medicationnames = "";
         if ($result->num_rows>0){
-            while ($row = $result->fetch_row()){
+            while ($row = $result->fetch_all()){
+                echo "row: ".$row[0];
                 $medicationnames += $row[0]." ";
             }
         }
