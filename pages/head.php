@@ -15,6 +15,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" src="../image/icon.png">
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
