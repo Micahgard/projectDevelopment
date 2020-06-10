@@ -1,32 +1,41 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admissions Report</title>
+    <?php include_once 'head.php'; ?>
 
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                dataType: "JSON",
+                success: function (data) {
+                    i = 0;
+                    while (i < data.length){
+                        $("#report").append("<hr>");
+                        $("#report").append("<p>ID: "+data[i].id+" </p>");
+                        $("#report").append("<p>patientID: "+data[i].patientID+" </p>");
+                        $("#report").append("<p>description: "+data[i].description+" </p>");
+                        $("#report").append("<hr>");
+                        i = i+1;
+                    }
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        });
+    </script>
+</head>
 
-class AdmissionsReport
-{
-    public $AdmissionID;
-    public $description;
-    public $admissiondate;
-    public $status;
-    public $patient;
-    public $medication;
+<body>
+<div id="report">
 
-    /**
-     * AdmissionsReport constructor.
-     * @param $AdmissionID
-     * @param $description
-     * @param $admissiondate
-     * @param $status
-     * @param $patient
-     * @param $medication
-     */
-    public function __construct($AdmissionID, $description, $admissiondate, $status, $patient, $medication)
-    {
-        $this->AdmissionID = $AdmissionID;
-        $this->description = $description;
-        $this->admissiondate = $admissiondate;
-        $this->status = $status;
-        $this->patient = $patient;
-        $this->medication = $medication;
-    }
-}
+</div>
 
+<div class="foot">
+    <?php include_once 'foot.php'; ?>
+</div>
+</body>
+</html>
