@@ -1,6 +1,6 @@
 <?php
 include_once ("DB.php");
-include_once "AdmissionsReport.php.php";
+include_once "AdmissionsReport.php";
 
 class Administrator
 {
