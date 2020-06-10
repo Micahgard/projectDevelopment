@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Add Admission</title>
-    <?php include_once 'head.php'; ?>
-
+<title>Add Admission</title>
+<?php include_once 'head.php'; ?>
     <script>
         $(document).ready(function () {
             $.ajax({
@@ -26,12 +22,8 @@
             });
         });
     </script>
-</head>
-
 <body>
-
 <form action="../api/apiAddAdmission.php" method="post">
-
     <h2>Add Admission</h2>
     <table>
         <tr>
@@ -56,8 +48,4 @@
         </tr>
     </table>
 </form>
-
-<div class="foot">
-    <?php include_once 'foot.php'; ?>
-</div>
-</body>
+<?php include_once 'foot.php'; ?>

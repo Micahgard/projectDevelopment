@@ -46,3 +46,7 @@ body {
 form {
     margin: auto;
 }
+
+.red {
+    color: red;
+}
