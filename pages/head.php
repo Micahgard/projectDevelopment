@@ -18,9 +18,11 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-    <div class="menu">
-        <ul class="text-left">
-            <li><a href="login.php" class="active">HOME</a></li>
+    <nav class="navbar navbar-expand-sm bg-primary justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="login.php">HOME</a>
+            </li>
         </ul>
-    </div>
+    </nav>
     <div class="container">
