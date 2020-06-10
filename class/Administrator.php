@@ -113,7 +113,7 @@ class Administrator
         $result = $conn->query($sql);
         $row = $result->fetch_all();
 //            print_r($row[0]);
-        $medicationnames = implode('|', $row[0]);
+        $medicationnames = implode('|', $row);
 
         $conn->close();
         //echo "Medications:" . $medicationnames;
