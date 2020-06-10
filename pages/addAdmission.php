@@ -13,9 +13,8 @@
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
-                        // $("#patient").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
-                        $("#patient").append("patient info: " + data[i].patientID + "<br>";
-                        i = i+1;
+                        // $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                        $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                     }
                 },
                 error: function () {
@@ -45,7 +44,7 @@
         <tr>
             <td><label>Patient:* </label></td>
             <td><select name="patient">
-                    <option id="patient"></option>
+<!--                    <option id="patient"></option>-->
                 </select>
             </td>
         </tr>
@@ -58,7 +57,7 @@
     </table>
 </form>
 
-<div id="patient"></div>
+<div id="patientinfo"></div>
 
 <div class="foot">
     <?php include_once 'foot.php'; ?>
