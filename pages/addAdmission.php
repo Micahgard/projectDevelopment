@@ -51,8 +51,8 @@
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
         <tr>
-            <td><input class="btn" type="submit" value="Add Admission"/></td>
-            <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
+            <td><input class="btn btn-primary" type="submit" value="Add Admission"/></td>
+            <td><input href="../api/apiLogin.php"><input class="btn btn-primary" type="button" value="Return" /></td>
         </tr>
     </table>
 </form>
