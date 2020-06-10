@@ -13,7 +13,7 @@
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
-                        $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                        $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option></br>");
                         // $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                         i = i + 1;
                     }
