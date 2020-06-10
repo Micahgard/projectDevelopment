@@ -13,8 +13,8 @@
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
-                        // $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
-                        $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
+                        $("#patientinfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                        // $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                         i = i + 1;
                     }
                 },
@@ -45,7 +45,7 @@
         <tr>
             <td><label>Patient:* </label></td>
             <td><select name="patient">
-<!--                    <option id="patient"></option>-->
+                    <option id="patientinfo"></option>
                 </select>
             </td>
         </tr>
