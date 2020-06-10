@@ -122,7 +122,7 @@ class Administrator
             print_r($row[0]);
             $i = 0;
 
-            while ($i < sizeof($row[0])) {
+            while ($i < sizeof(array($row[0]))) {
                 $medicationnames += $row[$i];
                 $i = $i + 1;
             }
