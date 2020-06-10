@@ -21,7 +21,7 @@
             <h2>Add Doctor</h2>
             <table>
                 <tr>
-                    <td><label>Last Name:* </label></td>
+                    <td><label>Last Name:<b style="color: red">*</b> </label></td>
                     <td><input type="text" id="lastname" name="lastname" size="25" required></td>
                 </tr>
 
@@ -62,8 +62,8 @@
 
                 <tr><td><i style="color: red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn" type="submit" value="Add Doctor"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Add Doctor"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
         </form>
