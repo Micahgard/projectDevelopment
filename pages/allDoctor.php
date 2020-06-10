@@ -1,4 +1,4 @@
-<title>Doctors</title>
+<title>Doctor</title>
 <?php include_once 'head.php'; ?>
 
 <!--Nav Tabs-->
