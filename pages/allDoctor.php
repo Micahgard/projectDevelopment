@@ -2,7 +2,7 @@
 <?php include_once 'head.php'; ?>
 
 <!--Nav Tabs-->
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" data-toggle="tab" href="#addDoctor">Add Doctor</a>
     </li>
