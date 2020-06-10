@@ -21,46 +21,46 @@
             <h2>Add Doctor</h2>
             <table>
                 <tr>
-                    <td><label>Last Name:<b style="color: red">*</b> </label></td>
+                    <td><label>Last Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="lastname" name="lastname" size="25" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>First Name:* </label></td>
+                    <td><label>First Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="firstname" name="firstname" size="25" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Street Address:* </label></td>
+                    <td><label>Street Address:<b class="red">*</b> </label></td>
                     <td><input type="text" id="street" name="street" size="50" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Suburb:* </label></td>
+                    <td><label>Suburb:<b class="red">*</b> </label></td>
                     <td><input type="text" id="suburb" name="suburb" size="20" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>City:* </label></td>
+                    <td><label>City:<b class="red">*</b> </label></td>
                     <td><input type="text" id="city" name="city" size="20" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Phone Number:* </label></td>
+                    <td><label>Phone Number:<b class="red">*</b> </label></td>
                     <td><input type="text" id="phone" name="phone" size="15" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Speciality:* </label></td>
+                    <td><label>Speciality:<b class="red">*</b> </label></td>
                     <td><input type="text" id="speciality" name="speciality" size="15" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Salary:* </label></td>
+                    <td><label>Salary:<b class="red">*</b> </label></td>
                     <td><input type="text" id="salary" name="salary" size="15" required></td>
                 </tr>
 
-                <tr><td><i style="color: red">* Required Fields</i></td></tr>
+                <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
                     <td><input class="btn btn-outline-primary" type="submit" value="Add Doctor"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
