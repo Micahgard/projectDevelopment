@@ -24,18 +24,11 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.login {
-    width: 100%;
-    max-width: 500px;
-    padding: 15px;
-    margin: auto;
-}
-
 #username, #password {
     margin: 12px auto;
 }
 
-.login .form-control {
+.login {
     position: relative;
     box-sizing: border-box;
     height: auto;
