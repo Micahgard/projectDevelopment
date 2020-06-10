@@ -108,8 +108,8 @@ class Administrator
         $result = $conn->query($sql);
         $medicationnames = "";
         if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
-                $medicationnames += $row["name"]." ";
+            while ($row = $result->fetch_row()){
+                $medicationnames += $row[0]." ";
             }
         }
         $conn->close();
