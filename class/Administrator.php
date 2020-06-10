@@ -114,12 +114,15 @@ class Administrator
 //                $medicationnames += $row[0]." ";
 //            }
             $row = $result->fetch_all();
+            print_r($row);
             $i = 0;
-            while ($i<sizeof($row)){
-                $medicationnames += $row[$i];
-                $i = $i+1;
+            if (sizeof($row) > 0){
+                while ($i<sizeof($row)){
+                    $medicationnames += $row[$i];
+                    $i = $i+1;
+                }
             }
-        }
+
         $conn->close();
         echo "Medications:".$medicationnames;
         return $medicationnames;
