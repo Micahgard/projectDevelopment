@@ -17,6 +17,7 @@
                         $("#report").append("<p>ID: "+data[i].id+" </p>");
                         $("#report").append("<p>patientID: "+data[i].patientID+" </p>");
                         $("#report").append("<p>description: "+data[i].description+" </p>");
+                        $("#report").append("<p>medication: "+data[i].medication+" </p>");
                         $("#report").append("<hr>");
                         i = i+1;
                     }
