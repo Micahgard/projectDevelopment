@@ -119,13 +119,12 @@ class Administrator
 //                $medicationnames += $row[0]." ";
 //            }
             $row = $result->fetch_all();
-            print_r($row);
+            print_r($row[0]);
             $i = 0;
-            if (sizeof($row) > 0) {
-                while ($i < sizeof($row[0])) {
-                    $medicationnames += $row[$i];
-                    $i = $i + 1;
-                }
+
+            while ($i < sizeof($row[0])) {
+                $medicationnames += $row[$i];
+                $i = $i + 1;
             }
 
             $conn->close();
