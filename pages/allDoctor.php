@@ -22,37 +22,37 @@
             <table>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="lastname" name="lastname" size="25" required></td>
+                    <td><input type="text" class="form-control" id="lastname" name="lastname" size="25" required></td>
                 </tr>
 
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="firstname" name="firstname" size="25" required></td>
+                    <td><input type="text" class="form-control" id="firstname" name="firstname" size="25" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="street" name="street" size="50" required></td>
+                    <td><input type="text" class="form-control" id="street" name="street" size="50" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="suburb" name="suburb" size="20" required></td>
+                    <td><input type="text" class="form-control" id="suburb" name="suburb" size="20" required></td>
                 </tr>
 
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="city" name="city" size="20" required></td>
+                    <td><input type="text" class="form-control" id="city" name="city" size="20" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="phone" name="phone" size="15" required></td>
+                    <td><input type="text" class="form-control" id="phone" name="phone" size="15" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Speciality:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="speciality" name="speciality" size="15" required></td>
+                    <td><input type="text" class="form-control" id="speciality" name="speciality" size="15" required></td>
                 </tr>
 
                 <tr>
