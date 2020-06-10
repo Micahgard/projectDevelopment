@@ -123,7 +123,7 @@ class Administrator
             $i = 0;
 
             while ($i < sizeof(array($row[0]))) {
-                $medicationnames += $row[$i];
+                $medicationnames += $row[0][$i];
                 $i = $i + 1;
             }
 
