@@ -1,5 +1,5 @@
 <?php
-include_once ("DB.php");
+include_once("DB.php");
 include_once "AdmissionsReport.php";
 
 class Administrator
@@ -12,6 +12,7 @@ class Administrator
     public $role;
 
 //  check username and password for this administrator login
+
     /**
      * Administrator constructor.
      */
@@ -49,15 +50,16 @@ class Administrator
      * @name showAdmissions
      * @return admission array
      */
-    public function showAdmissions(){
+    public function showAdmissions()
+    {
         $conn = (new DB())->conn;
         $sql = "select * from Admission";
         $admissions = array();
         $result = $conn->query($sql);
-        if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
                 $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
-                array_push($admissions,$admission);
+                array_push($admissions, $admission);
             }
         }
         $conn->close();
@@ -69,12 +71,13 @@ class Administrator
      * @param $patientID
      * @return array
      */
-    public function findPatientByPatientID($patientID){
+    public function findPatientByPatientID($patientID)
+    {
         $conn = (new DB())->conn;
-        $sql = "select * from Patient where PatientID = ".$patientID;
+        $sql = "select * from Patient where PatientID = " . $patientID;
         $result = $conn->query($sql);
-        if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
                 $id = $row["PatientID"];
                 $lastname = $row["lastname"];
                 $firstname = $row["firstname"];
@@ -88,26 +91,28 @@ class Administrator
      * @param $wardID
      * @return string
      */
-    public function findWardByWardID($wardID){
+    public function findWardByWardID($wardID)
+    {
         $conn = (new DB())->conn;
-        $sql = "select * from Ward where WardID = ".$wardID;
+        $sql = "select * from Ward where WardID = " . $wardID;
         $result = $conn->query($sql);
-        if ($result->num_rows>0){
-            while ($row = $result->fetch_assoc()){
-                $wardname = $row["lastname"].", ".$row["firstname"];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $wardname = $row["lastname"] . ", " . $row["firstname"];
             }
         }
         $conn->close();
         return $wardname;
     }
 
-    public function findMedicationsByAdmission($admissionID){
+    public function findMedicationsByAdmission($admissionID)
+    {
         $conn = (new DB())->conn;
-        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = ".$admissionID;
+        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
 //        echo $sql;
         $result = $conn->query($sql);
         $medicationnames = "";
-        if ($result->num_rows>0){
+        if ($result->num_rows > 0) {
 //            while ($row = $result->fetch_all()){
 //                echo "row: ".$row[0];
 //                print_r($row);
@@ -116,18 +121,18 @@ class Administrator
             $row = $result->fetch_all();
             print_r($row);
             $i = 0;
-            if (sizeof($row) > 0){
-                while ($i<sizeof($row)){
+            if (sizeof($row) > 0) {
+                while ($i < sizeof($row)) {
                     $medicationnames += $row[$i];
-                    $i = $i+1;
+                    $i = $i + 1;
                 }
             }
 
-        $conn->close();
-        echo "Medications:".$medicationnames;
-        return $medicationnames;
+            $conn->close();
+            echo "Medications:" . $medicationnames;
+            return $medicationnames;
+        }
     }
-
 //    // doctors report start
 //    /**
 //     * @name doctors
@@ -147,4 +152,5 @@ class Administrator
 //        $conn->close();
 //        return $doctors;
 //    }
+
 }
