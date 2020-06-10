@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-sm bg-primary navbar-light sticky-top">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="btn btn-outline-dark" href="login.php">HOME</a>
+                <a class="btn btn-outline-light" href="login.php">HOME</a>
             </li>
         </ul>
     </nav>
