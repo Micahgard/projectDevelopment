@@ -108,10 +108,13 @@ class Administrator
         $result = $conn->query($sql);
         $medicationnames = "";
         if ($result->num_rows>0){
-            while ($row = $result->fetch_all()){
-                echo "row: ".$row[0];
-                $medicationnames += $row[0]." ";
-            }
+//            while ($row = $result->fetch_all()){
+//                echo "row: ".$row[0];
+//                print_r($row);
+//                $medicationnames += $row[0]." ";
+//            }
+            $row = $result->fetch_all();
+            print_r($row);
         }
         $conn->close();
         echo "Medications:".$medicationnames;
