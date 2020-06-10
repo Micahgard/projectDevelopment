@@ -13,7 +13,8 @@
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
-                        $("#patient").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option><br>");
+                        // $("#patient").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                        $("#patient").append("patient info: " + data[i].patientID + "<br>";
                         i = i+1;
                     }
                 },
@@ -56,6 +57,8 @@
         </tr>
     </table>
 </form>
+
+<div id="patient"></div>
 
 <div class="foot">
     <?php include_once 'foot.php'; ?>
