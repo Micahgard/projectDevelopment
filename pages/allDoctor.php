@@ -57,7 +57,8 @@
 
                 <tr>
                     <td><label>Salary:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="salary" name="salary" size="15" required></td>
+<!--                    <td><input type="text" id="salary" name="salary" size="15" required></td>-->
+                    <td><input type="range" class="custom-range" name="salary" id="salary" size="15" required></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
