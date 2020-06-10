@@ -111,10 +111,12 @@ class Administrator
         $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
 //        echo $sql;
         $result = $conn->query($sql);
-        $row = $result->fetch_all();
-        print_r($row[0]);
-        $medicationnames = implode('|', $row[0]);
-
+        $medicationnames = "";
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $medicationnames .=$row["name"]." ";
+            }
+        }
         $conn->close();
         //echo "Medications:" . $medicationnames;
         return $medicationnames;
