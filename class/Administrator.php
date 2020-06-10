@@ -112,8 +112,8 @@ class Administrator
 //        echo $sql;
         $result = $conn->query($sql);
         $row = $result->fetch_all();
-//            print_r($row[0]);
-        $medicationnames = implode('|', $row);
+        print_r($row[0]);
+        $medicationnames = implode('|', $row[0]);
 
         $conn->close();
         //echo "Medications:" . $medicationnames;
