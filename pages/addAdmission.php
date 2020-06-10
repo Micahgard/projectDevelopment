@@ -46,9 +46,7 @@
 
         <tr>
             <td><label>Patient:* </label></td>
-            <td>
-                <div id="patientInfo"></div>
-            </td>
+            <td><label id="patientInfo"></label></td>
         </tr>
 
         <tr><td><i style="color: red">* Required Fields</i></td></tr>
