@@ -120,12 +120,7 @@ class Administrator
 //            }
             $row = $result->fetch_all();
             print_r($row[0]);
-            $i = 0;
-
-            while ($i < sizeof(array($row[0]))) {
-                $medicationnames += $row[0][$i];
-                $i = $i + 1;
-            }
+            $medicationnames=implode('|',$row[0]);
 
             $conn->close();
             echo "Medications:" . $medicationnames;
