@@ -20,6 +20,7 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="btn btn-outline-light" href="login.php">HOME</a>
+                <a class="btn btn-outline-light" href="allDoctor.php">HOME</a>
             </li>
         </ul>
     </nav>
