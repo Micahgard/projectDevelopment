@@ -1,6 +1,6 @@
 <?php
 include_once ("DB.php");
-include_once "Admission.php";
+include_once "AdmissionsReport.php";
 
 class Administrator
 {
@@ -56,7 +56,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows>0){
             while ($row = $result->fetch_assoc()){
-                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $row["wardID"]);
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
                 array_push($admissions,$admission);
             }
         }
@@ -64,6 +64,11 @@ class Administrator
         return $admissions;
     }
 
+
+    /**
+     * @param $patientID
+     * @return array
+     */
     public function findPatientByPatientID($patientID){
         $conn = (new DB())->conn;
         $sql = "select * from Patient where PatientID = ".$patientID;
@@ -79,6 +84,10 @@ class Administrator
         return array($id, $lastname, $firstname);
     }
 
+    /**
+     * @param $wardID
+     * @return string
+     */
     public function findWardByWardID($wardID){
         $conn = (new DB())->conn;
         $sql = "select * from Ward where WardID = ".$wardID;
@@ -90,6 +99,20 @@ class Administrator
         }
         $conn->close();
         return $wardname;
+    }
+
+    public function findMedicationsByAdmission($admissionID){
+        $conn = (new DB())->conn;
+        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = ".$admissionID;
+        $result = $conn->query($sql);
+        $medicationnames = "";
+        if ($result->num_rows>0){
+            while ($row = $result->fetch_assoc()){
+                $medicationnames += $row["name"]." ";
+            }
+        }
+        $conn->close();
+        return $medicationnames;
     }
 
 //    // doctors report start
