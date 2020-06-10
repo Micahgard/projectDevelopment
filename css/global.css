@@ -28,7 +28,7 @@ body {
     margin: 12px auto;
 }
 
-.login {
+.login .form-control {
     position: relative;
     box-sizing: border-box;
     height: auto;
