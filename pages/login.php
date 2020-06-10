@@ -12,7 +12,7 @@
         <h2>Log in</h2>
         <input class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
         <input class="form-control" type="password" id="password" name="password" placeholder="Password" required>
-        <button class="btn" type="submit">Log in</button>
+        <button class="btn btn-outline-primary" type="submit">Log in</button>
     </form>
 
 <div class="foot foot-login">
