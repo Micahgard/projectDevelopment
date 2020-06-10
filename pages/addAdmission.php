@@ -11,7 +11,7 @@
                 url: "https://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                 dataType: "JSON",
                 success: function (data) {
-                    $("#patientInfo").append("<select name='patient'>");
+                    $("#patientInfo").append("<select name='patient' class='custom-select'>");
                     let i = 0;
                     while (i < data.length){
                         $("#patientInfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
