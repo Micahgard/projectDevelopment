@@ -11,12 +11,14 @@
                 url: "https://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                 dataType: "JSON",
                 success: function (data) {
+                    $("#patientInfo").append("<select name='patient'>");
                     let i = 0;
                     while (i < data.length){
                         $("#patientInfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
                         // $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                         i = i + 1;
                     }
+                    $("#PatientInfo").append("</select>");
                 },
                 error: function () {
                     alert("Not connected");
@@ -44,9 +46,8 @@
 
         <tr>
             <td><label>Patient:* </label></td>
-            <td><select name="patient">
-                    <option id="patientInfo"></option><br>
-                </select>
+            <td>
+                <div id="patientInfo"></div>
             </td>
         </tr>
 
@@ -57,8 +58,6 @@
         </tr>
     </table>
 </form>
-
-<div id="patientinfo"></div>
 
 <div class="foot">
     <?php include_once 'foot.php'; ?>
