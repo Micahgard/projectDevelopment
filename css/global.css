@@ -23,49 +23,6 @@ body {
     width: 100%;
 }
 
-/* menu start */
-.menu ul{
-    padding: 0;
-    margin: 0;
-    background-color: rgba(30, 163, 226, 0.6);
-}
-
-.menu li{
-    font-size: 24px;
-    text-align: center;
-    display: inline-block;
-    padding: 5px;
-}
-
-.menu li a{
-    color: azure;
-    text-decoration: none;
-}
-
-.menu li a.active{
-    color: azure;
-    padding: 8px;
-    text-decoration: underline;
-}
-
-.menu li a:hover{
-    color: rgb(20, 107, 149);
-    font-size: 24px;
-}
-/* menu end */
-
-.foot{
-    font-size: 20px;
-    color: rgba(0, 92, 191, 0.71);
-    position: absolute;
-    bottom: -150px;
-    width: 100%;
-}
-
-.foot-login {
-    bottom: 10px;
-}
-
 /* login page start */
 .login-icon {
     margin-bottom: 1.5rem;

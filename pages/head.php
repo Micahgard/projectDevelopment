@@ -18,7 +18,7 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-    <nav class="navbar navbar-expand-sm bg-primary justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="login.php">HOME</a>
