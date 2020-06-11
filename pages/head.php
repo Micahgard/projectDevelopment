@@ -22,6 +22,7 @@
                 <a class="btn btn-outline-light" href="login.php">HOME</a>
                 <a class="btn btn-outline-light" href="allDoctor.php">DOCTOR</a>
                 <a class="btn btn-outline-light" href="allAdmission.php">ADMISSION</a>
+                <a class="btn btn-outline-light" href="allPatient.php">PATIENT</a>
             </li>
         </ul>
     </nav>

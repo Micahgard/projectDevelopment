@@ -88,7 +88,7 @@
                 });
             });
         </script>
-        <form action="../api/apiAddAdmission.php" method="post">
+        <form action="../api/apiUpdateAdmission.php" method="post">
             <h2>Update Admission</h2>
             <table>
                 <tr>
