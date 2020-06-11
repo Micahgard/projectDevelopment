@@ -20,7 +20,8 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="btn btn-outline-light" href="login.php">HOME</a>
-                <a class="btn btn-outline-light" href="allDoctor.php">DOCTORS</a>
+                <a class="btn btn-outline-light" href="allDoctor.php">DOCTOR</a>
+                <a class="btn btn-outline-light" href="allAdmission.php">ADMISSION</a>
             </li>
         </ul>
     </nav>

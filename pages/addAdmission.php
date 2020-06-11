@@ -22,7 +22,6 @@
             });
         });
     </script>
-<body>
 <form action="../api/apiAddAdmission.php" method="post">
     <h2>Add Admission</h2>
     <table>
