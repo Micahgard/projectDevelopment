@@ -62,8 +62,8 @@
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn" type="submit" value="Add Patient"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Add Patient"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
         </form>
@@ -120,8 +120,8 @@
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn" type="submit" value="Update Patient"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Update Patient"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
         </form>
