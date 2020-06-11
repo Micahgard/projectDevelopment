@@ -2,6 +2,7 @@
 include_once("DB.php");
 include_once "AdmissionsReport.php";
 include_once "Patient.php";
+include_once "Ward.php";
 
 class Administrator
 {
@@ -137,5 +138,20 @@ class Administrator
         }
         $conn->close();
         return $patients;
+    }
+
+    public function allWards(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Ward";
+        $result = $conn->query($sql);
+        $wards = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $ward = new Patient($row["WardID"], $row["name"], $row["firstname"], $row["location"], $row["capacity"]);
+                array_push($wards,$ward);
+            }
+        }
+        $conn->close();
+        return $wards;
     }
 }
