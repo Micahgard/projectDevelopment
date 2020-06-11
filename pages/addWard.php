@@ -9,7 +9,6 @@
 <body>
 
 <form action="../api/apiAddWard.php" method="post">
-
     <h2>Add Ward</h2>
     <table>
         <tr>
