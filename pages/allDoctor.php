@@ -82,7 +82,20 @@
                 }
 
                 $("#getDoctors").change(function() {
-                    alert($("#getDoctors").val());
+                    var i = 0;
+                    while (i < data.length) {
+                        if (data[i].id == $("#getDoctors").val()) {
+                            $("#updateLastname").val(data[i].lastname);
+                            $("#updateFirstname").val(data[i].firstname);
+                            $("#updateStreet").val(data[i].street);
+                            $("#updateSuburb").val(data[i].suburb);
+                            $("#updateCity").val(data[i].city);
+                            $("#updatePhone").val(data[i].phone);
+                            $("#updateSpeciality").val(data[i].speciality);
+                            $("#updateSalary").val(data[i].salary);
+                        }
+                        i++;
+                    }
                 });
             },
             error: function () {
