@@ -69,15 +69,31 @@
             </table>
         </form>
     </div>
+    <script>
+            $.ajax({
+                type: 'GET',
+                url: "https://unitecproject.herokuapp.com/api/apiAllDoctors.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i = i + 1;
+                    }
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        });
+    </script>
     <div id="updateDoctor" class="container tab-pane fade"><br>
         <form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <table>
                 <tr>
                     <td><label>Doctors:<b class="red">*</b> </label></td>
-                    <td><select name="doctors" class="custom-select">
-                        <option></option>
-                    </select></td>
+                    <td><select id="getDoctors" name="id"></select></td>
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
