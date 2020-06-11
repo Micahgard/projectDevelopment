@@ -9,7 +9,6 @@
 <body>
 
 <form action="../api/apiAddMedication.php" method="post">
-
     <h2>Add Medication</h2>
     <table>
         <tr>

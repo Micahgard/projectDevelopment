@@ -17,7 +17,32 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addMedication" class="container tab-pane active"><br>
+        <form action="../api/apiAddMedication.php" method="post">
+            <h2>Add Medication</h2>
+            <table>
+                <tr>
+                    <td><label>Medications:<b class="red">*</b> </label></td>
+                    <td><select name="medications" class="custom-select">
+                            <option></option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="name" name="name" size="30" required></td>
+                </tr>
 
+                <tr>
+                    <td><label>Cost:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="cost" name="cost" size="10" required></td>
+                </tr>
+
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn" type="submit" value="Add Medication"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
     <div id="updateMedication" class="container tab-pane fade"><br>
 
