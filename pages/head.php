@@ -23,6 +23,8 @@
                 <a class="btn btn-outline-light" href="allDoctor.php">DOCTOR</a>
                 <a class="btn btn-outline-light" href="allAdmission.php">ADMISSION</a>
                 <a class="btn btn-outline-light" href="allPatient.php">PATIENT</a>
+                <a class="btn btn-outline-light" href="allMedication.php">MEDICATION</a>
+                <a class="btn btn-outline-light" href="allWard.php">WARD</a>
             </li>
         </ul>
     </nav>
