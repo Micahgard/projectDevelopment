@@ -147,7 +147,7 @@ class Administrator
         $wards = array();
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $ward = new Patient($row["WardID"], $row["name"], $row["firstname"], $row["location"], $row["capacity"]);
+                $ward = new Patient($row["WardID"], $row["name"], $row["location"], $row["capacity"]);
                 array_push($wards,$ward);
             }
         }
