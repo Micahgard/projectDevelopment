@@ -34,7 +34,7 @@ class Doctor
 
     public function save(){
         //if I don't have this object in my database, I will register him first
-        $this->dbconn = (new DB())->conn ;
+        $this->dbconn = (new DB())->conn;
         if (is_null($this->id)){
             $query = "insert into Doctor values (null, '$this->lastname',
  '$this->firstname', '$this->street', '$this->suburb','$this->city', '$this->phone',
