@@ -111,7 +111,9 @@
             <table>
                 <tr>
                     <td><label>Doctors:<b class="red">*</b> </label></td>
-                    <td><select id="getDoctors" name="id"></select></td>
+                    <td><select id="getDoctors" name="id">
+                            <option></option>
+                        </select></td>
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
