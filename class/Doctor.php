@@ -39,7 +39,6 @@ class Doctor
             $query = "insert into Doctor values (null, '$this->lastname',
  '$this->firstname', '$this->street', '$this->suburb','$this->city', '$this->phone',
   '$this->speciality', $this->salary)";
-            echo $query;
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();

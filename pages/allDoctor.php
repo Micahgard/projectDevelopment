@@ -122,7 +122,7 @@
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Doctor"/></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Update Doctor"/ ></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
