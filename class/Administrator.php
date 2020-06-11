@@ -3,6 +3,7 @@ include_once("DB.php");
 include_once "AdmissionsReport.php";
 include_once "Patient.php";
 include_once "Ward.php";
+include_once "Doctor.php";
 
 class Administrator
 {
@@ -12,6 +13,7 @@ class Administrator
     public $email;
     public $phone;
     public $role;
+
 
 //  check username and password for this administrator login
 
