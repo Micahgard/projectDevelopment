@@ -72,7 +72,7 @@
     <script>
         $.ajax({
             type: 'GET',
-            url: "https://unitecproject.herokuapp.com/api/apiAllDoctors.php",
+            url: "../api/apiAllDoctors.php",
             dataType: "JSON",
             success: function (data) {
                 let i = 0;
