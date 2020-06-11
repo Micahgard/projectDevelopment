@@ -122,24 +122,19 @@ class Administrator
         return $medicationnames;
 
     }
-//    // doctors report start
-//    /**
-//     * @name doctors
-//     * @return doctor array
-//     */
-//    public function showDoctors(){
-//        $conn = (new DB())->conn;
-//        $sql = "select * from Admission";
-//        $doctors = array();
-//        $result = $conn->query($sql);
-//        if ($result->num_rows>0){
-//            while ($row = $result->fetch_assoc()){
-//                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
-//                array_push($doctors,$doctor);
-//            }
-//        }
-//        $conn->close();
-//        return $doctors;
-//    }
 
+    public function allPatiens(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Patient";
+        $result = $conn->query($sql);
+        $patients = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $patient = new Patient($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"]);
+                array_push($patients,$patient);
+            }
+        }
+        $conn->close();
+        return $patients;
+    }
 }
