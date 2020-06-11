@@ -80,11 +80,17 @@
                     $("#getDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                     i = i + 1;
                 }
+
+                $("#getDoctors").change(function() {
+                    alert($("#getDoctors").val());
+                });
             },
             error: function () {
                 alert("Not connected");
             }
         });
+
+
     </script>
     <div id="updateDoctor" class="container tab-pane fade"><br>
         <form action="../api/apiUpdateDoctor.php" method="post">
