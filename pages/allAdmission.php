@@ -89,7 +89,7 @@
             });
         </script>
         <form action="../api/apiAddAdmission.php" method="post">
-            <h2>Add Admission</h2>
+            <h2>Update Admission</h2>
             <table>
                 <tr>
                     <td><label>Admissions:<b class="red">*</b> </label></td>
