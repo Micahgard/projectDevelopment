@@ -4,13 +4,13 @@
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#addMedication">Add Doctor</a>
+        <a class="nav-link active" data-toggle="tab" href="#addMedication">Add Medication</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#updateMedication">Update Doctor</a>
+        <a class="nav-link" data-toggle="tab" href="#updateMedication">Update Medication</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#deleteMedication">Delete Doctor</a>
+        <a class="nav-link" data-toggle="tab" href="#deleteMedication">Delete Medication</a>
     </li>
 </ul>
 
