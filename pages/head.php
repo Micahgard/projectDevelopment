@@ -16,7 +16,7 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-    <nav class="navbar navbar-expand-sm bg-primary navbar-light justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="btn btn-outline-light" href="login.php">HOME</a>
