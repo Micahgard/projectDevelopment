@@ -1,4 +1,4 @@
-<<?php
+<?php
 /**
  * Author: Joel
  * Date: 27/05/2020

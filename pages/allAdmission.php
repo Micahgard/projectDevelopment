@@ -43,17 +43,17 @@
             <h2>Add Admission</h2>
             <table>
                 <tr>
-                    <td><label>Description:<b class="red">*</b> </label></td>
+                    <td><label>Description:* </label></td>
                     <td><input type="text" id="description" name="description" size="30" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Admission Date:<b class="red">*</b> </label></td>
+                    <td><label>Admission Date:* </label></td>
                     <td><input type="date" id="admissiondate" name="admissiondate" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Patient:<b class="red">*</b> </label></td>
+                    <td><label>Patient:* </label></td>
                     <td><label id="patientInfo"></label></td>
                 </tr>
 
@@ -73,14 +73,14 @@
                     url: "https://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        $("#updatePatientInfo").append("<select name='updatePatient' class='custom-select'>");
+                        $("#patientInfo").append("<select name='patient' class='custom-select'>");
                         let i = 0;
                         while (i < data.length){
-                            $("#updatePatientInfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
+                            $("#patientInfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
                             // $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                             i = i + 1;
                         }
-                        $("#updatePatientInfo").append("</select>");
+                        $("#PatientInfo").append("</select>");
                     },
                     error: function () {
                         alert("Not connected");
@@ -88,68 +88,27 @@
                 });
             });
         </script>
-        <form action="../api/apiUpdateAdmission.php" method="post">
-            <h2>Update Admission</h2>
+        <form action="../api/apiAddAdmission.php" method="post">
+            <h2>Add Admission</h2>
             <table>
                 <tr>
-                    <td><label>Admissions:<b class="red">*</b> </label></td>
-                    <td><select name="admissions" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Description:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateDescription" name="description" size="30" required></td>
+                    <td><label>Description:* </label></td>
+                    <td><input type="text" id="description" name="description" size="30" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Admission Date:<b class="red">*</b> </label></td>
-                    <td><input type="date" id="updateAdmissiondate" name="admissiondate" required></td>
+                    <td><label>Admission Date:* </label></td>
+                    <td><input type="date" id="admissiondate" name="admissiondate" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Patient:<b class="red">*</b> </label></td>
-                    <td><label id="updatePatientInfo"></label></td>
+                    <td><label>Patient:* </label></td>
+                    <td><label id="patientInfo"></label></td>
                 </tr>
+
+                <tr><td><i style="color: red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><label>Status:<b class="red">*</b> </label></td>
-                    <td><div class="form-check-inline">
-                        <label class="form-check-label" for="radio1">
-                            <input type="radio" class="form-check-input" id="radio1" name="optradio" value="Current" checked>Current
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label" for="radio2">
-                            <input type="radio" class="form-check-input" id="radio2" name="optradio" value="Complete">Complete
-                        </label>
-                    </div>
-                    <div class="form-check-inline">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" id="radio3" name="optradio" value="Billed">Billed
-                        </label>
-                    </div>
-                     <div class="form-check-inline">
-                         <label class="form-check-label" for="radio2">
-                             <input type="radio" class="form-check-input" id="radio4" name="optradio" value="Closed"><Closed></Closed>
-                          </label>
-                     </div></td>
-                </tr>
-                <tr>
-                    <td><label>Patient Last Name: </label></td>
-                    <td><input type="text" id="patientLastName" name="patientLastName" size="20" required></td>
-                </tr>
-                <tr>
-                    <td><label>Patient First Name: </label></td>
-                    <td><input type="text" id="patientFirstName" name="patientFirstName" size="20" required></td>
-                </tr>
-                <tr>
-                    <td><label>Ward: </label></td>
-                    <td><input type="text" id="admissionWard" name="ward" size="20" required></td>
-                </tr>
-                <tr>
-                    <td><i style="color: red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Admission"/></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Add Admission"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
