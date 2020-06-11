@@ -154,4 +154,19 @@ class Administrator
         $conn->close();
         return $wards;
     }
+
+    public function allDoctors(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Doctor";
+        $result = $conn->query($sql);
+        $doctors = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
+                array_push($doctors,$doctor);
+            }
+        }
+        $conn->close();
+        return $doctors;
+    }
 }
