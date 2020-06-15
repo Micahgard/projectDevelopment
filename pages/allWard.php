@@ -62,7 +62,7 @@
                 success: function (data) {
                     let i = 0;
                     while (i < data.length){
-                        $("#getDeleteWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        $("#getDeleteWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                         i = i + 1;
                     }
                     $("#getDeleteWards").change(function() {
@@ -87,7 +87,7 @@
             <table>
                 <tr>
                     <td><label>Wards:<b class="red">*</b> </label></td>
-                    <td><select id="getDeleteWards" name="id">
+                    <td><select id="getDeleteWards" name="id" class="custom-select">
                             <option></option>
                         </select></td>
                 </tr>
