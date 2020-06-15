@@ -4,7 +4,6 @@
 //error_reporting(E_ALL);
 include_once "../class/Administrator.php";
 $admin = new Administrator();
-$doctors = $admin->allDoctors();
+$patients = $admin->showPatients();
 
-echo json_encode($doctors);
-
+echo json_encode($patients);
