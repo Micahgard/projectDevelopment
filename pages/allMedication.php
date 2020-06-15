@@ -105,7 +105,7 @@
             <h2>Add Medication</h2>
             <table>
                 <tr>
-                    <td><label>Medications:<b class="red">*</b> </label></td>
+                    <td><label>Medications:<b class="red">*</b></label></td>
                     <td><select id="getDeleteMedication" name="id" class="custom-select">
                             <option></option>
                         </select></td>
