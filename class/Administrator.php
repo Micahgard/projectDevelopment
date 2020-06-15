@@ -82,7 +82,7 @@ class Administrator
             }
         }
         $conn->close();
-        return array($id, $lastname, $firstname);
+        return array($id. $lastname. $firstname);
     }
 
     public function findMedicationsByAdmission($admissionID)
