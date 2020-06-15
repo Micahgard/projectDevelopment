@@ -195,7 +195,7 @@
                 }
             });
         </script>
-        <form action="../api/apiDeleteDoctor.php" method="post">
+        <form action="../api/apiDeleteDoctor.php" method="get">
             <h2>Delete Doctor</h2>
             <table>
                 <tr>

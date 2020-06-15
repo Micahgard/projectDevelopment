@@ -45,10 +45,60 @@
         </form>
     </div>
     <div id="updateMedication" class="container tab-pane fade"><br>
+        <form action="../api/apiUpdateMedication.php" method="post">
+            <h2>Update Medication</h2>
+            <table>
+                <tr>
+                    <td><label>Medications:<b class="red">*</b> </label></td>
+                    <td><select name="updateMedications" class="custom-select">
+                            <option></option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateName" name="updateName" size="30" required></td>
+                </tr>
 
+                <tr>
+                    <td><label>Cost:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateCost" name="updateCost" size="10" required></td>
+                </tr>
+
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Update Medication"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
     <div id="deleteMedication" class="container tab-pane fade"><br>
+        <form action="../api/apiDeleteMedication.php" method="post">
+            <h2>Add Medication</h2>
+            <table>
+                <tr>
+                    <td><label>Medications:<b class="red">*</b> </label></td>
+                    <td><select name="deleteMedications" class="custom-select">
+                            <option></option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteName" name="deleteName" size="30" required></td>
+                </tr>
 
+                <tr>
+                    <td><label>Cost:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteCost" name="deleteCost" size="10" required></td>
+                </tr>
+
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Delete Medication"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
 

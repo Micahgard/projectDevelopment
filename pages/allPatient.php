@@ -74,38 +74,38 @@
             <table>
                 <tr>
                     <td><label>Patients:<b class="red">*</b> </label></td>
-                    <td><select name="patients" class="custom-select">
+                    <td><select name="updatePatients" class="custom-select">
                             <option></option>
                         </select></td>
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text"  name="lastname" size="25" required></td>
+                    <td><input type="text"  name="updateLastname" size="25" required></td>
                 </tr>
 
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="firstname" name="firstname" size="25" required></td>
+                    <td><input type="text" id="updateFirstname" name="updateFirstname" size="25" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="street" name="street" size="50" required></td>
+                    <td><input type="text" id="updateStreet" name="updateStreet" size="50" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="suburb" name="suburb" size="20" required></td>
+                    <td><input type="text" id="updateSuburb" name="updateSuburb" size="20" required></td>
                 </tr>
 
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="city" name="city" size="20" required></td>
+                    <td><input type="text" id="updateCity" name="updateCity" size="20" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Email Address:<b class="red">*</b> </label></td>
-                    <td><input type="email" id="email" name="email" size="30" required></td>
+                    <td><input type="email" id="updateEmail" name="updateEmail" size="30" required></td>
                 </tr>
 
                 <tr>
