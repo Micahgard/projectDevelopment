@@ -44,7 +44,7 @@
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Add Medication"/></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Add Ward"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
@@ -65,7 +65,6 @@
                         $("#getDeleteWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                         i = i + 1;
                     }
-                    $("#deleteCapacity").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].capacity + "</option>");
                     $("#getDeleteWards").change(function() {
                         var i = 0;
                         while (i < data.length) {
@@ -103,9 +102,7 @@
 
                 <tr>
                     <td><label>capacity:<b class="red">*</b> </label></td>
-                    <td><select name="capacity" id="deleteCapacity">
-                        </select>
-                    </td>
+                    <td><input type="text" id="deleteCapacity" name="deleteCapacity" size="5" required></td>
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
