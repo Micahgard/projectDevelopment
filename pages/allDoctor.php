@@ -77,10 +77,10 @@
             success: function (data) {
                 let i = 0;
                 while (i < data.length){
-                    $("#getDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                    $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                     i = i + 1;
                 }
-                $("#getDoctors").change(function() {
+                $("#getUpdateDoctors").change(function() {
                     var i = 0;
                     while (i < data.length) {
                         if (data[i].id == $("#getDoctors").val()) {
@@ -108,7 +108,7 @@
             <table>
                 <tr>
                     <td><label>Doctors:<b class="red">*</b> </label></td>
-                    <td><select id="getDoctors" name="id">
+                    <td><select id="getUpdateDoctors" name="id">
                             <option></option>
                         </select></td>
                 </tr>
@@ -162,7 +162,63 @@
         </form>
     </div>
     <div id="deleteDoctor" class="container tab-pane fade"><br>
+        <form action="../api/apiDeleteDoctor.php" method="post">
+            <h2>Delete Doctor</h2>
+            <table>
+                <tr>
+                    <td><label>Doctors:<b class="red">*</b> </label></td>
+                    <td><select id="getDeleteDoctors" name="id">
+                            <option></option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteLastname" name="lastname" size="25" required></td>
+                </tr>
 
+                <tr>
+                    <td><label>First Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteFirstname" name="firstname" size="25" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Street Address:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteStreet" name="street" size="50" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Suburb:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteSuburb" name="suburb" size="20" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>City:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteCity" name="city" size="20" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Phone Number:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deletePhone" name="phone" size="15" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Speciality:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteSpeciality" name="speciality" size="15" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Salary:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteSalary" name="salary" size="15" required></td>
+                    <!--                    <td><input type="range" class="custom-range" name="salary" id="salary" size="10" required></td>-->
+                </tr>
+
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/ ></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
 </div>
 
