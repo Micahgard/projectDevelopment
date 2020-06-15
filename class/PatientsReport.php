@@ -32,7 +32,7 @@ class PatientsReport
     public function __construct($PatientID, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode, $complete, $current)
     {
         $this->PatientID = $PatientID;
-        $this->lastanme = $lastname;
+        $this->lastname = $lastname;
         $this->firstname = $firstname;
         $this->street = $street;
         $this->suburb = $suburb;
