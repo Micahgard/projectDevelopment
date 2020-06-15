@@ -150,9 +150,9 @@ class Administrator
         $sql = "SELECT Admission.patientID FROM Admission WHERE status='complete' AND patientID=" . $patientID;
 //        echo $sql;
         $result = $conn->query($sql);
-        $number = $result->num_rows;
+        $number = mysqli_num_rows($result);
         $conn->close();
-        return 5;
+        return $number;
     }
 
     public function countCurrentAdmissions($patientID)
