@@ -1,9 +1,10 @@
 <?php
 include_once("DB.php");
-include_once "AdmissionsReport.php";
 include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
+include_once "AdmissionsReport.php";
+include_once "PatientsReport.php";
 
 class Administrator
 {
@@ -70,6 +71,22 @@ class Administrator
         return $admissions;
     }
 
+    public function showPatients()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Patient";
+        $patients = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $patient = new PatientsReport($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"], $this->countCompleteAdmissions($row["patientID"]), $this->countCurrentAdmissions($row["patientID"]));
+                array_push($patients, $patient);
+            }
+        }
+        $conn->close();
+        return $patients;
+    }
+
 
     /**
      * @param $patientID
@@ -127,6 +144,28 @@ class Administrator
 
     }
 
+    public function countCompleteAdmissions($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Admission.patientID FROM Admission WHERE status='complete' AND patientID=" . $patientID;
+//        echo $sql;
+        $result = $conn->query($sql);
+        $conn->close();
+
+        return $result->num_rows;
+    }
+
+    public function countCurrentAdmissions($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Admission.patientID FROM Admission WHERE status='current' AND patientID=" . $patientID;
+//        echo $sql;
+        $result = $conn->query($sql);
+        $conn->close();
+
+        return $result->num_rows;
+    }
+
     public function allPatiens(){
         $conn = (new DB())->conn;
         $sql = "select * from Patient";
@@ -170,20 +209,5 @@ class Administrator
         }
         $conn->close();
         return $doctors;
-    }
-
-    public function allMedications(){
-        $conn = (new DB())->conn;
-        $sql = "select * from Medication";
-        $result = $conn->query($sql);
-        $medications = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $medication = new Medication($row["MedicationID"], $row["name"], $row["cost"]);
-                array_push($medications, $medication);
-            }
-        }
-        $conn->close();
-        return $medications;
     }
 }
