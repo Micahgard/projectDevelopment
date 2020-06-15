@@ -76,7 +76,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllPatients.php",
+                url: "../api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;

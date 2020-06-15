@@ -171,4 +171,19 @@ class Administrator
         $conn->close();
         return $doctors;
     }
+
+    public function allMedications(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Medication";
+        $result = $conn->query($sql);
+        $medications = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $medication = new Medication($row["MedicationID"], $row["name"], $row["cost"]);
+                array_push($medications,$medication);
+            }
+        }
+        $conn->close();
+        return $medications;
+    }
 }
