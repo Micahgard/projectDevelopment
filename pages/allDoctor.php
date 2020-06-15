@@ -176,7 +176,7 @@
                     $("#getDeleteDoctors").change(function() {
                         var i = 0;
                         while (i < data.length) {
-                            if (data[i].id == $("#getDoctors").val()) {
+                            if (data[i].id == $("#getDeleteDoctors").val()) {
                                 $("#deleteLastname").val(data[i].lastname);
                                 $("#deleteFirstname").val(data[i].firstname);
                                 $("#deleteStreet").val(data[i].street);
