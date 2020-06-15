@@ -8,8 +8,8 @@
 
 include_once "../class/Ward.php";
 
-if (isset($_GET['WardID'])) {
-    $ward = new Ward($_GET["WardID"], "", "", "");
+if (isset($_GET['id'])) {
+    $ward = new Ward($_GET["id"], "", "", "");
     $ward->delete();
     $msg = "ward deleted";
 }else{
