@@ -162,6 +162,39 @@
         </form>
     </div>
     <div id="deleteDoctor" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllDoctors.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getDeleteDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getDeleteDoctors").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getDoctors").val()) {
+                                $("#deleteLastname").val(data[i].lastname);
+                                $("#deleteFirstname").val(data[i].firstname);
+                                $("#deleteStreet").val(data[i].street);
+                                $("#deleteSuburb").val(data[i].suburb);
+                                $("#deleteCity").val(data[i].city);
+                                $("#deletePhone").val(data[i].phone);
+                                $("#deleteSpeciality").val(data[i].speciality);
+                                $("#deleteSalary").val(data[i].salary);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
         <form action="../api/apiDeleteDoctor.php" method="post">
             <h2>Delete Doctor</h2>
             <table>
