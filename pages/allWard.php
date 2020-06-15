@@ -57,7 +57,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllWard.php",
+                url: "../api/apiAllWards.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
