@@ -4,7 +4,7 @@
 class PatientsReport
 {
     public $PatientID;
-    public $lastanme;
+    public $lastname;
     public $firstname;
     public $street;
     public $suburb;
@@ -18,7 +18,7 @@ class PatientsReport
     /**
      * PatientsReport constructor.
      * @param $PatientID
-     * @param $lastanme
+     * @param $lastname
      * @param $firstname
      * @param $street
      * @param $suburb
@@ -29,10 +29,10 @@ class PatientsReport
      * @param $complete
      * @param $current
      */
-    public function __construct($PatientID, $lastanme, $firstname, $street, $suburb, $city, $email, $phone, $insurcode, $complete, $current)
+    public function __construct($PatientID, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode, $complete, $current)
     {
         $this->PatientID = $PatientID;
-        $this->lastanme = $lastanme;
+        $this->lastanme = $lastname;
         $this->firstname = $firstname;
         $this->street = $street;
         $this->suburb = $suburb;

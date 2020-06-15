@@ -15,9 +15,11 @@
                     while (i < data.length){
                         $("#report").append("<hr>");
                         $("#report").append("<p>ID: "+data[i].AdmissionID+" </p>");
-                        $("#report").append("<p>patientID: "+data[i].patient+" </p>");
-                        $("#report").append("<p>description: "+data[i].description+" </p>");
-                        $("#report").append("<p>medication: "+data[i].medication+" </p>");
+                        $("#report").append("<p>Description: "+data[i].description+" </p>");
+                        $("#report").append("<p>Status: "+data[i].status+" </p>");
+                        $("#report").append("<p>Admission Date: "+data[i].admissiondate+" </p>");
+                        $("#report").append("<p>Patient: "+data[i].patient+" </p>");
+                        $("#report").append("<p>Medication: "+data[i].medication+" </p>");
                         $("#report").append("<hr>");
                         i = i+1;
                     }
