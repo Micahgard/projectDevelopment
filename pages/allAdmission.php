@@ -67,9 +67,12 @@
     </div>
     <div id="updateAdmission" class="container tab-pane fade"><br>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <form action="../api/apiUpdateAdmission.php" method="post">
             <h2>Update Admission</h2>
 =======
+=======
+>>>>>>> parent of 0d65c6c... bb
         <script>
             $(document).ready(function () {
                 $.ajax({
