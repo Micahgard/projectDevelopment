@@ -90,14 +90,17 @@ class Administrator
         $conn = (new DB())->conn;
         $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
         $result = $conn->query($sql);
-        $medicationnames = "";
+//        $medicationnames = "";
+        $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
-                $medicationnames .=$row["name"]." ";
+//                $medicationnames .=$row["name"]." ";
+                $medication = $row["name"];
+                array_push($medications,$medication);
             }
         }
         $conn->close();
-        return $medicationnames;
+        return $medications;
     }
     // admissions report end
 
