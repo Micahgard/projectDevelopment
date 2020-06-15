@@ -171,7 +171,7 @@
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text"  name="deleteLastname" size="25" required></td>
+                    <td><input type="text" id="deleteLastname"  name="deleteLastname" size="25" required></td>
                 </tr>
 
                 <tr>
