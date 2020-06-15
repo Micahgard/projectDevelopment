@@ -75,14 +75,12 @@ class Administrator
         $sql = "select * from Patient where PatientID = " . $patientID;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $id = $row["PatientID"];
-                $lastname = $row["lastname"];
-                $firstname = $row["firstname"];
+//            while ($row = $result->fetch_assoc()) {
+            $patientname = $result["firstname"]." ".$result["lastname"];
             }
-        }
+//        }
         $conn->close();
-        return array($id. $lastname. $firstname);
+        return $patientname;
     }
 
     public function findMedicationsByAdmission($admissionID)
