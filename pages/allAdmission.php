@@ -67,7 +67,7 @@
     </div>
     <div id="updateAdmission" class="container tab-pane fade"><br>
         <form action="../api/apiUpdateAdmission.php" method="post">
-            <h2>Add Admission</h2>
+            <h2>Update Admission</h2>
             <table>
                 <tr>
                     <td><label>Description:* </label></td>

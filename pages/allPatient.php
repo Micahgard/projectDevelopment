@@ -69,12 +69,45 @@
         </form>
     </div>
     <div id="updatePatient" class="container tab-pane fade"><br>
-        <form action="../api/apiAddPatient.php" method="post">
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllPatients.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getUpdatePatients").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getUpdatePatients").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getUpdatePatients").val()) {
+                                $("#updateLastname").val(data[i].lastname);
+                                $("#updateFirstname").val(data[i].firstname);
+                                $("#updateStreet").val(data[i].street);
+                                $("#updateSuburb").val(data[i].suburb);
+                                $("#updateCity").val(data[i].city);
+                                $("#updateEmail").val(data[i].email);
+                                $("#updatePhone").val(data[i].phone);
+                                $("#updateInsurcode").val(data[i].insurcode);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
+        <form action="../api/apiUpdatePatient.php" method="post">
             <h2>Update Patient</h2>
             <table>
                 <tr>
                     <td><label>Patients:<b class="red">*</b> </label></td>
-                    <td><select name="updatePatients" class="custom-select">
+                    <td><select name="getUpdatePatients" class="custom-select">
                             <option></option>
                         </select></td>
                 </tr>
@@ -110,12 +143,12 @@
 
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="hone" name="phone" size="15" required></td>
+                    <td><input type="text" id="updatePhone" name="phone" size="15" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Insurance Code: </label></td>
-                    <td><input type="text" id="insurcode" name="insurcode" size="10"></td>
+                    <td><input type="text" id="updateInsurcode" name="updateInsurcode" size="10"></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
