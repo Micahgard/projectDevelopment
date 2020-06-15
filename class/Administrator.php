@@ -188,6 +188,6 @@ class Administrator
     }
 
     public function test() {
-        echo "Hello World"
+        echo "Hello World";
     }
 }
