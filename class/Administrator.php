@@ -75,10 +75,10 @@ class Administrator
         $sql = "select * from Patient where PatientID = " . $patientID;
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
-//            while ($row = $result->fetch_assoc()) {
-            $patientname = $result["firstname"]." ".$result["lastname"];
+            while ($row = $result->fetch_assoc()) {
+            $patientname = $row["firstname"]." ".$result["lastname"];
             }
-//        }
+        }
         $conn->close();
         return $patientname;
     }
