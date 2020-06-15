@@ -79,7 +79,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $patient = new PatientsReport($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"], $this->countCompleteAdmissions($row["patientID"]), $this->countCurrentAdmissions($row["patientID"]));
+                $patient = new PatientsReport($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"], $this->countCompleteAdmissions($row["PatientID"]), $this->countCurrentAdmissions($row["PatientID"]));
                 array_push($patients, $patient);
             }
         }
@@ -148,7 +148,7 @@ class Administrator
     {
         $conn = (new DB())->conn;
         $sql = "SELECT Admission.patientID FROM Admission WHERE status='complete' AND patientID=" . $patientID;
-        echo $sql;
+//        echo $sql;
         $result = $conn->query($sql);
         $number = mysqli_num_rows($result);
         $conn->close();
