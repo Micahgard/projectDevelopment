@@ -87,7 +87,7 @@
             <table>
                 <tr>
                     <td><label>Wards:<b class="red">*</b> </label></td>
-                    <td><select id="getDeleteWards" name="id" class="custom-select">
+                    <td><select id="getDeleteWards" name="id">
                             <option></option>
                         </select></td>
                 </tr>
