@@ -180,7 +180,7 @@ class Administrator
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $medication = new Medication($row["MedicationID"], $row["name"], $row["cost"]);
-                array_push($medications,$medication);
+                array_push($medications, $medication);
             }
         }
         $conn->close();
