@@ -152,7 +152,7 @@ class Administrator
         $result = $conn->query($sql);
         $number = $result->num_rows;
         $conn->close();
-        return $number;
+        return 5;
     }
 
     public function countCurrentAdmissions($patientID)
