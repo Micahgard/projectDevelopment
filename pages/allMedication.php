@@ -101,7 +101,7 @@
                 }
             });
         </script>
-        <form action="../api/apiDeleteMedication.php" method="post">
+        <form action="../api/apiDeleteMedication.php" method="get">
             <h2>Add Medication</h2>
             <table>
                 <tr>
