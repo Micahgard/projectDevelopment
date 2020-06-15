@@ -139,7 +139,6 @@ class Administrator
     // patients report end
 
 
-
     public function findWardByWardID($wardID)
     {
         $conn = (new DB())->conn;
@@ -212,5 +211,9 @@ class Administrator
         }
         $conn->close();
         return $medications;
+    }
+
+    public function test(){
+        echo "oh my god jesus";
     }
 }
