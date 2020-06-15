@@ -73,14 +73,46 @@
         </form>
     </div>
     <div id="deleteMedication" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllPatients.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getDeleteMedication").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getDeleteMedication").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getDeleteMedication").val()) {
+                                $("#deleteID").val(data[i].id);
+                                $("#deleteName").val(data[i].name);
+                                $("#deleteCost").val(data[i].cost);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
         <form action="../api/apiDeleteMedication.php" method="post">
             <h2>Add Medication</h2>
             <table>
                 <tr>
                     <td><label>Medications:<b class="red">*</b> </label></td>
-                    <td><select name="deleteMedications" class="custom-select">
+                    <td><select id="getDeleteMedication" name="id" class="custom-select">
                             <option></option>
                         </select></td>
+                </tr>
+                <tr>
+                    <td><label>ID:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="deleteID" name="deleteID" size="30" required></td>
                 </tr>
                 <tr>
                     <td><label>Name:<b class="red">*</b> </label></td>
