@@ -148,7 +148,7 @@ class Administrator
     {
         $conn = (new DB())->conn;
         $sql = "SELECT Admission.patientID FROM Admission WHERE status='complete' AND patientID=" . $patientID;
-//        echo $sql;
+        echo $sql;
         $result = $conn->query($sql);
         $number = mysqli_num_rows($result);
         $conn->close();
