@@ -44,7 +44,7 @@
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Add Ward"/></td>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Add Medication"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
                 </tr>
             </table>
@@ -54,63 +54,7 @@
 
     </div>
     <div id="deleteWard" class="container tab-pane fade"><br>
-        <script>
-            $.ajax({
-                type: 'GET',
-                url: "../api/apiAllWards.php",
-                dataType: "JSON",
-                success: function (data) {
-                    let i = 0;
-                    while (i < data.length){
-                        $("#getDeleteWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                        i = i + 1;
-                    }
-                    $("#getDeleteWards").change(function() {
-                        var i = 0;
-                        while (i < data.length) {
-                            if (data[i].id == $("#getDeleteWards").val()) {
-                                $("#deleteName").val(data[i].name);
-                                $("#deleteLocation").val(data[i].location);
-                                $("#deleteCapacity").val(data[i].capacity);
-                            }
-                            i++;
-                        }
-                    });
-                },
-                error: function () {
-                    alert("Not connected");
-                }
-            });
-        </script>
-        <form action="../api/apiDeleteWard.php" method="get">
-            <h2>Delete Ward</h2>
-            <table>
-                <tr>
-                    <td><label>Wards:<b class="red">*</b> </label></td>
-                    <td><select id="getDeleteWards" name="id" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteName" name="deleteName" size="30" required></td>
-                </tr>
-                <tr>
-                    <td><label>Location:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteLocation" name="deleteLocation" size="10" required></td>
-                </tr>
 
-                <tr>
-                    <td><label>capacity:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteCapacity" name="deleteCapacity" size="5" required></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Delete Ward"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
-        </form>
     </div>
 </div>
 
