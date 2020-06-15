@@ -212,8 +212,4 @@ class Administrator
         $conn->close();
         return $medications;
     }
-
-    public function test(){
-        echo "oh my god jesus";
-    }
 }
