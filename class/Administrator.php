@@ -1,9 +1,10 @@
 <?php
 include_once("DB.php");
-include_once "AdmissionsReport.php";
 include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
+include_once "AdmissionsReport.php";
+include_once "PatientsReport.php";
 
 class Administrator
 {
@@ -49,11 +50,8 @@ class Administrator
         }
         $conn->close();
     }
+    // admissions report start
 
-    /**
-     * @name showAdmissions
-     * @return admission array
-     */
     public function showAdmissions()
     {
         $conn = (new DB())->conn;
@@ -70,11 +68,6 @@ class Administrator
         return $admissions;
     }
 
-
-    /**
-     * @param $patientID
-     * @return array
-     */
     public function findPatientByPatientID($patientID)
     {
         $conn = (new DB())->conn;
@@ -91,10 +84,62 @@ class Administrator
         return array($id, $lastname, $firstname);
     }
 
-    /**
-     * @param $wardID
-     * @return string
-     */
+    public function findMedicationsByAdmission($admissionID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $result = $conn->query($sql);
+        $medicationnames = "";
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $medicationnames .=$row["name"]." ";
+            }
+        }
+        $conn->close();
+        return $medicationnames;
+    }
+    // admissions report end
+
+    // patients report start
+    public function showPatients()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Patient";
+        $patients = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $patient = new PatientsReport($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"], $this->countCompleteAdmissions($row["PatientID"]), $this->countCurrentAdmissions($row["PatientID"]));
+                array_push($patients, $patient);
+            }
+        }
+        $conn->close();
+        return $patients;
+    }
+
+    public function countCompleteAdmissions($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Admission.patientID FROM Admission WHERE status='complete' AND patientID=" . $patientID;
+        $result = $conn->query($sql);
+        $number = mysqli_num_rows($result);
+        $conn->close();
+        return $number;
+    }
+
+    public function countCurrentAdmissions($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Admission.patientID FROM Admission WHERE status='current' AND patientID=" . $patientID;
+        $result = $conn->query($sql);
+        $number = mysqli_num_rows($result);
+        $conn->close();
+        return $number;
+    }
+    // patients report end
+
+
+
     public function findWardByWardID($wardID)
     {
         $conn = (new DB())->conn;
@@ -107,24 +152,6 @@ class Administrator
         }
         $conn->close();
         return $wardname;
-    }
-
-    public function findMedicationsByAdmission($admissionID)
-    {
-        $conn = (new DB())->conn;
-        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
-//        echo $sql;
-        $result = $conn->query($sql);
-        $medicationnames = "";
-        if ($result->num_rows>0){
-            while ($row=$result->fetch_assoc()){
-                $medicationnames .=$row["name"]." ";
-            }
-        }
-        $conn->close();
-        //echo "Medications:" . $medicationnames;
-        return $medicationnames;
-
     }
 
     public function allPatiens(){
@@ -170,20 +197,5 @@ class Administrator
         }
         $conn->close();
         return $doctors;
-    }
-
-    public function allMedications(){
-        $conn = (new DB())->conn;
-        $sql = "select * from Medication";
-        $result = $conn->query($sql);
-        $medications = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $medication = new Medication($row["MedicationID"], $row["name"], $row["cost"]);
-                array_push($medications, $medication);
-            }
-        }
-        $conn->close();
-        return $medications;
     }
 }
