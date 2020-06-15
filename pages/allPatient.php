@@ -69,7 +69,6 @@
         </form>
     </div>
     <div id="updatePatient" class="container tab-pane fade"><br>
-<<<<<<< HEAD
         <script>
             $.ajax({
                 type: 'GET',
@@ -104,22 +103,11 @@
             });
         </script>
         <form action="../api/apiUpdatePatient.php" method="post">
-=======
-        <form action="../api/apiAddPatient.php" method="post">
->>>>>>> parent of 0d65c6c... bb
             <h2>Update Patient</h2>
             <table>
                 <tr>
                     <td><label>Patients:<b class="red">*</b> </label></td>
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <td><select name="getUpdatePatients" class="custom-select">
-=======
-                    <td><select name="patients" class="custom-select">
->>>>>>> parent of 0d65c6c... bb
-=======
-                    <td><select name="patients" class="custom-select">
->>>>>>> parent of 0d65c6c... bb
                             <option></option>
                         </select></td>
                 </tr>
@@ -147,8 +135,6 @@
                     <td><label>City:<b class="red">*</b> </label></td>
                     <td><input type="text" id="city" name="city" size="20" required></td>
                 </tr>
-<<<<<<< HEAD
-
                 <tr>
                     <td><label>Email Address:<b class="red">*</b> </label></td>
                     <td><input type="email" id="email" name="email" size="30" required></td>
@@ -156,11 +142,7 @@
 
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-<<<<<<< HEAD
                     <td><input type="text" id="updatePhone" name="phone" size="15" required></td>
-=======
-                    <td><input type="text" id="phone" name="phone" size="15" required></td>
->>>>>>> parent of 0d65c6c... bb
                 </tr>
 
                 <tr>
@@ -175,7 +157,6 @@
                 </tr>
             </table>
         </form>
-=======
 
                 <tr>
                     <td><label>Email Address:<b class="red">*</b> </label></td>
@@ -199,6 +180,26 @@
                 </tr>
             </table>
         </form>
+=======
+                    <td><input type="text" id="phone" name="phone" size="15" required></td>
+                </tr>
+
+                <tr>
+                    <td><label>Insurance Code: </label></td>
+                    <td><input type="text" id="insurcode" name="insurcode" size="10"></td>
+                </tr>
+
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Update Patient"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div id="deletePatient" class="container tab-pane fade"><br>
+
+>>>>>>> parent of 0d65c6c... bb
     </div>
     <div id="deletePatient" class="container tab-pane fade"><br>
 
