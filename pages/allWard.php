@@ -51,7 +51,63 @@
         </form>
     </div>
     <div id="updateWard" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllWards.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getUpdateWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getUpdateWards").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getUpdateWards").val()) {
+                                $("#updateName").val(data[i].name);
+                                $("#updateLocation").val(data[i].location);
+                                $("#updateCapacity").val(data[i].capacity);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
+        <form action="../api/apiUpdateWard.php" method="post">
+            <h2>Update Ward</h2>
+            <table>
+                <tr>
+                    <td><label>Wards:<b class="red">*</b> </label></td>
+                    <td><select id="getUpdateWards" name="id" class="custom-select">
+                            <option></option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Name:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateName" name="updateName" size="30" required></td>
+                </tr>
+                <tr>
+                    <td><label>Location:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateLocation" name="updateLocation" size="10" required></td>
+                </tr>
 
+                <tr>
+                    <td><label>capacity:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateCapacity" name="updateCapacity" size="5" required></td>
+                </tr>
+                <tr><td><i class="red">* Required Fields</i></td></tr>
+                <tr>
+                    <td><input class="btn btn-outline-primary" type="submit" value="Update Ward"/></td>
+                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
+                </tr>
+            </table>
+        </form>
     </div>
     <div id="deleteWard" class="container tab-pane fade"><br>
         <script>
