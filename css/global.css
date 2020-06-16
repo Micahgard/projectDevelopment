@@ -28,6 +28,14 @@ body {
     margin: 12px auto;
 }
 
+h2 {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+}
+
 form {
     position: relative;
     box-sizing: border-box;

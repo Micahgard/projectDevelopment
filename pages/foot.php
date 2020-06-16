@@ -1,5 +1,6 @@
-<footer class="page-footer font-small blue">
-    <div class="footer-copyright text-center py-3">© 2020 Copyright: Saint Albert Hospital</div>
+<footer class="footer bg-primary">
+    <div class="text-center text-white">© 2020 Copyright: Saint Albert Hospital</div>
 </footer>
+</div>
 </body>
 </html>

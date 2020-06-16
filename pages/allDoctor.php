@@ -28,43 +28,42 @@
             <table>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="lastname" name="lastname" size="25" required></td>
+                    <td><input type="text" id="lastname" name="lastname" size="25" placeholder="Last Name" required></td>
                 </tr>
 
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="firstname" name="firstname" size="25" required></td>
+                    <td><input type="text" id="firstname" name="firstname" size="25" placeholder="First Name" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="street" name="street" size="50" required></td>
+                    <td><input type="text" id="street" name="street" size="50" placeholder="Street Address" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="suburb" name="suburb" size="20" required></td>
+                    <td><input type="text" id="suburb" name="suburb" size="20" placeholder="Suburb" required></td>
                 </tr>
 
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="city" name="city" size="20" required></td>
+                    <td><input type="text" id="city" name="city" size="20" placeholder="City" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="phone" name="phone" size="15" required></td>
+                    <td><input type="text" id="phone" name="phone" size="15" placeholder="Phone Number" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Speciality:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="speciality" name="speciality" size="15" required></td>
+                    <td><input type="text" id="speciality" name="speciality" size="15" placeholder="Speciality" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Salary:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="salary" name="salary" size="15" required></td>
-<!--                    <td><input type="range" class="custom-range" name="salary" id="salary" size="10" required></td>-->
+                    <td><input type="text" id="salary" name="salary" size="15" placeholder="Salary" required></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
@@ -75,81 +74,80 @@
             </table>
         </form>
     </div>
-    <script>
-        $.ajax({
-            type: 'GET',
-            url: "../api/apiAllDoctors.php",
-            dataType: "JSON",
-            success: function (data) {
-                let i = 0;
-                while (i < data.length){
-                    $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                    i = i + 1;
-                }
-                $("#getUpdateDoctors").change(function() {
-                    var i = 0;
-                    while (i < data.length) {
-                        if (data[i].id == $("#getUpdateDoctors").val()) {
-                            $("#updateLastname").val(data[i].lastname);
-                            $("#updateFirstname").val(data[i].firstname);
-                            $("#updateStreet").val(data[i].street);
-                            $("#updateSuburb").val(data[i].suburb);
-                            $("#updateCity").val(data[i].city);
-                            $("#updatePhone").val(data[i].phone);
-                            $("#updateSpeciality").val(data[i].speciality);
-                            $("#updateSalary").val(data[i].salary);
-                        }
-                        i++;
-                    }
-                });
-            },
-            error: function () {
-                alert("Not connected");
-            }
-        });
-    </script>
     <div id="updateDoctor" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllDoctors.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getUpdateDoctors").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getUpdateDoctors").val()) {
+                                $("#updateLastname").val(data[i].lastname);
+                                $("#updateFirstname").val(data[i].firstname);
+                                $("#updateStreet").val(data[i].street);
+                                $("#updateSuburb").val(data[i].suburb);
+                                $("#updateCity").val(data[i].city);
+                                $("#updatePhone").val(data[i].phone);
+                                $("#updateSpeciality").val(data[i].speciality);
+                                $("#updateSalary").val(data[i].salary);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
         <form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <table>
                 <tr>
                     <td><label>Doctors:<b class="red">*</b> </label></td>
                     <td><select id="getUpdateDoctors" name="id">
-                            <option></option>
+                            <option disabled selected hidden>Select a Doctor</option>
                         </select></td>
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateLastname" name="lastname" size="25" required></td>
+                    <td><input type="text" id="updateLastname" name="lastname" size="25" placeholder="Last Name" required></td>
                 </tr>
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateFirstname" name="firstname" size="25" required></td>
+                    <td><input type="text" id="updateFirstname" name="firstname" size="25" placeholder="First Name" required></td>
                 </tr>
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateStreet" name="street" size="50" required></td>
+                    <td><input type="text" id="updateStreet" name="street" size="50" placeholder="Street Address" required></td>
                 </tr>
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSuburb" name="suburb" size="20" required></td>
+                    <td><input type="text" id="updateSuburb" name="suburb" size="20" placeholder="Suburb" required></td>
                 </tr>
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateCity" name="city" size="20" required></td>
+                    <td><input type="text" id="updateCity" name="city" size="20" placeholder="City" required></td>
                 </tr>
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updatePhone" name="phone" size="15" required></td>
+                    <td><input type="text" id="updatePhone" name="phone" size="15" placeholder="Phone Number" required></td>
                 </tr>
                 <tr>
                     <td><label>Speciality:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSpeciality" name="speciality" size="15" required></td>
+                    <td><input type="text" id="updateSpeciality" name="speciality" size="15" placeholder="Speciality" required></td>
                 </tr>
                 <tr>
                     <td><label>Salary:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSalary" name="salary" size="15" required></td>
-                    <!--                    <td><input type="range" class="custom-range" name="salary" id="salary" size="10" required></td>-->
+                    <td><input type="text" id="updateSalary" name="salary" size="15" placeholder="Salary" required></td>
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
@@ -193,47 +191,46 @@
                 }
             });
         </script>
-        <div id="updateDoctor" class="container tab-pane fade"><br>
             <form action="../api/apiDeleteDoctor.php" method="get">
-                <h2>Update Doctor</h2>
+                <h2>Delete Doctor</h2>
                 <table>
                     <tr>
                         <td><label>Doctors:<b class="red">*</b> </label></td>
                         <td><select id="getDeleteDoctors" name="id" required>
-                                <option></option>
+                                <option disabled selected hidden>Select a Doctor</option>
                             </select></td>
                     </tr>
                     <tr>
-                        <td><label>Last Name:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteLastname" name="lastname" size="25" readonly></td>
+                        <td><label>Last Name: </label></td>
+                        <td><input type="text" id="deleteLastname" name="lastname" size="25" placeholder="Last Name" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>First Name:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteFirstname" name="firstname" size="25" readonly></td>
+                        <td><label>First Name: </label></td>
+                        <td><input type="text" id="deleteFirstname" name="firstname" size="25" placeholder="First Name" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Street Address:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteStreet" name="street" size="50" readonly></td>
+                        <td><label>Street Address: </label></td>
+                        <td><input type="text" id="deleteStreet" name="street" size="50" placeholder="Street Address" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Suburb:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSuburb" name="suburb" size="20" readonly></td>
+                        <td><label>Suburb: </label></td>
+                        <td><input type="text" id="deleteSuburb" name="suburb" size="20" placeholder="Suburb" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>City:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteCity" name="city" size="20" readonly></td>
+                        <td><label>City: </label></td>
+                        <td><input type="text" id="deleteCity" name="city" size="20" placeholder="City" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Phone Number:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deletePhone" name="phone" size="15" readonly></td>
+                        <td><label>Phone Number: </label></td>
+                        <td><input type="text" id="deletePhone" name="phone" size="15" placeholder="Phone Number" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Speciality:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSpeciality" name="speciality" size="15" readonly></td>
+                        <td><label>Speciality: </label></td>
+                        <td><input type="text" id="deleteSpeciality" name="speciality" size="15" placeholder="Speciality" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Salary:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSalary" name="salary" size="15" readonly></td>
+                        <td><label>Salary: </label></td>
+                        <td><input type="text" id="deleteSalary" name="salary" size="15" placeholder="Salary" readonly></td>
                     </tr>
                     <tr><td><i class="red">* Required Fields</i></td></tr>
                     <tr>

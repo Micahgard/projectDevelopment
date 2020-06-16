@@ -20,7 +20,6 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addAdmission" class="container tab-pane active"><br>
-
         <script>
             $(document).ready(function () {
                 $.ajax({
@@ -38,7 +37,6 @@
                         alert("Not connected");
                     }
                 });
-
                 $.ajax({
                     type: 'GET',
                     url: "../api/apiAllWards.php",
@@ -56,7 +54,6 @@
                 });
             });
         </script>
-
         <form action="../api/apiAddAdmission.php" method="post">
             <h2>Add Admission</h2>
             <table>
@@ -71,13 +68,13 @@
                 </tr>
 
                 <tr>
-                    <td><label>Patient:* </label></td>
-                    <td><select id="getPatient" name="patientID"></select></td>
+                    <td><label>Patient:<b class="red">*</b> </label></td>
+                    <td><select id="getPatient" name="patientID"><option></option></select></td>
                 </tr>
 
                 <tr>
-                    <td><label>Ward:* </label></td>
-                    <td><select id="getWard" name="wardID"></select></td>
+                    <td><label>Ward:<b class="red">*</b> </label></td>
+                    <td><select id="getWard" name="wardID"><option></option></select></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
@@ -111,7 +108,6 @@
                 });
             });
         </script>
-
         <form action="../api/apiUpdateAdmission.php" method="post">
             <h2>Update Admission</h2>
             <table>
