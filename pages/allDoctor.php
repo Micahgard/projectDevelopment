@@ -29,8 +29,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor: </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="firstname" placeholder="First Name*" title="First Name" required>
                 <input type="text" maxlength="25" class="form-control" id="lastname" placeholder="Last Name*" title="Last Name" required>
+                <input type="text" maxlength="25" class="form-control" id="firstname" placeholder="First Name*" title="First Name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
