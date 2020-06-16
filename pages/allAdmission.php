@@ -20,15 +20,12 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addAdmission" class="container tab-pane active"><br>
+
         <script>
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-<<<<<<< HEAD
-                    url: "https://unitecproject.herokuapp.com/api/apiAllPatients.php",
-=======
-                    url: "../api/apiAllAdmissions.php",
->>>>>>> 4f81ad959944e96beb28ce3ad4fc230db6ea4622
+                    url: "../api/apiAllPatients.php",
                     dataType: "JSON",
                     success: function (data) {
                         let i = 0;
@@ -44,7 +41,7 @@
 
                 $.ajax({
                     type: 'GET',
-                    url: "https://unitecproject.herokuapp.com/api/apiAllWards.php",
+                    url: "../api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
                         let i = 0;
@@ -74,7 +71,6 @@
                 </tr>
 
                 <tr>
-<<<<<<< HEAD
                     <td><label>Patient:* </label></td>
                     <td><select id="getPatient" name="patientID"></select></td>
                 </tr>
@@ -82,10 +78,6 @@
                 <tr>
                     <td><label>Ward:* </label></td>
                     <td><select id="getWard" name="wardID"></select></td>
-=======
-                    <td><label>Patient:<b class="red">*</b> </label></td>
-                    <td><label id="patientInfo"></label></td>
->>>>>>> 4f81ad959944e96beb28ce3ad4fc230db6ea4622
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
@@ -119,6 +111,7 @@
                 });
             });
         </script>
+
         <form action="../api/apiUpdateAdmission.php" method="post">
             <h2>Update Admission</h2>
             <table>
@@ -145,9 +138,11 @@
             </table>
         </form>
     </div>
+
     <div id="deleteAdmission" class="container tab-pane fade"><br>
 
     </div>
+
     <div id="closeAdmission" class="container tab-pane fade"><br>
 
     </div>
