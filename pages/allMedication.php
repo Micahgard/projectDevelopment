@@ -147,15 +147,15 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td><label>Medication Id:<b class="red">*</b> </label></td>
+                    <td><label>Medication Id:</label></td>
                     <td><input type="text" id="deleteMedicationId" name="deleteMedicationId" size="30" readonly></td>
                 </tr>
                 <tr>
-                    <td><label>Name:<b class="red">*</b> </label></td>
+                    <td><label>Name:</label></td>
                     <td><input type="text" id="deleteName" name="deleteName" size="10" readonly></td>
                 </tr>
                 <tr>
-                    <td><label>Cost:<b class="red">*</b> </label></td>
+                    <td><label>Cost:</label></td>
                     <td><input type="text" id="deleteCost" name="deleteCost" size="10" readonly></td>
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
