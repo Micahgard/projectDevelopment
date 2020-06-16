@@ -47,3 +47,5 @@ form {
 .red {
     color: red;
 }
+
+select:invalid { color: gray; }
