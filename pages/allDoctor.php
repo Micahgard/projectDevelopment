@@ -29,29 +29,29 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="First Name">
-                <input type="text" class="form-control" placeholder="Last Name">
+                <input type="text" class="form-control" placeholder="First Name" required>
+                <input type="text" class="form-control" placeholder="Last Name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 1: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Street Address">
+                <input type="text" class="form-control" placeholder="Street Address" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 2: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Suburb">
-                <input type="text" class="form-control" placeholder="City">
+                <input type="text" class="form-control" placeholder="Suburb" required>
+                <input type="text" class="form-control" placeholder="City" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Else: </span>
+                    <span class="input-group-text">Details: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Phone Number">
-                <input type="text" class="form-control" placeholder="Speciality">
-                <input type="text" class="form-control" placeholder="Salary">
+                <input type="text" class="form-control" placeholder="Phone Number" required>
+                <input type="text" class="form-control" placeholder="Speciality" required>
+                <input type="text" class="form-control" placeholder="Salary" required>
             </div>
             <table>
                 <tr>
