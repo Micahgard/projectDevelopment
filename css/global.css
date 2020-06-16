@@ -47,3 +47,7 @@ form {
 .grey {
     color: grey;
 }
+
+.blwFromBtns {
+    align-content: center;
+}
