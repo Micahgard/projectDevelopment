@@ -43,9 +43,9 @@
     <tr><td><label>Patient Details: </label></td></tr>
     <tr><td><input type="text" id="getPatient" readonly></td><tr>
     <tr><td><label>Prescribed Medications: </label></td></tr>
-    <tr><td><input type="text" id="getMedication"></td><tr>
+    <tr><td><input type="text" id="getMedication" readonly></td><tr>
     <tr><td><label>Allocated Doctors: </label></td></tr>
-    <tr><td><input type="text" id="getDoctor"></td><tr>
+    <tr><td><input type="text" id="getDoctor" readonly></td><tr>
 </table>
 
 <?php include_once 'foot.php'; ?>
