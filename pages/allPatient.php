@@ -190,47 +190,47 @@
                 }
             });
         </script>
-        <form action="../api/apiDeletePatient.php" method="post">
+        <form action="../api/apiDeletePatient.php" method="get">
             <h2>Delete Patient</h2>
             <table>
                 <tr>
                     <td><label>Patients:<b class="red">*</b> </label></td>
-                    <td><select name="getDeletePatients" class="custom-select">
+                    <td><select name="getDeletePatients" class="custom-select" required>
                             <option></option>
                         </select></td>
                 </tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteLastname"  name="deleteLastname" size="25" required></td>
+                    <td><input type="text" id="deleteLastname"  name="deleteLastname" size="25" readonly></td>
                 </tr>
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteFirstname" name="deleteFirstname" size="25" required></td>
+                    <td><input type="text" id="deleteFirstname" name="deleteFirstname" size="25" readonly></td>
                 </tr>
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteStreet" name="deleteStreet" size="50" required></td>
+                    <td><input type="text" id="deleteStreet" name="deleteStreet" size="50" readonly></td>
                 </tr>
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteSuburb" name="deleteSuburb" size="20" required></td>
+                    <td><input type="text" id="deleteSuburb" name="deleteSuburb" size="20" readonly></td>
                 </tr>
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteCity" name="deleteCity" size="20" required></td>
+                    <td><input type="text" id="deleteCity" name="deleteCity" size="20" readonly></td>
                 </tr>
                 <tr>
                     <td><label>Email Address:<b class="red">*</b> </label></td>
-                    <td><input type="email" id="deleteEmail" name="deleteEmail" size="30" required></td>
+                    <td><input type="email" id="deleteEmail" name="deleteEmail" size="30" readonly></td>
                 </tr>
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deletePhone" name="deletePhone" size="15" required></td>
+                    <td><input type="text" id="deletePhone" name="deletePhone" size="15" readonly></td>
                 </tr>
 
                 <tr>
                     <td><label>Insurance Code: </label></td>
-                    <td><input type="text" id="deleteInsurcode" name="deleteInsurcode" size="10"></td>
+                    <td><input type="text" id="deleteInsurcode" name="deleteInsurcode" size="10" readonly></td>
                 </tr>
                 <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>

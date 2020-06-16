@@ -199,41 +199,41 @@
                 <table>
                     <tr>
                         <td><label>Doctors:<b class="red">*</b> </label></td>
-                        <td><select id="getDeleteDoctors" name="id">
+                        <td><select id="getDeleteDoctors" name="id" required>
                                 <option></option>
                             </select></td>
                     </tr>
                     <tr>
                         <td><label>Last Name:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteLastname" name="lastname" size="25" required></td>
+                        <td><input type="text" id="deleteLastname" name="lastname" size="25" readonly></td>
                     </tr>
                     <tr>
                         <td><label>First Name:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteFirstname" name="firstname" size="25" required></td>
+                        <td><input type="text" id="deleteFirstname" name="firstname" size="25" readonly></td>
                     </tr>
                     <tr>
                         <td><label>Street Address:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteStreet" name="street" size="50" required></td>
+                        <td><input type="text" id="deleteStreet" name="street" size="50" readonly></td>
                     </tr>
                     <tr>
                         <td><label>Suburb:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSuburb" name="suburb" size="20" required></td>
+                        <td><input type="text" id="deleteSuburb" name="suburb" size="20" readonly></td>
                     </tr>
                     <tr>
                         <td><label>City:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteCity" name="city" size="20" required></td>
+                        <td><input type="text" id="deleteCity" name="city" size="20" readonly></td>
                     </tr>
                     <tr>
                         <td><label>Phone Number:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deletePhone" name="phone" size="15" required></td>
+                        <td><input type="text" id="deletePhone" name="phone" size="15" readonly></td>
                     </tr>
                     <tr>
                         <td><label>Speciality:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSpeciality" name="speciality" size="15" required></td>
+                        <td><input type="text" id="deleteSpeciality" name="speciality" size="15" readonly></td>
                     </tr>
                     <tr>
                         <td><label>Salary:<b class="red">*</b> </label></td>
-                        <td><input type="text" id="deleteSalary" name="salary" size="15" required></td>
+                        <td><input type="text" id="deleteSalary" name="salary" size="15" readonly></td>
                     </tr>
                     <tr><td><i class="red">* Required Fields</i></td></tr>
                     <tr>
