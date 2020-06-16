@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Invoice</title>
-    <?php include_once 'head.php'; ?>
+<title>Invoice</title>
+<?php include_once 'head.php'; ?>
 
     <script>
         $(document).ready(function () {
@@ -34,10 +31,7 @@
             });
         });
     </script>
-</head>
 
-<body>
-<div>
     <h2>Produce Invoice</h2>
     <table>
         <tr>
@@ -47,16 +41,11 @@
                 </select></td>
         </tr>
         <tr><td><label>Patient Details: </label></td></tr>
-        <tr><td><input type="text" id="getPatient"></input></td><tr>
+        <tr><td><input type="text" id="getPatient"></td><tr>
         <tr><td><label>Prescribed Medications: </label></td></tr>
-        <tr><td><div id="getMedication"></div></td><tr>
+        <tr><td><input type="text" id="getMedication"></td><tr>
         <tr><td><label>Allocated Doctors: </label></td></tr>
-        <tr><td><div id="getDoctor"></div></td><tr>
+        <tr><td><input type="text" id="getDoctor"></td><tr>
     </table>
-</div>
 
-<div class="foot">
-    <?php include_once 'foot.php'; ?>
-</div>
-</body>
-</html>
+<?php include_once 'foot.php'; ?>
