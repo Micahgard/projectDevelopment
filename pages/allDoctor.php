@@ -29,7 +29,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor: </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="firstname" placeholder="First Name*" required>
+                <input type="text" maxlength="25" title="First Name" class="form-control" id="firstname" placeholder="First Name*" required>
                 <input type="text" maxlength="25" class="form-control" id="lastname" placeholder="Last Name*" required>
             </div>
             <div class="input-group mb-3">
@@ -53,8 +53,10 @@
                 <input type="text" maxlength="20" class="form-control" id="speciality" placeholder="Speciality*" required>
                 <input type="text" maxlength="9" class="form-control" id="salary" placeholder="Salary*" required>
             </div>
-            <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
-            <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            <div>
+                <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="updateDoctor" class="container tab-pane fade"><br>
