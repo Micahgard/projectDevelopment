@@ -193,7 +193,7 @@
             });
         </script>
             <form action="../api/apiDeleteDoctor.php" method="get">
-                <h2>Update Doctor</h2>
+                <h2>Delete Doctor</h2>
                 <table>
                     <tr>
                         <td><label>Doctors:<b class="red">*</b> </label></td>
@@ -202,35 +202,35 @@
                             </select></td>
                     </tr>
                     <tr>
-                        <td><label>Last Name:<b class="red">*</b> </label></td>
+                        <td><label>Last Name: </label></td>
                         <td><input type="text" id="deleteLastname" name="lastname" size="25" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>First Name:<b class="red">*</b> </label></td>
+                        <td><label>First Name: </label></td>
                         <td><input type="text" id="deleteFirstname" name="firstname" size="25" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Street Address:<b class="red">*</b> </label></td>
+                        <td><label>Street Address: </label></td>
                         <td><input type="text" id="deleteStreet" name="street" size="50" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Suburb:<b class="red">*</b> </label></td>
+                        <td><label>Suburb: </label></td>
                         <td><input type="text" id="deleteSuburb" name="suburb" size="20" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>City:<b class="red">*</b> </label></td>
+                        <td><label>City: </label></td>
                         <td><input type="text" id="deleteCity" name="city" size="20" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Phone Number:<b class="red">*</b> </label></td>
+                        <td><label>Phone Number: </label></td>
                         <td><input type="text" id="deletePhone" name="phone" size="15" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Speciality:<b class="red">*</b> </label></td>
+                        <td><label>Speciality: </label></td>
                         <td><input type="text" id="deleteSpeciality" name="speciality" size="15" readonly></td>
                     </tr>
                     <tr>
-                        <td><label>Salary:<b class="red">*</b> </label></td>
+                        <td><label>Salary: </label></td>
                         <td><input type="text" id="deleteSalary" name="salary" size="15" readonly></td>
                     </tr>
                     <tr><td><i class="red">* Required Fields</i></td></tr>
