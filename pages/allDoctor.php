@@ -94,7 +94,7 @@
                 }
             });
         </script>
-        <form action="../api/apiUpdateDoctor.php" method="post">
+        <!--<form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -137,7 +137,7 @@
                 <input class="btn btn-outline-primary" type="submit" value="Update Doctor"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
-        </form>
+        </form>-->
         <form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <table>
