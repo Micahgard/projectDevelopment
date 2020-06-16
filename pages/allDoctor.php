@@ -53,6 +53,7 @@
                 <input type="text" maxlength="20" class="form-control" id="speciality" placeholder="Speciality*" title="Speciality" required>
                 <input type="text" maxlength="9" class="form-control" id="salary" placeholder="Salary*" title="Salary" required>
             </div>
+            <i class="grey">* Required Fields</i>
             <div class="blwFromBtns">
                 <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
