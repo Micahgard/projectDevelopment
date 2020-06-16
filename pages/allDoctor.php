@@ -134,7 +134,7 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
+                <input class="btn btn-outline-primary" type="submit" value="Update Doctor"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
         </form>
