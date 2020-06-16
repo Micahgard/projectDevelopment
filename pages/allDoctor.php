@@ -21,11 +21,11 @@
 </ul>
 
 <!-- Tab panes -->
-<div class="tab-content justify-content-center">
+<div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
-            <table>
+            <table class="justify-content-center">
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="lastname" name="lastname" size="25" required></td>
