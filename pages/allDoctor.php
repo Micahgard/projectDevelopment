@@ -25,7 +25,7 @@
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
-            <table class="justify-content-center">
+            <table>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="lastname" name="lastname" size="25" required></td>

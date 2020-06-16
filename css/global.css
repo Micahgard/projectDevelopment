@@ -28,6 +28,10 @@ body {
     margin: 12px auto;
 }
 
+table {
+    margin: auto;
+}
+
 form {
     position: relative;
     box-sizing: border-box;
