@@ -69,12 +69,12 @@
 
                 <tr>
                     <td><label>Patient:<b class="red">*</b> </label></td>
-                    <td><select id="getPatient" name="patientID"></select></td>
+                    <td><select id="getPatient" name="patientID"><option></option></select></td>
                 </tr>
 
                 <tr>
                     <td><label>Ward:<b class="red">*</b> </label></td>
-                    <td><select id="getWard" name="wardID"></select></td>
+                    <td><select id="getWard" name="wardID"><option></option></select></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
