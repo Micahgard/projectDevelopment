@@ -12,6 +12,9 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#deleteAdmission">Delete Admission</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#closeAdmission">Close Admission</a>
+    </li>
 </ul>
 
 <!-- Tab panes -->
@@ -21,7 +24,11 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
+<<<<<<< HEAD
                     url: "https://unitecproject.herokuapp.com/api/apiAllPatients.php",
+=======
+                    url: "../api/apiAllAdmissions.php",
+>>>>>>> 4f81ad959944e96beb28ce3ad4fc230db6ea4622
                     dataType: "JSON",
                     success: function (data) {
                         let i = 0;
@@ -57,16 +64,17 @@
             <h2>Add Admission</h2>
             <table>
                 <tr>
-                    <td><label>Description:* </label></td>
+                    <td><label>Description:<b class="red">*</b> </label></td>
                     <td><input type="text" id="description" name="description" size="30" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Admission Date:* </label></td>
+                    <td><label>Admission Date:<b class="red">*</b> </label></td>
                     <td><input type="date" id="admissiondate" name="admissiondate" required></td>
                 </tr>
 
                 <tr>
+<<<<<<< HEAD
                     <td><label>Patient:* </label></td>
                     <td><select id="getPatient" name="patientID"></select></td>
                 </tr>
@@ -74,9 +82,13 @@
                 <tr>
                     <td><label>Ward:* </label></td>
                     <td><select id="getWard" name="wardID"></select></td>
+=======
+                    <td><label>Patient:<b class="red">*</b> </label></td>
+                    <td><label id="patientInfo"></label></td>
+>>>>>>> 4f81ad959944e96beb28ce3ad4fc230db6ea4622
                 </tr>
 
-                <tr><td><i style="color: red">* Required Fields</i></td></tr>
+                <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
                     <td><input class="btn btn-outline-primary" type="submit" value="Add Admission"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
@@ -86,20 +98,17 @@
     </div>
 
     <div id="updateAdmission" class="container tab-pane fade"><br>
-        <form action="../api/apiUpdateAdmission.php" method="post">
-            <h2>Update Admission</h2>
         <script>
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "https://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                    url: "../api/apiAllAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         $("#patientInfo").append("<select name='patient' class='custom-select'>");
                         let i = 0;
                         while (i < data.length){
                             $("#patientInfo").append("<option value='" + data[i].patientID + "'>" + data[i].patientID + "</option>");
-                            // $("#patientinfo").append("<p>patient info: " + data[i].patientID + "</p>");
                             i = i + 1;
                         }
                         $("#PatientInfo").append("</select>");
@@ -110,25 +119,25 @@
                 });
             });
         </script>
-        <form action="../api/apiAddAdmission.php" method="post">
-            <h2>Add Admission</h2>
+        <form action="../api/apiUpdateAdmission.php" method="post">
+            <h2>Update Admission</h2>
             <table>
                 <tr>
-                    <td><label>Description:* </label></td>
-                    <td><input type="text" id="description" name="description" size="30" required></td>
+                    <td><label>Description:<b class="red">*</b> </label></td>
+                    <td><input type="text" id="updateDescription" name="description" size="30" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Admission Date:* </label></td>
-                    <td><input type="date" id="admissiondate" name="admissiondate" required></td>
+                    <td><label>Admission Date:<b class="red">*</b> </label></td>
+                    <td><input type="date" id="updateAdmissionDate" name="admissiondate" required></td>
                 </tr>
 
                 <tr>
-                    <td><label>Patient:* </label></td>
-                    <td><label id="patientInfo"></label></td>
+                    <td><label>Patient:<b class="red">*</b> </label></td>
+                    <td><label id="updatePatientInfo"></label></td>
                 </tr>
 
-                <tr><td><i style="color: red">* Required Fields</i></td></tr>
+                <tr><td><i class="red">* Required Fields</i></td></tr>
                 <tr>
                     <td><input class="btn btn-outline-primary" type="submit" value="Add Admission"/></td>
                     <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
@@ -139,6 +148,8 @@
     <div id="deleteAdmission" class="container tab-pane fade"><br>
 
     </div>
-</div>
+    <div id="closeAdmission" class="container tab-pane fade"><br>
 
+    </div>
+</div>
 <?php include_once 'foot.php';?>
