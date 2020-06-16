@@ -261,5 +261,4 @@
 
     </div>
 </div>
-
 <?php include_once 'foot.php';?>
