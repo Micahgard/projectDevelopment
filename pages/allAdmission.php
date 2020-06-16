@@ -12,6 +12,9 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#deleteAdmission">Delete Admission</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#closeAdmission">Close Admission</a>
+    </li>
 </ul>
 
 <!-- Tab panes -->
@@ -117,6 +120,9 @@
         </form>
     </div>
     <div id="deleteAdmission" class="container tab-pane fade"><br>
+
+    </div>
+    <div id="closeAdmission" class="container tab-pane fade"><br>
 
     </div>
 </div>
