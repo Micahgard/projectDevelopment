@@ -13,12 +13,20 @@
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
-                        $("#getAdmission").append("<option value='"+data[i].AdmissionID+"'>"+data[i].AdmissionID+"</option>");
-                        $("#invoice").append("<p>Patient Details: "+data[i].patient+" </p>");
-                        $("#invoice").append("<p>Prescribed Medications: "+data[i].medication+" </p>");
-                        $("#invoice").append("<p>Allocated Doctors: "+data[i].doctor+" </p>");
+                        $("#getAdmission").append("<option value='"+data[i].AdmissionID+"'>"+data[i].AdmissionID+" "+data[i].description+"</option>");
                         i = i+1;
                     }
+                    $("#getAdmission").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getAdmission").val()) {
+                                $("#getPatient").val(data[i].patient);
+                                $("#getMedication").val(data[i].medication);
+                                $("#getDoctor").val(data[i].doctor);
+                            }
+                            i++;
+                        }
+                    });
                 },
                 error: function () {
                     alert("Not connected");
@@ -34,25 +42,16 @@
     <table>
         <tr>
             <td><label>Admission: </label></td>
-            <td><select name="getUpdatePatients" class="custom-select">
+            <td><select id="getAdmission">
                     <option></option>
                 </select></td>
         </tr>
-
-        <tr>
-            <td><label>Patient Details: </label></td>
-            <td><input type="text" id="getPatient" size="25" required></td>
-        </tr>
-
-        <tr>
-            <td><label>Prescribed Medications: </label></td>
-            <td><input type="text" id="updateFirstname" name="updateFirstname" size="25" required></td>
-        </tr>
-
-        <tr>
-            <td><label>Allocated Doctors:  </label></td>
-            <td><input type="text" id="updateStreet" name="updateStreet" size="50" required></td>
-        </tr>
+        <tr><td><label>Patient Details: </label></td></tr>
+        <tr><td><input type="text" id="getPatient"></input></td><tr>
+        <tr><td><label>Prescribed Medications: </label></td></tr>
+        <tr><td><div id="getMedication"></div></td><tr>
+        <tr><td><label>Allocated Doctors: </label></td></tr>
+        <tr><td><div id="getDoctor"></div></td><tr>
     </table>
 </div>
 
