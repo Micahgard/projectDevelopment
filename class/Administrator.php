@@ -3,6 +3,7 @@ include_once("DB.php");
 include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
+include_once "Medication.php";
 include_once "AdmissionsReport.php";
 include_once "PatientsReport.php";
 include_once "DoctorsReport.php";
