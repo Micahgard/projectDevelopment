@@ -36,22 +36,22 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 1: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Street Address*" required>
+                <input type="text" maxlength="50" class="form-control" id="street" placeholder="Street Address*" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 2: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Suburb*" required>
-                <input type="text" class="form-control" placeholder="City" required>
+                <input type="text" maxlength="20" class="form-control" id="suburb" placeholder="Suburb*" required>
+                <input type="text" maxlength="20" class="form-control" id="city" placeholder="City">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Details: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Phone Number" required>
-                <input type="text" class="form-control" placeholder="Speciality*" required>
-                <input type="text" class="form-control" placeholder="Salary*" required>
+                <input type="text" maxlength="15" class="form-control" id="phone" placeholder="Phone Number">
+                <input type="text" maxlength="20" class="form-control" id="speciality" placeholder="Speciality*" required>
+                <input type="text" maxlength="9" class="form-control" id="salary" placeholder="Salary*" required>
             </div>
             <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
             <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
