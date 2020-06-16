@@ -27,7 +27,7 @@
             <h2>Add Doctor</h2>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Doctor: </span>
+                    <span class="input-group-text">Name: </span>
                 </div>
                 <input type="text" maxlength="25" class="form-control" id="lastname" name="lastname" placeholder="Last Name*" title="Last Name" required>
                 <input type="text" maxlength="25" class="form-control" id="firstname" name="firstname" placeholder="First Name*" title="First Name" required>
@@ -106,7 +106,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Doctor: </span>
+                    <span class="input-group-text">Name: </span>
                 </div>
                 <input type="text" maxlength="25" class="form-control" id="updateLastname" name="updateLastname" placeholder="Last Name*" title="Last Name" required>
                 <input type="text" maxlength="25" class="form-control" id="updateFirstname" name="updateFirstname" placeholder="First Name*" title="First Name" required>

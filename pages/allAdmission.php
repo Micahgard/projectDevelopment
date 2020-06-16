@@ -80,13 +80,13 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Patient: </span>
+                    <span class="input-group-text">Patient:* </span>
                 </div>
                 <select class="form-control" id="getPatient" name="patientID" required>
                     <option disabled selected hidden>Select a Patient</option>
                 </select>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Ward: </span>
+                    <span class="input-group-text">Ward:* </span>
                 </div>
                 <select class="form-control" id="getWard" name="wardID" required>
                     <option disabled selected hidden>Select a Ward</option>
