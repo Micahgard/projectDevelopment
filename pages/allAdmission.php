@@ -153,6 +153,7 @@
                                 if (data[i].id == $("#getUpdateAdmissions").val()) {
                                     $("#updateAdmissionId").val(data[i].id);
                                     $("#updateDescription").val(data[i].description);
+                                    $("#updateAdmissiondate").val(data[i].admissiondate);
                                 }
                                 i++;
                             }
