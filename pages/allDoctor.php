@@ -192,7 +192,6 @@
                 }
             });
         </script>
-        <div id="deleteDoctor" class="container tab-pane fade"><br>
             <form action="../api/apiDeleteDoctor.php" method="get">
                 <h2>Update Doctor</h2>
                 <table>
