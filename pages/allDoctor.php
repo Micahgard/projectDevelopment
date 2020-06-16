@@ -94,7 +94,7 @@
                 }
             });
         </script>
-        <!--<form action="../api/apiUpdateDoctor.php" method="post">
+        <form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -137,54 +137,6 @@
                 <input class="btn btn-outline-primary" type="submit" value="Update Doctor"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
-        </form>-->
-        <form action="../api/apiUpdateDoctor.php" method="post">
-            <h2>Update Doctor</h2>
-            <table>
-                <tr>
-                    <td><label>Doctors:<b class="red">*</b> </label></td>
-                    <td><select id="getUpdateDoctors" name="id">
-                            <option disabled selected hidden>Select a Doctor</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateLastname" name="lastname" size="25" placeholder="Last Name" required></td>
-                </tr>
-                <tr>
-                    <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateFirstname" name="firstname" size="25" placeholder="First Name" required></td>
-                </tr>
-                <tr>
-                    <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateStreet" name="street" size="50" placeholder="Street Address" required></td>
-                </tr>
-                <tr>
-                    <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSuburb" name="suburb" size="20" placeholder="Suburb" required></td>
-                </tr>
-                <tr>
-                    <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateCity" name="city" size="20" placeholder="City" required></td>
-                </tr>
-                <tr>
-                    <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updatePhone" name="phone" size="15" placeholder="Phone Number" required></td>
-                </tr>
-                <tr>
-                    <td><label>Speciality:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSpeciality" name="speciality" size="15" placeholder="Speciality" required></td>
-                </tr>
-                <tr>
-                    <td><label>Salary:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSalary" name="salary" size="15" placeholder="Salary" required></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Doctor"/ ></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
         </form>
     </div>
     <div id="deleteDoctor" class="container tab-pane fade"><br>
