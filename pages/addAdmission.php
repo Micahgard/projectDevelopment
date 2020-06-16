@@ -4,7 +4,7 @@
         $(document).ready(function () {
             $.ajax({
                 type: 'GET',
-                url: "https://unitecproject.herokuapp.com/api/apiAllPatients.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -20,7 +20,7 @@
 
             $.ajax({
                 type: 'GET',
-                url: "https://unitecproject.herokuapp.com/api/apiAllWards.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;

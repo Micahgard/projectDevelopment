@@ -52,8 +52,8 @@ class Administrator
         }
         $conn->close();
     }
-    // admissions report start
 
+    // admissions report start
     public function showAdmissions()
     {
         $conn = (new DB())->conn;
