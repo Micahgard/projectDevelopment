@@ -28,7 +28,11 @@ body {
     margin: 12px auto;
 }
 
-table h2 {
+h2 {
+    text-align: center;
+}
+
+table {
     margin: auto;
 }
 
