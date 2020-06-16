@@ -99,7 +99,6 @@
             </div>
         </form>
     </div>
-
     <div id="updateAdmission" class="container tab-pane fade"><br>
         <script>
             $(document).ready(function () {
