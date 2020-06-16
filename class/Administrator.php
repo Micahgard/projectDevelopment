@@ -5,6 +5,7 @@ include_once "Ward.php";
 include_once "Doctor.php";
 include_once "AdmissionsReport.php";
 include_once "PatientsReport.php";
+include_once "DoctorsReport.php";
 
 class Administrator
 {
@@ -75,13 +76,11 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $id = $row["PatientID"];
-                $lastname = $row["lastname"];
-                $firstname = $row["firstname"];
+            $patientname = $row["firstname"]." ".$row["lastname"];
             }
         }
         $conn->close();
-        return array($id, $lastname, $firstname);
+        return $patientname;
     }
 
     public function findMedicationsByAdmission($admissionID)
@@ -89,14 +88,17 @@ class Administrator
         $conn = (new DB())->conn;
         $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
         $result = $conn->query($sql);
-        $medicationnames = "";
+//        $medicationnames = "";
+        $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
-                $medicationnames .=$row["name"]." ";
+//                $medicationnames .=$row["name"]." ";
+                $medication = $row["name"];
+                array_push($medications,$medication);
             }
         }
         $conn->close();
-        return $medicationnames;
+        return $medications;
     }
     // admissions report end
 
@@ -138,21 +140,43 @@ class Administrator
     }
     // patients report end
 
-
-
-    public function findWardByWardID($wardID)
+    // doctors report start
+    public function showDoctors()
     {
         $conn = (new DB())->conn;
-        $sql = "select * from Ward where WardID = " . $wardID;
+        $sql = "select * from Doctor";
+        $doctors = array();
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $wardname = $row["lastname"] . ", " . $row["firstname"];
+                $doctor = new DoctorsReport($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"], $this->countAdmissionsForDoctor($row["DoctorID"]), $this->countProjectsForDoctor($row["DoctorID"]));
+                array_push($doctors, $doctor);
             }
         }
         $conn->close();
-        return $wardname;
+        return $doctors;
     }
+
+    public function countAdmissionsForDoctor($doctorID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Admission.AdmissionID FROM Admission, Allocation, Doctor WHERE Admission.AdmissionID = Allocation.admissionID AND Allocation.doctorID = Doctor.DoctorID AND Doctor.DoctorID =" . $doctorID;
+        $result = $conn->query($sql);
+        $number = mysqli_num_rows($result);
+        $conn->close();
+        return $number;
+    }
+
+    public function countProjectsForDoctor($doctorID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT Researchproject.doctorID FROM Researchproject WHERE doctorID=" . $doctorID;
+        $result = $conn->query($sql);
+        $number = mysqli_num_rows($result);
+        $conn->close();
+        return $number;
+    }
+    // doctors report end
 
     public function allPatiens(){
         $conn = (new DB())->conn;
