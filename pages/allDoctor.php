@@ -115,7 +115,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 1: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="udpateStreet" placeholder="Street Address*" title="Street Address" required>
+                <input type="text" maxlength="50" class="form-control" id="updateStreet" placeholder="Street Address*" title="Street Address" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
