@@ -16,7 +16,7 @@
                     $("#getAdmission").change(function() {
                         var i = 0;
                         while (i < data.length) {
-                            if (data[i].id == $("#getAdmission").val()) {
+                            if (data[i].AdmissionID == $("#getAdmission").val()) {
                                 $("#getPatient").val(data[i].patient);
                                 $("#getMedication").val(data[i].medication);
                                 $("#getDoctor").val(data[i].doctor);
@@ -41,7 +41,7 @@
                 </select></td>
         </tr>
         <tr><td><label>Patient Details: </label></td></tr>
-        <tr><td><input type="text" id="getPatient"></td><tr>
+        <tr><td><input type="text" id="getPatient" readonly></td><tr>
         <tr><td><label>Prescribed Medications: </label></td></tr>
         <tr><td><input type="text" id="getMedication"></td><tr>
         <tr><td><label>Allocated Doctors: </label></td></tr>
