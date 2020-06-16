@@ -64,7 +64,6 @@
                 <tr>
                     <td><label>Salary:<b class="red">*</b> </label></td>
                     <td><input type="text" id="salary" name="salary" size="15" required></td>
-<!--                    <td><input type="range" class="custom-range" name="salary" id="salary" size="10" required></td>-->
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
@@ -75,40 +74,40 @@
             </table>
         </form>
     </div>
-    <script>
-        $.ajax({
-            type: 'GET',
-            url: "../api/apiAllDoctors.php",
-            dataType: "JSON",
-            success: function (data) {
-                let i = 0;
-                while (i < data.length){
-                    $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                    i = i + 1;
-                }
-                $("#getUpdateDoctors").change(function() {
-                    var i = 0;
-                    while (i < data.length) {
-                        if (data[i].id == $("#getUpdateDoctors").val()) {
-                            $("#updateLastname").val(data[i].lastname);
-                            $("#updateFirstname").val(data[i].firstname);
-                            $("#updateStreet").val(data[i].street);
-                            $("#updateSuburb").val(data[i].suburb);
-                            $("#updateCity").val(data[i].city);
-                            $("#updatePhone").val(data[i].phone);
-                            $("#updateSpeciality").val(data[i].speciality);
-                            $("#updateSalary").val(data[i].salary);
-                        }
-                        i++;
-                    }
-                });
-            },
-            error: function () {
-                alert("Not connected");
-            }
-        });
-    </script>
     <div id="updateDoctor" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllDoctors.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getUpdateDoctors").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getUpdateDoctors").val()) {
+                                $("#updateLastname").val(data[i].lastname);
+                                $("#updateFirstname").val(data[i].firstname);
+                                $("#updateStreet").val(data[i].street);
+                                $("#updateSuburb").val(data[i].suburb);
+                                $("#updateCity").val(data[i].city);
+                                $("#updatePhone").val(data[i].phone);
+                                $("#updateSpeciality").val(data[i].speciality);
+                                $("#updateSalary").val(data[i].salary);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
         <form action="../api/apiUpdateDoctor.php" method="post">
             <h2>Update Doctor</h2>
             <table>
