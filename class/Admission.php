@@ -6,7 +6,7 @@ class Admission
     public $id;
     public $description;
     public $admissiondate;
-    public $status;
+    public $git;
     public $dbconn;
 
     public function  __construct($id, $description, $admissiondate, $status)
