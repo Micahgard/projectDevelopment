@@ -21,7 +21,7 @@
 </ul>
 
 <!-- Tab panes -->
-<div class="tab-content">
+<div class="tab-content justify-content-center">
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
