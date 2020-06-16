@@ -25,14 +25,14 @@
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Doctor: </span>
-                </div>
-                <input type="text" class="form-control" placeholder="First Name">
-                <input type="text" class="form-control" placeholder="Last Name">
-            </div>
             <table>
+                <tr><div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Doctor: </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="First Name">
+                        <input type="text" class="form-control" placeholder="Last Name">
+                    </div></tr>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="lastname" name="lastname" size="25" placeholder="Last Name" required></td>
