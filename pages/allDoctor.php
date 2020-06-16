@@ -175,51 +175,47 @@
         </script>
             <form action="../api/apiDeleteDoctor.php" method="get">
                 <h2>Delete Doctor</h2>
-                <table>
-                    <tr>
-                        <td><label>Doctors:<b class="red">*</b> </label></td>
-                        <td><select id="getDeleteDoctors" name="id" required>
-                                <option disabled selected hidden>Select a Doctor</option>
-                            </select></td>
-                    </tr>
-                    <tr>
-                        <td><label>Last Name: </label></td>
-                        <td><input type="text" id="deleteLastname" name="lastname" size="25" placeholder="Last Name" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>First Name: </label></td>
-                        <td><input type="text" id="deleteFirstname" name="firstname" size="25" placeholder="First Name" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>Street Address: </label></td>
-                        <td><input type="text" id="deleteStreet" name="street" size="50" placeholder="Street Address" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>Suburb: </label></td>
-                        <td><input type="text" id="deleteSuburb" name="suburb" size="20" placeholder="Suburb" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>City: </label></td>
-                        <td><input type="text" id="deleteCity" name="city" size="20" placeholder="City" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>Phone Number: </label></td>
-                        <td><input type="text" id="deletePhone" name="phone" size="15" placeholder="Phone Number" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>Speciality: </label></td>
-                        <td><input type="text" id="deleteSpeciality" name="speciality" size="15" placeholder="Speciality" readonly></td>
-                    </tr>
-                    <tr>
-                        <td><label>Salary: </label></td>
-                        <td><input type="text" id="deleteSalary" name="salary" size="15" placeholder="Salary" readonly></td>
-                    </tr>
-                    <tr><td><i class="red">* Required Fields</i></td></tr>
-                    <tr>
-                        <td><input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/ ></td>
-                        <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                    </tr>
-                </table>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Doctors: </span>
+                    </div>
+                    <select class="form-control" id="getUpdateDoctors" name="id" required>
+                        <option disabled selected hidden>Select a Doctor</option>
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" placeholder="Last Name" title="Last Name" readonly>
+                    <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" placeholder="First Name" title="First Name" readonly>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Address 1: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deleteStreet" placeholder="Street Address" title="Street Address" readonly>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Address 2: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deleteSuburb" placeholder="Suburb" title="Suburb" readonly>
+                    <input type="text" class="form-control" id="deleteCity" placeholder="City" title="City" readonly>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Details: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deletePhone" placeholder="Phone Number" title="Phone Number" readonly>
+                    <input type="text" class="form-control" id="deleteSpeciality" placeholder="Speciality" title="Speciality" readonly>
+                    <input type="text" class="form-control" id="deleteSalary" placeholder="Salary" title="Salary" readonly>
+                </div>
+                <i class="grey">* Required Fields</i>
+                <div class="d-flex justify-content-around">
+                    <input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/>
+                    <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                </div>
             </form>
     </div>
     <div id="allocateDoctor" class="container tab-pane fade"><br>
