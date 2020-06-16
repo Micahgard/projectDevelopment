@@ -29,32 +29,35 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor: </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="firstname" placeholder="First Name*" required>
-                <input type="text" maxlength="25" class="form-control" id="lastname" placeholder="Last Name*" required>
+                <input type="text" maxlength="25" class="form-control" id="lastname" placeholder="Last Name*" title="Last Name" required>
+                <input type="text" maxlength="25" class="form-control" id="firstname" placeholder="First Name*" title="First Name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 1: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Street Address*" required>
+                <input type="text" maxlength="50" class="form-control" id="street" placeholder="Street Address*" title="Street Address" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Address 2: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Suburb*" required>
-                <input type="text" class="form-control" placeholder="City" required>
+                <input type="text" maxlength="20" class="form-control" id="suburb" placeholder="Suburb*" title="Suburb" required>
+                <input type="text" maxlength="20" class="form-control" id="city" placeholder="City" title="City">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Details: </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Phone Number" required>
-                <input type="text" class="form-control" placeholder="Speciality*" required>
-                <input type="text" class="form-control" placeholder="Salary*" required>
+                <input type="text" maxlength="15" class="form-control" id="phone" placeholder="Phone Number" title="Phone Number">
+                <input type="text" maxlength="20" class="form-control" id="speciality" placeholder="Speciality*" title="Speciality" required>
+                <input type="text" maxlength="9" class="form-control" id="salary" placeholder="Salary*" title="Salary" required>
             </div>
-            <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
-            <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Add Doctor"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="updateDoctor" class="container tab-pane fade"><br>
