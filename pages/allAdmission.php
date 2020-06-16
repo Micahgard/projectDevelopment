@@ -107,11 +107,16 @@
                     url: "../api/apiAllPatients.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
-                        while (i < data.length){
-                            $("#getPatient").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                            i = i + 1;
-                        }
+                        $("#getUpdateAdmissions").change(function() {
+                            var i = 0;
+                            while (i < data.length) {
+                                if (data[i].id == $("#getUpdateAdmissions").val()) {
+                                    $("#updatePatientLastname").val(data[i].lastname);
+                                    $("#updatePatientFirstname").val(data[i].firstname);
+                                }
+                                i++;
+                            }
+                        });
                     },
                     error: function () {
                         alert("Not connected");
@@ -124,7 +129,7 @@
                     success: function (data) {
                         let i = 0;
                         while (i < data.length){
-                            $("#getWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
+                            $("#getUpdateWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                             i = i + 1;
                         }
                     },
@@ -148,12 +153,6 @@
                                 if (data[i].id == $("#getUpdateAdmissions").val()) {
                                     $("#updateAdmissionId").val(data[i].id);
                                     $("#updateDescription").val(data[i].description);
-                                    $("#updateStreet").val(data[i].street);
-                                    $("#updateSuburb").val(data[i].suburb);
-                                    $("#updateCity").val(data[i].city);
-                                    $("#updatePhone").val(data[i].phone);
-                                    $("#updateSpeciality").val(data[i].speciality);
-                                    $("#updateSalary").val(data[i].salary);
                                 }
                                 i++;
                             }
@@ -203,13 +202,19 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Patient:* </span>
+                    <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <select class="form-control" id="getPatient" name="patientID" required></select>
+                <input type="text" class="form-control" id="updatePatientLastname" name="updatePatientLastname" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Ward:* </span>
+                    <span class="input-group-text">Patient First Name: </span>
                 </div>
-                <select class="form-control" id="getWard" name="wardID" required></select>
+                <input type="text" class="form-control" id="updatePatientFirstname" name="updatePatientFirstname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Ward Name: </span>
+                </div>
+                <input type="text" class="form-control" id="updateWardName" name="updateWardName" readonly>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -218,7 +223,6 @@
             </div>
         </form>
     </div>
-
     <div id="deleteAdmission" class="container tab-pane fade"><br>
 
     </div>
