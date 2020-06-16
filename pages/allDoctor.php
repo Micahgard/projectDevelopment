@@ -25,45 +25,45 @@
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
             <h2>Add Doctor</h2>
-            <table class="form-control">
+            <table>
                 <tr>
                     <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="lastname" name="lastname" size="25" placeholder="Last Name" required></td>
+                    <td><input class="form-control" type="text" id="lastname" name="lastname" size="25" placeholder="Last Name" required></td>
                 </tr>
 
                 <tr>
                     <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="firstname" name="firstname" size="25" placeholder="First Name" required></td>
+                    <td><input class="form-control" type="text" id="firstname" name="firstname" size="25" placeholder="First Name" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="street" name="street" size="50" placeholder="Street Address" required></td>
+                    <td><input class="form-control" type="text" id="street" name="street" size="50" placeholder="Street Address" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="suburb" name="suburb" size="20" placeholder="Suburb" required></td>
+                    <td><input class="form-control" type="text" id="suburb" name="suburb" size="20" placeholder="Suburb" required></td>
                 </tr>
 
                 <tr>
                     <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="city" name="city" size="20" placeholder="City" required></td>
+                    <td><input class="form-control" type="text" id="city" name="city" size="20" placeholder="City" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="phone" name="phone" size="15" placeholder="Phone Number" required></td>
+                    <td><input class="form-control" type="text" id="phone" name="phone" size="15" placeholder="Phone Number" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Speciality:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="speciality" name="speciality" size="15" placeholder="Speciality" required></td>
+                    <td><input class="form-control" type="text" id="speciality" name="speciality" size="15" placeholder="Speciality" required></td>
                 </tr>
 
                 <tr>
                     <td><label>Salary:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="salary" name="salary" size="15" placeholder="Salary" required></td>
+                    <td><input class="form-control" type="text" id="salary" name="salary" size="15" placeholder="Salary" required></td>
                 </tr>
 
                 <tr><td><i class="red">* Required Fields</i></td></tr>
