@@ -12,6 +12,12 @@
     <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#deleteMedication">Delete Medication</a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#prescribeMedication">Prescribe Medication</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#removePrescription">Remove Prescription</a>
+    </li>
 </ul>
 
 <!-- Tab panes -->
@@ -48,6 +54,12 @@
 
     </div>
     <div id="deleteMedication" class="container tab-pane fade"><br>
+
+    </div>
+    <div id="prescribeMedication" class="container tab-pane fade"><br>
+
+    </div>
+    <div id="removePrescription" class="container tab-pane fade"><br>
 
     </div>
 </div>
