@@ -114,7 +114,7 @@
                 <tr>
                     <td><label>Doctors:<b class="red">*</b> </label></td>
                     <td><select id="getUpdateDoctors" name="id">
-                            <option><i class="grey">Select a Doctor</i></option>
+                            <option disabled selected>Select a Doctor</option>
                         </select></td>
                 </tr>
                 <tr>
@@ -197,7 +197,7 @@
                     <tr>
                         <td><label>Doctors:<b class="red">*</b> </label></td>
                         <td><select id="getDeleteDoctors" name="id" required>
-                                <option><i class="grey">Select a Doctor</i></option>
+                                <option disabled selected>Select a Doctor</option>
                             </select></td>
                     </tr>
                     <tr>
