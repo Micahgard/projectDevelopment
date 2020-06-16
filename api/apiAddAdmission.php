@@ -9,7 +9,7 @@
 include_once "../class/Admission.php";
 
 if (isset($_POST["description"])) {
-    $admission = new Admission(null, $_POST["description"], $_POST["admissiondate"], "current", $_POST["patientID"], $_POST["wardID"]);
+    $admission = new Admission(null, $_POST["description"], $_POST["admissiondate"], $_POST["status"], $_POST["patientID"], $_POST["wardID"]);
     $admission->save();
     $msg = "Admission added";
 }else{
