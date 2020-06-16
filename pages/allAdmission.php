@@ -69,8 +69,6 @@
         </form>
     </div>
     <div id="updateAdmission" class="container tab-pane fade"><br>
-        <form action="../api/apiUpdateAdmission.php" method="post">
-            <h2>Update Admission</h2>
         <script>
             $(document).ready(function () {
                 $.ajax({
