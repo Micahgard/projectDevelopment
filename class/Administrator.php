@@ -4,6 +4,7 @@ include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
 include_once "Medication.php";
+include_once "Admission.php";
 include_once "AdmissionsReport.php";
 include_once "PatientsReport.php";
 include_once "DoctorsReport.php";
@@ -52,6 +53,60 @@ class Administrator
         }
         $conn->close();
     }
+
+    // invoice start
+    public function completeAdmissions()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission where status = 'complete'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new Invoice($row["AdmissionID"], $row["description"], $this->patientDetailsForInvoice($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
+    public function patientDetailsForInvoice($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Patient where PatientID = " . $patientID;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $getID = $row["PatientID"];
+                $getname = $row["firstname"]." ".$row["lastname"];
+                $getaddress = $row["street"].", ".$row["suburb"].", ".$row["city"];
+            }
+        }
+        $conn->close();
+        return array($getID, $getname, $getaddress);
+    }
+
+    public function medicationsForInvoice()
+    {
+
+    }
+
+    public function amountForInvoice()
+    {
+
+    }
+
+    public function allocatedDoctorForInvoice()
+    {
+
+    }
+
+    public function feeForInvoice()
+    {
+
+    }
+    // invoice end
 
     // admissions report start
     public function showAdmissions()
