@@ -179,7 +179,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Doctors: </span>
                     </div>
-                    <select class="form-control" id="getUpdateDoctors" name="id" required>
+                    <select class="form-control" id="getDeleteDoctors" name="id" required>
                         <option disabled selected hidden>Select a Doctor</option>
                     </select>
                 </div>
