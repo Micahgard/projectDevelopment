@@ -7,9 +7,7 @@ class Invoice
     public $description;
     public $patient;
     public $medication;
-    public $amount;
-    public $doctorname;
-    public $fee;
+    public $doctor;
 
     /**
      * Invoice constructor.
@@ -17,18 +15,14 @@ class Invoice
      * @param $description
      * @param $patient
      * @param $medication
-     * @param $amount
-     * @param $doctorname
-     * @param $fee
+     * @param $doctor
      */
-    public function __construct($AdmissionID, $description, $patient, $medication, $amount, $doctorname, $fee)
+    public function __construct($AdmissionID, $description, $patient, $medication, $doctor)
     {
         $this->AdmissionID = $AdmissionID;
         $this->description = $description;
         $this->patient = $patient;
         $this->medication = $medication;
-        $this->amount = $amount;
-        $this->doctorname = $doctorname;
-        $this->fee = $fee;
+        $this->doctor = $doctor;
     }
 }

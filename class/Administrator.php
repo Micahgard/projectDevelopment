@@ -4,7 +4,7 @@ include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
 include_once "Medication.php";
-include_once "Admission.php";
+include_once "Invoice.php";
 include_once "AdmissionsReport.php";
 include_once "PatientsReport.php";
 include_once "DoctorsReport.php";
@@ -63,7 +63,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new Invoice($row["AdmissionID"], $row["description"], $this->patientDetailsForInvoice($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new Invoice($row["AdmissionID"], $row["description"], $this->patientDetailsForInvoice($row["patientID"]), $this->medicationForInvoice($row["AdmissionID"]), $this->allocatedDoctorForInvoice($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -87,24 +87,36 @@ class Administrator
         return array($getID, $getname, $getaddress);
     }
 
-    public function medicationsForInvoice()
+    public function medicationForInvoice($admissionID)
     {
-
+        $conn = (new DB())->conn;
+        $sql = "select Medication.name, Medication.cost, Prescription.amount from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $result = $conn->query($sql);
+        $medications = array();
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $medication = $row["name"]."  ".$row["cost"]."  ".$row["amount"];
+                array_push($medications,$medication);
+            }
+        }
+        $conn->close();
+        return $medications;
     }
 
-    public function amountForInvoice()
+    public function allocatedDoctorForInvoice($admissionID)
     {
-
-    }
-
-    public function allocatedDoctorForInvoice()
-    {
-
-    }
-
-    public function feeForInvoice()
-    {
-
+        $conn = (new DB())->conn;
+        $sql = "select Doctor.lastname, Doctor.firstname, Allocation.fee from Doctor, Allocation, Admission where Doctor.DoctorID = Allocation.doctorID and Allocation.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $result = $conn->query($sql);
+        $doctors = array();
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $doctor = $row["firstname"]." ".$row["lastname"]."  ".$row["fee"];
+                array_push($doctors,$doctor);
+            }
+        }
+        $conn->close();
+        return $doctors;
     }
     // invoice end
 
