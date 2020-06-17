@@ -23,7 +23,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Senior Administrator</h1>
+            <div class="container">
+                <h1>Welcome Senior Administrator</h1>
             <?php
             break;
 
@@ -38,7 +39,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Assistant Administrator</h1>
+            <div class="container">
+                <h1>Welcome Assistant Administrator</h1>
             <?php
             break;
 
@@ -52,7 +54,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Facility Administrator</h1>
+            <div class="container">
+                <h1>Welcome Facility Administrator</h1>
             <?php
             break;
 
@@ -66,7 +69,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Pharmacy Administrator</h1>
+            <div class="container">
+                <h1>Welcome Pharmacy Administrator</h1>
             <?php
             break;
 
@@ -79,7 +83,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Research Administrator</h1>
+            <div class="container">
+                <h1>Welcome Research Administrator</h1>
             <?php
             break;
 
@@ -93,7 +98,8 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
-            <h1>Welcome Payroll Clerk</h1>
+            <div class="container">
+                <h1>Welcome Payroll Clerk</h1>
             <?php
             break;
     }
