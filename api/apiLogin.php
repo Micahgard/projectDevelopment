@@ -84,11 +84,7 @@ if (!empty($username) && !empty($password)) {
             echo 'Welcome pharmacy administrator';
             ?>
             <div class="block">
-                <p><a href="../pages/addMedication.php">Add Medication</a></p>
-                <p><a href="../pages/updateMedication.php">Update Medication</a></p>
-                <p><a href="../pages/deleteMedication.php">Delete Medication</a></p>
-                <p><a href="../pages/prescribeMedication.php">Prescribe Medication</a></p>
-                <p><a href="../pages/removePrescription.php">Remove Prescription</a></p>
+                <p><a href="../pages/allMedication.php">Medication</a></p>
             </div>
             <?php
             break;
