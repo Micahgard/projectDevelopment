@@ -8,8 +8,8 @@
 
 include_once "../class/Researchproject.php";
 
-if (isset($_POST['projectID'])) {
-    $id = $_POST['projectID'];
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
     $enddate = $_POST['enddate'];
     $outcome = $_POST['outcome'];
     $budget = $_POST['budget'];

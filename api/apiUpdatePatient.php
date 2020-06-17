@@ -8,8 +8,8 @@
 
 include_once "../class/Patient.php";
 
-if (isset($_POST['PatientID'])) {
-    $id = $_POST['PatientID'];
+if (isset($_POST['id'])) {
+    $id = $_POST['id'];
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $street = $_POST['street'];

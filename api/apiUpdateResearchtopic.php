@@ -8,8 +8,8 @@
 
 include_once "../class/Researchtopic.php";
 
-if (isset($_POST['topicID'])){
-    $id = $_POST['topicID'];
+if (isset($_POST['id'])){
+    $id = $_POST['id'];
     $description = $_POST['description'];
     $level = $_POST['level'];
     $topic = new Researchtopic($id, $description, $level);
