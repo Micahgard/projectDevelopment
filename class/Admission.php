@@ -54,14 +54,4 @@ class Admission
         }
         $this->dbconn->close();
     }
-
-    public function invoice()
-    {
-        $this->dbconn = (new DB())->conn;
-        if (!is_null($this->id)) {
-            $query = "UPDATE Admission SET status='$this->status' WHERE AdmissionID=$this->id";
-            mysqli_query($this->dbconn, $query);
-        }
-        $this->dbconn->close();
-    }
 }

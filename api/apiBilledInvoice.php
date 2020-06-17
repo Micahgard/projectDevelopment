@@ -6,11 +6,11 @@
  * Purpose: api for changing admission's status to billed
  */
 
-include_once "../class/Admission.php";
+include_once "../class/Invoice.php";
     $id = $_POST['id'];
     $status = "billed";
-    $admission = new Admission($id, $status);
-    $admission->invoice();
+    $invoice = new Billed($id, $status);
+    $invoice->invoice();
     $msg = "status changed to billed";
 
 $msg = json_encode($msg);

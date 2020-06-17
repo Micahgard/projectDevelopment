@@ -3,7 +3,7 @@
  * Author: Joel
  * Date: 13/06/2020
  * Version: 1.0
- * Purpose: api for getting data for admission's invoice
+ * Purpose: api for getting data for admission invoice
  */
 
 ini_set('display_errors', 1);

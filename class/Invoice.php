@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Author: Joel
+ * Date: 13/06/2020
+ * Version: 1.0
+ * Purpose: class for getting data for admission invoice
+ */
 
 class Invoice
 {

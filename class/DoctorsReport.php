@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Author: Joel
+ * Date: 12/06/2020
+ * Version: 1.0
+ * Purpose: class for doctors report
+ */
 
 class DoctorsReport
 {

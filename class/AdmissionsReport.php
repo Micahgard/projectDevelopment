@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Author: Joel
+ * Date: 10/06/2020
+ * Version: 1.0
+ * Purpose: class for admissions report
+ */
 
 class AdmissionsReport
 {
