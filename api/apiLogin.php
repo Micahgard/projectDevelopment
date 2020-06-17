@@ -1,5 +1,5 @@
 <?php
-
+include_once '../pages/head.php';
 include_once "../class/Administrator.php";
 
 $username = $_POST['username'];
@@ -14,30 +14,15 @@ if (!empty($username) && !empty($password)) {
             echo 'Welcome senior administrator';
             ?>
             <div class="block">
-                <p><a href="../pages/addPatient.php">1. Add Patient</a></p>
-                <p><a href="../pages/updatePatient.php">2. Update Patient</a></p>
-                <p><a href="../pages/deletePatient.php">3. Delete Patient</a></p>
-                <p><a href="../pages/patientsReport.php">4. Patients Report</a></p>
-                <p><a href="../pages/recordPayment.php">5. Record Payment</a></p>
-                <p><a href="../pages/addDoctor.php">6. Add Doctor</a></p>
-                <p><a href="../pages/updateDoctor.php">7. Update Doctor</a></p>
-                <p><a href="../pages/deleteDoctor.php">8. Delete Doctor</a></p>
+                <p><a href="../pages/allPatient.php">All Patient</a></p>
+                <p><a href="../pages/patientsReport.php">Patients Report</a></p>
+                <p><a href="../pages/recordPayment.php">Record Payment</a></p>
+                <p><a href="../pages/allDoctor.php">All Doctor</a></p>
                 <p><a href="../pages/doctorsReport.php">9. Doctors Report</a></p>
-                <p><a href="../pages/addAdmission.php">10. Add Admission</a></p>
-                <p><a href="../pages/updateAdmission.php">11. Update Admission</a></p>
-                <p><a href="../pages/deleteAdmission.php">12. Delete Admission</a></p>
+                <p><a href="../pages/allAdmission.php">All Admission</a></p>
                 <p><a href="../pages/admissionsReport.php">13. Admissions Report</a></p>
-                <p><a href="../pages/prescribeMedication.php">14. Prescribe Medication</a></p>
-                <p><a href="../pages/removePrescription.php">15. Remove Prescription</a></p>
-                <p><a href="../pages/addMedication.php">16. Add Medication</a></p>
-                <p><a href="../pages/updateMedication.php">17. Update Medication</a></p>
-                <p><a href="../pages/deleteMedication.php">18. Delete Medication</a></p>
-                <p><a href="../pages/produceInvoice.php">19. Produce Invoice</a></p>
-                <p><a href="../pages/allocateDoctor.php">20. Allocate doctor</a></p>
-                <p><a href="../pages/removeDoctor.php">21. Remove doctor</a></p>
-                <p><a href="../pages/addWard.php">22. Add Ward</a></p>
-                <p><a href="../pages/updateWard.php">23. Update Ward</a></p>
-                <p><a href="../pages/deleteWard.php">24. Delete Ward</a></p>
+                <p><a href="../pages/allMedication.php">All Medication</a></p>
+                <p><a href="../pages/allWard.php">All Ward</a></p>
                 <p><a href="../pages/closeAdmission.php">25. Close Admission</a></p>
                 <p><a href="../pages/addResearchproject.php">26. Add Research Project</a></p>
                 <p><a href="../pages/removeResearchproject.php">27. Remove Research Project</a></p>
@@ -84,11 +69,7 @@ if (!empty($username) && !empty($password)) {
             echo 'Welcome pharmacy administrator';
             ?>
             <div class="block">
-                <p><a href="../pages/addMedication.php">Add Medication</a></p>
-                <p><a href="../pages/updateMedication.php">Update Medication</a></p>
-                <p><a href="../pages/deleteMedication.php">Delete Medication</a></p>
-                <p><a href="../pages/prescribeMedication.php">Prescribe Medication</a></p>
-                <p><a href="../pages/removePrescription.php">Remove Prescription</a></p>
+                <p><a href="../pages/allMedication.php">Medication</a></p>
             </div>
             <?php
             break;
@@ -119,3 +100,5 @@ if (!empty($username) && !empty($password)) {
             break;
     }
 }
+
+include_once '../pages/foot.php';

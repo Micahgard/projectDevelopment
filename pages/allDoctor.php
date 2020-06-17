@@ -63,7 +63,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="text" maxlength="9" class="form-control" id="salary" name="salary" placeholder="Salary*" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="salary" name="salary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -88,6 +88,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateDoctors").val()) {
+                                $("#updateDoctorId").val(data[i].id);
                                 $("#updateLastname").val(data[i].lastname);
                                 $("#updateFirstname").val(data[i].firstname);
                                 $("#updateStreet").val(data[i].street);
@@ -118,6 +119,10 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <span class="input-group-text">Doctor Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updateDoctorId" name="updateDoctorId" placeholder="Doctor Id" readonly>
+                <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
                 </div>
                 <input type="text" maxlength="25" class="form-control" id="updateLastname" name="updateLastname" placeholder="Last Name" required>
@@ -130,31 +135,31 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Street Address:* </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="updateStreet" placeholder="Street Address" required>
+                <input type="text" maxlength="50" class="form-control" id="updateStreet" name="updateStreet" placeholder="Street Address" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Suburb:* </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateSuburb" placeholder="Suburb" required>
+                <input type="text" maxlength="20" class="form-control" id="updateSuburb" name="updateSuburb" placeholder="Suburb" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">City: </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateCity" placeholder="City">
+                <input type="text" maxlength="20" class="form-control" id="updateCity" name="updateCity" placeholder="City">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Phone Number: </span>
                 </div>
-                <input type="text" maxlength="15" class="form-control" id="updatePhone" placeholder="Phone Number">
+                <input type="text" maxlength="15" class="form-control" id="updatePhone" name="updatePhone" placeholder="Phone Number">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Speciality:* </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateSpeciality" placeholder="Speciality" required>
+                <input type="text" maxlength="20" class="form-control" id="updateSpeciality" name="updateSpeciality" placeholder="Speciality" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="text" maxlength="9" class="form-control" id="updateSalary" placeholder="Salary" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="updateSalary" name="updateSalary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -179,6 +184,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeleteDoctors").val()) {
+                                $("#deleteDoctorId").val(data[i].id);
                                 $("#deleteLastname").val(data[i].lastname);
                                 $("#deleteFirstname").val(data[i].firstname);
                                 $("#deleteStreet").val(data[i].street);
@@ -209,43 +215,47 @@
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
+                        <span class="input-group-text">Doctor Id: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deleteDoctorId" name="deleteDoctorId" placeholder="Doctor Id" readonly>
+                    <div class="input-group-prepend">
                         <span class="input-group-text">Last Name: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" title="Last Name" readonly>
+                    <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">First Name: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" title="First Name" readonly>
+                    <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Street Address: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteStreet" title="Street Address" readonly>
+                    <input type="text" class="form-control" id="deleteStreet" name="deleteStreet" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Suburb: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSuburb" readonly>
+                    <input type="text" class="form-control" id="deleteSuburb" name="deleteSuburb" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">City: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteCity" readonly>
+                    <input type="text" class="form-control" id="deleteCity" name="deleteCity" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Phone Number: </span>
                     </div>
-                    <input type="text" class="form-control" id="deletePhone" readonly>
+                    <input type="text" class="form-control" id="deletePhone" name="deletePhone" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Speciality: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSpeciality" readonly>
+                    <input type="text" class="form-control" id="deleteSpeciality" name="deleteSpeciality" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Salary: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSalary" readonly>
+                    <input type="text" class="form-control" id="deleteSalary" name="deleteSalary" readonly>
                 </div>
                 <i class="grey">* Required Fields</i>
                 <div class="d-flex justify-content-around">

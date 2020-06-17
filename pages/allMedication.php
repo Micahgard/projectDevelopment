@@ -25,29 +25,23 @@
     <div id="addMedication" class="container tab-pane active"><br>
         <form action="../api/apiAddMedication.php" method="post">
             <h2>Add Medication</h2>
-            <table>
-                <tr>
-                    <td><label>Medications:<b class="red">*</b> </label></td>
-                    <td><select name="medications" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="name" name="name" size="30" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Cost:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="cost" name="cost" size="10" required></td>
-                </tr>
-
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Add Medication"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Cost:* </span>
+                </div>
+                <input type="number" min="1" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" required>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Add Medication"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="updateMedication" class="container tab-pane fade"><br>
@@ -81,31 +75,35 @@
         </script>
         <form action="../api/apiUpdateMedication.php" method="post">
             <h2>Update Medication</h2>
-            <table>
-                <tr>
-                    <td><label>Medications:<b class="red">*</b> </label></td>
-                    <td><select id="getUpdateMedications" name="id" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Medication Id:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateMedicationId" name="updateMedicationId" size="30" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateName" name="updateName" size="10" required></td>
-                </tr>
-                <tr>
-                    <td><label>Cost:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateCost" name="updateCost" size="10" required></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Medication"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Medications:* </span>
+                </div>
+                <select class="form-control" id="getUpdateMedications" name="id" required>
+                    <option disabled selected hidden>Select a Medication</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Medication Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updateMedicationId" name="updateMedicationId" placeholder="Medication Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="updateName" name="updateName" placeholder="Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Cost:* </span>
+                </div>
+                <input type="number" min="1" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="updateCost" required>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Update Medication"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="deleteMedication" class="container tab-pane fade"><br>
@@ -139,31 +137,35 @@
         </script>
         <form action="../api/apiDeleteMedication.php" method="get">
             <h2>Delete Medication</h2>
-            <table>
-                <tr>
-                    <td><label>Medications:<b class="red">*</b> </label></td>
-                    <td><select id="getDeleteMedications" name="id" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Medication Id:</label></td>
-                    <td><input type="text" id="deleteMedicationId" name="deleteMedicationId" size="30" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Name:</label></td>
-                    <td><input type="text" id="deleteName" name="deleteName" size="10" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Cost:</label></td>
-                    <td><input type="text" id="deleteCost" name="deleteCost" size="10" readonly></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Delete Medication"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Medications:* </span>
+                </div>
+                <select class="form-control" id="getDeleteMedications" name="id" required>
+                    <option disabled selected hidden>Select a Medication</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Medication Id: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteMedicationId" name="deleteMedicationId" placeholder="Medication Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name: </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="deleteName" name="deleteName" placeholder="Name" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Cost: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteCost" name="deleteCost" placeholder="Cost" readonly>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Delete Medication"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="prescribeMedication" class="container tab-pane fade"><br>

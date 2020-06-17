@@ -35,7 +35,6 @@
                 </div>
                 <input type="number" min="1" max="20" class ="form-control" id="capacity" name="capacity" required>
             </div>
-            </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Add Ward"/>
@@ -102,7 +101,6 @@
                     <span class="input-group-text">Capacity:* </span>
                 </div>
                 <input type="number" min="1" max="20" class ="form-control" id="updateCapacity" name="updateCapacity" required>
-                </div>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -169,9 +167,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Capacity: </span>
                 </div>
-                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" readonly>
+                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" placeholder="Capacity" readonly>
                 </div>
-            </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Ward"/>

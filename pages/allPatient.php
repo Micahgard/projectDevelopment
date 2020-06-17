@@ -22,53 +22,51 @@
     <div id="addPatient" class="container tab-pane active"><br>
         <form action="../api/apiAddPatient.php" method="post">
             <h2>Add Patient</h2>
-            <table>
-                <tr>
-                    <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text"  name="lastname" size="25" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="firstname" name="firstname" size="25" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="street" name="street" size="50" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="suburb" name="suburb" size="20" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="city" name="city" size="20" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Email Address:<b class="red">*</b> </label></td>
-                    <td><input type="email" id="email" name="email" size="30" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="phone" name="phone" size="15" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Insurance Code: </label></td>
-                    <td><input type="text" id="insurcode" name="insurcode" size="10"></td>
-                </tr>
-
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Add Patient"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="firstname" name="firstname" placeholder="First Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Street Address:* </span>
+                </div>
+                <input type="text" maxlength="50" class="form-control" id="street" name="street" placeholder="Street Address" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Suburb:* </span>
+                </div>
+                <input type="text" maxlength="20" class="form-control" id="suburb" name="suburb" placeholder="Suburb" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">City:* </span>
+                </div>
+                <input type="text" maxlength="20" class="form-control" id="city" name="city" placeholder="City" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone:* </span>
+                </div>
+                <input type="text" maxlength="15" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Insurance Code: </span>
+                </div>
+                <input type="text" maxlength="8" class="form-control" id="insurcode" name="insurcode" placeholder="Insurance Code">
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Add Patient"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="updatePatient" class="container tab-pane fade"><br>
@@ -87,6 +85,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdatePatients").val()) {
+                                $("#updatePatientId").val(data[i].id);
                                 $("#updateLastname").val(data[i].lastname);
                                 $("#updateFirstname").val(data[i].firstname);
                                 $("#updateStreet").val(data[i].street);
@@ -107,53 +106,63 @@
         </script>
         <form action="../api/apiUpdatePatient.php" method="post">
             <h2>Update Patient</h2>
-            <table>
-                <tr>
-                    <td><label>Patients:<b class="red">*</b> </label></td>
-                    <td><select name="getUpdatePatients" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateLastname" name="updateLastname" size="25" required></td>
-                </tr>
-                <tr>
-                    <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateFirstname" name="updateFirstname" size="25" required></td>
-                </tr>
-                <tr>
-                    <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateStreet" name="updateStreet" size="50" required></td>
-                </tr>
-                <tr>
-                    <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateSuburb" name="updateSuburb" size="20" required></td>
-                </tr>
-                <tr>
-                    <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateCity" name="updateCity" size="20" required></td>
-                </tr>
-                <tr>
-                    <td><label>Email Address:<b class="red">*</b> </label></td>
-                    <td><input type="email" id="updateEmail" name="updateEmail" size="30" required></td>
-                </tr>
-                <tr>
-                    <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updatePhone" name="updatePhone" size="15" required></td>
-                </tr>
-
-                <tr>
-                    <td><label>Insurance Code: </label></td>
-                    <td><input type="text" id="updateInsurcode" name="updateInsurcode" size="10"></td>
-                </tr>
-
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Patient"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patients:* </span>
+                </div>
+                <select class="form-control" id="getUpdatePatients" name="id" required>
+                    <option disabled selected hidden>Select a Patient</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updatePatientId" name="updatePatientId" placeholder="Patient Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="updateLastname" name="updateLastname" placeholder="Last Name" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="updateFirstname" name="updateFirstname" placeholder="First Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Street Address:* </span>
+                </div>
+                <input type="text" maxlength="50" class="form-control" id="updateStreet" name="updateStreet" placeholder="Street Address" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Suburb:* </span>
+                </div>
+                <input type="text" maxlength="20" class="form-control" id="updateSuburb" name="updateSuburb" placeholder="Suburb" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">City:* </span>
+                </div>
+                <input type="text" maxlength="20" class="form-control" id="updateCity" name="updateCity" placeholder="City" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="updateEmail" name="updateEmail" placeholder="Email Address" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone:* </span>
+                </div>
+                <input type="text" maxlength="15" class="form-control" id="updatePhone" name="updatePhone" placeholder="Phone Number" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Insurance Code: </span>
+                </div>
+                <input type="text" maxlength="8" class="form-control" id="updateInsurcode" name="updateInsurcode" placeholder="Insurance Code">
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Update Patient"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="deletePatient" class="container tab-pane fade"><br>
@@ -172,6 +181,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeletePatients").val()) {
+                                $("#deletePatientId").val(data[i].id);
                                 $("#deleteLastname").val(data[i].lastname);
                                 $("#deleteFirstname").val(data[i].firstname);
                                 $("#deleteStreet").val(data[i].street);
@@ -192,52 +202,63 @@
         </script>
         <form action="../api/apiDeletePatient.php" method="get">
             <h2>Delete Patient</h2>
-            <table>
-                <tr>
-                    <td><label>Patients:<b class="red">*</b> </label></td>
-                    <td><select name="getDeletePatients" class="custom-select" required>
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Last Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteLastname"  name="deleteLastname" size="25" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>First Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteFirstname" name="deleteFirstname" size="25" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Street Address:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteStreet" name="deleteStreet" size="50" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Suburb:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteSuburb" name="deleteSuburb" size="20" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>City:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deleteCity" name="deleteCity" size="20" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Email Address:<b class="red">*</b> </label></td>
-                    <td><input type="email" id="deleteEmail" name="deleteEmail" size="30" readonly></td>
-                </tr>
-                <tr>
-                    <td><label>Phone Number:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="deletePhone" name="deletePhone" size="15" readonly></td>
-                </tr>
-
-                <tr>
-                    <td><label>Insurance Code: </label></td>
-                    <td><input type="text" id="deleteInsurcode" name="deleteInsurcode" size="10" readonly></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Delete Patient"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patients:* </span>
+                </div>
+                <select class="form-control" id="getDeletePatients" name="id" required>
+                    <option disabled selected hidden>Select a Patient</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Id: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePatientId" name="deletePatientId" placeholder="Patient Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" placeholder="Last Name" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" placeholder="First Name" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Street Address: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteStreet" name="deleteStreet" placeholder="Street Address" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Suburb: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteSuburb" name="deleteSuburb" placeholder="Suburb" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">City: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteCity" name="deleteCity" placeholder="City" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Email: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteEmail" name="deleteEmail" placeholder="Email Address" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePhone" name="deletePhone" placeholder="Phone Number" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Insurance Code: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteInsurcode" name="deleteInsurcode" placeholder="Insurance Code" readonly>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Delete Patient"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="recordPayment" class="container tab-pane fade"><br>

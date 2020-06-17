@@ -67,16 +67,6 @@
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
                 <input type="date" maxlength="10" class="form-control" id="admissiondate" name="admissiondate" placeholder="Admission Date" title="Admission Date" required>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Status:* </span>
-                </div>
-                <select class="form-control" id="status" name="status" required>
-                    <option disabled selected hidden>Select a Status</option>
-                    <option value="current">Current</option>
-                    <option value="complete">Complete</option>
-                    <option value="billed">Billed</option>
-                    <option value="closed">Closed</option>
-                </select>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -172,7 +162,7 @@
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getUpdateAdmissions" name="id" required>
-                    <option disabled selected hidden>Select a Doctor</option>
+                    <option disabled selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -197,8 +187,8 @@
                     <option disabled selected hidden>Select a Status</option>
                     <option value="current">Current</option>
                     <option value="complete">Complete</option>
-                    <option value="billed">Billed</option>
-                    <option value="closed">Closed</option>
+                    <option value="billed" hidden>Billed</option>
+                    <option value="closed" hidden>Closed</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -219,13 +209,129 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Admission"/>
+                <input class="btn btn-outline-primary" type="submit" value="Update Admission"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
         </form>
     </div>
     <div id="deleteAdmission" class="container tab-pane fade"><br>
-
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiAllPatients.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        $("#getDeleteAdmissions").change(function() {
+                            var i = 0;
+                            while (i < data.length) {
+                                if (data[i].id == $("#getDeleteAdmissions").val()) {
+                                    $("#deletePatientLastname").val(data[i].lastname);
+                                    $("#deletePatientFirstname").val(data[i].firstname);
+                                }
+                                i++;
+                            }
+                        });
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiAllWards.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        let i = 0;
+                        while (i < data.length){
+                            $("#getDeleteWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
+                            i = i + 1;
+                        }
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiAllAdmissions.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        let i = 0;
+                        while (i < data.length){
+                            $("#getDeleteAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                            i = i + 1;
+                        }
+                        $("#getDeleteAdmissions").change(function() {
+                            var i = 0;
+                            while (i < data.length) {
+                                if (data[i].id == $("#getDeleteAdmissions").val()) {
+                                    $("#deleteAdmissionId").val(data[i].id);
+                                    $("#deleteDescription").val(data[i].description);
+                                    $("#deleteAdmissiondate").val(data[i].admissiondate);
+                                }
+                                i++;
+                            }
+                        });
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+            });
+        </script>
+        <form action="../api/apiDeleteAdmission.php" method="get">
+            <h2>Update Admission</h2>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admissions:* </span>
+                </div>
+                <select class="form-control" id="getDeleteAdmissions" name="id" required>
+                    <option disabled selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Id: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteAdmissionId" name="deleteAdmissionId" placeholder="Admission Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Description: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteDescription" name="deleteDescription" placeholder="Description*" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Date: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteAdmissiondate" name="deleteAdmissiondate" placeholder="Admission Date" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Status: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteStatus" name="deleteStatus" placeholder="Status" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Last Name: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePatientLastname" name="deletePatientLastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePatientFirstname" name="deletePatientFirstname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Ward Name: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteWardName" name="deleteWardName" readonly>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Delete Admission"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
+        </form>
     </div>
 
     <div id="closeAdmission" class="container tab-pane fade"><br>
