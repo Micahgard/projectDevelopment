@@ -169,7 +169,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Capacity: </span>
                 </div>
-                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" readonly>
+                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" placeholder="Capacity" readonly>
                 </div>
             </div>
             <i class="grey">* Required Fields</i>
