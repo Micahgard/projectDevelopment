@@ -24,7 +24,7 @@
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
         <form action="../api/apiAddDoctor.php" method="post">
-            <h2>Add Doctor</h2>
+            <h1>Add Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
@@ -108,7 +108,7 @@
             });
         </script>
         <form action="../api/apiUpdateDoctor.php" method="post">
-            <h2>Update Doctor</h2>
+            <h1>Update Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctors:* </span>
@@ -204,7 +204,7 @@
             });
         </script>
             <form action="../api/apiDeleteDoctor.php" method="get">
-                <h2>Delete Doctor</h2>
+                <h1>Delete Doctor</h1>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Doctors:* </span>

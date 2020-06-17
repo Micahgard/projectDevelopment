@@ -55,7 +55,7 @@
             });
         </script>
         <form action="../api/apiAddAdmission.php" method="post">
-            <h2>Add Admission</h2>
+            <h1>Add Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description:* </span>
@@ -156,7 +156,7 @@
             });
         </script>
         <form action="../api/apiUpdateAdmission.php" method="post">
-            <h2>Update Admission</h2>
+            <h1>Update Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
@@ -281,7 +281,7 @@
             });
         </script>
         <form action="../api/apiDeleteAdmission.php" method="get">
-            <h2>Update Admission</h2>
+            <h1>Update Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
