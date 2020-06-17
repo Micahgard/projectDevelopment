@@ -10,7 +10,6 @@ if (!empty($username) && !empty($password)) {
     $login->login($username, $password);
     switch($login->role) {
         case 'senior':
-            echo 'Welcome Senior Administrator';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -24,11 +23,11 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Senior Administrator</h1>
             <?php
             break;
 
         case 'assistant':
-            echo 'Welcome Assistant Administrator';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -39,11 +38,11 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Assistant Administrator</h1>
             <?php
             break;
 
         case 'facility':
-            echo 'Welcome Facility Administrator';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -53,11 +52,11 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Facility Administrator</h1>
             <?php
             break;
 
         case 'pharmacy':
-            echo 'Welcome Pharmacy Administrator';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -67,11 +66,11 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Pharmacy Administrator</h1>
             <?php
             break;
 
         case 'research':
-            echo 'Welcome Research Administrator';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -80,11 +79,11 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Research Administrator</h1>
             <?php
             break;
 
         case 'clerk':
-            echo 'Welcome Payroll Clerk';
             ?>
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
@@ -94,6 +93,7 @@ if (!empty($username) && !empty($password)) {
                     </li>
                 </ul>
             </nav>
+            <h1>Welcome Payroll Clerk</h1>
             <?php
             break;
     }
