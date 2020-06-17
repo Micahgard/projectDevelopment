@@ -16,16 +16,5 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
-        <ul class="navbar-nav">
-            <li class="nav-item" style="display: none">
-                <a class="btn btn-outline-light" href="login.php">HOME</a>
-                <a class="btn btn-outline-light" href="allDoctor.php">DOCTOR</a>
-                <a class="btn btn-outline-light" href="allAdmission.php">ADMISSION</a>
-                <a class="btn btn-outline-light" href="allPatient.php">PATIENT</a>
-                <a class="btn btn-outline-light" href="allMedication.php">MEDICATION</a>
-                <a class="btn btn-outline-light" href="allWard.php">WARD</a>
-            </li>
-        </ul>
-    </nav>
+
     <div class="container">
