@@ -9,59 +9,49 @@
             dataType: "JSON",
             success: function (data) {
                 i = 0;
-                while (i < data.length){
-                    $("#admission").append("<option value='"+data[i].AdmissionID+"'>"+data[i].AdmissionID+" "+data[i].description+"</option>");
+                while (i < data.length) {
+                    $("#admission").append("<option value='" + data[i].AdmissionID + "'>" + data[i].AdmissionID + " " + data[i].description + "</option>");
                     i++;
                 }
 
-                $("#invoice").append("<table><tr>");
-                $("#invoice").append("<td>Patient ID: </td><td>" + data[i].patient + " " "</td>");
-                $("#invoice").append
+                $("#admission").change(function() {
+                    i = 0;
+                        while (i < data.length) {
+                        if (data[i].AdmissionID == $("#admission").val()) {
+                            $("#invoice").html("<table>");
+                            $("#invoice").append("<tr><td>Patient ID:</td><td>" + data[i].patient.id + "</td>" +
+                                "<td>Patient Name:</td><td>" + data[i].patient.name + "</td></tr>");
+                            $("#invoice").append("<tr><td>Patient Address:</td><td>" + data[i].patient.address + "</td></tr>");
+                            $("#invoice").append("<tr style='height: 20px'></tr>");
 
+                            m = 0;
+                            subtotal = 0;
+                            while (m < data[i].medication.length) {
+                                $("#invoice").append("<tr><td>Medication Name:</td><td>" + data[i].medication[m].name + "</td>" +
+                                    "<td>Medication Cost:</td><td>$" + data[i].medication[m].cost + "</td>" +
+                                    "<td>Prescribed Quantity:</td><td>" + data[i].medication[m].amount + "</td></tr>");
+                                subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
+                                m++;
+                            }
+                            $("#invoice").append("<tr style='height: 20px'></tr>");
 
+                            d = 0;
+                            fee = 0;
+                            while (d < data[i].doctor.length) {
+                                $("#invoice").append("<tr><td>Doctor Name:</td><td>" + data[i].doctor[d].name + "</td>" +
+                                    "<td>Fee:</td><td>$" + data[i].doctor[d].fee + "</td></tr>");
+                                fee += parseInt(data[i].doctor[d].fee);
+                                d++;
+                            }
+                            $("#invoice").append("<tr style='height: 20px'></tr>");
 
-
-
-                // i = 0;
-                // while (i < data.length) {
-                //     if (data[i].AdmissionID == $("#Admission").val()) {
-                //
-                //     }
-                //
-                //
-                //
-                //
-                //
-                // }
-                //
-                //     var i = 0;
-                //     while (i < data.length) {
-                //         if (data[i].AdmissionID == $("#getAdmission").val()) {
-                //             $("#getPatient").val(data[i].patient);
-                //             $("#getMedication").val(data[i].medication[0].name);
-                //             $("#getDoctor").val(data[i].doctor);
-                //
-                //             m = 0;
-                //             subtotal = 0;
-                //             while (m < data[i].medication.length) {
-                //                subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
-                //                m++;
-                //             }
-                //
-                //             d = 0;
-                //             fee = 0;
-                //             while (d < data[i].doctor.length) {
-                //                 fee += parseInt(data[i].doctor[d][1]);
-                //                 d++;
-                //             }
-                //
-                //             due = subtotal + fee;
-                //
-                //             $("#due").val(subtotal);
-                //         }
-                //         i++;
-                //     }
-                // });
+                            due = subtotal + fee;
+                            $("#invoice").append("<tr><td>Total Due:</td><td>" + due + "</td></tr>");
+                            $("#invoice").append("</table>");
+                        }
+                        i++;
+                    }
+                });
             },
             error: function () {
                 alert("Not connected");
@@ -83,7 +73,8 @@
                 </select>
             </div>
 
-            <div id="invoice"></div>
+            <div id="invoice">
+            </div>
         </form>
     </div>
 </div>
