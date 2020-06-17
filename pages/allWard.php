@@ -59,6 +59,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateWards").val()) {
+                                $("#udpateWardId").val(data[i].id);
                                 $("#udpateName").val(data[i].name);
                                 $("#updateLocation").val(data[i].location);
                                 $("#updateCapacity").val(data[i].capacity);
@@ -74,39 +75,40 @@
         </script>
         <form action="../api/apiUpdateWard.php" method="post">
             <h2>Update Wards</h2>
-            <table>
-                <tr>
-                    <td><label>Wards:<b class="red">*</b> </label></td>
-                    <td><select name="getUpdateWards" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Name:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="udpateName" name="udpateName" size="25" required></td>
-                </tr>
-                <tr>
-                    <td><label>Location:<b class="red">*</b> </label></td>
-                    <td><input type="text" id="updateLocation" name="updateLocation" size="25" required></td>
-                </tr>
-                <tr>
-                    <td><label>Capacity:<b class="red">*</b> </label></td>
-                    <td><select id="updateCapacity" name="updateCapacity"></select>
-                        <?php
-                        $i = 1;
-                        while ($i<=20){
-                            echo "<option value='".$i."'>".$i."</option>";
-                            $i = $i + 1;
-                        }
-                        ?>
-                        </select></td>
-                </tr>
-                <tr><td><i class="red">* Required Fields</i></td></tr>
-                <tr>
-                    <td><input class="btn btn-outline-primary" type="submit" value="Update Ward"/></td>
-                    <td><a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a></td>
-                </tr>
-            </table>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Wards:* </span>
+                </div>
+                <select class="form-control" id="getUpdateWards" name="id" required>
+                    <option disabled selected hidden>Select a Ward</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Ward Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updateWardId" name="updateWardId" placeholder="Ward Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name:* </span>
+                </div>
+                <input type="text" maxlength="20" class="form-control" id="updateName" name="updateName" placeholder="Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Location:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="updateLocation" name="updateLocation" placeholder="Location" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Capacity:* </span>
+                </div>
+                <input type="number" min="1" max="20" class ="form-control" id="updateCapacity" name="updateCapacity" required>
+                </div>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Update Ward"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
         </form>
     </div>
     <div id="deleteWard" class="container tab-pane fade"><br>
