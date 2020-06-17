@@ -63,7 +63,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="number" min="20000" max="200000" class ="form-control" id="salary" name="salary" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="salary" name="salary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -159,7 +159,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="number" min="20000" max="200000" class ="form-control" id="updateSalary" name="updateSalary" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="updateSalary" name="updateSalary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
