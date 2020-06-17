@@ -11,8 +11,9 @@
                 i = 0;
                 while (i < data.length){
                     $("#getAdmission").append("<option value='"+data[i].AdmissionID+"'>"+data[i].AdmissionID+" "+data[i].description+"</option>");
-                    i = i+1;
+                    i++;
                 }
+
                 $("#getAdmission").change(function() {
                     var i = 0;
                     while (i < data.length) {
@@ -20,6 +21,21 @@
                             $("#getPatient").val(data[i].patient);
                             $("#getMedication").val(data[i].medication);
                             $("#getDoctor").val(data[i].doctor);
+
+                            m = 0;
+                            cost = 0;
+                            while (m < 2) {
+                               cost += (data[i].medication[m][1]) * (data[i].medication[m][2]);
+                               m++;
+                            }
+
+                            d = 0;
+                            fee = 0;
+                            while (d < 2) {
+                                fee += (data[i].doctor[d][1]) * (data[i].medication[m][2]);
+                            }
+
+                            $("#medi").val(cost);
                         }
                         i++;
                     }
@@ -41,11 +57,12 @@
             </select></td>
     </tr>
     <tr><td><label>Patient Details: </label></td></tr>
-    <tr><td><input type="text" id="getPatient" readonly></td><tr>
+    <tr><td><input type="text" id="getPatient" style="width: 500px"></td><tr>
     <tr><td><label>Prescribed Medications: </label></td></tr>
-    <tr><td><input type="text" id="getMedication" readonly></td><tr>
+    <tr><td><input type="text" id="getMedication" style="width: 500px"></td><tr>
     <tr><td><label>Allocated Doctors: </label></td></tr>
-    <tr><td><input type="text" id="getDoctor" readonly></td><tr>
+    <tr><td><input type="text" id="getDoctor" style="width: 500px"></td><tr>
+    <tr><td><input type="text" id="medi" style="width: 500px"></td><tr>
 </table>
 
 <?php include_once 'foot.php'; ?>
