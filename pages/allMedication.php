@@ -36,7 +36,6 @@
                     <span class="input-group-text">Cost:* </span>
                 </div>
                 <input type="number" min="1" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" required>
-                </div>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
