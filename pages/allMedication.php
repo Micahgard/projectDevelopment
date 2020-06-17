@@ -25,13 +25,25 @@
     <div id="addMedication" class="container tab-pane active"><br>
         <form action="../api/apiAddMedication.php" method="post">
             <h2>Add Medication</h2>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Name:* </span>
+                </div>
+                <input type="text" maxlength="30" class="form-control" id="name" name="name" placeholder="Name" required>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Cost:* </span>
+                </div>
+                <input type="number" min="1" max="9999.99" step=".01" class="form-control" id="cost" name="cost" required>
+                </div>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Add Medication"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
             <table>
-                <tr>
-                    <td><label>Medications:<b class="red">*</b> </label></td>
-                    <td><select name="medications" class="custom-select">
-                            <option></option>
-                        </select></td>
-                </tr>
                 <tr>
                     <td><label>Name:<b class="red">*</b> </label></td>
                     <td><input type="text" id="name" name="name" size="30" required></td>

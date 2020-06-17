@@ -88,6 +88,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateDoctors").val()) {
+                                $("#updateDoctorId").val(data[i].id);
                                 $("#updateLastname").val(data[i].lastname);
                                 $("#updateFirstname").val(data[i].firstname);
                                 $("#updateStreet").val(data[i].street);
@@ -117,6 +118,10 @@
                 </select>
             </div>
             <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doctor Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updateDoctorId" name="updateDoctorId" placeholder="Doctor Id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
                 </div>
@@ -179,6 +184,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeleteDoctors").val()) {
+                                $("#deleteDoctorId").val(data[i].id);
                                 $("#deleteLastname").val(data[i].lastname);
                                 $("#deleteFirstname").val(data[i].firstname);
                                 $("#deleteStreet").val(data[i].street);
@@ -208,6 +214,10 @@
                     </select>
                 </div>
                 <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Doctor Id: </span>
+                    </div>
+                    <input type="text" class="form-control" id="deleteDoctorId" name="deleteDoctorId" placeholder="Doctor Id" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Last Name: </span>
                     </div>

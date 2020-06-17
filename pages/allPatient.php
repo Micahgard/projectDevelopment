@@ -85,6 +85,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdatePatients").val()) {
+                                $("#updatePatientId").val(data[i].id);
                                 $("#updateLastname").val(data[i].lastname);
                                 $("#updateFirstname").val(data[i].firstname);
                                 $("#updateStreet").val(data[i].street);
@@ -114,6 +115,10 @@
                 </select>
             </div>
             <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Id: </span>
+                </div>
+                <input type="text" class="form-control" id="updatePatientId" name="updatePatientId" placeholder="Patient Id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
                 </div>
@@ -176,6 +181,7 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeletePatients").val()) {
+                                $("#deletePatientId").val(data[i].id);
                                 $("#deleteLastname").val(data[i].lastname);
                                 $("#deleteFirstname").val(data[i].firstname);
                                 $("#deleteStreet").val(data[i].street);
@@ -206,37 +212,41 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Last Name:* </span>
+                    <span class="input-group-text">Patient Id: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePatientId" name="deletePatientId" placeholder="Patient Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" placeholder="Last Name" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">First Name:* </span>
+                    <span class="input-group-text">First Name: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" placeholder="First Name" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Street Address:* </span>
+                    <span class="input-group-text">Street Address: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteStreet" name="deleteStreet" placeholder="Street Address" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Suburb:* </span>
+                    <span class="input-group-text">Suburb: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteSuburb" name="deleteSuburb" placeholder="Suburb" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">City:* </span>
+                    <span class="input-group-text">City: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteCity" name="deleteCity" placeholder="City" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Email:* </span>
+                    <span class="input-group-text">Email: </span>
                 </div>
                 <input type="text" class="form-control" id="deleteEmail" name="deleteEmail" placeholder="Email Address" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Phone:* </span>
+                    <span class="input-group-text">Phone: </span>
                 </div>
                 <input type="text" class="form-control" id="deletePhone" name="deletePhone" placeholder="Phone Number" readonly>
                 <div class="input-group-prepend">
