@@ -18,7 +18,7 @@
 <div class="tab-content">
     <div id="addWard" class="container tab-pane active"><br>
         <form action="../api/apiAddWard.php" method="post">
-            <h2>Add Ward</h2>
+            <h1>Add Ward</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
@@ -73,7 +73,7 @@
             });
         </script>
         <form action="../api/apiUpdateWard.php" method="post">
-            <h2>Update Wards</h2>
+            <h1>Update Wards</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Wards:* </span>
@@ -140,7 +140,7 @@
             });
         </script>
         <form action="../api/apiDeleteWard.php" method="get">
-            <h2>Delete Wards</h2>
+            <h1>Delete Wards</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Wards:* </span>

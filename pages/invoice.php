@@ -51,7 +51,7 @@
     });
 </script>
 
-<h2>Produce Invoice</h2>
+<h1>Produce Invoice</h1>
 <table>
     <tr>
         <td><label>Admission: </label></td>
