@@ -333,9 +333,69 @@
             </div>
         </form>
     </div>
-
     <div id="closeAdmission" class="container tab-pane fade"><br>
-
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiAllAdmissions.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        let i = 0;
+                        while (i < data.length){
+                            $("#getCloseAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                            i = i + 1;
+                        }
+                        $("#getCloseAdmissions").change(function() {
+                            var i = 0;
+                            while (i < data.length) {
+                                if (data[i].id == $("#getCloseAdmissions").val()) {
+                                    $("#closeAdmissionId").val(data[i].id);
+                                    $("#closeDescription").val(data[i].description);
+                                    $("#closeAdmissiondate").val(data[i].admissiondate);
+                                }
+                                i++;
+                            }
+                        });
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+            });
+        </script>
+        <form action="../api/apiCloseAdmission.php" method="post">
+            <h1>Close Admission</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Billed Admissions (That Have Payments):* </span>
+                </div>
+                <select class="form-control" id="getCloseAdmissions" name="id" required>
+                    <option disabled selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Id: </span>
+                </div>
+                <input type="text" class="form-control" id="closeAdmissionId" name="closeAdmissionId" placeholder="Admission Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Date: </span>
+                </div>
+                <input type="date" class="form-control" id="closeAdmissiondate" name="admissiondate" placeholder="Admission Date" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Description: </span>
+                </div>
+                <input type="text" class="form-control" id="closeDescription" name="closeDescription" placeholder="Description" readonly>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Close Admission"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
+        </form>
     </div>
 </div>
 <?php include_once 'foot.php';?>
