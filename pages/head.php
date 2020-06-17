@@ -16,4 +16,3 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-
