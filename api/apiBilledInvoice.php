@@ -6,7 +6,7 @@
  * Purpose: api for changing admission's status to billed
  */
 
-include_once "../class/Invoice.php";
+include_once "../class/Billed.php";
     $id = $_POST['id'];
     $status = "billed";
     $invoice = new Billed($id, $status);
