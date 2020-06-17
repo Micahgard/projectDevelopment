@@ -98,7 +98,7 @@ class Administrator
                 $getname = $row["name"];
                 $getcost = $row["cost"];
                 $getamount = $row["amount"];
-                $medication = array($getname, $getcost, $getamount);
+                $medication = array("name"=>$getname, "cost"=>$getcost, "amount"=>$getamount);
                 array_push($medications,$medication);
             }
         }
