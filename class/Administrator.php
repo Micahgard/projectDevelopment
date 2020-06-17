@@ -95,7 +95,11 @@ class Administrator
         $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
-                $medication = $row["name"]."  ".$row["cost"]."  ".$row["amount"];
+//                $medication = $row["name"]."  ".$row["cost"]."  ".$row["amount"];
+                $getname = $row["name"];
+                $getcost = $row["cost"];
+                $getamount = $row["amount"];
+                $medication = array($getname, $getcost, $getamount);
                 array_push($medications,$medication);
             }
         }
