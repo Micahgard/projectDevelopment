@@ -24,18 +24,21 @@
 
                             m = 0;
                             cost = 0;
-                            while (m < 2) {
+                            while (m < data[i].medication.length) {
                                cost += (data[i].medication[m][1]) * (data[i].medication[m][2]);
                                m++;
                             }
 
                             d = 0;
                             fee = 0;
-                            while (d < 2) {
-                                fee += (data[i].doctor[d][1]) * (data[i].medication[m][2]);
+                            while (d < data[i].doctor.length) {
+                                fee += parseInt(data[i].doctor[d][1]);
+                                d++;
                             }
 
-                            $("#medi").val(cost);
+                            due = cost + fee;
+
+                            $("#due").val(due);
                         }
                         i++;
                     }
@@ -62,7 +65,8 @@
     <tr><td><input type="text" id="getMedication" style="width: 500px"></td><tr>
     <tr><td><label>Allocated Doctors: </label></td></tr>
     <tr><td><input type="text" id="getDoctor" style="width: 500px"></td><tr>
-    <tr><td><input type="text" id="medi" style="width: 500px"></td><tr>
+    <tr><td><label>Due: </label></td></tr>
+    <tr><td><input type="text" id="due" style="width: 500px"></td><tr>
 </table>
 
 <?php include_once 'foot.php'; ?>
