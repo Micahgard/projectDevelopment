@@ -297,6 +297,8 @@
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
                                 $("#allocateDescription").val(data[i].description);
+                                $("#allocatePatientLastname").val(data[i].lastname);
+                                $("#allocatePatientFirstname").val(data[i].firstname);
                             }
                             i++;
                         }
