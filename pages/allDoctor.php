@@ -265,7 +265,65 @@
             </form>
     </div>
     <div id="allocateDoctor" class="container tab-pane fade"><br>
-
+        <script>
+        </script>
+        <form action="../api/apiAllocateDoctor.php" method="post">
+            <h1>Allocate Doctor</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admissions:* </span>
+                </div>
+                <select class="form-control" id="getAllocateAdmissions" name="id" required>
+                    <option disabled selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Id: </span>
+                </div>
+                <input type="text" class="form-control" id="allocateAdmissionId" name="allocateAdmissionId" placeholder="Admission Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Description:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="allocadeDescription" name="allocadeDescription" placeholder="Description" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Last Name:* </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="allocatePatientLastname" name="allocatePatientLastname" placeholder="Patient Last Name" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name:* </span>
+                </div>
+                <input type="text" maxlength="50" class="form-control" id="allocatePatientFirstname" name="allocatePatientFirstname" placeholder="Patient First Name" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doctors:* </span>
+                </div>
+                <select class="form-control" id="getAllocateDoctors" name="id" required>
+                    <option disabled selected hidden>Select a Doctor</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Fee:* </span>
+                </div>
+                <input type="number" min="1" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="allocateFee" required>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Role:* </span>
+                </div>
+                <select class="form-control" id="allocateRole" name="allocateRole" required>
+                    <option value="primary">Primary</option>
+                    <option value="secondary">Secondary</option>
+                </select>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Allocate Doctor"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
+        </form>
     </div>
     <div id="removeDoctor" class="container tab-pane fade"><br>
 
