@@ -1,14 +1,14 @@
 <?php
 /**
  * Author: Joel
- * Date: 10/06/2020
- * Version: 1.0
- * Purpose: class for admissions report
+ * Date: 18/06/2020
+ * Version: 1.1
+ * Purpose: class for admissions report and getting data from admission
  */
 
 class AdmissionsReport
 {
-    public $AdmissionID;
+    public $id;
     public $description;
     public $admissiondate;
     public $status;
@@ -17,16 +17,16 @@ class AdmissionsReport
 
     /**
      * AdmissionsReport constructor.
-     * @param $AdmissionID
+     * @param $id
      * @param $description
      * @param $admissiondate
      * @param $status
      * @param $patient
      * @param $medication
      */
-    public function __construct($AdmissionID, $description, $admissiondate, $status, $patient, $medication)
+    public function __construct($id, $description, $admissiondate, $status, $patient, $medication)
     {
-        $this->AdmissionID = $AdmissionID;
+        $this->id = $id;
         $this->description = $description;
         $this->admissiondate = $admissiondate;
         $this->status = $status;
