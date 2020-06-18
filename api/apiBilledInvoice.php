@@ -11,7 +11,5 @@ include_once "../class/Billed.php";
     $status = "billed";
     $invoice = new Billed($id, $status);
     $invoice->invoice();
-    $msg = "status changed to billed";
-
 $msg = json_encode($msg);
 echo $msg;
