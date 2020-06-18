@@ -385,7 +385,8 @@
                                     $("#invoice").append("<tr style='height: 20px'></tr>");
 
                                     due = subtotal + fee;
-                                    $("#invoice").append("<tr><td>Total Due:</td><td>" + due + "</td></tr>");
+                                    $("#invoice").append("<tr><td>Total Due:</td><td>$" + due + "</td></tr>");
+                                    $("#invoice").append("<tr style='height: 30px'></tr>");
                                     $("#invoice").append("</table>");
                                 }
                                 i++;
