@@ -345,7 +345,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiShowInvoice.php",
+                    url: "../api/apiShowInvoice.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
