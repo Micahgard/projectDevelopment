@@ -12,7 +12,8 @@ error_reporting(E_ALL);
 include_once "../class/Administrator.php";
 $admin = new Administrator();
 $allpatients = $admin->allPatiens();
-$patients = $admin->patiensWithoutAdmission();
-
 echo json_encode($allpatients);
+
+$admin = new Administrator();
+$patients = $admin->patiensWithoutAdmission();
 echo json_encode($patients);
