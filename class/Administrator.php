@@ -38,10 +38,10 @@ class Administrator
     {
         $conn = (new DB())->conn;
         $query = "select * from Admin where username = '$username'";   // check if the username exists
-        $result = mysqli_query($conn, $query);  //  run the query
+        $result = mysqli_query($conn, $query);
         if ($result->num_rows == 1) {    // if the username exists, check the password
-            while ($row = $result->fetch_assoc()) {   //  fetching the data
-                if ($row['password'] == $password) {  //  if username and password are correct, I set information to this administrator login
+            while ($row = $result->fetch_assoc()) {
+                if ($row['password'] == $password) {
                     $this->id = $row['id'];
                     $this->username = $row['username'];
                     $this->password = $row['password'];
@@ -162,11 +162,9 @@ class Administrator
         $conn = (new DB())->conn;
         $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
         $result = $conn->query($sql);
-//        $medicationnames = "";
         $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
-//                $medicationnames .=$row["name"]." ";
                 $medication = $row["name"];
                 array_push($medications,$medication);
             }
@@ -252,6 +250,7 @@ class Administrator
     }
     // doctors report end
 
+    // patient updating & deleting
     public function allPatiens(){
         $conn = (new DB())->conn;
         $sql = "select * from Patient";
@@ -267,6 +266,7 @@ class Administrator
         return $patients;
     }
 
+    // ward updating & deleting
     public function allWards(){
         $conn = (new DB())->conn;
         $sql = "select * from Ward";
@@ -282,6 +282,7 @@ class Administrator
         return $wards;
     }
 
+    // doctor updating & deleting
     public function allDoctors(){
         $conn = (new DB())->conn;
         $sql = "select * from Doctor";
@@ -297,6 +298,7 @@ class Administrator
         return $doctors;
     }
 
+    // medication updating & deleting
     public function allMedications(){
         $conn = (new DB())->conn;
         $sql = "select * from Medication";
@@ -310,5 +312,56 @@ class Administrator
         }
         $conn->close();
         return $medications;
+    }
+
+    // admission updating
+    public function currentAdmissions()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission where status = 'current'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
+    // admission deleting
+    public function closeAdmissions()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission where status = 'close'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
+    // admission closing
+    public function billedAdmissions()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission where status = 'billed'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
     }
 }
