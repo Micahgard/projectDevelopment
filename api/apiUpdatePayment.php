@@ -8,8 +8,8 @@
 
 include_once "../class/Payment.php";
 
-if (isset($_POST['paymentcode'])){
-    $id = $_POST['paymentcode'];
+if (isset($_POST['id'])){
+    $id = $_POST['id'];
     $paymentdate = $_POST['paymentdate'];
     $amount = $_POST['amount'];
     $admissionID = $_POST['admissionID'];

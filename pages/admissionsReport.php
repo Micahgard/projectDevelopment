@@ -14,7 +14,7 @@
                     i = 0;
                     while (i < data.length){
                         $("#report").append("<hr>");
-                        $("#report").append("<p>ID: "+data[i].AdmissionID+" </p>");
+                        $("#report").append("<p>ID: "+data[i].id+" </p>");
                         $("#report").append("<p>Description: "+data[i].description+" </p>");
                         $("#report").append("<p>Status: "+data[i].status+" </p>");
                         $("#report").append("<p>Admission Date: "+data[i].admissiondate+" </p>");

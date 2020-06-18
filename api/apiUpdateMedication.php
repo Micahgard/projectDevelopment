@@ -8,8 +8,8 @@
 
 include_once "../class/Medication.php";
 
-if (isset($_POST['MedicationID'])){
-    $id = $_POST['MedicationID'];
+if (isset($_POST['id'])){
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $cost = $_POST['cost'];
     $medication = new Medication($id, $name, $cost);

@@ -8,8 +8,8 @@
 
 include_once "../class/Researchproject.php";
 
-if (isset($_GET['projectID'])) {
-    $project = new Researchproject($_GET["projectID"], "", "", "", "", "");
+if (isset($_GET['id'])) {
+    $project = new Researchproject($_GET["id"], "", "", "", "", "");
     $project->delete();
     $msg = "research project deleted";
 }else{

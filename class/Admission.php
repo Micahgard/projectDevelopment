@@ -54,6 +54,4 @@ class Admission
         }
         $this->dbconn->close();
     }
-
-
 }

@@ -81,10 +81,11 @@ class Administrator
                 $getID = $row["PatientID"];
                 $getname = $row["firstname"]." ".$row["lastname"];
                 $getaddress = $row["street"].", ".$row["suburb"].", ".$row["city"];
+                $patient = array("id"=>$getID, "name"=>$getname, "address"=>$getaddress);
             }
         }
         $conn->close();
-        return array($getID, $getname, $getaddress);
+        return $patient;
     }
 
     public function medicationForInvoice($admissionID)
@@ -116,7 +117,7 @@ class Administrator
             while ($row=$result->fetch_assoc()){
                 $getname = $row["firstname"]." ".$row["lastname"];
                 $getfee = $row["fee"];
-                $doctor = array($getname, $getfee);
+                $doctor = array("name"=>$getname, "fee"=>$getfee);
                 array_push($doctors,$doctor);
             }
         }
