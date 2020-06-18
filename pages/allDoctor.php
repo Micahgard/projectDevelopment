@@ -121,45 +121,45 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor Id: </span>
                 </div>
-                <input type="text" class="form-control" id="updateDoctorId" name="updateDoctorId" placeholder="Doctor Id" readonly>
+                <input type="text" class="form-control" id="updateDoctorId" name="id" placeholder="Doctor Id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="updateLastname" name="updateLastname" placeholder="Last Name" required>
+                <input type="text" maxlength="25" class="form-control" id="updateLastname" name="lastname" placeholder="Last Name" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">First Name:* </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="updateFirstname" name="updateFirstname" placeholder="First Name" required>
+                <input type="text" maxlength="25" class="form-control" id="updateFirstname" name="firstname" placeholder="First Name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Street Address:* </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="updateStreet" name="updateStreet" placeholder="Street Address" required>
+                <input type="text" maxlength="50" class="form-control" id="updateStreet" name="street" placeholder="Street Address" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Suburb:* </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateSuburb" name="updateSuburb" placeholder="Suburb" required>
+                <input type="text" maxlength="20" class="form-control" id="updateSuburb" name="suburb" placeholder="Suburb" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">City: </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateCity" name="updateCity" placeholder="City">
+                <input type="text" maxlength="20" class="form-control" id="updateCity" name="city" placeholder="City">
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Phone Number: </span>
                 </div>
-                <input type="text" maxlength="15" class="form-control" id="updatePhone" name="updatePhone" placeholder="Phone Number">
+                <input type="text" maxlength="15" class="form-control" id="updatePhone" name="phone" placeholder="Phone Number">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Speciality:* </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateSpeciality" name="updateSpeciality" placeholder="Speciality" required>
+                <input type="text" maxlength="20" class="form-control" id="updateSpeciality" name="speciality" placeholder="Speciality" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="updateSalary" name="updateSalary" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="salary" name="updateSalary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -217,45 +217,45 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">Doctor Id: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteDoctorId" name="deleteDoctorId" placeholder="Doctor Id" readonly>
+                    <input type="text" class="form-control" id="deleteDoctorId" name="id" placeholder="Doctor Id" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Last Name: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteLastname" name="deleteLastname" readonly>
+                    <input type="text" class="form-control" id="deleteLastname" name="lastname" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">First Name: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteFirstname" name="deleteFirstname" readonly>
+                    <input type="text" class="form-control" id="deleteFirstname" name="firstname" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Street Address: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteStreet" name="deleteStreet" readonly>
+                    <input type="text" class="form-control" id="deleteStreet" name="street" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Suburb: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSuburb" name="deleteSuburb" readonly>
+                    <input type="text" class="form-control" id="deleteSuburb" name="suburb" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">City: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteCity" name="deleteCity" readonly>
+                    <input type="text" class="form-control" id="deleteCity" name="city" readonly>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Phone Number: </span>
                     </div>
-                    <input type="text" class="form-control" id="deletePhone" name="deletePhone" readonly>
+                    <input type="text" class="form-control" id="deletePhone" name="phone" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Speciality: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSpeciality" name="deleteSpeciality" readonly>
+                    <input type="text" class="form-control" id="deleteSpeciality" name="speciality" readonly>
                     <div class="input-group-prepend">
                         <span class="input-group-text">Salary: </span>
                     </div>
-                    <input type="text" class="form-control" id="deleteSalary" name="deleteSalary" readonly>
+                    <input type="text" class="form-control" id="deleteSalary" name="salary" readonly>
                 </div>
                 <i class="grey">* Required Fields</i>
                 <div class="d-flex justify-content-around">

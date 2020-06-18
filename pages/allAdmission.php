@@ -63,7 +63,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="description" name="description" placeholder="Description*" title="Description" required>
+                <input type="text" maxlength="30" class="form-control" id="description" name="description" placeholder="Description" title="Description" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -96,41 +96,41 @@
     <div id="updateAdmission" class="container tab-pane fade"><br>
         <script>
             $(document).ready(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
-                    dataType: "JSON",
-                    success: function (data) {
-                        $("#getUpdateAdmissions").change(function() {
-                            var i = 0;
-                            while (i < data.length) {
-                                if (data[i].id == $("#getUpdateAdmissions").val()) {
-                                    $("#updatePatientLastname").val(data[i].lastname);
-                                    $("#updatePatientFirstname").val(data[i].firstname);
-                                }
-                                i++;
-                            }
-                        });
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
-                $.ajax({
-                    type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
-                    dataType: "JSON",
-                    success: function (data) {
-                        let i = 0;
-                        while (i < data.length){
-                            $("#getUpdateWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                            i = i + 1;
-                        }
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
+                // $.ajax({
+                //     type: 'GET',
+                //     url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
+                //     dataType: "JSON",
+                //     success: function (data) {
+                //         $("#getUpdateAdmissions").change(function() {
+                //             var i = 0;
+                //             while (i < data.length) {
+                //                 if (data[i].id == $("#getUpdateAdmissions").val()) {
+                //                     $("#updatePatientLastname").val(data[i].lastname);
+                //                     $("#updatePatientFirstname").val(data[i].firstname);
+                //                 }
+                //                 i++;
+                //             }
+                //         });
+                //     },
+                //     error: function () {
+                //         alert("Not connected");
+                //     }
+                // });
+                // $.ajax({
+                //     type: 'GET',
+                //     url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
+                //     dataType: "JSON",
+                //     success: function (data) {
+                //         let i = 0;
+                //         while (i < data.length){
+                //             $("#getUpdateWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
+                //             i = i + 1;
+                //         }
+                //     },
+                //     error: function () {
+                //         alert("Not connected");
+                //     }
+                // });
                 $.ajax({
                     type: 'GET',
                     url: "http://unitecproject.herokuapp.com/api/apiCurrentAdmissions.php",
@@ -148,7 +148,9 @@
                                     $("#updateAdmissionId").val(data[i].id);
                                     $("#updateDescription").val(data[i].description);
                                     $("#updateAdmissiondate").val(data[i].admissiondate);
-                                    $("#updateAdmissiondate").val(data[i].admissiondate);
+                                    $("#updateStatus").val(data[i].status);
+                                    $("#updatePatientLastname").val(data[i].patient.lastname);
+                                    $("#updatePatientFirstname").val(data[i].patient.firstname);
                                 }
                                 i++;
                             }
@@ -178,13 +180,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="updateDescription" placeholder="Description*" title="Description" required>
+                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="updateDescription" placeholder="Description" title="Description" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
-                <input type="date" maxlength="10" class="form-control" id="updateAdmissiondate" name="updateAdmissiondate" placeholder="Admission Date" title="Admission Date" required>
+                <input type="date" maxlength="10" class="form-control" id="updateStatus" name="updateAdmissiondate" placeholder="Admission Date" title="Admission Date" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Status:* </span>
                 </div>
@@ -192,8 +194,6 @@
                     <option disabled selected hidden>Select a Status</option>
                     <option value="current">Current</option>
                     <option value="complete">Complete</option>
-                    <option value="billed" hidden>Billed</option>
-                    <option value="closed" hidden>Closed</option>
                 </select>
             </div>
             <div class="input-group mb-3">

@@ -150,11 +150,14 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-            $patientname = $row["firstname"]." ".$row["lastname"];
+            $id = $row["PatientID"];
+            $lastname = $row["lastname"];
+            $firstname = $row["firstname"];
+            $patient = array($id, $lastname, $firstname);
             }
         }
         $conn->close();
-        return $patientname;
+        return $patient;
     }
 
     public function findMedicationsByAdmission($admissionID)
@@ -250,10 +253,26 @@ class Administrator
     }
     // doctors report end
 
-    // patient updating & deleting
+    // patient updating
     public function allPatiens(){
         $conn = (new DB())->conn;
         $sql = "select * from Patient";
+        $result = $conn->query($sql);
+        $patients = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $patient = new Patient($row["PatientID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["email"], $row["phone"], $row["insurcode"]);
+                array_push($patients,$patient);
+            }
+        }
+        $conn->close();
+        return $patients;
+    }
+
+    // patient deleting
+    public function patiensWithoutAdmission(){
+        $conn = (new DB())->conn;
+        $sql = "SELECT * FROM Patient WHERE NOT EXISTS (SELECT patientID FROM Admission WHERE Admission.patientID = Patient.PatientID)";
         $result = $conn->query($sql);
         $patients = array();
         if ($result->num_rows > 0) {
