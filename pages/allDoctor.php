@@ -283,17 +283,17 @@
                 </div>
                 <input type="text" class="form-control" id="allocateAdmissionId" name="allocateAdmissionId" placeholder="Admission Id" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Description:* </span>
+                    <span class="input-group-text">Description: </span>
                 </div>
                 <input type="text" maxlength="25" class="form-control" id="allocadeDescription" name="allocadeDescription" placeholder="Description" readonly>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Patient Last Name:* </span>
-                </div>
-                <input type="text" maxlength="25" class="form-control" id="allocatePatientLastname" name="allocatePatientLastname" placeholder="Patient Last Name" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Patient First Name:* </span>
+                    <span class="input-group-text">Patient Last Name: </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="allocatePatientLastname" name="allocatePatientLastname" placeholder="Patient Last Name" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
                 </div>
                 <input type="text" maxlength="50" class="form-control" id="allocatePatientFirstname" name="allocatePatientFirstname" placeholder="Patient First Name" readonly>
             </div>
