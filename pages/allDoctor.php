@@ -281,6 +281,31 @@
                     alert("Not connected");
                 }
             });
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllAdmissions.php",
+                dataType: "JSON",
+                success: function (data) {
+                    let i = 0;
+                    while (i < data.length){
+                        $("#getAllocateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        i = i + 1;
+                    }
+                    $("#getAllocateAdmissions").change(function() {
+                        var i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getAllocateAdmissions").val()) {
+                                $("#allocateAdmissionIdId").val(data[i].id);
+                                $("#allocateDescription").val(data[i].description);
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
         </script>
         <form action="../api/apiAllocateDoctor.php" method="post">
             <h1>Allocate Doctor</h1>
