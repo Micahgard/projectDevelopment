@@ -296,7 +296,7 @@
                         while (i < data.length) {
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
-                                $("#allocadeDescription").val(data[i].description);
+                                $("#allocateDescription").val(data[i].description);
                             }
                             i++;
                         }
@@ -325,7 +325,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description: </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="allocadeDescription" name="allocadeDescription" placeholder="Description" readonly>
+                <input type="text" maxlength="25" class="form-control" id="allocateDescription" name="allocateDescription" placeholder="Description" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
