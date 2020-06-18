@@ -295,8 +295,8 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
-                                $("#allocateAdmissionIdId").val(data[i].id);
-                                $("#allocateDescription").val(data[i].description);
+                                $("#allocateAdmissionId").val(data[i].id);
+                                $("#allocadeDescription").val(data[i].description);
                             }
                             i++;
                         }
