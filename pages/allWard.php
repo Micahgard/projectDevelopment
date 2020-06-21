@@ -59,8 +59,8 @@
                         var i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateWards").val()) {
-                                $("#udpateWardId").val(data[i].id);
-                                $("#udpateName").val(data[i].name);
+                                $("#updateWardId").val(data[i].id);
+                                $("#updateName").val(data[i].name);
                                 $("#updateLocation").val(data[i].location);
                                 $("#updateCapacity").val(data[i].capacity);
                             }
@@ -87,21 +87,21 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward Id: </span>
                 </div>
-                <input type="text" class="form-control" id="updateWardId" name="updateWardId" readonly>
+                <input type="text" class="form-control" id="updateWardId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
                 </div>
-                <input type="text" maxlength="20" class="form-control" id="updateName" name="updateName" placeholder="Name" required>
+                <input type="text" maxlength="20" class="form-control" id="updateName" name="name" placeholder="Name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Location:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateLocation" name="updateLocation" placeholder="Location" required>
+                <input type="text" maxlength="30" class="form-control" id="updateLocation" name="location" placeholder="Location" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Capacity:* </span>
                 </div>
-                <input type="number" min="1" max="20" class ="form-control" id="updateCapacity" name="updateCapacity" required>
+                <input type="number" min="1" max="20" class ="form-control" id="updateCapacity" name="capacity" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -155,21 +155,21 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward Id: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteWardId" name="deleteWardId" readonly>
+                <input type="text" class="form-control" id="deleteWardId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteName" name="deleteName" readonly>
+                <input type="text" class="form-control" id="deleteName" name="name" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Location: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteLocation" name="deleteLocation" readonly>
+                <input type="text" class="form-control" id="deleteLocation" name="location" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Capacity: </span>
                 </div>
-                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" readonly>
+                <input type="text" class ="form-control" id="deleteCapacity" name="capacity" readonly>
                 </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
