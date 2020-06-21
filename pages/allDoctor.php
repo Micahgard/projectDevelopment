@@ -13,6 +13,9 @@
         <a class="nav-link" data-toggle="tab" href="#deleteDoctor">Delete Doctor</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#doctorsReport">Doctors Report</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#allocateDoctor">Allocate Doctor</a>
     </li>
     <li class="nav-item">
@@ -160,7 +163,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Salary:* </span>
                 </div>
-                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="salary" name="updateSalary" required>
+                <input type="number" min="20000" max="200000" maxlength="9" class ="form-control" id="updateSalary" name="salary" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -205,66 +208,99 @@
                 }
             });
         </script>
-            <form action="../api/apiDeleteDoctor.php" method="get">
-                <h1>Delete Doctor</h1>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Doctors:* </span>
-                    </div>
-                    <select class="form-control" id="getDeleteDoctors" name="id" required>
-                        <option disabled selected hidden>Select a Doctor</option>
-                    </select>
+        <form action="../api/apiDeleteDoctor.php" method="get">
+            <h1>Delete Doctor</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doctors:* </span>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Doctor Id: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteDoctorId" name="id" placeholder="Doctor Id" readonly>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Last Name: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteLastname" name="lastname" readonly>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">First Name: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteFirstname" name="firstname" readonly>
+                <select class="form-control" id="getDeleteDoctors" name="id" required>
+                    <option disabled selected hidden>Select a Doctor</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doctor Id: </span>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Street Address: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteStreet" name="street" readonly>
+                <input type="text" class="form-control" id="deleteDoctorId" name="id" placeholder="Doctor Id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name: </span>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Suburb: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteSuburb" name="suburb" readonly>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">City: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteCity" name="city" readonly>
+                <input type="text" class="form-control" id="deleteLastname" name="lastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name: </span>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Phone Number: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deletePhone" name="phone" readonly>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Speciality: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteSpeciality" name="speciality" readonly>
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Salary: </span>
-                    </div>
-                    <input type="text" class="form-control" id="deleteSalary" name="salary" readonly>
+                <input type="text" class="form-control" id="deleteFirstname" name="firstname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Street Address: </span>
                 </div>
-                <i class="grey">* Required Fields</i>
-                <div class="d-flex justify-content-around">
-                    <input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/>
-                    <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <input type="text" class="form-control" id="deleteStreet" name="street" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Suburb: </span>
                 </div>
-            </form>
+                <input type="text" class="form-control" id="deleteSuburb" name="suburb" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">City: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteCity" name="city" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Phone Number: </span>
+                </div>
+                <input type="text" class="form-control" id="deletePhone" name="phone" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Speciality: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteSpeciality" name="speciality" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Salary: </span>
+                </div>
+                <input type="text" class="form-control" id="deleteSalary" name="salary" readonly>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
+        </form>
+    </div>
+
+    <div id="doctorsReport" class="container tab-pane fade"><br>
+        <h1>Doctors Report</h1>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "http://unitecproject.herokuapp.com/api/apiDoctorsReport.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        i = 0;
+                        while (i < data.length){
+                            $("#report").append("<hr>");
+                            $("#report").append("<p>ID: "+data[i].DoctorID+" </p>");
+                            $("#report").append("<p>Name: "+data[i].firstname+" "+data[i].lastname+" </p>");
+                            $("#report").append("<p>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</p>");
+                            $("#report").append("<p>Phone Number: "+data[i].phone+" </p>");
+                            $("#report").append("<p>Speciality: "+data[i].speciality+" </p>");
+                            $("#report").append("<p>Salary: "+data[i].salary+" </p>");
+                            $("#report").append("<p>Admissions: "+data[i].admission+" </p>");
+                            $("#report").append("<p>Research Projects: "+data[i].project+" </p>");
+                            $("#report").append("<hr>");
+                            i = i+1;
+                        }
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+            });
+        </script>
+        <div id="report"></div>
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
