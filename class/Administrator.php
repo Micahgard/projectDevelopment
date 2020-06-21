@@ -302,7 +302,7 @@ class Administrator
     }
 
     // doctor updating
-    public function DoctorsWithoutAllocation(){
+    public function doctorsWithoutAllocation(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Doctor WHERE NOT EXISTS (SELECT * FROM Allocation, Researchproject
                 WHERE Allocation.doctorID = Doctor.DoctorID OR Researchproject.doctorID = Doctor.DoctorID)";
@@ -318,7 +318,7 @@ class Administrator
         return $doctors;
     }
 
-    // ward updating & deleting
+    // ward updating
     public function allWards(){
         $conn = (new DB())->conn;
         $sql = "select * from Ward";
@@ -334,10 +334,42 @@ class Administrator
         return $wards;
     }
 
-    // medication updating & deleting
+    // ward deleting
+    public function wardsWithoutAdmission(){
+        $conn = (new DB())->conn;
+        $sql = "SELECT * FROM Ward WHERE NOT EXISTS (SELECT wardID FROM Admission WHERE Admission.wardID = Ward.WardID)";
+        $result = $conn->query($sql);
+        $wards = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $ward = new Ward($row["WardID"], $row["name"], $row["location"], $row["capacity"]);
+                array_push($wards,$ward);
+            }
+        }
+        $conn->close();
+        return $wards;
+    }
+
+    // medication updating
     public function allMedications(){
         $conn = (new DB())->conn;
         $sql = "select * from Medication";
+        $result = $conn->query($sql);
+        $medications = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $medication = new Medication($row["MedicationID"], $row["name"], $row["cost"]);
+                array_push($medications, $medication);
+            }
+        }
+        $conn->close();
+        return $medications;
+    }
+
+    // medication deleting
+    public function medicationsWithoutPresciption(){
+        $conn = (new DB())->conn;
+        $sql = "SELECT * FROM Medication WHERE NOT EXISTS (SELECT medicationID FROM Prescription WHERE Prescription.medicationID = Medication.MedicationID)";
         $result = $conn->query($sql);
         $medications = array();
         if ($result->num_rows > 0) {

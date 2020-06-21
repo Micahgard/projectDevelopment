@@ -1,9 +1,9 @@
 <?php
 /**
  * Author: Mojeeb
- * Date: 07/06/2020
+ * Date: 09/06/2020
  * Version: 1.0
- * Purpose: api for getting data from doctor
+ * Purpose: api for getting data from medication
  */
 
 ini_set('display_errors', 1);
@@ -11,6 +11,5 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include_once "../class/Administrator.php";
 $admin = new Administrator();
-$doctors = $admin->allDoctors();
-
-echo json_encode($doctors);
+$medications = $admin->medicationsWithoutPresciption();
+echo json_encode($medications);

@@ -44,11 +44,12 @@
             </div>
         </form>
     </div>
+
     <div id="updateMedication" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllMedications.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -106,11 +107,12 @@
             </div>
         </form>
     </div>
+
     <div id="deleteMedication" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllMedications.php",
+                url: "http://unitecproject.herokuapp.com/api/apiMedicationsNoPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -168,9 +170,11 @@
             </div>
         </form>
     </div>
+
     <div id="prescribeMedication" class="container tab-pane fade"><br>
 
     </div>
+
     <div id="removePrescription" class="container tab-pane fade"><br>
 
     </div>

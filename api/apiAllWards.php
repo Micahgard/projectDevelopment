@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Joel
+ * Author: Mojeeb
  * Date: 06/06/2020
  * Version: 1.0
  * Purpose: api for getting data from ward

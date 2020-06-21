@@ -42,11 +42,12 @@
             </div>
         </form>
     </div>
+
     <div id="updateWard" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllWards.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -109,11 +110,12 @@
             </div>
         </form>
     </div>
+
     <div id="deleteWard" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllWards.php",
+                url: "http://unitecproject.herokuapp.com/api/apiWardsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;

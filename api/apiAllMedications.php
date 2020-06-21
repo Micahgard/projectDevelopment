@@ -1,6 +1,6 @@
 <?php
 /**
- * Author: Joel
+ * Author: Mojeeb
  * Date: 09/06/2020
  * Version: 1.0
  * Purpose: api for getting data from medication
