@@ -72,11 +72,12 @@
             </div>
         </form>
     </div>
+
     <div id="updateDoctor" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllDoctors.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -168,11 +169,12 @@
             </div>
         </form>
     </div>
+
     <div id="deleteDoctor" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllDoctors.php",
+                url: "http://unitecproject.herokuapp.com/api/apiDoctorsNoAllocation.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -264,6 +266,7 @@
                 </div>
             </form>
     </div>
+
     <div id="allocateDoctor" class="container tab-pane fade"><br>
         <script>
             $.ajax({

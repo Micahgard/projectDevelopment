@@ -285,6 +285,39 @@ class Administrator
         return $patients;
     }
 
+    // doctor updating
+    public function allDoctors(){
+        $conn = (new DB())->conn;
+        $sql = "select * from Doctor";
+        $result = $conn->query($sql);
+        $doctors = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
+                array_push($doctors,$doctor);
+            }
+        }
+        $conn->close();
+        return $doctors;
+    }
+
+    // doctor updating
+    public function DoctorsWithoutAllocation(){
+        $conn = (new DB())->conn;
+        $sql = "SELECT * FROM Doctor WHERE NOT EXISTS (SELECT * FROM Allocation, Researchproject
+                WHERE Allocation.doctorID = Doctor.DoctorID OR Researchproject.doctorID = Doctor.DoctorID)";
+        $result = $conn->query($sql);
+        $doctors = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
+                array_push($doctors,$doctor);
+            }
+        }
+        $conn->close();
+        return $doctors;
+    }
+
     // ward updating & deleting
     public function allWards(){
         $conn = (new DB())->conn;
@@ -299,22 +332,6 @@ class Administrator
         }
         $conn->close();
         return $wards;
-    }
-
-    // doctor updating & deleting
-    public function allDoctors(){
-        $conn = (new DB())->conn;
-        $sql = "select * from Doctor";
-        $result = $conn->query($sql);
-        $doctors = array();
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $doctor = new Doctor($row["DoctorID"], $row["lastname"], $row["firstname"], $row["street"], $row["suburb"], $row["city"], $row["phone"], $row["speciality"], $row["salary"]);
-                array_push($doctors,$doctor);
-            }
-        }
-        $conn->close();
-        return $doctors;
     }
 
     // medication updating & deleting

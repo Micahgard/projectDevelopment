@@ -11,5 +11,5 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 include_once "../class/Administrator.php";
 $admin = new Administrator();
-$patient = $admin->allPatiens();
-echo json_encode($patient);
+$patients = $admin->allPatiens();
+echo json_encode($patients);
