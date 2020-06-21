@@ -169,7 +169,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
+                url: "http://unitecproject.herokuapp.com/api/apiPatientsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
