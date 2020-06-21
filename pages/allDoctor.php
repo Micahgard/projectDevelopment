@@ -125,7 +125,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor Id: </span>
                 </div>
-                <input type="text" class="form-control" id="updateDoctorId" name="id" placeholder="Doctor Id" readonly>
+                <input type="text" class="form-control" id="updateDoctorId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name:* </span>
                 </div>
@@ -222,7 +222,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctor Id: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteDoctorId" name="id" placeholder="Doctor Id" readonly>
+                <input type="text" class="form-control" id="deleteDoctorId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Last Name: </span>
                 </div>

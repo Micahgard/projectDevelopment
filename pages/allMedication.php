@@ -88,7 +88,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Medication Id: </span>
                 </div>
-                <input type="text" class="form-control" id="updateMedicationId" name="updateMedicationId" placeholder="Medication Id" readonly>
+                <input type="text" class="form-control" id="updateMedicationId" name="updateMedicationId" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
                 </div>
@@ -151,17 +151,17 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Medication Id: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteMedicationId" name="deleteMedicationId" placeholder="Medication Id" readonly>
+                <input type="text" class="form-control" id="deleteMedicationId" name="deleteMedicationId" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name: </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="deleteName" name="deleteName" placeholder="Name" readonly>
+                <input type="text" maxlength="30" class="form-control" id="deleteName" name="deleteName" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Cost: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteCost" name="deleteCost" placeholder="Cost" readonly>
+                <input type="text" class="form-control" id="deleteCost" name="deleteCost" readonly>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">

@@ -87,7 +87,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward Id: </span>
                 </div>
-                <input type="text" class="form-control" id="updateWardId" name="updateWardId" placeholder="Ward Id" readonly>
+                <input type="text" class="form-control" id="updateWardId" name="updateWardId" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
                 </div>
@@ -155,21 +155,21 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward Id: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteWardId" name="deleteWardId" placeholder="Ward Id" readonly>
+                <input type="text" class="form-control" id="deleteWardId" name="deleteWardId" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteName" name="deleteName" placeholder="Name" readonly>
+                <input type="text" class="form-control" id="deleteName" name="deleteName" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Location: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteLocation" name="deleteLocation" placeholder="Location" readonly>
+                <input type="text" class="form-control" id="deleteLocation" name="deleteLocation" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Capacity: </span>
                 </div>
-                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" placeholder="Capacity" readonly>
+                <input type="text" class ="form-control" id="deleteCapacity" name="deleteCapacity" readonly>
                 </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
