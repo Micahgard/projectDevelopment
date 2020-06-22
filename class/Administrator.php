@@ -183,7 +183,7 @@ class Administrator
     public function currentAdmissionsForAllocation()
     {
         $conn = (new DB())->conn;
-        $sql = "select * from Admission WHERE statu = 'current'";
+        $sql = "select * from Admission WHERE status = 'current'";
         $admissions = array();
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
