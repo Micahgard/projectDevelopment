@@ -22,7 +22,7 @@
     <div id="addDoctor" class="container tab-pane active"><br>
         <script>
             $(document).ready(function(){
-                if (addSuccess == true) {
+                if (addSuccess === true) {
                     $('.alert').toggleClass('display-none');
                 }
             });
