@@ -218,6 +218,15 @@ class Administrator
     }
     // allocate doctor end
 
+    // prescribe medication start
+
+
+
+
+
+
+    // prescribe medication end
+
     // patients report start
     public function showPatients()
     {
@@ -342,7 +351,7 @@ class Administrator
         return $doctors;
     }
 
-    // doctor updating
+    // doctor deleting
     public function doctorsWithoutAllocation(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Doctor WHERE NOT EXISTS (SELECT * FROM Allocation, Researchproject
@@ -449,7 +458,7 @@ class Administrator
             while ($row = $result->fetch_assoc()) {
                 $id = $row["WardID"];
                 $name = $row["name"];
-                $ward = array($id, $name);
+                $ward = array("id"=>$id, "name"=>$name);
             }
         }
         $conn->close();
