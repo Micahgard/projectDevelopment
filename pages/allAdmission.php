@@ -122,9 +122,9 @@
                                     $("#updateAdmissionId").val(data[i].id);
                                     $("#updateDescription").val(data[i].description);
                                     $("#updateAdmissiondate").val(data[i].admissiondate);
-                                    $("#updatePatientID").val(data[i].patientID[0]);
-                                    $("#updatePatientLastname").val(data[i].patientID[1]);
-                                    $("#updatePatientFirstname").val(data[i].patientID[2]);
+                                    $("#updatePatientID").val(data[i].patientID.id);
+                                    $("#updatePatientLastname").val(data[i].patientID.lastname);
+                                    $("#updatePatientFirstname").val(data[i].patientID.firstname);
                                     $("#updateWardID").val(data[i].wardID.id);
                                     $("#updateWardName").val(data[i].wardID.name);
                                 }
@@ -335,7 +335,7 @@
                             $("#report").append("<p>Description: "+data[i].description+" </p>");
                             $("#report").append("<p>Status: "+data[i].status+" </p>");
                             $("#report").append("<p>Admission Date: "+data[i].admissiondate+" </p>");
-                            $("#report").append("<p>Patient: "+data[i].patient+" </p>");
+                            $("#report").append("<p>Patient: "+data[i].patient.firstname+" "+data[i].patient.lastname+" </p>");
                             $("#report").append("<p>Medication: "+data[i].medication+" </p>");
                             $("#report").append("<hr>");
                             i = i+1;
@@ -529,7 +529,7 @@
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
                                 $("#allocateDescription").val(data[i].description);
-                                $("#allocatePatientInfo").val(data[i].patient[2] + " " + data[i].patient[1]);
+                                $("#allocatePatientInfo").val(data[i].patient.firstname + " " + data[i].patient.lastname);
                                 d = 0;
                                 info = "";
                                 while (d < data[i].doctor.length) {
