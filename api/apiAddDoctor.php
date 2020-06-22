@@ -12,7 +12,7 @@ if (isset($_POST["lastname"])) {
     $doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["phone"], $_POST["speciality"], $_POST["salary"]);
     $doctor->save();
     $addSuccess = true;
-    window.history.back();
+    history.back();
 }else{
     ?>
     <a class="btn btn-danger" onclick="toastr.error('Hi! I am error message.');">Error message</a>
