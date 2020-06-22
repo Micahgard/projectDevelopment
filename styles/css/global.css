@@ -7,6 +7,10 @@ body {
     src: url(../fonts/BebasNeue-Regular.ttf);
 }
 
+.display-none {
+    display: none;
+}
+
 .text-left {
     text-align: left;
 }
