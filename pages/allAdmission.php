@@ -125,8 +125,8 @@
                                     $("#updatePatientID").val(data[i].patientID[0]);
                                     $("#updatePatientLastname").val(data[i].patientID[1]);
                                     $("#updatePatientFirstname").val(data[i].patientID[2]);
-                                    $("#updateWardID").val(data[i].wardID[0].id);
-                                    $("#updateWardName").val(data[i].wardID[0].name);
+                                    $("#updateWardID").val(data[i].wardID.id);
+                                    $("#updateWardName").val(data[i].wardID.name);
                                 }
                                 i++;
                             }

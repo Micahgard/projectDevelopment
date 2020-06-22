@@ -155,7 +155,7 @@ class Administrator
             $id = $row["PatientID"];
             $lastname = $row["lastname"];
             $firstname = $row["firstname"];
-            $patient = array($id, $lastname, $firstname);
+            $patient = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname);
             }
         }
         $conn->close();
