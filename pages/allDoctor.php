@@ -20,6 +20,10 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
+        <div class="alert alert-primary alert-dismissible fade show ">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong> Doctor has been successfully added.
+        </div>
         <form action="../api/apiAddDoctor.php" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
