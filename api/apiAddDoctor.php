@@ -11,9 +11,7 @@ include_once "../class/Doctor.php";
 if (isset($_POST["lastname"])) {
     $doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["phone"], $_POST["speciality"], $_POST["salary"]);
     $doctor->save();
-    function goBack() {
-        window.history.back();
-    }
+    window.history.back();
     ?>
     <div class="alert alert-primary alert-dismissible fade show">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
