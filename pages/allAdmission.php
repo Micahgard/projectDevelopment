@@ -554,7 +554,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
-                <select class="form-control" id="getAllocateAdmissions" name="id" required>
+                <select class="form-control" id="getAllocateAdmissions" name="admissionID" required>
                     <option disabled selected hidden>Select an Admission</option>
                 </select>
             </div>
@@ -584,7 +584,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Doctors:* </span>
                 </div>
-                <select class="form-control" id="getAllocateDoctors" name="id" required>
+                <select class="form-control" id="getAllocateDoctors" name="doctorID" required>
                     <option disabled selected hidden>Select a Doctor</option>
                 </select>
             </div>
@@ -592,11 +592,11 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Fee:* </span>
                 </div>
-                <input type="number" min="1" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="allocateFee" required>
+                <input type="number" min="1" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Role:* </span>
                 </div>
-                <select class="form-control" id="allocateRole" name="allocateRole" required>
+                <select class="form-control" id="allocateRole" name="role" required>
                     <option value="primary">Primary</option>
                     <option value="secondary">Secondary</option>
                 </select>
