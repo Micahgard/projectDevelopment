@@ -208,7 +208,8 @@ class Administrator
                 $id = $row["DoctorID"];
                 $lastname = $row["lastname"];
                 $firstname = $row["firstname"];
-                $doctor = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname);
+                $role = $row["role"];
+                $doctor = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname, "role"=>$role);
                 array_push($doctors,$doctor);
             }
         }

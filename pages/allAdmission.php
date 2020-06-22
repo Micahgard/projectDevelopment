@@ -529,13 +529,15 @@
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
                                 $("#allocateDescription").val(data[i].description);
-                                $("#allocatePatient").val(data[i].patient[2] + " " + data[i].patient[1]);
-                                $("#allocateDoctor").val(data[i].patient[2] + " " + data[i].patient[1]);
+                                $("#allocatePatientInfo").val(data[i].patient[2] + " " + data[i].patient[1]);
                                 d = 0;
+                                info = "";
                                 while (d < data[i].doctor.length) {
-                                    // $("#allocateDoctor").val(data[i].doctor[d].firstname + " " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname);
+                                    info += (data[i].doctor[d].id + " , " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname +
+                                        " , " + data[i].doctor[d].role + " | ");
                                     d++;
                                 }
+                                $("#allocateDoctorInfo").val(info);
                             }
                             i++;
                         }
@@ -570,13 +572,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient Name: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="allocatePatient" name="patient" readonly>
+                <input type="text" maxlength="50" class="form-control" id="allocatePatientInfo" name="patient" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Allocated Doctors: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="allocateDoctor" name="doctor" readonly>
+                <input type="text" maxlength="50" class="form-control" id="allocateDoctorInfo" name="doctor" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
