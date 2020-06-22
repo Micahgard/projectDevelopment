@@ -20,19 +20,6 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <script>
-            $(document).ready(function(){
-                $("#addDoctor").click(function(){
-                    if (addSuccess == true) {
-                        $(".alert").toggleClass("display-none");
-                    }
-                });
-            });
-        </script>
-        <div class="alert alert-primary alert-dismissible fade show display-none">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Success!</strong> Doctor has been successfully added.
-        </div>
         <form action="../api/apiAddDoctor.php" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">

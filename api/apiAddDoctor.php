@@ -13,6 +13,10 @@ if (isset($_POST["lastname"])) {
     $doctor->save();
     $addSuccess = true;?>
     <script>history.back();</script>
+    <div class="alert alert-primary alert-dismissible fade show display-none">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Success!</strong> Doctor has been successfully added.
+    </div>
     <?php
 }else{
     ?>
