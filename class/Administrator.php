@@ -179,7 +179,24 @@ class Administrator
     }
     // admissions report end
 
-    // allocated info for admission
+    // allocate doctor start
+    public function currentAdmissionsForAllocation()
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission WHERE statu = 'current'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
+                    $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
     public function findDoctorsByAdmission($admissionID)
     {
         $conn = (new DB())->conn;
@@ -198,6 +215,7 @@ class Administrator
         $conn->close();
         return $doctors;
     }
+    // allocate doctor end
 
     // patients report start
     public function showPatients()

@@ -360,14 +360,14 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length) {
-                            $("#admission").append("<option value='" + data[i].AdmissionID + "'>" + data[i].AdmissionID + " " + data[i].description + "</option>");
+                            $("#getInvoice").append("<option value='" + data[i].AdmissionID + "'>" + data[i].AdmissionID + " " + data[i].description + "</option>");
                             i++;
                         }
 
-                        $("#admission").change(function() {
+                        $("#getInvoice").change(function() {
                             i = 0;
                             while (i < data.length) {
-                                if (data[i].AdmissionID == $("#admission").val()) {
+                                if (data[i].AdmissionID == $("#getInvoice").val()) {
                                     $("#invoice").html("<table>");
                                     $("#invoice").append("<tr><td>Patient ID:</td><td>" + data[i].patient.id + "</td>" +
                                         "<td>Patient Name:</td><td>" + data[i].patient.name + "</td></tr>");
@@ -416,7 +416,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Complete Admissions: </span>
                 </div>
-                <select class="form-control" id="admission" name="id" required>
+                <select class="form-control" id="getInvoice" name="id" required>
                     <option disabled selected hidden>Select an Admission</option>
                 </select>
             </div>
@@ -515,7 +515,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAdmissionsForAllocation.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
