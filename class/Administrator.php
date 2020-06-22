@@ -4,6 +4,7 @@ include_once "Patient.php";
 include_once "Ward.php";
 include_once "Doctor.php";
 include_once "Medication.php";
+include_once "Admission.php";
 include_once "Invoice.php";
 include_once "AdmissionsReport.php";
 include_once "PatientsReport.php";
@@ -391,7 +392,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findWardByWardID($row["wardID"]));
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findWardByWardID($row["wardID"]));
                 array_push($admissions, $admission);
             }
         }
