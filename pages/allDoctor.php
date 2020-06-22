@@ -19,13 +19,6 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <script>
-            $(document).ready(function(){
-                if (addSuccess === true) {
-                    $('#addSuccess').toggleClass('display-none');
-                }
-            });
-        </script>
         <div class="alert alert-primary alert-dismissible fade show display-none" id="addSuccess">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Success!</strong> Doctor has been successfully added.
