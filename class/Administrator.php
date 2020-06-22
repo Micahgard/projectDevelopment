@@ -382,7 +382,7 @@ class Administrator
         return $medications;
     }
 
-    // admission updating
+    // admission updating start
     public function currentAdmissions()
     {
         $conn = (new DB())->conn;
@@ -391,13 +391,30 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findWardByWardID($row["wardID"]));
                 array_push($admissions, $admission);
             }
         }
         $conn->close();
         return $admissions;
     }
+
+    public function findWardByWardID($wardID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Ward where WardID = " . $wardID;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $id = $row["WardID"];
+                $name = $row["name"];
+                $ward = array($id, $name);
+            }
+        }
+        $conn->close();
+        return $ward;
+    }
+    // admission updating end
 
     // admission deleting
     public function closeAdmissions()

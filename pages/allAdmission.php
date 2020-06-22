@@ -149,8 +149,9 @@
                                     $("#updateDescription").val(data[i].description);
                                     $("#updateAdmissiondate").val(data[i].admissiondate);
                                     $("#updateStatus").val(data[i].status);
-                                    $("#updatePatientLastname").val(data[i].patient.lastname);
-                                    $("#updatePatientFirstname").val(data[i].patient.firstname);
+                                    $("#updatePatientLastname").val(data[i].patient[1]);
+                                    $("#updatePatientFirstname").val(data[i].patient[2]);
+                                    $("#updateWardName").val(data[i].ward.name);
                                 }
                                 i++;
                             }
@@ -176,35 +177,41 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Id: </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateAdmissionId" name="updateAdmissionId" title="Admission Id" readonly>
+                <input type="text" maxlength="30" class="form-control" id="updateAdmissionId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="updateDescription" placeholder="Description" title="Description" required>
+                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="description" placeholder="Description" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
-                <input type="date" maxlength="10" class="form-control" id="updateStatus" name="updateAdmissiondate" placeholder="Admission Date" title="Admission Date" required>
+                <input type="date" maxlength="10" class="form-control" id="updateStatus" name="admissiondate" placeholder="Admission Date" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Status:* </span>
                 </div>
-                <select class="form-control" id="updateStatus" name="updateStatus" required>
-                    <option disabled selected hidden>Select a Status</option>
-                    <option value="current">Current</option>
-                    <option value="complete">Complete</option>
-                </select>
+<!--                <select class="form-control" id="updateStatus" name="updateStatus" required>-->
+<!--                    <option disabled selected hidden>Select a Status</option>-->
+<!--                    <option value="current">Current</option>-->
+<!--                    <option value="complete">Complete</option>-->
+<!--                </select>-->
+                <div>
+                    <input type="radio" name="status" value="0" checked>
+                    <label>Current</label>
+                    <input type="radio" name="status" value="1">
+                    <label>Complete</label>
+                </div>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <input type="text" class="form-control" id="updatePatientLastname" name="updatePatientLastname" readonly>
+                <input type="text" class="form-control" id="updatePatientLastname" name="patientID" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient First Name: </span>
                 </div>
-                <input type="text" class="form-control" id="updatePatientFirstname" name="updatePatientFirstname" readonly>
+                <input type="text" class="form-control" id="updatePatientFirstname" name="wardID" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
