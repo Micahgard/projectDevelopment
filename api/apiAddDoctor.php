@@ -16,7 +16,6 @@ if (isset($_POST["lastname"])) {
     <?php
 }else{
     ?>
-    <a class="btn btn-danger" onclick="toastr.error('Hi! I am error message.');">Error message</a>
     <?php
     $msg = "doctor not added";
 }
