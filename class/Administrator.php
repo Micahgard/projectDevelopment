@@ -136,7 +136,8 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
+                    $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -177,6 +178,26 @@ class Administrator
         return $medications;
     }
     // admissions report end
+
+    // allocated info for admission
+    public function findDoctorsByAdmission($admissionID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Doctor, Allocation, Admission where Doctor.DoctorID = Allocation.doctorID and Allocation.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $result = $conn->query($sql);
+        $doctors = array();
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $id = $row["DoctorID"];
+                $lastname = $row["lastname"];
+                $firstname = $row["firstname"];
+                $doctor = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname);
+                array_push($doctors,$doctor);
+            }
+        }
+        $conn->close();
+        return $doctors;
+    }
 
     // patients report start
     public function showPatients()

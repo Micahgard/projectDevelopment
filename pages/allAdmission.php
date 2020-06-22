@@ -500,7 +500,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllDoctors.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -515,7 +515,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllAdmissions.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
