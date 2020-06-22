@@ -14,8 +14,6 @@ if (isset($_POST["lastname"])) {
     <script>history.back(); $('#addSuccess').toggleClass('display-none');</script>
     <?php
 }else{
-    ?>
-    <?php
     $msg = "doctor not added";
 }
 $msg = json_encode($msg);
