@@ -17,12 +17,17 @@
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
 <?php
-if (!empty($username) && !empty($password)) {
-$login = new Administrator();
-$login->login($username, $password);
-switch($login->role) {
-case 'senior':
-?>
+    include_once "class/Administrator.php";
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (!empty($username) && !empty($password)) {
+    $login = new Administrator();
+    $login->login($username, $password);
+    switch($login->role) {
+    case 'senior':
+    ?>
     <nav class="navbar navbar-expand-sm bg-primary navbar-light">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -38,10 +43,10 @@ case 'senior':
     <div class="container">
         <h1>Welcome Senior Administrator</h1>
         <?php
-        break;
+            break;
 
         case 'assistant':
-        ?>
+            ?>
         <nav class="navbar navbar-expand-sm bg-primary navbar-light">
             <ul class="navbar-nav">
                 <li class="nav-item">
