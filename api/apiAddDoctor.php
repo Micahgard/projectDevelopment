@@ -12,8 +12,7 @@ if (isset($_POST["lastname"])) {
     $doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["phone"], $_POST["speciality"], $_POST["salary"]);
     $doctor->save();
     $addSuccess = true;?>
-    <script>history.back();
-        var name='<?php echo $addSuccess; ?>';</script>
+    <script>history.back(); var name='<?php echo $addSuccess; ?>';</script>
     <?php
 }else{
     ?>

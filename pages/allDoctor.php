@@ -1,6 +1,6 @@
 <title>Doctor</title>
 <?php include_once 'head.php'; ?>
-
+<?php include_once '../api/apiAddDoctor.php';?>
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
