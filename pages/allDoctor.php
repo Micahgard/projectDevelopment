@@ -20,7 +20,7 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <script>
             $(document).ready(function(){
                 if (addSuccess == true) {
                     $('.alert').toggleClass('display-none');
