@@ -23,11 +23,11 @@
         <script>
             $(document).ready(function(){
                 if (addSuccess === true) {
-                    $('.alert').toggleClass('display-none');
+                    $('#addSuccess').toggleClass('display-none');
                 }
             });
         </script>
-        <div class="alert alert-primary alert-dismissible fade show display-none">
+        <div class="alert alert-primary alert-dismissible fade show display-none" id="addSuccess">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             <strong>Success!</strong> Doctor has been successfully added.
         </div>
