@@ -39,10 +39,10 @@
                     url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getPatient").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                     },
                     error: function () {
@@ -54,10 +54,10 @@
                     url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                     },
                     error: function () {
@@ -110,13 +110,13 @@
                     url: "http://unitecproject.herokuapp.com/api/apiCurrentAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getUpdateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                         $("#getUpdateAdmissions").change(function() {
-                            var i = 0;
+                            i = 0;
                             while (i < data.length) {
                                 if (data[i].id == $("#getUpdateAdmissions").val()) {
                                     $("#updateAdmissionId").val(data[i].id);
@@ -208,7 +208,7 @@
                     dataType: "JSON",
                     success: function (data) {
                         $("#getDeleteAdmissions").change(function() {
-                            var i = 0;
+                            i = 0;
                             while (i < data.length) {
                                 if (data[i].id == $("#getDeleteAdmissions").val()) {
                                     $("#deletePatientLastname").val(data[i].lastname);
@@ -227,10 +227,10 @@
                     url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getDeleteWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                     },
                     error: function () {
@@ -242,13 +242,13 @@
                     url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getDeleteAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                         $("#getDeleteAdmissions").change(function() {
-                            var i = 0;
+                            i = 0;
                             while (i < data.length) {
                                 if (data[i].id == $("#getDeleteAdmissions").val()) {
                                     $("#deleteAdmissionId").val(data[i].id);
@@ -439,13 +439,13 @@
                     url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        let i = 0;
+                        i = 0;
                         while (i < data.length){
                             $("#getCloseAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                            i = i + 1;
+                            i++;
                         }
                         $("#getCloseAdmissions").change(function() {
-                            var i = 0;
+                            i = 0;
                             while (i < data.length) {
                                 if (data[i].id == $("#getCloseAdmissions").val()) {
                                     $("#closeAdmissionId").val(data[i].id);
@@ -503,10 +503,10 @@
                 url: "http://unitecproject.herokuapp.com/api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
                         $("#getAllocateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                 },
                 error: function () {
@@ -518,13 +518,13 @@
                 url: "http://unitecproject.herokuapp.com/api/apiAdmissionsForAllocation.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
                         $("#getAllocateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getAllocateAdmissions").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
@@ -592,7 +592,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Fee:* </span>
                 </div>
-                <input type="number" min="1" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" required>
+                <input type="number" min="0" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Role:* </span>
                 </div>

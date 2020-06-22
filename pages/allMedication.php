@@ -35,7 +35,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Cost:* </span>
                 </div>
-                <input type="number" min="1" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" required>
+                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -58,7 +58,7 @@
                         i = i + 1;
                     }
                     $("#getUpdateMedications").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateMedications").val()) {
                                 $("#updateMedicationId").val(data[i].id);
@@ -98,7 +98,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Cost:* </span>
                 </div>
-                <input type="number" min="1" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="cost" required>
+                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="cost" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -115,13 +115,13 @@
                 url: "http://unitecproject.herokuapp.com/api/apiMedicationsNoPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
                         $("#getDeleteMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                         i = i + 1;
                     }
                     $("#getDeleteMedications").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeleteMedications").val()) {
                                 $("#deleteMedicationId").val(data[i].id);
@@ -178,10 +178,10 @@
                 url: "http://unitecproject.herokuapp.com/api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
                         $("#getPrescibeMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + " " + data[i].cost + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                 },
                 error: function () {
@@ -190,29 +190,28 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAdmissionsForAllocation.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAdmissionsForPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
-                        $("#getAllocateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        $("#getPrescibeAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                         i = i + 1;
                     }
-                    $("#getAllocateAdmissions").change(function() {
-                        var i = 0;
+                    $("#getPrescibeAdmissions").change(function() {
+                        i = 0;
                         while (i < data.length) {
-                            if (data[i].id == $("#getAllocateAdmissions").val()) {
-                                $("#allocateAdmissionId").val(data[i].id);
-                                $("#allocateDescription").val(data[i].description);
-                                $("#allocatePatientInfo").val(data[i].patient[2] + " " + data[i].patient[1]);
-                                d = 0;
+                            if (data[i].id == $("#getPrescibeAdmissions").val()) {
+                                $("#prescribeAdmissionId").val(data[i].id);
+                                $("#prescribeDescription").val(data[i].description);
+                                $("#prescribePatientInfo").val(data[i].patient.firstname + " " + data[i].patient.lastname);
+                                m = 0;
                                 info = "";
-                                while (d < data[i].doctor.length) {
-                                    info += (data[i].doctor[d].id + " , " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname +
-                                        " , " + data[i].doctor[d].role + " | ");
-                                    d++;
+                                while (m < data[i].medication.length) {
+                                    info += (data[i].medication[m].name + " , " + data[i].medication[m].amount + " " + data[i].medication[d].medicationdate + " | ");
+                                    m++;
                                 }
-                                $("#allocateDoctorInfo").val(info);
+                                $("#prescribeMedicationInfo").val(info);
                             }
                             i++;
                         }
@@ -223,13 +222,13 @@
                 }
             });
         </script>
-        <form action="../api/apiAddAllocation.php" method="post">
-            <h1>Allocate Doctor</h1>
+        <form action="../api/apiAddPrescription.php" method="post">
+            <h1>Prescribe Medication</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
-                <select class="form-control" id="getAllocateAdmissions" name="admissionID" required>
+                <select class="form-control" id="getPrescibeAdmissions" name="admissionID" required>
                     <option disabled selected hidden>Select an Admission</option>
                 </select>
             </div>
@@ -237,23 +236,23 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Id: </span>
                 </div>
-                <input type="text" class="form-control" id="allocateAdmissionId" name="id" readonly>
+                <input type="text" class="form-control" id="prescribeAdmissionId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description: </span>
                 </div>
-                <input type="text" maxlength="25" class="form-control" id="allocateDescription" name="description" readonly>
+                <input type="text" maxlength="25" class="form-control" id="prescribeDescription" name="description" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient Name: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="allocatePatientInfo" name="patient" readonly>
+                <input type="text" maxlength="50" class="form-control" id="prescribePatientInfo" name="patient" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Allocated Doctors: </span>
+                    <span class="input-group-text">Prescribed Medications: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="allocateDoctorInfo" name="doctor" readonly>
+                <input type="text" maxlength="50" class="form-control" id="prescribeMedicationInfo" name="medication" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -265,16 +264,9 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Fee:* </span>
+                    <span class="input-group-text">Amount:* </span>
                 </div>
-                <input type="number" min="1" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" required>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Role:* </span>
-                </div>
-                <select class="form-control" id="allocateRole" name="role" required>
-                    <option value="primary">Primary</option>
-                    <option value="secondary">Secondary</option>
-                </select>
+                <input type="number" min="0" max="999.99" maxlength="6" class="form-control" id="preAmount" name="amount" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
