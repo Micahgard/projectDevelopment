@@ -13,6 +13,9 @@
         <a class="nav-link" data-toggle="tab" href="#deleteAdmission">Delete Admission</a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#admissionsReport">Admissions Report</a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#produceInvoice">Produce Invoice</a>
     </li>
     <li class="nav-item">
@@ -69,7 +72,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
-                <input type="date" maxlength="10" class="form-control" id="admissiondate" name="admissiondate" placeholder="Admission Date" title="Admission Date" required>
+                <input type="date" maxlength="10" class="form-control" id="admissiondate" name="admissiondate" title="Admission Date" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -148,10 +151,11 @@
                                     $("#updateAdmissionId").val(data[i].id);
                                     $("#updateDescription").val(data[i].description);
                                     $("#updateAdmissiondate").val(data[i].admissiondate);
-                                    $("#updateStatus").val(data[i].status);
-                                    $("#updatePatientLastname").val(data[i].patient[1]);
-                                    $("#updatePatientFirstname").val(data[i].patient[2]);
-                                    $("#updateWardName").val(data[i].ward.name);
+                                    $("#updatePatientID").val(data[i].patientID[0]);
+                                    $("#updatePatientLastname").val(data[i].patientID[1]);
+                                    $("#updatePatientFirstname").val(data[i].patientID[2]);
+                                    $("#updateWardID").val(data[i].wardID[0]);
+                                    $("#updateWardName").val(data[i].wardID[1]);
                                 }
                                 i++;
                             }
@@ -187,7 +191,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
-                <input type="date" maxlength="10" class="form-control" id="updateStatus" name="admissiondate" placeholder="Admission Date" required>
+                <input type="date" maxlength="10" class="form-control" id="updateAdmissiondate" name="admissiondate" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Status:* </span>
                 </div>
@@ -197,9 +201,9 @@
 <!--                    <option value="complete">Complete</option>-->
 <!--                </select>-->
                 <div>
-                    <input type="radio" name="status" value="0" checked>
+                    <input type="radio" name="status" value="current" checked>
                     <label>Current</label>
-                    <input type="radio" name="status" value="1">
+                    <input type="radio" name="status" value="complete">
                     <label>Complete</label>
                 </div>
             </div>
@@ -207,17 +211,19 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <input type="text" class="form-control" id="updatePatientLastname" name="patientID" readonly>
+                <input type="text" class="form-control" id="updatePatientLastname" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient First Name: </span>
                 </div>
-                <input type="text" class="form-control" id="updatePatientFirstname" name="wardID" readonly>
+                <input type="text" class="form-control" id="updatePatientFirstname" readonly>
+                <input type="text" id="updatePatientID" name="patientID" hidden>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward Name: </span>
                 </div>
-                <input type="text" class="form-control" id="updateWardName" name="updateWardName" readonly>
+                <input type="text" class="form-control" id="updateWardName" readonly>
+                <input type="text" id="updateWardID" name="wardID" hidden>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -345,6 +351,37 @@
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
         </form>
+    </div>
+
+    <div id="admissionsReport" class="container tab-pane fade"><br>
+    <h1>Admissions Report</h1>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "http://unitecproject.herokuapp.com/api/apiAllAdmissions.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        i = 0;
+                        while (i < data.length){
+                            $("#report").append("<hr>");
+                            $("#report").append("<p>ID: "+data[i].id+" </p>");
+                            $("#report").append("<p>Description: "+data[i].description+" </p>");
+                            $("#report").append("<p>Status: "+data[i].status+" </p>");
+                            $("#report").append("<p>Admission Date: "+data[i].admissiondate+" </p>");
+                            $("#report").append("<p>Patient: "+data[i].patient+" </p>");
+                            $("#report").append("<p>Medication: "+data[i].medication+" </p>");
+                            $("#report").append("<hr>");
+                            i = i+1;
+                        }
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+            });
+        </script>
+        <div id="report"></div>
     </div>
 
     <div id="produceInvoice" class="container tab-pane fade"><br>
