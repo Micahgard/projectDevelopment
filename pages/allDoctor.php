@@ -1,6 +1,5 @@
 <title>Doctor</title>
 <?php include_once 'head.php'; ?>
-
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
@@ -20,6 +19,10 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
+        <div class="alert alert-primary alert-dismissible fade show display-none" id="addSuccess">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Success!</strong> Doctor has been successfully added.
+        </div>
         <form action="../api/apiAddDoctor.php" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
