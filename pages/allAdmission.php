@@ -370,7 +370,7 @@
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
                                     $("#invoice").html("<table>");
                                     $("#invoice").append("<tr><td>Patient ID:</td><td>" + data[i].patient.id + "</td>" +
-                                        "<td>Patient Name:</td><td>" + data[i].patient.name + "</td></tr>");
+                                        "<td>Patient Name:</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr>");
                                     $("#invoice").append("<tr><td>Patient Address:</td><td>" + data[i].patient.address + "</td></tr>");
                                     $("#invoice").append("<tr style='height: 20px'></tr>");
 
@@ -388,7 +388,7 @@
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<tr><td>Doctor Name:</td><td>" + data[i].doctor[d].name + "</td>" +
+                                        $("#invoice").append("<tr><td>Doctor Name:</td><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td>" +
                                             "<td>Fee:</td><td>$" + data[i].doctor[d].fee + "</td></tr>");
                                         fee += parseInt(data[i].doctor[d].fee);
                                         d++;

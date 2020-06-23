@@ -55,7 +55,7 @@ class Administrator
         $conn->close();
     }
 
-    // invoice start
+    // invoice
     public function completeAdmissions()
     {
         $conn = (new DB())->conn;
@@ -64,68 +64,68 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new Invoice($row["AdmissionID"], $row["description"], $this->patientDetailsForInvoice($row["patientID"]), $this->medicationForInvoice($row["AdmissionID"]), $this->allocatedDoctorForInvoice($row["AdmissionID"]));
+                $admission = new Invoice($row["AdmissionID"], $row["description"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
         $conn->close();
         return $admissions;
     }
-
-    public function patientDetailsForInvoice($patientID)
-    {
-        $conn = (new DB())->conn;
-        $sql = "select * from Patient where PatientID = " . $patientID;
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $getID = $row["PatientID"];
-                $getname = $row["firstname"]." ".$row["lastname"];
-                $getaddress = $row["street"].", ".$row["suburb"].", ".$row["city"];
-                $patient = array("id"=>$getID, "name"=>$getname, "address"=>$getaddress);
-            }
-        }
-        $conn->close();
-        return $patient;
-    }
-
-    public function medicationForInvoice($admissionID)
-    {
-        $conn = (new DB())->conn;
-        $sql = "select Medication.name, Medication.cost, Prescription.amount from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
-        $result = $conn->query($sql);
-        $medications = array();
-        if ($result->num_rows>0){
-            while ($row=$result->fetch_assoc()){
-                $getname = $row["name"];
-                $getcost = $row["cost"];
-                $getamount = $row["amount"];
-                $medication = array("name"=>$getname, "cost"=>$getcost, "amount"=>$getamount);
-                array_push($medications,$medication);
-            }
-        }
-        $conn->close();
-        return $medications;
-    }
-
-    public function allocatedDoctorForInvoice($admissionID)
-    {
-        $conn = (new DB())->conn;
-        $sql = "select Doctor.lastname, Doctor.firstname, Allocation.fee from Doctor, Allocation, Admission where Doctor.DoctorID = Allocation.doctorID and Allocation.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
-        $result = $conn->query($sql);
-        $doctors = array();
-        if ($result->num_rows>0){
-            while ($row=$result->fetch_assoc()){
-                $getname = $row["firstname"]." ".$row["lastname"];
-                $getfee = $row["fee"];
-                $doctor = array("name"=>$getname, "fee"=>$getfee);
-                array_push($doctors,$doctor);
-            }
-        }
-        $conn->close();
-        return $doctors;
-    }
-    // invoice end
+//
+//    public function patientDetailsForInvoice($patientID)
+//    {
+//        $conn = (new DB())->conn;
+//        $sql = "select * from Patient where PatientID = " . $patientID;
+//        $result = $conn->query($sql);
+//        if ($result->num_rows > 0) {
+//            while ($row = $result->fetch_assoc()) {
+//                $getID = $row["PatientID"];
+//                $getname = $row["firstname"]." ".$row["lastname"];
+//                $getaddress = $row["street"].", ".$row["suburb"].", ".$row["city"];
+//                $patient = array("id"=>$getID, "name"=>$getname, "address"=>$getaddress);
+//            }
+//        }
+//        $conn->close();
+//        return $patient;
+//    }
+//
+//    public function medicationForInvoice($admissionID)
+//    {
+//        $conn = (new DB())->conn;
+//        $sql = "select Medication.name, Medication.cost, Prescription.amount from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+//        $result = $conn->query($sql);
+//        $medications = array();
+//        if ($result->num_rows>0){
+//            while ($row=$result->fetch_assoc()){
+//                $getname = $row["name"];
+//                $getcost = $row["cost"];
+//                $getamount = $row["amount"];
+//                $medication = array("name"=>$getname, "cost"=>$getcost, "amount"=>$getamount);
+//                array_push($medications,$medication);
+//            }
+//        }
+//        $conn->close();
+//        return $medications;
+//    }
+//
+//    public function allocatedDoctorForInvoice($admissionID)
+//    {
+//        $conn = (new DB())->conn;
+//        $sql = "select Doctor.lastname, Doctor.firstname, Allocation.fee from Doctor, Allocation, Admission where Doctor.DoctorID = Allocation.doctorID and Allocation.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+//        $result = $conn->query($sql);
+//        $doctors = array();
+//        if ($result->num_rows>0){
+//            while ($row=$result->fetch_assoc()){
+//                $getname = $row["firstname"]." ".$row["lastname"];
+//                $getfee = $row["fee"];
+//                $doctor = array("name"=>$getname, "fee"=>$getfee);
+//                array_push($doctors,$doctor);
+//            }
+//        }
+//        $conn->close();
+//        return $doctors;
+//    }
+//    // invoice end
 
     // admissions report start
     public function showAdmissions()
@@ -137,7 +137,7 @@ class Administrator
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
-                    $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
+                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -145,7 +145,7 @@ class Administrator
         return $admissions;
     }
 
-    public function findPatientByPatientID($patientID)
+    public function findPatientByAdmission($patientID)
     {
         $conn = (new DB())->conn;
         $sql = "select * from Patient where PatientID = " . $patientID;
@@ -155,7 +155,8 @@ class Administrator
             $id = $row["PatientID"];
             $lastname = $row["lastname"];
             $firstname = $row["firstname"];
-            $patient = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname);
+            $address = $row["street"].", ".$row["suburb"].", ".$row["city"];
+            $patient = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname, "address"=>$address);
             }
         }
         $conn->close();
@@ -165,12 +166,15 @@ class Administrator
     public function findMedicationsByAdmission($admissionID)
     {
         $conn = (new DB())->conn;
-        $sql = "select Medication.name from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $sql = "select Medication.name, Medication.cost, Prescription.amount from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
         $result = $conn->query($sql);
         $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
-                $medication = $row["name"];
+                $name = $row["name"];
+                $cost = $row["cost"];
+                $amount = $row["amount"];
+                $medication = array("name"=>$name, "cost"=>$cost, "amount"=>$amount);
                 array_push($medications,$medication);
             }
         }
@@ -189,7 +193,7 @@ class Administrator
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
-                    $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
+                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -209,7 +213,8 @@ class Administrator
                 $lastname = $row["lastname"];
                 $firstname = $row["firstname"];
                 $role = $row["role"];
-                $doctor = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname, "role"=>$role);
+                $fee = $row["fee"];
+                $doctor = array("id"=>$id, "lastname"=>$lastname, "firstname"=>$firstname, "role"=>$role, "fee"=>$fee);
                 array_push($doctors,$doctor);
             }
         }
@@ -441,7 +446,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findWardByWardID($row["wardID"]));
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findWardByWardID($row["wardID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -475,7 +480,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -492,7 +497,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByPatientID($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
