@@ -208,7 +208,7 @@
                                 m = 0;
                                 info = "";
                                 while (m < data[i].medication.length) {
-                                    info += (data[i].medication[m].name + " , " + data[i].medication[m].amount + " " + data[i].medication[d].medicationdate + " | ");
+                                    info += (data[i].medication[m].name + " , " + data[i].medication[m].amount + " , " + data[i].medication[m].prescriptiondate + " | ");
                                     m++;
                                 }
                                 $("#prescribeMedicationInfo").val(info);
@@ -270,7 +270,7 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Allocate Doctor"/>
+                <input class="btn btn-outline-primary" type="submit" value="Prescribe Medication"/>
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
         </form>
