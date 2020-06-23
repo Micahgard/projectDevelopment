@@ -29,13 +29,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="name" name="name" placeholder="Name" required>
+                <input type="text" maxlength="30" class="form-control" id="name" name="name" placeholder="Name" title="name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Cost:* </span>
                 </div>
-                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" required>
+                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" title="cost" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -92,13 +92,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Name:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateName" name="name" placeholder="Name" required>
+                <input type="text" maxlength="30" class="form-control" id="updateName" name="name" placeholder="Name" title="name" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Cost:* </span>
                 </div>
-                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="cost" required>
+                <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="cost" title="cost" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -266,7 +266,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Amount:* </span>
                 </div>
-                <input type="number" min="0" max="999.99" maxlength="6" class="form-control" id="preAmount" name="amount" required>
+                <input type="number" step=".01" min="0" max="999.99" maxlength="6" class="form-control" id="preAmount" name="amount" title="amount" required>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">

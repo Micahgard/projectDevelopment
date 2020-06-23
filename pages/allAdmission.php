@@ -156,13 +156,13 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description:* </span>
                 </div>
-                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="description" placeholder="Description" required>
+                <input type="text" maxlength="30" class="form-control" id="updateDescription" name="description" placeholder="Description" title="Description" required>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date:* </span>
                 </div>
-                <input type="date" maxlength="10" class="form-control" id="updateAdmissiondate" name="admissiondate" required>
+                <input type="date" maxlength="10" class="form-control" id="updateAdmissiondate" name="admissiondate" title="Admission Date" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Status:* </span>
                 </div>
@@ -596,7 +596,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Fee:* </span>
                 </div>
-                <input type="number" min="0" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" required>
+                <input type="number" step=".01" min="0" max="99999.99" maxlength="8" class="form-control" id="allocateFee" name="fee" title="fee" required>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Role:* </span>
                 </div>

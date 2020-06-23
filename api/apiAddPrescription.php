@@ -9,8 +9,8 @@
 
 include_once "../class/Prescription.php";
 
-if (isset($_POST["name"])) {
-    $prescription = new Prescription(null, date("y-m-d"), $_POST["amount"], $_POST["admissionid"], $_POST["medicationid"]);
+if (isset($_POST["medicationID"])) {
+    $prescription = new Prescription(null, date("y-m-d"), $_POST["amount"], $_POST["admissionID"], $_POST["medicationID"]);
     $prescription->save();
     $msg = "prescription added";
 }else{

@@ -8,7 +8,7 @@
 
 include_once "../class/Allocation.php";
 
-if (isset($_POST["fee"])) {
+if (isset($_POST["doctorID"])) {
     $allocation = new Allocation(null, $_POST["fee"], $_POST["role"], $_POST["doctorID"], $_POST["admissionID"]);
     $allocation->save();
     $msg = "allocation added";
