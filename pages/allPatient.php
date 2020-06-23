@@ -77,7 +77,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
+                url: "../api/apiAllPatients.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -174,7 +174,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiPatientsNoAdmission.php",
+                url: "../api/apiPatientsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -273,7 +273,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiPatientsReport.php",
+                    url: "../api/apiPatientsReport.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;

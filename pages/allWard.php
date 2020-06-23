@@ -47,7 +47,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
+                url: "../api/apiAllWards.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -115,7 +115,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiWardsNoAdmission.php",
+                url: "../api/apiWardsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;

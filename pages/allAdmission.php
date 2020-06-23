@@ -36,7 +36,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAllPatients.php",
+                    url: "../api/apiAllPatients.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -51,7 +51,7 @@
                 });
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
+                    url: "../api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -107,7 +107,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiCurrentAdmissions.php",
+                    url: "../api/apiCurrentAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -204,7 +204,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiCloseAdmissions.php",
+                    url: "../api/apiCloseAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         $("#getDeleteAdmissions").change(function() {
@@ -224,7 +224,7 @@
                 });
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAllWards.php",
+                    url: "../api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -325,7 +325,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiAdmissionsReport.php",
+                    url: "../api/apiAdmissionsReport.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -359,7 +359,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "http://unitecproject.herokuapp.com/api/apiCompleteAdmissions.php",
+                    url: "../api/apiCompleteAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -504,7 +504,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllDoctors.php",
+                url: "../api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -519,7 +519,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllocationPrescription.php",
+                url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;

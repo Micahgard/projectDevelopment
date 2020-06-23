@@ -49,7 +49,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllMedications.php",
+                url: "../api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
                     let i = 0;
@@ -112,7 +112,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiMedicationsNoPrescription.php",
+                url: "../api/apiMedicationsNoPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -175,7 +175,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllMedications.php",
+                url: "../api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -190,7 +190,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAllocationPrescription.php",
+                url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
