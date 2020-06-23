@@ -190,7 +190,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "http://unitecproject.herokuapp.com/api/apiAdmissionsForPrescription.php",
+                url: "http://unitecproject.herokuapp.com/api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;

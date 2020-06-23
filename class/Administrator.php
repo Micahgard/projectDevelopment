@@ -6,7 +6,7 @@ include_once "Doctor.php";
 include_once "Medication.php";
 include_once "Admission.php";
 include_once "Invoice.php";
-include_once "AdmissionsReport.php";
+include_once "AdmissionsAll.php";
 include_once "PatientsReport.php";
 include_once "DoctorsReport.php";
 
@@ -55,7 +55,7 @@ class Administrator
         $conn->close();
     }
 
-    // find patient, doctors, medications by admissioin start
+    // finding records from patient, doctors, medications, ward by admissioin -start-
     public function findPatientByAdmission($patientID)
     {
         $conn = (new DB())->conn;
@@ -98,7 +98,7 @@ class Administrator
     public function findMedicationsByAdmission($admissionID)
     {
         $conn = (new DB())->conn;
-        $sql = "select Medication.name, Medication.cost, Prescription.amount from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $sql = "select * from Medication, Prescription, Admission where Medication.MedicationID = Prescription.medicationID and Prescription.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
         $result = $conn->query($sql);
         $medications = array();
         if ($result->num_rows>0){
@@ -106,16 +106,33 @@ class Administrator
                 $name = $row["name"];
                 $cost = $row["cost"];
                 $amount = $row["amount"];
-                $medication = array("name"=>$name, "cost"=>$cost, "amount"=>$amount);
+                $date = $row["prescriptiondate"];
+                $medication = array("name"=>$name, "cost"=>$cost, "amount"=>$amount, "prescriptiondate"=>$date);
                 array_push($medications,$medication);
             }
         }
         $conn->close();
         return $medications;
     }
-    // find patient, doctors, medications by admissioin end
 
-    // invoice
+    public function findWardByAdmission($wardID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Ward where WardID = " . $wardID;
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $id = $row["WardID"];
+                $name = $row["name"];
+                $ward = array("id"=>$id, "name"=>$name);
+            }
+        }
+        $conn->close();
+        return $ward;
+    }
+    // finding records from patient, doctors, medications, ward by admissioin -end-
+
+    // finding records for invoice
     public function completeAdmissions()
     {
         $conn = (new DB())->conn;
@@ -132,7 +149,7 @@ class Administrator
         return $admissions;
     }
 
-    // admissions report
+    // finding records for admissions report
     public function showAdmissions()
     {
         $conn = (new DB())->conn;
@@ -141,7 +158,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
                     $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
@@ -150,8 +167,8 @@ class Administrator
         return $admissions;
     }
 
-    // allocate doctor
-    public function currentAdmissionsForAllocation()
+    // finding records for allocating doctor, prescribing medication
+    public function currentAdmissionsForAllocationPrescription()
     {
         $conn = (new DB())->conn;
         $sql = "select * from Admission WHERE status = 'current'";
@@ -159,7 +176,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
                     $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
@@ -168,16 +185,7 @@ class Administrator
         return $admissions;
     }
 
-    // prescribe medication start
-
-
-
-
-
-
-    // prescribe medication end
-
-    // patients report start
+    // finding records for patients report -start-
     public function showPatients()
     {
         $conn = (new DB())->conn;
@@ -213,9 +221,9 @@ class Administrator
         $conn->close();
         return $number;
     }
-    // patients report end
+    // finding records for patients report -end-
 
-    // doctors report start
+    // finding records for doctors report -start-
     public function showDoctors()
     {
         $conn = (new DB())->conn;
@@ -251,9 +259,9 @@ class Administrator
         $conn->close();
         return $number;
     }
-    // doctors report end
+    // finding records for doctors report -end-
 
-    // patient updating
+    // finding records for updating patient
     public function allPatiens(){
         $conn = (new DB())->conn;
         $sql = "select * from Patient";
@@ -269,7 +277,7 @@ class Administrator
         return $patients;
     }
 
-    // patient deleting
+    // finding records for deleting patient
     public function patiensWithoutAdmission(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Patient WHERE NOT EXISTS (SELECT patientID FROM Admission WHERE Admission.patientID = Patient.PatientID)";
@@ -285,7 +293,7 @@ class Administrator
         return $patients;
     }
 
-    // doctor updating
+    // finding records for updating doctor
     public function allDoctors(){
         $conn = (new DB())->conn;
         $sql = "select * from Doctor";
@@ -301,7 +309,7 @@ class Administrator
         return $doctors;
     }
 
-    // doctor deleting
+    // finding records for deleting doctor
     public function doctorsWithoutAllocation(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Doctor WHERE NOT EXISTS (SELECT * FROM Allocation, Researchproject
@@ -318,7 +326,7 @@ class Administrator
         return $doctors;
     }
 
-    // ward updating
+    // finding records for updating ward
     public function allWards(){
         $conn = (new DB())->conn;
         $sql = "select * from Ward";
@@ -334,7 +342,7 @@ class Administrator
         return $wards;
     }
 
-    // ward deleting
+    // finding records for deleting ward
     public function wardsWithoutAdmission(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Ward WHERE NOT EXISTS (SELECT wardID FROM Admission WHERE Admission.wardID = Ward.WardID)";
@@ -350,7 +358,7 @@ class Administrator
         return $wards;
     }
 
-    // medication updating
+    // finding records for updating medication
     public function allMedications(){
         $conn = (new DB())->conn;
         $sql = "select * from Medication";
@@ -366,7 +374,7 @@ class Administrator
         return $medications;
     }
 
-    // medication deleting
+    // finding records for deleting medication
     public function medicationsWithoutPresciption(){
         $conn = (new DB())->conn;
         $sql = "SELECT * FROM Medication WHERE NOT EXISTS (SELECT medicationID FROM Prescription WHERE Prescription.medicationID = Medication.MedicationID)";
@@ -382,7 +390,7 @@ class Administrator
         return $medications;
     }
 
-    // admission updating start
+    // finding records for updating admission
     public function currentAdmissions()
     {
         $conn = (new DB())->conn;
@@ -391,7 +399,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findWardByWardID($row["wardID"]));
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findWardByAdmission($row["wardID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -399,24 +407,7 @@ class Administrator
         return $admissions;
     }
 
-    public function findWardByWardID($wardID)
-    {
-        $conn = (new DB())->conn;
-        $sql = "select * from Ward where WardID = " . $wardID;
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $id = $row["WardID"];
-                $name = $row["name"];
-                $ward = array("id"=>$id, "name"=>$name);
-            }
-        }
-        $conn->close();
-        return $ward;
-    }
-    // admission updating end
-
-    // admission deleting
+    // finding records for deleting admission
     public function closeAdmissions()
     {
         $conn = (new DB())->conn;
@@ -425,7 +416,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -433,7 +424,7 @@ class Administrator
         return $admissions;
     }
 
-    // admission closing
+    // finding records for closing admission
     public function billedAdmissions()
     {
         $conn = (new DB())->conn;
@@ -442,7 +433,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsReport($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
