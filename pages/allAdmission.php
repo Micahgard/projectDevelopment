@@ -336,9 +336,13 @@
                             $("#report").append("<p>Status: "+data[i].status+" </p>");
                             $("#report").append("<p>Admission Date: "+data[i].admissiondate+" </p>");
                             $("#report").append("<p>Patient: "+data[i].patient.firstname+" "+data[i].patient.lastname+" </p>");
-                            $("#report").append("<p>Medication: "+data[i].medication+" </p>");
+                            m = 0;
+                            while (m < data[i].medication.length) {
+                                $("#report").append("<p>Medication: "+data[i].medication[m].name+" </p>");
+                                m++;
+                            }
                             $("#report").append("<hr>");
-                            i = i+1;
+                            i++;
                         }
                     },
                     error: function () {
