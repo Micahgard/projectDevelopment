@@ -1,7 +1,7 @@
 <title>Log in</title>
 <?php include_once 'head.php'; ?>
 <body class="text-center">
-    <form class="login" action="index.php" method="post">
+    <form class="login" action="../api/apiLogin.php" method="post">
         <img src="../image/icon.png" alt="image error" width="150" height="150">
         <h1>Log in</h1>
         <input class="form-control" type="text" id="username" name="username" placeholder="Username" required autofocus>
