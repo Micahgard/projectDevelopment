@@ -275,7 +275,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "../api/apiAdmissionsReport.php",
+                    // url: "../api/apiAdmissionsReport.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -390,7 +390,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    // url: "../api/apiBilledAdmissions.php",
+                    url: "../api/apiBilledAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -469,7 +469,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllocationPrescription.php",
+                // url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;

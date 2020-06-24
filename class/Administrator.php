@@ -53,7 +53,7 @@ class Administrator
         $conn->close();
     }
 
-    // finding records from patient, doctors, medications, ward by admissioin -start-
+    // finding records from patient, doctors, medications, payments, ward by admission -start-
     public function findPatientByAdmission($patientID)
     {
         $conn = (new DB())->conn;
@@ -128,7 +128,23 @@ class Administrator
         $conn->close();
         return $ward;
     }
-    // finding records from patient, doctors, medications, ward by admissioin -end-
+
+    public function findPaymentsByAdmission($admissionID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Payment, Admission where Payment.admissionID = Admission.AdmissionID and Admission.AdmissionID = " . $admissionID;
+        $result = $conn->query($sql);
+        $payments = array();
+        if ($result->num_rows>0){
+            while ($row=$result->fetch_assoc()){
+                $payment = $row["amount"];
+                array_push($payments,$payment);
+            }
+        }
+        $conn->close();
+        return $payments;
+    }
+    // finding records from patient, doctors, medications, payments, ward by admission -end-
 
     // finding records from admission by patient
     public function findAdmissionsByPatient($patientID)
@@ -176,7 +192,8 @@ class Administrator
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
-                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
+                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]),
+                    $this->findDoctorsByAdmission($row["AdmissionID"]), $this->findPaymentsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -194,7 +211,8 @@ class Administrator
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
-                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]), $this->findDoctorsByAdmission($row["AdmissionID"]));
+                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]),
+                    $this->findDoctorsByAdmission($row["AdmissionID"]), $this->findPaymentsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -467,7 +485,9 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"],
+                    $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]),
+                    $this->findDoctorsByAdmission($row["AdmissionID"]), $this->findPaymentsByAdmission($row["AdmissionID"]));
                 array_push($admissions, $admission);
             }
         }
@@ -475,20 +495,18 @@ class Administrator
         return $admissions;
     }
 
-    public function prescriptionFromAdmission() {
-        $conn = (new DB())->conn;
-        $sql = "select * from Prescription where admissionID = '15'";
-        $admissions = array();
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
-                array_push($admissions, $admission);
-            }
-        }
-        $conn->close();
-        return $admissions;
-    }
-
-
+//    public function prescriptionFromAdmission() {
+//        $conn = (new DB())->conn;
+//        $sql = "select * from Prescription where admissionID = '15'";
+//        $admissions = array();
+//        $result = $conn->query($sql);
+//        if ($result->num_rows > 0) {
+//            while ($row = $result->fetch_assoc()) {
+//                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+//                array_push($admissions, $admission);
+//            }
+//        }
+//        $conn->close();
+//        return $admissions;
+//    }
 }

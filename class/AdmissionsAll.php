@@ -1,9 +1,9 @@
 <?php
 /**
  * Author: Joel
- * Date: 21/06/2020
+ * Date: 23/06/2020
  * Version: 1.2
- * Purpose: class for getting data for admissions report, allocating, prescribing
+ * Purpose: class for getting data for admissions report, allocating, prescribing, closing admission
  */
 
 class AdmissionsAll
@@ -15,9 +15,10 @@ class AdmissionsAll
     public $patient;
     public $medication;
     public $doctor;
+    public $payment;
 
     /**
-     * AdmissionsReport constructor.
+     * AdmissionsAll constructor.
      * @param $id
      * @param $description
      * @param $admissiondate
@@ -25,8 +26,9 @@ class AdmissionsAll
      * @param $patient
      * @param $medication
      * @param $doctor
+     * @param $payment
      */
-    public function __construct($id, $description, $admissiondate, $status, $patient, $medication, $doctor)
+    public function __construct($id, $description, $admissiondate, $status, $patient, $medication, $doctor, $payment)
     {
         $this->id = $id;
         $this->description = $description;
@@ -35,6 +37,7 @@ class AdmissionsAll
         $this->patient = $patient;
         $this->medication = $medication;
         $this->doctor = $doctor;
+        $this->payment = $payment;
     }
 }
 
