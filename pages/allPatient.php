@@ -301,6 +301,84 @@
     </div>
 
     <div id="recordPayment" class="container tab-pane fade"><br>
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiPatientPayment.php",
+                dataType: "JSON",
+                success: function (data) {
+                    i = 0;
+                    while (i < data.length){
+                        $("#getPaymentPatients").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
+                        i++;
+                    }
+                    $("#getPaymentPatients").change(function() {
+                        i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getPaymentPatients").val()) {
+                                $("#paymentPatientID").val(data[i].id);
+                                $("#paymentLastname").val(data[i].lastname);
+                                $("#paymentFirstname").val(data[i].firstname);
+                                a = 0;
+                                $("#getPaymentAdmissions").html("");
+                                while (a < data[i].admission.length) {
+                                    $("#getPaymentAdmissions").append("<option value='" + data[i].admission[a].id + "'>" + data[i].admission[a].id + " " + data[i].admission[a].description + "</option>");
+                                    a++;
+                                }
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
+        <form action="../api/apiAddPayment.php" method="post">
+            <h1>Record Payment</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patients:* </span>
+                </div>
+                <select class="form-control" id="getPaymentPatients" name="patientID" required>
+                    <option disabled selected hidden>Select a Patient</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Id: </span>
+                </div>
+                <input type="text" class="form-control" id="paymentPatientID" name="patientID" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Last Name: </span>
+                </div>
+                <input type="text" maxlength="25" class="form-control" id="paymentLastname" name="lastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">First Name: </span>
+                </div>
+                <input type="text" maxlength="50" class="form-control" id="paymentFirstname" name="firstname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admissions:* </span>
+                </div>
+                <select class="form-control" id="getPaymentAdmissions" name="admissionID" required>
+                    <option disabled selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Payment Amount:* </span>
+                </div>
+                <input type="number" step=".01" min="0" max="99999.99" maxlength="8" class="form-control" id="amount" name="amount" title="amount" required>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Record Payment"/>
+                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+            </div>
+        </form>
     </div>
 </div>
 

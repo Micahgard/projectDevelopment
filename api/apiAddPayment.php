@@ -8,8 +8,8 @@
 
 include_once "../class/Payment.php";
 
-if (isset($_POST["paymentdate"])) {
-    $payment = new Payment(null, $_POST["paymentdate"], $_POST["amount"], $_POST["admissionID"]);
+if (isset($_POST["admissionID"])) {
+    $payment = new Payment(null, date("y-m-d"), $_POST["amount"], $_POST["admissionID"]);
     $payment->save();
     $msg = "payment added";
 }else{
