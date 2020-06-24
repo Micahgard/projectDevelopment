@@ -440,4 +440,21 @@ class Administrator
         $conn->close();
         return $admissions;
     }
+
+    public function prescriptionFromAdmission() {
+        $conn = (new DB())->conn;
+        $sql = "select * from Prescription where admissionID = '15'";
+        $admissions = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
+
 }
