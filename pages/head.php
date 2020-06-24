@@ -16,3 +16,7 @@
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
+        <ul class="navbar-nav">
+        </ul>
+    </nav>
