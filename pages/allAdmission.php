@@ -204,7 +204,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "../api/apiCloseAdmissions.php",
+                    // url: "../api/apiCloseAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -346,7 +346,7 @@
                                     while (d < data[i].doctor.length) {
                                         $("#invoice").append("<tr><td>Doctor Name:</td><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td>" +
                                             "<td>Fee:</td><td>$" + data[i].doctor[d].fee + "</td></tr>");
-                                        fee += parseInt(data[i].doctor[d].fee);
+                                        fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
                                     $("#invoice").append("<tr style='height: 20px'></tr>");
@@ -407,6 +407,32 @@
                                     $("#closeAdmissionId").val(data[i].id);
                                     $("#closeDescription").val(data[i].description);
                                     $("#closeAdmissiondate").val(data[i].admissiondate);
+
+                                    m = 0;
+                                    subtotal = 0;
+                                    while (m < data[i].medication.length) {
+                                        subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
+                                        m++;
+                                    }
+
+                                    d = 0;
+                                    fee = 0;
+                                    while (d < data[i].doctor.length) {
+                                        fee += parseFloat(data[i].doctor[d].fee);
+                                        d++;
+                                    }
+
+                                    due = subtotal + fee;
+
+                                    p = 0;
+                                    pay = 0;
+                                    while (p < data[i].payment.length) {
+                                        pay += parseFloat(data[i].payment[p]);
+                                        p++;
+                                    }
+
+                                    $("#amountdue").html("<label>" + due + "</label>");
+                                    $("#amountdue").append("<label>" + pay + "</label>");
                                 }
                                 i++;
                             }
@@ -451,13 +477,15 @@
                 <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
             </div>
         </form>
+        <div id="amountdue">
+        </div>
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllDoctors.php",
+                // url: "../api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -472,7 +500,7 @@
             });
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllocationPrescription.php",
+                // url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
