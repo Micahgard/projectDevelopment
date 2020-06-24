@@ -418,6 +418,7 @@
                 });
             });
         </script>
+
         <form action="../api/apiCloseBilled.php" method="post">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
