@@ -450,7 +450,7 @@ class Administrator
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $admission = new AdmissionsAll($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findMedicationsByAdmission($row["AdmissionID"]));
+                $admission = new Admission($row["AdmissionID"], $row["description"], $row["admissiondate"], $row["status"], $this->findPatientByAdmission($row["patientID"]), $this->findWardByAdmission($row["wardID"]));
                 array_push($admissions, $admission);
             }
         }

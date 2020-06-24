@@ -207,41 +207,6 @@
                     url: "../api/apiCloseAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        $("#getDeleteAdmissions").change(function() {
-                            i = 0;
-                            while (i < data.length) {
-                                if (data[i].id == $("#getDeleteAdmissions").val()) {
-                                    $("#deletePatientLastname").val(data[i].lastname);
-                                    $("#deletePatientFirstname").val(data[i].firstname);
-                                }
-                                i++;
-                            }
-                        });
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
-                $.ajax({
-                    type: 'GET',
-                    url: "../api/apiAllWards.php",
-                    dataType: "JSON",
-                    success: function (data) {
-                        i = 0;
-                        while (i < data.length){
-                            $("#getDeleteWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                            i++;
-                        }
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
-                $.ajax({
-                    type: 'GET',
-                    url: "",
-                    dataType: "JSON",
-                    success: function (data) {
                         i = 0;
                         while (i < data.length){
                             $("#getDeleteAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
@@ -254,6 +219,7 @@
                                     $("#deleteAdmissionId").val(data[i].id);
                                     $("#deleteDescription").val(data[i].description);
                                     $("#deleteAdmissiondate").val(data[i].admissiondate);
+                                    $("#deleteStatus").val(data[i].status);
                                 }
                                 i++;
                             }
@@ -266,7 +232,7 @@
             });
         </script>
         <form action="../api/apiDeleteAdmission.php" method="get">
-            <h1>Update Admission</h1>
+            <h1>Delete Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
@@ -279,37 +245,21 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Id: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteAdmissionId" name="deleteAdmissionId" placeholder="Admission Id" readonly>
+                <input type="text" class="form-control" id="deleteAdmissionId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteDescription" name="deleteDescription" placeholder="Description*" readonly>
+                <input type="text" class="form-control" id="deleteDescription" name="description" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteAdmissiondate" name="deleteAdmissiondate" placeholder="Admission Date" readonly>
+                <input type="text" class="form-control" id="deleteAdmissiondate" name="admissiondate" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Status: </span>
                 </div>
-                <input type="text" class="form-control" id="deleteStatus" name="deleteStatus" placeholder="Status" readonly>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Patient Last Name: </span>
-                </div>
-                <input type="text" class="form-control" id="deletePatientLastname" name="deletePatientLastname" readonly>
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Patient First Name: </span>
-                </div>
-                <input type="text" class="form-control" id="deletePatientFirstname" name="deletePatientFirstname" readonly>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Ward Name: </span>
-                </div>
-                <input type="text" class="form-control" id="deleteWardName" name="deleteWardName" readonly>
+                <input type="text" class="form-control" id="deleteStatus" name="status" readonly>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
