@@ -16,8 +16,7 @@ if (!empty($username) && !empty($password)) {
                     <li class="nav-item">
                         <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allDoctor.php">DOCTOR</a>
-                        <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION①</a>
-                        <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION②</a>
+                        <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION</a>
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
