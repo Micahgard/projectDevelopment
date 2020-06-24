@@ -416,7 +416,7 @@
                 });
             });
         </script>
-        <form action="../api/apiCloseAdmission.php" method="post">
+        <form action="../api/apiCloseAdmissions.php" method="post">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
