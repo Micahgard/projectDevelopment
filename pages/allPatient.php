@@ -68,7 +68,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Add Patient"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -165,7 +165,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Update Patient"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -262,7 +262,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Patient"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -299,7 +299,7 @@
         </script>
         <div id="report">
         </div>
-        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+        <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
     </div>
 
     <div id="recordPayment" class="container tab-pane fade"><br>
@@ -378,7 +378,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Record Payment"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>

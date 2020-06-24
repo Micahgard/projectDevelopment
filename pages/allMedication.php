@@ -40,7 +40,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Add Medication"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -103,7 +103,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Update Medication"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -166,7 +166,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Medication"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -271,7 +271,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Prescribe Medication"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>

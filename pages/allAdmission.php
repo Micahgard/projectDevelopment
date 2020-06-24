@@ -97,7 +97,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Add Admission"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -194,7 +194,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Update Admission"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -264,7 +264,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Admission"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -303,7 +303,7 @@
         </script>
         <div id="report">
         </div>
-        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+        <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
     </div>
 
     <div id="produceInvoice" class="container tab-pane fade"><br>
@@ -382,7 +382,7 @@
 
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Produce Invoice"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -448,7 +448,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Close Admission"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -561,7 +561,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Allocate Doctor"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
