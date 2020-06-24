@@ -13,8 +13,11 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="icon" href="../image/icon.png">
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">
-    <nav class="navbar navbar-expand-sm bg-primary navbar-light">
-    </nav>

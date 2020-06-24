@@ -1,5 +1,6 @@
 <title>Doctor</title>
 <?php include_once 'head.php'; ?>
+<?php include_once 'head-child.php'; ?>
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
@@ -68,7 +69,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" id="addDoctor" type="submit" value="Add Doctor"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -165,7 +166,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Update Doctor"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -262,7 +263,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Doctor"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -299,7 +300,7 @@
         </script>
         <div id="report">
         </div>
-        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+        <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
     </div>
 
 </div>

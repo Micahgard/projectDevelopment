@@ -1,6 +1,6 @@
 <title>Ward</title>
 <?php include_once 'head.php'; ?>
-
+<?php include_once 'head-child.php'; ?>
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
@@ -38,7 +38,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Add Ward"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -106,7 +106,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Update Ward"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>
@@ -174,7 +174,7 @@
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Delete Ward"/>
-                <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
     </div>

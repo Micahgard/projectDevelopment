@@ -1,5 +1,6 @@
 <title>Log in</title>
 <?php include_once 'head.php'; ?>
+<?php include_once 'head-child.php'; ?>
 <body class="text-center">
     <form class="login" action="../api/apiLogin.php" method="post">
         <img src="../image/icon.png" alt="image error" width="150" height="150">
