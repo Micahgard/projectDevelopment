@@ -51,6 +51,7 @@ class Admission
         if (!is_null($this->id)) {
             $query = "DELETE FROM Payment WHERE admissionID=$this->id;";
             $query.= "DELETE FROM Admission WHERE AdmissionID=$this->id";
+            echo $query;
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();

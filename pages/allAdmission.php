@@ -390,7 +390,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "../api/apiCurrentAdmissions.php",
+                    // url: "../api/apiBilledAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;

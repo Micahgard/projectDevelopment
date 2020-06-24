@@ -9,7 +9,7 @@
 include_once "../class/Admission.php";
 
 if (isset($_GET['id'])) {
-    $admission = new Admission($_GET["id"], "", "", "", "","" );
+    $admission = new Admission($_GET["id"], "", "", "", "","");
     $admission->delete();
     $msg = "admission deleted";
 }else{
