@@ -1,6 +1,6 @@
 <title>Ward</title>
 <?php include_once 'head.php'; ?>
-
+<?php include_once 'head-child.php'; ?>
 <!--Nav Tabs-->
 <ul class="nav nav-tabs justify-content-center" role="tablist">
     <li class="nav-item">
