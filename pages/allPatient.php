@@ -297,7 +297,9 @@
                 });
             });
         </script>
-        <div id="report"></div>
+        <div id="report">
+        </div>
+        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
     </div>
 
     <div id="recordPayment" class="container tab-pane fade"><br>

@@ -275,7 +275,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    url: "../api/apiAdmissionsReport.php",
+                    // url: "../api/apiAdmissionsReport.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -301,7 +301,9 @@
                 });
             });
         </script>
-        <div id="report"></div>
+        <div id="report">
+        </div>
+        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
     </div>
 
     <div id="produceInvoice" class="container tab-pane fade"><br>
@@ -368,7 +370,7 @@
             <h1>Produce Invoice</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Complete Admissions: </span>
+                    <span class="input-group-text">Admissions: </span>
                 </div>
                 <select class="form-control" id="getInvoice" name="id" required>
                     <option disabled selected hidden>Select an Admission</option>
@@ -416,11 +418,11 @@
                 });
             });
         </script>
-        <form action="../api/apiCloseAdmission.php" method="post">
+        <form action="../api/apiCloseBilled.php" method="post">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Billed Admissions (That Have Payments):* </span>
+                    <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getCloseAdmissions" name="id" required>
                     <option disabled selected hidden>Select an Admission</option>

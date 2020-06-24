@@ -288,7 +288,7 @@
                             $("#report").append("<p>Admissions: "+data[i].admission+" </p>");
                             $("#report").append("<p>Research Projects: "+data[i].project+" </p>");
                             $("#report").append("<hr>");
-                            i = i+1;
+                            i++;
                         }
                     },
                     error: function () {
@@ -297,7 +297,9 @@
                 });
             });
         </script>
-        <div id="report"></div>
+        <div id="report">
+        </div>
+        <a href="../api/apiLogin.php"><input class="btn btn-outline-primary" type="button" value="Return"></a>
     </div>
 
 </div>
