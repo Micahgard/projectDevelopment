@@ -8,6 +8,7 @@ include_once "Admission.php";
 include_once "Invoice.php";
 include_once "AdmissionsAll.php";
 include_once "PatientsReport.php";
+include_once "PatientPayment.php";
 include_once "DoctorsReport.php";
 
 class Administrator
@@ -18,9 +19,6 @@ class Administrator
     public $email;
     public $phone;
     public $role;
-
-
-//  check username and password for this administrator login
 
     /**
      * Administrator constructor.
@@ -132,6 +130,25 @@ class Administrator
     }
     // finding records from patient, doctors, medications, ward by admissioin -end-
 
+    // finding records from admission by patient
+    public function findAdmissionsByPatient($patientID)
+    {
+        $conn = (new DB())->conn;
+        $sql = "select * from Admission where status = 'billed' and patientID = ". $patientID;
+        $result = $conn->query($sql);
+        $admissions = array();
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $id = $row["AdmissionID"];
+                $description = $row["description"];
+                $admission = array("id"=>$id, "description"=>$description);
+                array_push($admissions, $admission);
+            }
+        }
+        $conn->close();
+        return $admissions;
+    }
+
     // finding records for invoice
     public function completeAdmissions()
     {
@@ -183,6 +200,23 @@ class Administrator
         }
         $conn->close();
         return $admissions;
+    }
+
+    // finding records for adding payment
+    public function patientsWithBilledAdmission()
+    {
+        $conn = (new DB())->conn;
+        $sql = "SELECT * FROM Patient WHERE EXISTS (SELECT patientID FROM Admission WHERE Admission.patientID = Patient.PatientID AND Admission.status = 'billed')";
+        $patients = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $patient = new PatientPayment($row["PatientID"], $row["lastname"], $row["firstname"], $this->findAdmissionsByPatient($row["PatientID"]));
+                array_push($patients, $patient);
+            }
+        }
+        $conn->close();
+        return $patients;
     }
 
     // finding records for patients report -start-
