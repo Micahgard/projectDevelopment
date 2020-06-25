@@ -25,7 +25,7 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Senior Administrator</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
                 <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
@@ -43,7 +43,8 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Assistant Administrator</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -59,7 +60,8 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Facility Administrator</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -75,7 +77,8 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Pharmacy Administrator</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -90,7 +93,8 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Research Administrator</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -106,7 +110,8 @@ if (!empty($username) && !empty($password)) {
             </nav>
             <div class="container">
                 <h1>Welcome Payroll Clerk</h1>
-                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
     }
