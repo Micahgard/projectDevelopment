@@ -301,6 +301,7 @@
         <div id="report">
         </div>
         <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+        <br><br><br>
     </div>
 
 </div>

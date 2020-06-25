@@ -304,6 +304,7 @@
         <div id="report">
         </div>
         <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+        <br><br><br>
     </div>
 
     <div id="produceInvoice" class="container tab-pane fade"><br>
@@ -409,33 +410,42 @@
                                     $("#closeAdmissiondate").val(data[i].admissiondate);
 
                                     m = 0;
-                                    subtotal = 0;
+                                    var med = 0;
                                     while (m < data[i].medication.length) {
-                                        subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
+                                        med += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
 
                                     d = 0;
-                                    fee = 0;
+                                    var doc = 0;
                                     while (d < data[i].doctor.length) {
-                                        fee += parseFloat(data[i].doctor[d].fee);
+                                        doc += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
 
-                                    due = subtotal + fee;
+                                    var amountdue = med + doc;
 
                                     p = 0;
-                                    pay = 0;
+                                    var amountpay = 0;
                                     while (p < data[i].payment.length) {
-                                        pay += parseFloat(data[i].payment[p]);
+                                        amountpay += parseFloat(data[i].payment[p]);
                                         p++;
                                     }
-
-                                    $("#amountdue").html("<label>" + due + "</label>");
-                                    $("#amountdue").append("<label>" + pay + "</label>");
                                 }
                                 i++;
                             }
+                            $("#amountdue").html("<label>" + amountdue + "</label>");
+                            $("#amountpay").html("<label>" + amountpay + "</label>");
+                        });
+
+                        $(function() {
+                            $("#closeForm").on("submit",function() {
+                                if (1 < 2) {
+                                    alert('Full payment has not been made yet. The admission cannot be closed');
+                                    return false; // cancel submit
+                                }
+                                return true; // allow submit
+                            });
                         });
                     },
                     error: function () {
@@ -445,7 +455,7 @@
             });
         </script>
 
-        <form action="../api/apiCloseBilled.php" method="post">
+        <form action="../api/apiCloseBilled.php" method="post" id="closeForm">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -473,11 +483,13 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Close Admission"/>
+                <input class="btn btn-outline-primary" type="submit" id="closeAdmission" value="Close Admission"/>
                 <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
         <div id="amountdue">
+        </div>
+        <div id="amountpay">
         </div>
     </div>
 
