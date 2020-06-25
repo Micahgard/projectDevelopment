@@ -62,7 +62,7 @@
                 </div>
                 <input type="text" maxlength="20" class="form-control" id="speciality" name="speciality" placeholder="Speciality*" required>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Salary:* </span>
+                    <span class="input-group-text">Salary($):* </span>
                 </div>
                 <input type="number" step=".01" min="20000" max="200000" maxlength="9" class ="form-control" id="salary" name="salary" required>
             </div>
@@ -159,7 +159,7 @@
                 </div>
                 <input type="text" maxlength="20" class="form-control" id="updateSpeciality" name="speciality" placeholder="Speciality" required>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Salary:* </span>
+                    <span class="input-group-text">Salary($):* </span>
                 </div>
                 <input type="number" step=".01" min="20000" max="200000" maxlength="9" class ="form-control" id="updateSalary" name="salary" required>
             </div>
@@ -256,7 +256,7 @@
                 </div>
                 <input type="text" class="form-control" id="deleteSpeciality" name="speciality" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Salary: </span>
+                    <span class="input-group-text">Salary($): </span>
                 </div>
                 <input type="text" class="form-control" id="deleteSalary" name="salary" readonly>
             </div>
@@ -285,7 +285,7 @@
                             $("#report").append("<p>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</p>");
                             $("#report").append("<p>Phone Number: "+data[i].phone+" </p>");
                             $("#report").append("<p>Speciality: "+data[i].speciality+" </p>");
-                            $("#report").append("<p>Salary: "+data[i].salary+" </p>");
+                            $("#report").append("<p>Salary($): "+data[i].salary+" </p>");
                             $("#report").append("<p>Admissions: "+data[i].admission+" </p>");
                             $("#report").append("<p>Research Projects: "+data[i].project+" </p>");
                             $("#report").append("<hr>");

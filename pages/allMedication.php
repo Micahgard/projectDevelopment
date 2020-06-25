@@ -33,7 +33,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Cost:* </span>
+                    <span class="input-group-text">Cost($):* </span>
                 </div>
                 <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="cost" name="cost" title="cost" required>
             </div>
@@ -96,7 +96,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Cost:* </span>
+                    <span class="input-group-text">Cost($):* </span>
                 </div>
                 <input type="number" min="0" max="9999.99" maxlength="7" step=".01" class="form-control" id="updateCost" name="cost" title="cost" required>
             </div>
@@ -159,7 +159,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Cost: </span>
+                    <span class="input-group-text">Cost($): </span>
                 </div>
                 <input type="text" class="form-control" id="deleteCost" name="cost" readonly>
             </div>
@@ -264,7 +264,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Amount:* </span>
+                    <span class="input-group-text">Amount(Quantity):* </span>
                 </div>
                 <input type="number" step=".01" min="0" max="999.99" maxlength="6" class="form-control" id="preAmount" name="amount" title="amount" required>
             </div>
