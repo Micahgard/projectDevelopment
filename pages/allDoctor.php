@@ -290,10 +290,10 @@
                         i = 0;
                         while (i < data.length){
                             $("#report").append("<div class='table-responsive'>");
-                            $("#report").append("<table class='grid justify-content-center' cellspacing='0'>");
+                            $("#report").append("<table class='grid justify-content-center'>");
                             $("#report").append("<tbody><tr>");
                             $("#report").append("<td>"+data[i].DoctorID+"</td>");
-                            $("#report").append("<td>"+data[i].lastname+", "+data[i].firstname+"</td>");
+                            $("#report").append("<td>"+data[i].lastname+", "+data[i].firstname+"</td></tr>");
                             $("#report").append("<tr><td>"+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr>");
                             $("#report").append("<tr><td>"+data[i].phone+"</td>");
                             $("#report").append("<td>"+data[i].speciality+"</td>");
