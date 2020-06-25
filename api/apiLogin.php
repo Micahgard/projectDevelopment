@@ -14,18 +14,19 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allDoctor.php">DOCTOR</a>
                         <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION</a>
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
-                        <a class="btn btn-outline-light float-right" href="../pages/login.php">LOG OUT</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Senior Administrator</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -34,14 +35,16 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION</a>
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Assistant Administrator</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -50,13 +53,15 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Facility Administrator</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -65,13 +70,15 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Pharmacy Administrator</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -80,12 +87,14 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Research Administrator</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
 
@@ -94,13 +103,15 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allDoctor.php">DOCTOR</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
             <div class="container">
                 <h1>Welcome Payroll Clerk</h1>
+                <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator.</p>
+                <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
     }
