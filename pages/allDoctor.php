@@ -289,8 +289,8 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
-                            $("#report").append("<div class='justify-content-center table-responsive'>");
-                            $("#report").append("<table class='grid' cellspacing='0'>");
+                            $("#report").append("<div class='table-responsive'>");
+                            $("#report").append("<table class='grid justify-content-center' cellspacing='0'>");
                             $("#report").append("<tbody><tr>");
                             $("#report").append("<td colspan='1'>"+data[i].DoctorID+"</td>");
                             $("#report").append("<td colspan='10'>"+data[i].lastname+", "+data[i].firstname+"</td>");
