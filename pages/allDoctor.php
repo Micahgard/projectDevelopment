@@ -289,16 +289,18 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
-                            $("#report").append("<hr>");
-                            $("#report").append("<p>ID: "+data[i].DoctorID+" </p>");
-                            $("#report").append("<p>Name: "+data[i].firstname+" "+data[i].lastname+" </p>");
-                            $("#report").append("<p>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</p>");
-                            $("#report").append("<p>Phone Number: "+data[i].phone+" </p>");
-                            $("#report").append("<p>Speciality: "+data[i].speciality+" </p>");
-                            $("#report").append("<p>Salary($): "+data[i].salary+" </p>");
-                            $("#report").append("<p>Admissions: "+data[i].admission+" </p>");
-                            $("#report").append("<p>Research Projects: "+data[i].project+" </p>");
-                            $("#report").append("<hr>");
+                            $("#report").append("<div class='table-responsive'>");
+                            $("#report").append("<table class='grid' cellspacing='0'>");
+                            $("#report").append("<tbody><tr>");
+                            $("#report").append("<td>"+data[i].DoctorID+"</td>");
+                            $("#report").append("<td>"+data[i].lastname+", "+data[i].firstname+"</td>");
+                            $("#report").append("<tr><td>"+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr>");
+                            $("#report").append("<tr><td>"+data[i].phone+"</td>");
+                            $("#report").append("<td>"+data[i].speciality+"</td>");
+                            $("#report").append("<td>"+data[i].salary+"</td></tr>");
+                            $("#report").append("<tr><td>Admissions: "+data[i].admission+" </td>");
+                            $("#report").append("<td>Research Projects: "+data[i].project+" </td>");
+                            $("#report").append("</tr></tbody></table></div>");
                             i++;
                         }
                     },
