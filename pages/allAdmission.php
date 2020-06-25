@@ -410,23 +410,23 @@
                                     $("#closeAdmissiondate").val(data[i].admissiondate);
 
                                     m = 0;
-                                    var med = 0;
+                                    med = 0;
                                     while (m < data[i].medication.length) {
                                         med += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
 
                                     d = 0;
-                                    var doc = 0;
+                                    doc = 0;
                                     while (d < data[i].doctor.length) {
                                         doc += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
 
-                                    var amountdue = med + doc;
+                                    amountdue = med + doc;
 
                                     p = 0;
-                                    var amountpay = 0;
+                                    amountpay = 0;
                                     while (p < data[i].payment.length) {
                                         amountpay += parseFloat(data[i].payment[p]);
                                         p++;
@@ -434,13 +434,13 @@
                                 }
                                 i++;
                             }
-                            $("#amountdue").html("<label>" + amountdue + "</label>");
-                            $("#amountpay").html("<label>" + amountpay + "</label>");
+                            // $("#amountpay").html("<label>" + amountpay + "</label>");
+                            // $("#amountdue").html("<label>" + amountdue + "</label>");
                         });
 
                         $(function() {
                             $("#closeForm").on("submit",function() {
-                                if (1 < 2) {
+                                if (amountpay < amountdue) {
                                     alert('Full payment has not been made yet. The admission cannot be closed');
                                     return false; // cancel submit
                                 }
@@ -487,10 +487,10 @@
                 <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
-        <div id="amountdue">
-        </div>
-        <div id="amountpay">
-        </div>
+<!--        <div id="amountdue">-->
+<!--        </div>-->
+<!--        <div id="amountpay">-->
+<!--        </div>-->
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
