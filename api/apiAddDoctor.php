@@ -16,3 +16,4 @@ if (isset($_POST["lastname"])) {
     $msg = "doctor not added";
 }
 $msg = json_encode($msg);
+echo $msg;
