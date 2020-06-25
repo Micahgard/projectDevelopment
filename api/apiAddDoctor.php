@@ -13,5 +13,3 @@ if (isset($_POST["lastname"])) {
     $doctor->save();
 }else{
 }
-$msg = json_encode($msg);
-echo $msg;
