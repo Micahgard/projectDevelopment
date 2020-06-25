@@ -50,7 +50,19 @@ class Admission
         $this->dbconn = (new DB())->conn;
         if (!is_null($this->id)) {
             $query = "DELETE FROM Payment WHERE admissionID=$this->id;";
-            $query.= "DELETE FROM Admission WHERE AdmissionID=$this->id";
+            $query .= "DELETE FROM Admission WHERE AdmissionID=$this->id;";
+            mysqli_multi_query($this->dbconn, $query);
+        }
+        $this->dbconn->close();
+    }
+
+    public function closeAndDelete()
+    {
+        $this->dbconn = (new DB())->conn;
+        if (!is_null($this->id)) {
+            $query = "UPDATE Admission SET status='close' WHERE AdmissionID=$this->id;";
+            $query .= "DELETE FROM Allocation WHERE admissionID=$this->id;";
+            $query .= "DELETE FROM Prescription WHERE admissionID=$this->id;";
             mysqli_multi_query($this->dbconn, $query);
         }
         $this->dbconn->close();

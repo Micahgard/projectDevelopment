@@ -204,7 +204,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    // url: "../api/apiCloseAdmissions.php",
+                    url: "../api/apiCloseAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -275,7 +275,7 @@
             $(document).ready(function () {
                 $.ajax({
                     type: 'GET',
-                    // url: "../api/apiAdmissionsReport.php",
+                    url: "../api/apiAdmissionsReport.php",
                     dataType: "JSON",
                     success: function (data) {
                         i = 0;
@@ -455,7 +455,7 @@
             });
         </script>
 
-        <form action="../api/apiCloseBilled.php" method="post" id="closeForm">
+        <form action="../api/apiCloseBilled.php" method="get" id="closeForm">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -497,7 +497,7 @@
         <script>
             $.ajax({
                 type: 'GET',
-                // url: "../api/apiAllDoctors.php",
+                url: "../api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
@@ -512,7 +512,7 @@
             });
             $.ajax({
                 type: 'GET',
-                // url: "../api/apiAllocationPrescription.php",
+                url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
