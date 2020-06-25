@@ -77,7 +77,7 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" id="addDoctor" onclick="addDoctor()" type="submit" value="Add Doctor"/>
+                <input class="btn btn-outline-primary" id="addDoctor" type="submit" value="Add Doctor"/>
                 <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
