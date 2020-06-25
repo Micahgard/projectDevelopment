@@ -11,5 +11,7 @@ include_once "../class/Billed.php";
     $status = "billed";
     $invoice = new Billed($id, $status);
     $invoice->invoice();
+
+$msg = "invoice produced";
 $msg = json_encode($msg);
 echo $msg;
