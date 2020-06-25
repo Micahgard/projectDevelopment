@@ -292,8 +292,8 @@
                             $("#report").append("<div class='table-responsive'>");
                             $("#report").append("<table class='grid justify-content-center' cellspacing='0'>");
                             $("#report").append("<tbody><tr>");
-                            $("#report").append("<td colspan='1'>"+data[i].DoctorID+"</td>");
-                            $("#report").append("<td colspan='10'>"+data[i].lastname+", "+data[i].firstname+"</td>");
+                            $("#report").append("<td>"+data[i].DoctorID+"</td>");
+                            $("#report").append("<td>"+data[i].lastname+", "+data[i].firstname+"</td>");
                             $("#report").append("<tr><td>"+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr>");
                             $("#report").append("<tr><td>"+data[i].phone+"</td>");
                             $("#report").append("<td>"+data[i].speciality+"</td>");
