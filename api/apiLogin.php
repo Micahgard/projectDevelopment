@@ -20,6 +20,7 @@ if (!empty($username) && !empty($password)) {
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
+                        <a class="btn btn-outline-light float-right" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
