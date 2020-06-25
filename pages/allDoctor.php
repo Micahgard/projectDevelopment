@@ -21,13 +21,16 @@
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
         <script>
-            function addDoctor (){
+            function SubForm(e){
+                e.preventDefault();
+                var url=$(this).closest('form').attr('action'),
+                    data=$(this).closest('form').serialize();
                 $.ajax({
                     url:'../api/apiAddDoctor.php',
                     type:'post',
-                    data:$('#myForm').serialize(),
+                    data:data,
                     success:function(){
-                        alert("worked");
+                        alert('success');
                     }
                 });
             }
