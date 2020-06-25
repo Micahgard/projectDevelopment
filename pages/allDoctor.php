@@ -33,7 +33,7 @@
             }
         </script>
 
-        <form action="../api/apiAddDoctor.php" id="myForm" method="post">
+        <form id="myForm" name="myForm" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
