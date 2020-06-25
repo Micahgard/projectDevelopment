@@ -14,13 +14,12 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allDoctor.php">DOCTOR</a>
                         <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION</a>
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
-                        <a class="btn btn-outline-light float-right" href="../pages/login.php">LOG OUT</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
@@ -34,9 +33,9 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allAdmission.php">ADMISSION</a>
                         <a class="btn btn-outline-light" href="../pages/allPatient.php">PATIENT</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
@@ -50,8 +49,8 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allWard.php">WARD</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
@@ -65,8 +64,8 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allMedication.php">MEDICATION</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
@@ -80,7 +79,7 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
@@ -94,8 +93,8 @@ if (!empty($username) && !empty($password)) {
             <nav class="navbar navbar-expand-sm bg-primary navbar-light">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-light" href="../pages/login.php">HOME</a>
                         <a class="btn btn-outline-light" href="../pages/allDoctor.php">DOCTOR</a>
+                        <a class="btn btn-outline-light" href="../pages/login.php">LOG OUT</a>
                     </li>
                 </ul>
             </nav>
