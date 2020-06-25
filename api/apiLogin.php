@@ -26,6 +26,7 @@ if (!empty($username) && !empty($password)) {
             <div class="container">
                 <h1>Welcome Senior Administrator</h1>
                 <p>Welcome to Saint Albert Hospital Management. Your permissions are listed above. If you are not happy with your access, please contact the Administrator</p>
+                <img src="../image/icon.png">
             <?php
             break;
 
