@@ -20,11 +20,15 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <div class="alert alert-primary alert-dismissible fade show display-none" id="addSuccess">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Success!</strong> Doctor has been successfully added.
-        </div>
-        <form action="../api/apiAddDoctor.php" method="post">
+        <div id="addDoctor">Doctor Added Successfully!</div>
+        <script>
+            function addDoctor() {
+                var x = document.getElementById("addDoctor");
+                x.className = "show";
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            }
+        </script>
+        <form action="../api/apiAddDoctor.php" method="post" onsubmit="addDoctor()">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -68,7 +72,7 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" id="addDoctor" type="submit" value="Add Doctor"/>
+                <input class="btn btn-outline-primary" id="addDoctor" onclick="addDoctor()" type="submit" value="Add Doctor"/>
                 <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
