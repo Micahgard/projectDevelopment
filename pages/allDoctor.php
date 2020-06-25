@@ -20,15 +20,16 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <div id="addDoctor">Doctor Added Successfully!</div>
+        <div id="notification">Doctor Added Successfully!</div>
         <script>
-            function addDoctor() {
-                var x = document.getElementById("addDoctor");
-                x.className = "show";
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-            }
+            $('#myForm').submit(function() {
+                var post_data = $('#myForm').serialize();
+                $.post('../api/apiAddDoctor.php', post_data, function(data) {
+                    $('#notification').show();
+                });
+            });
         </script>
-        <form action="../api/apiAddDoctor.php" method="post" onsubmit="addDoctor()">
+        <form id="myForm" name="myForm" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -72,7 +73,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" id="addDoctor" onclick="addDoctor()" type="submit" value="Add Doctor"/>
+                <input class="btn btn-outline-primary" id="addDoctor" type="submit" value="Add Doctor"/>
+                <a class="btn btn-outline-primary" onclick="toastr.success('Success');">Success message</a>
                 <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
             </div>
         </form>
