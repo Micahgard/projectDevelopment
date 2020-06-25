@@ -20,15 +20,20 @@
 <!-- Tab panes -->
 <div class="tab-content">
     <div id="addDoctor" class="container tab-pane active"><br>
-        <div id="addDoctor">Doctor Added Successfully!</div>
         <script>
-            function addDoctor() {
-                var x = document.getElementById("addDoctor");
-                x.className = "show";
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+            function addDoctor (){
+                $.ajax({
+                    url:'../api/apiAddDoctor.php',
+                    type:'post',
+                    data:$('#myForm').serialize(),
+                    success:function(){
+                        alert("worked");
+                    }
+                });
             }
         </script>
-        <form action="../api/apiAddDoctor.php" method="post" onsubmit="addDoctor()">
+
+        <form action="../api/apiAddDoctor.php" id="myForm" method="post">
             <h1>Add Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
