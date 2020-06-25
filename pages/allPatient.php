@@ -372,7 +372,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Payment Amount:* </span>
+                    <span class="input-group-text">Payment Amount($):* </span>
                 </div>
                 <input type="number" step=".01" min="0" max="99999.99" maxlength="8" class="form-control" id="amount" name="amount" title="amount" required>
             </div>
