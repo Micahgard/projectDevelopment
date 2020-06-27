@@ -21,10 +21,10 @@ if (isset($_POST['id'])) {
     $salary = $_POST['salary'];
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
     $doctor->update();?>
-    <div id="notification">Some text some message..</div>
     <script>
         showNotification();
     </script>
+    <div id="notification">Doctor Updated Successfully</div>
     <?php
     $msg = "doctor updated";
 }else{
