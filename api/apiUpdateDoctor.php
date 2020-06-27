@@ -26,4 +26,4 @@ if (isset($_POST['id'])) {
     $msg = "doctor not updated";
 }
 $msg = json_encode($msg);
-//echo $msg;
+echo $msg;
