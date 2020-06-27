@@ -20,12 +20,7 @@ if (isset($_POST['id'])) {
     $speciality = $_POST['speciality'];
     $salary = $_POST['salary'];
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
-    $doctor->update();?>
-    <script>
-        showNotification();
-    </script>
-    <div id="notification">Doctor Updated Successfully</div>
-    <?php
+    $doctor->update();
     $msg = "doctor updated";
 }else{
     $msg = "doctor not updated";
