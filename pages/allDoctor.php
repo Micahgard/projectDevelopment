@@ -104,8 +104,20 @@
                     alert("Not connected");
                 }
             });
+            $('#updateDoctorForm').submit(function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:'../api/apiUpdateDoctor.php',
+                    type:'post',
+                    data:$('#updateDoctorForm').serialize(),
+                    success:function(){
+                        showNotification();
+                    }
+                });
+            });
         </script>
-        <form action="../api/apiUpdateDoctor.php" method="post">
+        <div id="notification">Doctor Updated Successfully!</div>
+        <form action="../api/apiUpdateDoctor.php" method="post" id="updateDoctorForm" name="updateDoctorForm">
             <h1>Update Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
