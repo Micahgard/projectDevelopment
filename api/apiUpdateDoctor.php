@@ -7,6 +7,7 @@
  */
 
 include_once "../class/Doctor.php";
+include_once "notification.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -19,10 +20,15 @@ if (isset($_POST['id'])) {
     $speciality = $_POST['speciality'];
     $salary = $_POST['salary'];
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
-    $doctor->update();
+    $doctor->update();?>
+    <div id="notification">Some text some message..</div>
+    <script>
+        showNotification();
+    </script>
+    <?php
     $msg = "doctor updated";
 }else{
     $msg = "doctor not updated";
 }
 $msg = json_encode($msg);
-echo $msg;
+//echo $msg;
