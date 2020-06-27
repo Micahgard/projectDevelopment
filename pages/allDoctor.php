@@ -106,7 +106,6 @@
             });
         </script>
         <form action="../api/apiUpdateDoctor.php" method="post">
-            <div id="notification">Doctor Updated Successfully</div>
             <h1>Update Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">

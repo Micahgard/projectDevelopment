@@ -24,7 +24,7 @@ if (isset($_POST['id'])) {
     <script>
         showNotification();
     </script>
-
+    <div id="notification">Doctor Updated Successfully</div>
     <?php
     $msg = "doctor updated";
 }else{
