@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script src="../scripts/notification.js"></script>
+    <script src="../scripts/scripts.js"></script>
     <link rel="icon" href="../image/icon.png">
 </head>
 <body>
