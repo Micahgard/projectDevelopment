@@ -275,16 +275,22 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
-                            $("#report").append("<hr>");
-                            $("#report").append("<p>ID: "+data[i].DoctorID+" </p>");
-                            $("#report").append("<p>Name: "+data[i].firstname+" "+data[i].lastname+" </p>");
-                            $("#report").append("<p>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</p>");
-                            $("#report").append("<p>Phone Number: "+data[i].phone+" </p>");
-                            $("#report").append("<p>Speciality: "+data[i].speciality+" </p>");
-                            $("#report").append("<p>Salary($): "+data[i].salary+" </p>");
-                            $("#report").append("<p>Admissions: "+data[i].admission+" </p>");
-                            $("#report").append("<p>Research Projects: "+data[i].project+" </p>");
-                            $("#report").append("<hr>");
+                            $("#report").append("<div class='row'>");
+                            $("#report").append("<div class='col'>ID: "+data[i].DoctorID+" </div>");
+                            $("#report").append("<div class='col'>Name: "+data[i].firstname+" "+data[i].lastname+" </div>");
+                            $("#report").append("</div>");
+                            $("#report").append("<div class='row'>");
+                            $("#report").append("<div class='col'>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</div>");
+                            $("#report").append("</div>");
+                            $("#report").append("<div class='row'>");
+                            $("#report").append("<div class='col'>Phone Number: "+data[i].phone+" </div>");
+                            $("#report").append("<div class='col'>Speciality: "+data[i].speciality+" </div>");
+                            $("#report").append("<div class='col'>Salary($): "+data[i].salary+" </div>");
+                            $("#report").append("</div>");
+                            $("#report").append("<div class='row'>");
+                            $("#report").append("<div class='col'>Admissions: "+data[i].admission+" </div>");
+                            $("#report").append("<div class='col'>Research Projects: "+data[i].project+" </div>");
+                            $("#report").append("</div>");
                             i++;
                         }
                     },
