@@ -56,15 +56,18 @@ table {
 }
 
 .successNotification {
+    text-align: center;
     background-color: #33D275;
     color: white;
     height: 50px;
-    text-align: center;
 }
 
 
 .failureNotification {
-
+    text-align: center;
+    background-color: #FF6B79;
+    color: white;
+    height: 50px;
 }
 
 .grey {
