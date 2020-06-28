@@ -6,7 +6,7 @@ function notificationGoBack() {
         setTimeout(function () {
             window.history.back();
             location.reload();
-        }, 5000);
+        }, 6000);
 }
 
 function showNotification() {
