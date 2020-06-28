@@ -5,6 +5,7 @@ function goBack() {
 function notificationGoBack() {
         setTimeout(function () {
             window.history.back();
+            location.reload();
         }, 5000);
 }
 
