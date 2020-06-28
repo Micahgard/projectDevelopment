@@ -7,7 +7,7 @@
  */
 
 include_once "../class/Doctor.php";
-include_once "notification.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -25,5 +25,7 @@ if (isset($_POST['id'])) {
 }else{
     $msg = "doctor not updated";
 }
-$msg = json_encode($msg);
+//$msg = json_encode($msg);
 echo $msg;
+
+include_once '../pages/foot.php';
