@@ -7,6 +7,8 @@
  */
 
 include_once "../class/Admission.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -17,9 +19,13 @@ if (isset($_POST['id'])) {
     $wardID = $_POST['wardID'];
     $admission = new Admission($id, $description, $admissiondate, $status, $patientID, $wardID);
     $admission->update();
-    $msg = "admission updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Admission has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "admission not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Admission has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

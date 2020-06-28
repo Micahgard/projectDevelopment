@@ -8,6 +8,8 @@
  */
 
 include_once "../class/Prescription.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -17,9 +19,13 @@ if (isset($_POST['id'])) {
     $medicationid = $_POST['medicationid'];
     $prescription = new Prescription($id, $prescriptiondate, $amount, $admissionid, $medicationid);
     $prescription->update();
-    $msg = "prescription updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Prescription has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "prescription not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Prescription has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

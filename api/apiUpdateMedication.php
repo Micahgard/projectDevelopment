@@ -7,6 +7,8 @@
  */
 
 include_once "../class/Medication.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])){
     $id = $_POST['id'];
@@ -14,9 +16,13 @@ if (isset($_POST['id'])){
     $cost = $_POST['cost'];
     $medication = new Medication($id, $name, $cost);
     $medication->update();
-    $msg = "medication updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Medication has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "medication not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Medication has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

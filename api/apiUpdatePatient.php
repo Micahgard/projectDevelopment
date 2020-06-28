@@ -7,6 +7,8 @@
  */
 
 include_once "../class/Patient.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -20,9 +22,13 @@ if (isset($_POST['id'])) {
     $insurcode = $_POST['insurcode'];
     $patient = new Patient($id, $lastname, $firstname, $street, $suburb, $city, $email, $phone, $insurcode);
     $patient->update();
-    $msg = "patient updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Patient has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "patient not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Patient has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

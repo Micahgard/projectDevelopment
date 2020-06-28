@@ -7,6 +7,8 @@
  */
 
 include_once "../class/Payment.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])){
     $id = $_POST['id'];
@@ -15,9 +17,13 @@ if (isset($_POST['id'])){
     $admissionID = $_POST['admissionID'];
     $payment = new Payment($id, $paymentdate, $amount, $admissionID);
     $payment->update();
-    $msg = "payment updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Payment has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "payment not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Payment has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

@@ -7,6 +7,8 @@
  */
 
 include_once "../class/Allocation.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -16,9 +18,13 @@ if (isset($_POST['id'])) {
     $admissionid = $_POST['admissionid'];
     $allocation = new Allocation($id, $fee, $role, $doctorid, $admissionid);
     $allocation->update();
-    $msg = "allocation updated";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Allocation has been Successfully Updated!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "allocation not updated";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Allocation has not been Updated!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";
