@@ -21,12 +21,11 @@ if (isset($_POST['id'])) {
     $speciality = $_POST['speciality'];
     $salary = $_POST['salary'];
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
-    $doctor->update();
-    echo '<p>Doctor has been Successfully Updated!</p>';
-}else{
+    $doctor->update();?>
+    <div class="container">
+    <div id="successNotification">Doctor has been Successfully Updated!</div>
+<?php}else{
     $msg = "doctor not updated";
 }
-//$msg = json_encode($msg);
-echo $msg;
-
+?></div><?php
 include_once "../pages/foot.php";
