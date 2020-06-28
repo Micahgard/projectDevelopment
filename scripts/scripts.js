@@ -4,8 +4,7 @@ function goBack() {
 
 function notificationGoBack() {
         setTimeout(function () {
-            window.history.back();
-            location.reload();
+            window.location=document.referrer;
         }, 6000);
 }
 
