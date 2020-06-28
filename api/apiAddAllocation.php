@@ -7,13 +7,18 @@
  */
 
 include_once "../class/Allocation.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST["doctorID"])) {
     $allocation = new Allocation(null, $_POST["fee"], $_POST["role"], $_POST["doctorID"], $_POST["admissionID"]);
     $allocation->save();
-    $msg = "allocation added";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Allocation has been Successfully Added!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "allocation not added";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Allocation has not been Added!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+include_once "../pages/foot.php";

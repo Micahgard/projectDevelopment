@@ -7,13 +7,19 @@
  */
 
 include_once "../class/Doctor.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST["lastname"])) {
     $doctor = new Doctor(null, $_POST["lastname"], $_POST["firstname"], $_POST["street"], $_POST["suburb"], $_POST["city"], $_POST["phone"], $_POST["speciality"], $_POST["salary"]);
     $doctor->save();
-    $msg = "doctor added!";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Added!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "doctor not added";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Doctor has not been Added!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

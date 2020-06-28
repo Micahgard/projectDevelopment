@@ -8,13 +8,19 @@
  */
 
 include_once "../class/Prescription.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST["medicationID"])) {
     $prescription = new Prescription(null, date("y-m-d"), $_POST["amount"], $_POST["admissionID"], $_POST["medicationID"]);
     $prescription->save();
-    $msg = "prescription added";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Prescription has been Successfully Added!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "prescription not added";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Prescription has not been Added!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";
