@@ -7,6 +7,7 @@
  */
 
 include_once "../class/Doctor.php";
+include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
 if (isset($_POST['id'])) {
@@ -21,11 +22,11 @@ if (isset($_POST['id'])) {
     $salary = $_POST['salary'];
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
     $doctor->update();
-    $msg = "doctor updated";
+    echo '<p>Doctor has been Successfully Updated!</p>';
 }else{
     $msg = "doctor not updated";
 }
 //$msg = json_encode($msg);
 echo $msg;
 
-include_once '../pages/foot.php';
+include_once "../pages/foot.php";
