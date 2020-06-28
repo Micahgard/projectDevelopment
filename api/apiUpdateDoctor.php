@@ -23,7 +23,7 @@ if (isset($_POST['id'])) {
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
     $doctor->update();?>
     <div class="container">
-    <div id="successNotification">Doctor has been Successfully Updated!</div>
+    <div class="successNotification">&nbsp;<b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Updated!</div>
 <?php}else{
     $msg = "doctor not updated";
 }
