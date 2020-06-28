@@ -23,12 +23,12 @@ if (isset($_POST['id'])) {
     $doctor = new Doctor($id, $lastname, $firstname, $street, $suburb, $city, $phone, $speciality, $salary);
     $doctor->update();?>
     <div class="container">
-        <div class="success-notification">&nbsp;<b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Updated!</div>
-<!--        <script>notificationGoBack();</script>-->
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Updated!</div>
+        <script>notificationGoBack();</script>
     <?php
 }else{
     ?><div class="container">
-        <div class="failure-notification">&nbsp;<b style="font-size: 20px;">⚠️</b>&nbsp; Doctor has been Successfully Updated!</div>
+        <div class="failure-notification">⚠️Doctor has been Successfully Updated!</div>
         <script>notificationGoBack();</script><?php
 }
 include_once "../pages/foot.php";
