@@ -7,13 +7,19 @@
  */
 
 include_once "../class/Doctor.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_GET['id'])) {
     $doctor = new Doctor($_GET["id"], "", "", "", "", "", "", "", "");
     $doctor->delete();
-    $msg = "doctor deleted";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "doctor not deleted";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Doctor has not been Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

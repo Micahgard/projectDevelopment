@@ -8,13 +8,19 @@
  */
 
 include_once "../class/Prescription.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_GET['id'])) {
     $prescription = new Prescription($_GET["id"], "", "", "", "");
     $prescription->delete();
-    $msg = "prescription deleted";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Prescription has been Successfully Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "prescription not deleted";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Prescription has not been Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

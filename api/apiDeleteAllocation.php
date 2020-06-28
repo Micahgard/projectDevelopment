@@ -7,13 +7,19 @@
  */
 
 include_once "../class/Allocation.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_GET['id'])) {
     $allocation = new Allocation($_GET["id"], "", "", "", "");
     $allocation->delete();
-    $msg = "allocation deleted";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Allocation has been Successfully Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "allocation not deleted";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Allocation has not been Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";

@@ -7,13 +7,19 @@
  */
 
 include_once "../class/Payment.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_GET['id'])) {
     $payment = new Payment($_GET["id"], "", "", "");
     $payment->delete();
-    $msg = "payment deleted";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Payment has been Successfully Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "payment not deleted";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Payment has not been Deleted!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";
