@@ -55,7 +55,7 @@ table {
     margin-right: auto;
 }
 
-.successNotification {
+.success-notification {
     text-align: center;
     background-color: #33D275;
     color: white;
@@ -63,7 +63,7 @@ table {
 }
 
 
-.failureNotification {
+.failure-notification {
     text-align: center;
     background-color: #FF6B79;
     color: white;
