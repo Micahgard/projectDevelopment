@@ -68,7 +68,8 @@ table {
     text-align: center;
     background-color: #FF6B79;
     color: white;
-    height: 50px;
+    margin: 20px;
+    padding: 8px;
 }
 
 .grey {
