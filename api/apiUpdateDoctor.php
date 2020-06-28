@@ -24,7 +24,7 @@ if (isset($_POST['id'])) {
     $doctor->update();?>
     <div class="container">
         <div class="success-notification">&nbsp;<b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Updated!</div>
-        <script>notificationGoBack();</script>
+<!--        <script>notificationGoBack();</script>-->
     <?php
 }else{
     ?><div class="container">
