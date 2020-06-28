@@ -28,7 +28,7 @@ if (isset($_POST['id'])) {
     <?php
 }else{
     ?><div class="container">
-        <div class="failure-notification">⚠️&nbsp;Doctor has been Successfully Updated!</div>
+        <div class="failure-notification">⚠️&nbsp;Doctor has not been Updated!</div>
         <script>notificationGoBack();</script><?php
 }
 include_once "../pages/foot.php";
