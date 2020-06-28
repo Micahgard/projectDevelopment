@@ -275,14 +275,10 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
-                            $("#report").append("<div class='row'><div class='col'>ID: "+data[i].DoctorID+" </div>");
-                            $("#report").append("<div class='col'>Name: "+data[i].firstname+" "+data[i].lastname+" </div></div>");
+                            $("#report").append("<div class='row'><div class='col'>ID: "+data[i].DoctorID+" </div><div class='col'>Name: "+data[i].firstname+" "+data[i].lastname+" </div></div>");
                             $("#report").append("<div class='row'><div class='col'>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</div></div>");
-                            $("#report").append("<div class='row'><div class='col'>Phone Number: "+data[i].phone+" </div>");
-                            $("#report").append("<div class='col'>Speciality: "+data[i].speciality+" </div>");
-                            $("#report").append("<div class='col'>Salary($): "+data[i].salary+" </div></div>");
-                            $("#report").append("<div class='row'><div class='col'>Admissions: "+data[i].admission+" </div>");
-                            $("#report").append("<div class='col'>Research Projects: "+data[i].project+" </div></div>");
+                            $("#report").append("<div class='row'><div class='col'>Phone Number: "+data[i].phone+" </div><div class='col'>Speciality: "+data[i].speciality+" </div><div class='col'>Salary($): "+data[i].salary+" </div></div>");
+                            $("#report").append("<div class='row'><div class='col'>Admissions: "+data[i].admission+" </div><div class='col'>Research Projects: "+data[i].project+" </div></div>");
                             i++;
                         }
                     },
