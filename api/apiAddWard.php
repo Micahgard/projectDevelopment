@@ -7,13 +7,19 @@
  */
 
 include_once "../class/Ward.php";
+include_once "../pages/head.php";
+include_once "../pages/head-child.php";
 
 if (isset($_POST["name"])) {
     $ward = new Ward(null, $_POST["name"], $_POST["location"], $_POST["capacity"]);
     $ward->save();
-    $msg = "ward added";
+    ?><div class="container">
+        <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Ward has been Successfully Added!</div>
+        <script>notificationGoBack();</script><?php
 }else{
-    $msg = "ward not added";
+    ?><div class="container">
+        <div class="failure-notification">⚠️&nbsp;Ward has not been Added!</div>
+        <script>notificationGoBack();</script><?php
 }
-$msg = json_encode($msg);
-echo $msg;
+
+include_once "../pages/foot.php";
