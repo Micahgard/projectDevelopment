@@ -3,8 +3,8 @@ function goBack() {
 }
 
 function notificationGoBack() {
-        setTimeout(function () {
-            window.location=document.referrer;
-            //window.history.back();
-        }, 6000);
+    setTimeout(function () {
+        window.location=document.referrer;
+        //window.history.back();
+    }, 6000);
 }
