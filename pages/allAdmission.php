@@ -374,7 +374,7 @@
                     <span class="input-group-text">Admissions: </span>
                 </div>
                 <select class="form-control" id="getInvoice" name="id" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled selected hidden>Select an Invoice</option>
                 </select>
             </div>
 
