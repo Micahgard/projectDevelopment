@@ -605,9 +605,97 @@
             </div>
         </form>
     </div>
-
     <div id="removeDoctor" class="container tab-pane fade"><br>
-
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiRemoveDoctor.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        i = 0;
+                        while (i < data.length){
+                            $("#getRemoveDoctorAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                            i++;
+                        }
+                        $("#getRemoveDoctorAdmissions").change(function() {
+                            i = 0;
+                            while (i < data.length) {
+                                if (data[i].id == $("#getRemoveDoctorAdmissions").val()) {
+                                    $("#removeDoctorAdmissionId").val(data[i].id);
+                                    $("#removeDoctorDescription").val(data[i].description);
+                                    $("#removeDoctorPatientLastname").val(data[i].firstname);
+                                    $("#removeDoctorPatientFirstname").val(data[i].lastname);
+                                }
+                                i++;
+                            }
+                        });
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+                $.ajax({
+                    type: 'GET',
+                    url: "../api/apiRemoveDoctor.php",
+                    dataType: "JSON",
+                    success: function (data) {
+                        i = 0;
+                        while (i < data.length){
+                            $("#getRemoveDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].lastname + " " + data[i].firstname + " " + data[i].role + "</option>");
+                            i++;
+                        }
+                    },
+                    error: function () {
+                        alert("Not connected");
+                    }
+                });
+            });
+        </script>
+        <form action="../api/apiRemoveDoctor.php" method="get">
+            <h1>Remove Doctor</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admissions:* </span>
+                </div>
+                <select class="form-control" id="getRemoveDoctorAdmissions" name="id" required>
+                    <option disabled selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Id: </span>
+                </div>
+                <input type="text" class="form-control" id="removeDoctorAdmissionId" name="id" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Description: </span>
+                </div>
+                <input type="text" class="form-control" id="removeDoctorDescription" name="description" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Last Name: </span>
+                </div>
+                <input type="text" class="form-control" id="removeDoctorPatientLastname" name="patientLastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
+                </div>
+                <input type="text" class="form-control" id="removeDoctorPatientFirstname" name="patientLastname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Doctors:* </span>
+                </div>
+                <select class="form-control" id="getRemoveDoctors" name="id" required>
+                    <option disabled selected hidden>Select a Doctor</option>
+                </select>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Remove Doctor"/>
+                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+            </div>
+        </form>
     </div>
 </div>
 <?php include_once 'foot.php';?>
