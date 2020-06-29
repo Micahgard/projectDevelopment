@@ -1,6 +1,5 @@
 function goBack() {
-    //window.history.back();
-    window.history.go(-2);
+    window.history.back();
 }
 
 function notificationGoBack() {
