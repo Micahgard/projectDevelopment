@@ -85,19 +85,19 @@
                     <span class="input-group-text">Patient:* </span>
                 </div>
                 <select class="form-control" id="getPatient" name="patientID" required>
-                    <option disabled selected hidden>Select a Patient</option>
+                    <option disabled value="" selected hidden>Select a Patient</option>
                 </select>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Ward:* </span>
                 </div>
                 <select class="form-control" id="getWard" name="wardID" required>
-                    <option disabled selected hidden>Select a Ward</option>
+                    <option disabled value="" selected hidden>Select a Ward</option>
                 </select>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Admission"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Add Admission">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -145,7 +145,7 @@
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getUpdateAdmissions" name="id" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -193,8 +193,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Update Admission"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Update Admission">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -231,14 +231,14 @@
                 });
             });
         </script>
-        <form action="../api/apiDeleteAdmission.php" method="get">
+        <form action="../api/apiDeleteAdmission.php" method="post">
             <h1>Delete Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getDeleteAdmissions" name="id" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -263,8 +263,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Delete Admission"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Delete Admission">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -303,7 +303,7 @@
         </script>
         <div id="report">
         </div>
-        <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+        <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
         <br><br><br>
     </div>
 
@@ -370,7 +370,7 @@
                     <span class="input-group-text">Admissions: </span>
                 </div>
                 <select class="form-control" id="getInvoice" name="id" required>
-                    <option disabled selected hidden>Select an Invoice</option>
+                    <option disabled value="" selected hidden>Select an Invoice</option>
                 </select>
             </div>
 
@@ -378,8 +378,8 @@
             </div>
 
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Produce Invoice"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Produce Invoice">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -450,15 +450,14 @@
                 });
             });
         </script>
-
-        <form action="../api/apiCloseBilled.php" method="get" id="closeForm">
+        <form action="../api/apiCloseBilled.php" method="post" id="closeForm">
             <h1>Close Admission</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getCloseAdmissions" name="id" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -479,8 +478,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" id="closeAdmission" value="Close Admission"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" id="closeAdmission" value="Close Admission">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
 <!--        <div id="amountdue">-->
@@ -522,7 +521,8 @@
                             if (data[i].id == $("#getAllocateAdmissions").val()) {
                                 $("#allocateAdmissionId").val(data[i].id);
                                 $("#allocateDescription").val(data[i].description);
-                                $("#allocatePatientInfo").val(data[i].patient.firstname + " " + data[i].patient.lastname);
+                                $("#allocatePatientLastname").val(data[i].patient.lastname);
+                                $("#allocatePatientFirstname").val(data[i].patient.firstname);
                                 d = 0;
                                 info = "";
                                 while (d < data[i].doctor.length) {
@@ -548,7 +548,7 @@
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getAllocateAdmissions" name="admissionID" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -563,9 +563,13 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Patient Name: </span>
+                    <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="allocatePatientInfo" name="patient" readonly>
+                <input type="text" maxlength="50" class="form-control" id="allocatePatientLastname" name="lastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
+                </div>
+                <input type="text" maxlength="50" class="form-control" id="allocatePatientFirstname" name="firstname" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -578,7 +582,7 @@
                     <span class="input-group-text">Doctors:* </span>
                 </div>
                 <select class="form-control" id="getAllocateDoctors" name="doctorID" required>
-                    <option disabled selected hidden>Select a Doctor</option>
+                    <option disabled value="" selected hidden>Select a Doctor</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -596,11 +600,12 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Allocate Doctor"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Allocate Doctor">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
+
     <div id="removeDoctor" class="container tab-pane fade"><br>
         <script>
             $(document).ready(function () {
@@ -648,14 +653,14 @@
                 });
             });
         </script>
-        <form action="../api/apiRemoveDoctor.php" method="get">
+        <form action="../api/apiDeleteAllocation.php" method="post">
             <h1>Remove Doctor</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getRemoveDoctorAdmissions" name="id" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -683,13 +688,13 @@
                     <span class="input-group-text">Doctors:* </span>
                 </div>
                 <select class="form-control" id="getRemoveDoctors" name="id" required>
-                    <option disabled selected hidden>Select a Doctor</option>
+                    <option disabled value="" selected hidden>Select a Doctor</option>
                 </select>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Remove Doctor"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Remove Doctor">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>

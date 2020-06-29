@@ -39,8 +39,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Medication"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Add Medication">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -81,7 +81,7 @@
                     <span class="input-group-text">Medications:* </span>
                 </div>
                 <select class="form-control" id="getUpdateMedications" name="id" required>
-                    <option disabled selected hidden>Select a Medication</option>
+                    <option disabled value="" selected hidden>Select a Medication</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -102,8 +102,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Update Medication"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Update Medication">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -137,14 +137,14 @@
                 }
             });
         </script>
-        <form action="../api/apiDeleteMedication.php" method="get">
+        <form action="../api/apiDeleteMedication.php" method="post">
             <h1>Delete Medication</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Medications:* </span>
                 </div>
                 <select class="form-control" id="getDeleteMedications" name="id" required>
-                    <option disabled selected hidden>Select a Medication</option>
+                    <option disabled value="" selected hidden>Select a Medication</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -165,8 +165,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Delete Medication"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Delete Medication">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -229,7 +229,7 @@
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getPrescibeAdmissions" name="admissionID" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -259,7 +259,7 @@
                     <span class="input-group-text">Medications:* </span>
                 </div>
                 <select class="form-control" id="getPrescibeMedications" name="medicationID" required>
-                    <option disabled selected hidden>Select a Medication</option>
+                    <option disabled value="" selected hidden>Select a Medication</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -270,8 +270,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Prescribe Medication"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Prescribe Medication">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>

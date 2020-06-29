@@ -10,8 +10,8 @@ include_once "../class/Admission.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_GET['id'])) {
-    $admission = new Admission($_GET["id"], "", "", "", "","");
+if (isset($_POST['id'])) {
+    $admission = new Admission($_POST["id"], "", "", "", "","");
     $admission->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Admission has been Successfully Deleted!</div>
