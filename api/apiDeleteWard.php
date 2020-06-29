@@ -10,8 +10,8 @@ include_once "../class/Ward.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_GET['id'])) {
-    $ward = new Ward($_GET["id"], "", "", "");
+if (isset($_POST['id'])) {
+    $ward = new Ward($_POST["id"], "", "", "");
     $ward->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Ward has been Successfully Deleted!</div>

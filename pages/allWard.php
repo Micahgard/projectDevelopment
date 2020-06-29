@@ -141,7 +141,7 @@
                 }
             });
         </script>
-        <form action="../api/apiDeleteWard.php" method="get">
+        <form action="../api/apiDeleteWard.php" method="post">
             <h1>Delete Wards</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
