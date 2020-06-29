@@ -334,9 +334,7 @@
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table table-bordered'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead><tbody><tr><td>" + data[i].medication[m].name + "</td>" +
-                                            "<td>$" + data[i].medication[m].cost + "</td>" +
-                                            "<td>" + data[i].medication[m].amount + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead><tbody><tr><td>" + data[i].medication[m].name + "</td><td>$" + data[i].medication[m].cost + "</td><td>" + data[i].medication[m].amount + "</td></tr></tbody></table>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
@@ -345,8 +343,7 @@
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<tr><td>Doctor Name:</td><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td>" +
-                                            "<td>Fee:</td><td>$" + data[i].doctor[d].fee + "</td></tr>");
+                                        $("#invoice").append("<table class='table'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead><tbody><td><td>" + data[i].doctor[d].firstname + "</td><td>" + data[i].doctor[d].lastname + "</td><td>" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
