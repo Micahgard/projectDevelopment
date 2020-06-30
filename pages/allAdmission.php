@@ -322,7 +322,7 @@
                             while (i < data.length) {
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
                                     $("#invoice").html("<table class='table table-borderless'>");
-                                    $("#invoice").append("<table class='table table-borderless'><tr><td>" + data[i].patient.id
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].patient.id
                                         + " &nbsp;&nbsp;&nbsp;" + data[i].patient.firstname + " " + data[i].patient.lastname
                                         + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr>");
                                     m = 0;
