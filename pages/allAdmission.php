@@ -615,7 +615,7 @@
                     $("#getRemoveAdmissions").change(function() {
                         i = 0;
                         while (i < data.length) {
-                            if (data[i].id == $("#getAllocateAdmissions").val()) {
+                            if (data[i].id == $("#getRemoveAdmissions").val()) {
                                 $("#removeAdmissionId").val(data[i].id);
                                 $("#removeDescription").val(data[i].description);
                                 $("#removePatientLastname").val(data[i].patient.lastname);
