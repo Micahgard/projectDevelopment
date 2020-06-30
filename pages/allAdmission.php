@@ -608,49 +608,40 @@
 
     <div id="removeDoctor" class="container tab-pane fade"><br>
         <script>
-            $(document).ready(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: "../api/apiRemoveDoctor.php",
-                    dataType: "JSON",
-                    success: function (data) {
-                        i = 0;
-                        while (i < data.length){
-                            $("#getRemoveDoctorAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllocationPrescription.php",
+                dataType: "JSON",
+                success: function (data) {
+                    i = 0;
+                    while (i < data.length){
+                        if (data[i].doctor.length > 0) {
+                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                             i++;
                         }
-                        $("#getRemoveDoctorAdmissions").change(function() {
-                            i = 0;
-                            while (i < data.length) {
-                                if (data[i].id == $("#getRemoveDoctorAdmissions").val()) {
-                                    $("#removeDoctorAdmissionId").val(data[i].id);
-                                    $("#removeDoctorDescription").val(data[i].description);
-                                    $("#removeDoctorPatientLastname").val(data[i].firstname);
-                                    $("#removeDoctorPatientFirstname").val(data[i].lastname);
+                    }
+                    $("#getRemoveAdmissions").change(function() {
+                        i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getAllocateAdmissions").val()) {
+                                $("#removeAdmissionId").val(data[i].id);
+                                $("#removeDescription").val(data[i].description);
+                                $("#removePatientLastname").val(data[i].patient.lastname);
+                                $("#removePatientFirstname").val(data[i].patient.firstname);
+                                d = 0;
+                                while (d < data[i].doctor.length) {
+                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].id + "'>" + data[i].doctor[d].id + " " +
+                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + " " + data[i].doctor[d].role + "</option>");
+                                    d++;
                                 }
-                                i++;
                             }
-                        });
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
-                $.ajax({
-                    type: 'GET',
-                    url: "../api/apiRemoveDoctor.php",
-                    dataType: "JSON",
-                    success: function (data) {
-                        i = 0;
-                        while (i < data.length){
-                            $("#getRemoveDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].lastname + " " + data[i].firstname + " " + data[i].role + "</option>");
                             i++;
                         }
-                    },
-                    error: function () {
-                        alert("Not connected");
-                    }
-                });
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
             });
         </script>
         <form action="../api/apiDeleteAllocation.php" method="post">
@@ -659,7 +650,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admissions:* </span>
                 </div>
-                <select class="form-control" id="getRemoveDoctorAdmissions" name="id" required>
+                <select class="form-control" id="getRemoveAdmissions" name="admissionID" required>
                     <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
@@ -667,27 +658,27 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Id: </span>
                 </div>
-                <input type="text" class="form-control" id="removeDoctorAdmissionId" name="id" readonly>
+                <input type="text" class="form-control" id="removeAdmissionId" name="admissionID" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description: </span>
                 </div>
-                <input type="text" class="form-control" id="removeDoctorDescription" name="description" readonly>
+                <input type="text" class="form-control" id="removeDescription" name="description" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <input type="text" class="form-control" id="removeDoctorPatientLastname" name="patientLastname" readonly>
+                <input type="text" class="form-control" id="removePatientLastname" name="patientLastname" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patient First Name: </span>
                 </div>
-                <input type="text" class="form-control" id="removeDoctorPatientFirstname" name="patientLastname" readonly>
+                <input type="text" class="form-control" id="removePatientFirstname" name="patientFirstname" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Doctors:* </span>
+                    <span class="input-group-text">Allocated Doctors:* </span>
                 </div>
-                <select class="form-control" id="getRemoveDoctors" name="id" required>
+                <select class="form-control" id="getRemoveDoctors" name="doctorID" required>
                     <option disabled value="" selected hidden>Select a Doctor</option>
                 </select>
             </div>
