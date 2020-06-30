@@ -622,8 +622,8 @@
                                 d = 0;
                                 $("#getRemoveDoctors").html("");
                                 while (d < data[i].doctor.length) {
-                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].id + "'>" + data[i].doctor[d].id + " " +
-                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + " " + data[i].doctor[d].role + "</option>");
+                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].id + "'>" + data[i].doctor[d].id + ", " +
+                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + "</option>");
                                     d++;
                                 }
                             }
