@@ -10,8 +10,8 @@ include_once "../class/Doctor.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_GET['id'])) {
-    $doctor = new Doctor($_GET["id"], "", "", "", "", "", "", "", "");
+if (isset($_POST['id'])) {
+    $doctor = new Doctor($_POST["id"], "", "", "", "", "", "", "", "");
     $doctor->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Doctor has been Successfully Deleted!</div>

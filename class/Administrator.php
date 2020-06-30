@@ -41,14 +41,18 @@ class Administrator
         if ($result->num_rows == 1) {    // if the username exists, check the password
             while ($row = $result->fetch_assoc()) {
                 if ($row['password'] == $password) {
-                    $this->id = $row['id'];
+                    $this->id = $row['AdminID'];
                     $this->username = $row['username'];
                     $this->password = $row['password'];
                     $this->email = $row['email'];
                     $this->phone = $row['phone'];
                     $this->role = $row['role'];
+                }else {
+                    $this->role = "wrong";
                 }
             }
+        }else {
+            $this->role = "wrong";
         }
         $conn->close();
     }

@@ -67,8 +67,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Patient"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Add Patient">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -115,7 +115,7 @@
                     <span class="input-group-text">Patients:* </span>
                 </div>
                 <select class="form-control" id="getUpdatePatients" name="id" required>
-                    <option disabled selected hidden>Select a Patient</option>
+                    <option disabled value="" selected hidden>Select a Patient</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -164,8 +164,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Update Patient"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Update Patient">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -205,14 +205,14 @@
                 }
             });
         </script>
-        <form action="../api/apiDeletePatient.php" method="get">
+        <form action="../api/apiDeletePatient.php" method="post">
             <h1>Delete Patient</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Patients:* </span>
                 </div>
                 <select class="form-control" id="getDeletePatients" name="id" required>
-                    <option disabled selected hidden>Select a Patient</option>
+                    <option disabled value="" selected hidden>Select a Patient</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -261,8 +261,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Delete Patient"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Delete Patient">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -299,7 +299,7 @@
         </script>
         <div id="report">
         </div>
-        <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+        <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
         <br><br><br>
     </div>
 
@@ -345,7 +345,7 @@
                     <span class="input-group-text">Patients:* </span>
                 </div>
                 <select class="form-control" id="getPaymentPatients" name="patientID" required>
-                    <option disabled selected hidden>Select a Patient</option>
+                    <option disabled value="" selected hidden>Select a Patient</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -367,7 +367,7 @@
                     <span class="input-group-text">Admissions:* </span>
                 </div>
                 <select class="form-control" id="getPaymentAdmissions" name="admissionID" required>
-                    <option disabled selected hidden>Select an Admission</option>
+                    <option disabled value="" selected hidden>Select an Admission</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -378,8 +378,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Record Payment"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Record Payment">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>

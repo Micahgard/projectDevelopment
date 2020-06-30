@@ -37,8 +37,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Add Ward"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Add Ward">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -80,7 +80,7 @@
                     <span class="input-group-text">Wards:* </span>
                 </div>
                 <select class="form-control" id="getUpdateWards" name="id" required>
-                    <option disabled selected hidden>Select a Ward</option>
+                    <option disabled value="" selected hidden>Select a Ward</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -105,8 +105,8 @@
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Update Ward"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Update Ward">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>
@@ -141,14 +141,14 @@
                 }
             });
         </script>
-        <form action="../api/apiDeleteWard.php" method="get">
+        <form action="../api/apiDeleteWard.php" method="post">
             <h1>Delete Wards</h1>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Wards:* </span>
                 </div>
                 <select class="form-control" id="getDeleteWards" name="id" required>
-                    <option disabled selected hidden>Select a Ward</option>
+                    <option disabled value="" selected hidden>Select a Ward</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -173,8 +173,8 @@
                 </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
-                <input class="btn btn-outline-primary" type="submit" value="Delete Ward"/>
-                <button class="btn btn-outline-primary" onclick="goBack()">Return</button>
+                <input class="btn btn-outline-primary" type="submit" value="Delete Ward">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
     </div>

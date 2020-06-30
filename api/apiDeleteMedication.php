@@ -10,8 +10,8 @@ include_once "../class/Medication.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_GET['id'])) {
-    $medication = new Medication($_GET["id"], "", "");
+if (isset($_POST['id'])) {
+    $medication = new Medication($_POST["id"], "", "");
     $medication->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Medication has been Successfully Deleted!</div>

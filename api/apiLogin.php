@@ -114,6 +114,15 @@ if (!empty($username) && !empty($password)) {
                 <img class="img-fluid rounded mx-auto d-block" src="../image/icon.png" alt="logo-icon">
             <?php
             break;
+
+        case 'wrong';
+            ?>
+            <div class="container">
+                <p style="font-size: 25px; text-align: center">username or password incorrect!</p>
+                <p style="font-size: 25px; text-align: center">auto returning... </p>
+                <script>notificationGoBack();</script>
+            <?php
+            break;
     }
 }
 
