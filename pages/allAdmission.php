@@ -346,7 +346,7 @@
                                     }
 
                                     due = subtotal + fee;
-                                    $("#invoice").append("<table class='table'><tr><td>Total Due:</td><td>$" + due + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table'><tr><td></td><td>Total Due: $" + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
