@@ -325,13 +325,13 @@
                             i = 0;
                             while (i < data.length) {
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
-                                    $("#invoice").append("<table class='table grid'><tr><td>" + data[i].patient.id + "</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table-borderless'><tr><td>" + data[i].patient.id + "</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
                                     $("#invoice").append("<table class='table grid'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead></table>");
 
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table grid'><tbody><tr><td>" + data[i].medication[m].name + "</td><td>$" + data[i].medication[m].cost + "</td><td>" + data[i].medication[m].amount + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table grid'><tr><td>" + data[i].medication[m].name + "</td><td>$" + data[i].medication[m].cost + "</td><td>" + data[i].medication[m].amount + "</td></tr></table>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
