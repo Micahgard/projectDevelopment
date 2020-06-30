@@ -338,12 +338,12 @@
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
-                                    $("#invoice").append("<table class='table'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead></table>");
+                                    $("#invoice").append("<table class='table table-responsive-sm'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead></table>");
 
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table'><tbody><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td>" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table table-responsive-sm'><tbody><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td>" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
