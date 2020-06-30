@@ -608,8 +608,8 @@
                     while (i < data.length){
                         if (data[i].doctor.length > 0) {
                             $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                            i++;
                         }
+                        i++;
                     }
                     $("#getRemoveAdmissions").change(function() {
                         i = 0;
