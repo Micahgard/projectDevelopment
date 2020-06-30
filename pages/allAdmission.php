@@ -331,7 +331,7 @@
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>Medication: " + data[i].medication[m].name + "</td><td>Quantity: " + data[i].medication[m].amount + "</td><td style='float: right'>Cost: $" + data[i].medication[m].cost + "</td></tr>");
+                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].medication[m].name + "</td><td>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
@@ -341,7 +341,7 @@
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>Doctor: " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td style='float: right'>Fee: $" + data[i].doctor[d].fee + "</td></tr>");
+                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td style='float: right'>$" + data[i].doctor[d].fee + "</td></tr>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
