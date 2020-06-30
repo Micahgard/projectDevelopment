@@ -337,7 +337,7 @@
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table table-borderless'><tbody><td>Doctor: " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td class='float-right'>Fee: $" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table table-borderless'><tr><td>Doctor: " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td style='float: right'>Fee: $" + data[i].doctor[d].fee + "</td></tr></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
