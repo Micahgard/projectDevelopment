@@ -267,7 +267,7 @@
         </form>
     </div>
 
-    <div id="patientsReport" class="container tab-pane fade"><br>
+    <div id="patientsReport" class="container tab-pane fade" style="width: 50rem"><br>
         <h1>Patients Report</h1>
         <script>
             $(document).ready(function () {
@@ -278,6 +278,10 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
+                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].DoctorID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>Phone Number: "+data[i].phone+" </td><td>Speciality: "+data[i].speciality+" </td><td>Salary($): "+data[i].salary+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>Admissions: "+data[i].admission+" </td><td>Research Projects: "+data[i].project+"</td></tr></table>");
                             $("#report").append("<hr>");
                             $("#report").append("<p>ID: "+data[i].PatientID+" </p>");
                             $("#report").append("<p>Name: "+data[i].firstname+" "+data[i].lastname+" </p>");

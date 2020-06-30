@@ -282,7 +282,6 @@
                         while (i < data.length){
                             $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].id+" </td><td>"+data[i].description+"</td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Status: "+data[i].status+"</td><td>Date: "+data[i].admissiondate+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Phone Number: "+data[i].phone+" </td><td>Speciality: "+data[i].speciality+" </td><td>Salary($): "+data[i].salary+" </td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Patient: "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr></table>");
                             m = 0;
                             while (m < data[i].medication.length) {
