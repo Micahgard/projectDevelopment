@@ -278,19 +278,10 @@
                     success: function (data) {
                         i = 0;
                         while (i < data.length){
-                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].DoctorID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].PatientID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Phone Number: "+data[i].phone+" </td><td>Speciality: "+data[i].speciality+" </td><td>Salary($): "+data[i].salary+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Admissions: "+data[i].admission+" </td><td>Research Projects: "+data[i].project+"</td></tr></table>");
-                            $("#report").append("<hr>");
-                            $("#report").append("<p>ID: "+data[i].PatientID+" </p>");
-                            $("#report").append("<p>Name: "+data[i].firstname+" "+data[i].lastname+" </p>");
-                            $("#report").append("<p>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</p>");
-                            $("#report").append("<p>Email: "+data[i].email+" </p>");
-                            $("#report").append("<p>Phone Number: "+data[i].phone+" </p>");
-                            $("#report").append("<p>Insurance Code: "+data[i].insurcode+" </p>");
-                            $("#report").append("<p>Complete Admissions: "+data[i].complete+" </p>");
-                            $("#report").append("<p>Current Admissions: "+data[i].current+" </p>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>Email: "+data[i].email+" </td><td>Phone Number: "+data[i].phone+" </td><td>Insurance Code: "+data[i].insurcode+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>Complete Admissions: "+data[i].complete+" </td><td>Current Admissions: "+data[i].current+"</td></tr></table>");
                             $("#report").append("<hr>");
                             i = i+1;
                         }
