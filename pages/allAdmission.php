@@ -326,27 +326,27 @@
                             while (i < data.length) {
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
                                     $("#invoice").append("<table class='table table-borderless'><tr><td>" + data[i].patient.id + "</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
-                                    $("#invoice").append("<table class='table grid'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead></table>");
+                                    $("#invoice").append("<table class='table'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead></table>");
 
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table grid'><tr><td>" + data[i].medication[m].name + "</td><td>$" + data[i].medication[m].cost + "</td><td>" + data[i].medication[m].amount + "</td></tr></table>");
+                                        $("#invoice").append("<table class='table'><tr><td>" + data[i].medication[m].name + "</td><td>$" + data[i].medication[m].cost + "</td><td>" + data[i].medication[m].amount + "</td></tr></table>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
-                                    $("#invoice").append("<table class='table grid'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead></table>");
+                                    $("#invoice").append("<table class='table'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead></table>");
 
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table grid'><tbody><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td>" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table'><tbody><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td>" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
 
                                     due = subtotal + fee;
-                                    $("#invoice").append("<table class='table grid'><tr><td>Total Due:</td><td>$" + due + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table'><tr><td>Total Due:</td><td>$" + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
