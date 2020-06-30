@@ -333,7 +333,7 @@
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<tr style='color: #007BFF;'><td>" + data[i].medication[m].name + "</td><td>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
+                                        $("#invoice").append("<tr style='color: #007BFF; width: 100%;'><td>" + data[i].medication[m].name + "</td><td>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
