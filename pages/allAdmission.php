@@ -325,7 +325,7 @@
                             i = 0;
                             while (i < data.length) {
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
-                                    $("#invoice").append("<table class='table table-borderless'><tr><td>" + data[i].patient.id + "</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table table-borderless'><tr><td>" + data[i].patient.id + " " + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
                                     $("#invoice").append("<table class='table'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead></table>");
 
                                     m = 0;
