@@ -307,7 +307,7 @@
         <br><br><br>
     </div>
 
-    <div id="produceInvoice" class="container tab-pane fade"><br>
+    <div id="produceInvoice" class="container tab-pane fade" style="width: 100px"><br>
         <script>
             $(document).ready(function () {
                 $.ajax({
