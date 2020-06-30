@@ -49,7 +49,7 @@ class Allocation
     {
         $this->dbconn = (new DB())->conn;
         if (!is_null($this->id)) {
-            $query = "DELETE FROM Allocation WHERE AllocationID=$this->id";
+            $query = "DELETE FROM Allocation WHERE doctorID=$this->doctorid AND admissionID=$this->admissionid";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
