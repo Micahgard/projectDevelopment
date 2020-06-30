@@ -326,7 +326,7 @@
                                         + " &nbsp;&nbsp;&nbsp;" + data[i].patient.firstname + " " + data[i].patient.lastname
                                         + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr>");
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-sm'><tr><td>Medication(s)</td><td>Quantity</td><td style='float: right'>Cost</td></tr>");
+                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Medication(s)</td><td>Quantity</td><td style='float: right'>Cost</td></tr>");
                                     $("#invoice").append("<hr>");
                                     m = 0;
                                     subtotal = 0;
@@ -336,7 +336,7 @@
                                         m++;
                                     }
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-sm'><tr><td>Doctor(s)</td><td style='float: right'>Fee</td></tr>");
+                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Doctor(s)</td><td style='float: right'>Fee</td></tr>");
                                     $("#invoice").append("<hr>");
                                     d = 0;
                                     fee = 0;
