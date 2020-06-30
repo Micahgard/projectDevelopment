@@ -336,6 +336,8 @@
                                         m++;
                                     }
                                     $("#invoice").append("<hr>");
+                                    $("#invoice").append("<table class='table table-sm'><tr><td>Doctor(s)</td><td style='float: right'>Fee</td></tr>");
+                                    $("#invoice").append("<hr>");
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
