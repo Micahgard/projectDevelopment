@@ -330,7 +330,7 @@
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table'><tr><td>Medication: " + data[i].medication[m].name + "</td><td>Cost: $" + data[i].medication[m].cost + "</td><td>Quantity: " + data[i].medication[m].amount + "</td></tr></table>");
+                                        $("#invoice").append("<table class='table'><tr><td>Medication: " + data[i].medication[m].name + "</td><td>Cost: $" + data[i].medication[m].cost + "</td><td class='float-right'>Quantity: " + data[i].medication[m].amount + "</td></tr></table>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
@@ -338,13 +338,13 @@
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table'><tbody><td>Doctor: " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td>Fee: $" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
+                                        $("#invoice").append("<table class='table'><tbody><td>Doctor: " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td class='float-right'>Fee: $" + data[i].doctor[d].fee + "</td></tr></tbody></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
 
                                     due = subtotal + fee;
-                                    $("#invoice").append("<table class='table table-borderless'><tr><td> </td><td style='float: right' '>Total Due: $" + due + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table table-borderless'><tr><td> </td><td class='float-right'>Total Due: $" + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
