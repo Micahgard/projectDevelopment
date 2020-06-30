@@ -342,10 +342,8 @@
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
-                                    $("#invoice").append("<tr style='height: 20px'></tr>");
                                     due = subtotal + fee;
                                     $("#invoice").append("<table class='table table-borderless'><tr><td> </td><td class='float-right'>Total Due: $" + due + "</td></tr></table>");
-                                    $("#invoice").append("<tr style='height: 30px'></tr>");
                                 }
                                 i++;
                             }
