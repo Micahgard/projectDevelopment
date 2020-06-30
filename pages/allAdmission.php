@@ -325,7 +325,6 @@
                                     $("#invoice").append("<tr><td>Patient ID:</td><td>" + data[i].patient.id + "</td>" +
                                         "<td>Patient Name:</td><td>" + data[i].patient.firstname + " " + data[i].patient.lastname + "</td></tr>");
                                     $("#invoice").append("<tr><td>Patient Address:</td><td>" + data[i].patient.address + "</td></tr>");
-                                    $("#invoice").append("<table class='table'><thead><tr><th>Medications</th><th>Cost</th><th>Quantity</th></thead></table>");
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
@@ -333,7 +332,6 @@
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
-                                    $("#invoice").append("<table class='table'><thead><tr><th>Doctor(s)</th><th>Fee(s)</th></thead></table>");
                                     d = 0;
                                     fee = 0;
                                     while (d < data[i].doctor.length) {
