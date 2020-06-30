@@ -269,7 +269,7 @@
         </form>
     </div>
 
-    <div id="admissionsReport" class="container tab-pane fade report-width"><br>
+    <div id="admissionsReport" class="container tab-pane fade" style="width: 50rem"><br>
     <h1>Admissions Report</h1>
         <script>
             $(document).ready(function () {
@@ -307,7 +307,7 @@
         <br><br><br>
     </div>
 
-    <div id="produceInvoice" class="container tab-pane fade report-width"><br>
+    <div id="produceInvoice" class="container tab-pane fade" style="width: 50rem"><br>
         <script>
             $(document).ready(function () {
                 $.ajax({

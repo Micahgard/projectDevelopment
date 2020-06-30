@@ -264,7 +264,7 @@
         </form>
     </div>
 
-    <div id="doctorsReport" class="container tab-pane fade report-width"><br>
+    <div id="doctorsReport" class="container tab-pane fade" style="width: 50rem"><br>
         <h1>Doctors Report</h1>
         <script>
             $(document).ready(function () {
