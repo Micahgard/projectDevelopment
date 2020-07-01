@@ -349,7 +349,7 @@
                                     }
                                     due = subtotal + fee;
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-borderless table-sm'><td></td><td style='font-weight: bold'>Total Due: $" + "</td><td style='float: right'>" + due + "</td></table>");
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr style='float: right'><td style='font-weight: bold'>Total Due: $" + "</td><td>" + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
