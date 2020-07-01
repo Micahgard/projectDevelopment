@@ -14,6 +14,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <link rel="icon" href="../image/icon.png">
+    <?php date_default_timezone_set('Pacific/Auckland'); ?>
 </head>
 <body>
     <img class="headimg" src="../image/head.jpg" alt="image error">

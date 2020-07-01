@@ -52,11 +52,13 @@
                 url: "../api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    i = 0;
                     while (i < data.length){
                         $("#getUpdateMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                        i = i + 1;
+                        $("#getPrescibeMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + " " + data[i].cost + "</option>");
+                        i++;
                     }
+
                     $("#getUpdateMedications").change(function() {
                         i = 0;
                         while (i < data.length) {
@@ -118,7 +120,7 @@
                     i = 0;
                     while (i < data.length){
                         $("#getDeleteMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getDeleteMedications").change(function() {
                         i = 0;
@@ -175,36 +177,24 @@
         <script>
             $.ajax({
                 type: 'GET',
-                url: "../api/apiAllMedications.php",
-                dataType: "JSON",
-                success: function (data) {
-                    i = 0;
-                    while (i < data.length){
-                        $("#getPrescibeMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + " " + data[i].cost + "</option>");
-                        i++;
-                    }
-                },
-                error: function () {
-                    alert("Not connected");
-                }
-            });
-            $.ajax({
-                type: 'GET',
                 url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
                     i = 0;
                     while (i < data.length){
                         $("#getPrescibeAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                        i = i + 1;
+                        $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        i++;
                     }
+
                     $("#getPrescibeAdmissions").change(function() {
                         i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getPrescibeAdmissions").val()) {
                                 $("#prescribeAdmissionId").val(data[i].id);
                                 $("#prescribeDescription").val(data[i].description);
-                                $("#prescribePatientInfo").val(data[i].patient.firstname + " " + data[i].patient.lastname);
+                                $("#PrescribePatientLastname").val(data[i].patient.lastname);
+                                $("#PrescribePatientFirstname").val(data[i].patient.firstname);
                                 m = 0;
                                 info = "";
                                 while (m < data[i].medication.length) {
@@ -212,6 +202,26 @@
                                     m++;
                                 }
                                 $("#prescribeMedicationInfo").val(info);
+                            }
+                            i++;
+                        }
+                    });
+
+                    $("#getRemoveAdmissions").change(function() {
+                        i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getRemoveAdmissions").val()) {
+                                $("#removeAdmissionId").val(data[i].id);
+                                $("#removeDescription").val(data[i].description);
+                                $("#removePatientLastname").val(data[i].patient.lastname);
+                                $("#removePatientFirstname").val(data[i].patient.firstname);
+                                m = 0;
+                                $("#getRemoveMedications").html("");
+                                while (m < data[i].medication.length) {
+                                    $("#getRemoveMedications").append("<option value='" + data[i].medication[m].prescription + "'>" + data[i].medication[m].name + ", " +
+                                        data[i].medication[m].prescriptiondate + ", " + data[i].medication[m].amount + "</option>");
+                                    m++;
+                                }
                             }
                             i++;
                         }
@@ -244,9 +254,13 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Patient Name: </span>
+                    <span class="input-group-text">Patient Last Name: </span>
                 </div>
-                <input type="text" maxlength="50" class="form-control" id="prescribePatientInfo" name="patient" readonly>
+                <input type="text" class="form-control" id="prescribePatientLastname" name="patientLastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
+                </div>
+                <input type="text" class="form-control" id="prescribePatientFirstname" name="patientFirstname" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -277,44 +291,6 @@
     </div>
 
     <div id="removePrescription" class="container tab-pane fade"><br>
-        <script>
-            $.ajax({
-                type: 'GET',
-                url: "../api/apiAllocationPrescription.php",
-                dataType: "JSON",
-                success: function (data) {
-                    i = 0;
-                    while (i < data.length){
-                        if (data[i].medication.length > 0) {
-                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                        }
-                        i++;
-                    }
-                    $("#getRemoveAdmissions").change(function() {
-                        i = 0;
-                        while (i < data.length) {
-                            if (data[i].id == $("#getRemoveAdmissions").val()) {
-                                $("#removeAdmissionId").val(data[i].id);
-                                $("#removeDescription").val(data[i].description);
-                                $("#removePatientLastname").val(data[i].patient.lastname);
-                                $("#removePatientFirstname").val(data[i].patient.firstname);
-                                m = 0;
-                                $("#getRemoveMedications").html("");
-                                while (m < data[i].medication.length) {
-                                    $("#getRemoveMedications").append("<option value='" + data[i].medication[m].id + "'>" + data[i].medication[m].name + ", " +
-                                        data[i].medication[m].prescriptiondate + ", " + data[i].medication[m].amount + "</option>");
-                                    m++;
-                                }
-                            }
-                            i++;
-                        }
-                    });
-                },
-                error: function () {
-                    alert("Not connected");
-                }
-            });
-        </script>
         <form action="../api/apiDeletePrescription.php" method="post">
             <h1>Remove Prescription</h1>
             <div class="input-group mb-3">
@@ -349,7 +325,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Prescribed Medications:* </span>
                 </div>
-                <select class="form-control" id="getRemoveMedications" name="medicationID" required>
+                <select class="form-control" id="getRemoveMedications" name="prescriptionID" required>
                     <option disabled value="" selected hidden>Select a Medication</option>
                 </select>
             </div>

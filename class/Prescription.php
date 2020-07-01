@@ -48,7 +48,7 @@ medicationid=$this->medicationid WHERE PrescriptionID=$this->id";
     public function delete(){
         $this->dbconn = (new DB())->conn ;
         if (!is_null($this->id)){
-            $query = "DELETE FROM Prescription WHERE admissionID=$this->admissionid AND medicationID=$this->medicationid";
+            $query = "DELETE FROM Prescription WHERE PrescriptionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();
