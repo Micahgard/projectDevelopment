@@ -349,7 +349,7 @@
                                     }
                                     due = subtotal + fee;
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-borderless table-sm'><td></td><td style='float: right; font-weight: bold'>Total Due: $" + "</td><td>" + due + "</td></table>");
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><td></td><td style='float: right; font-weight: bold'>Total Due: $" + "</td><td style='float: right'>" + due + "</td></table>");
                                 }
                                 i++;
                             }
@@ -378,9 +378,9 @@
             <div class="d-flex justify-content-around">
                 <input class="btn btn-outline-primary" type="submit" value="Produce Invoice">
                 <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
-                <br><br><br>
             </div>
         </form>
+        <br><br><br>
     </div>
 
     <div id="closeAdmission" class="container tab-pane fade"><br>
