@@ -333,7 +333,7 @@
                                     m = 0;
                                     subtotal = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr style='display: inline-block'><td>" + data[i].medication[m].name + "</td><td>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
+                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].medication[m].name + "</td><td>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
                                         subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
@@ -349,7 +349,7 @@
                                     }
                                     due = subtotal + fee;
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr style='float: right'><td style='font-weight: bold'>Total Due: $" + "</td><td>" + due + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr style='float: right'><td style='font-weight: bold'>Total Due: " + "</td><td>$ " + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
