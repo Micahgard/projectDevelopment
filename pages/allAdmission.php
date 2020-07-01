@@ -328,7 +328,7 @@
                                         + " &nbsp;&nbsp;&nbsp;" + data[i].patient.firstname + " " + data[i].patient.lastname
                                         + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr>");
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Medication(s)</td><td style='float: inside'>Quantity</td><td style='float: right'>Cost</td></tr>");
+                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Medication(s)</td><td style='float: right'>Quantity</td><td style='float: right'>Cost</td></tr>");
                                     $("#invoice").append("<hr>");
                                     m = 0;
                                     subtotal = 0;
