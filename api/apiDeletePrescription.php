@@ -11,8 +11,8 @@ include_once "../class/Prescription.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_GET['id'])) {
-    $prescription = new Prescription($_GET["id"], "", "", "", "");
+if (isset($_POST['admissionID'], $_POST['medicationID'])) {
+    $prescription = new Prescription("", "", "", $_POST["admissionID"], $_POST["medicationID"]);
     $prescription->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Prescription has been Successfully Deleted!</div>

@@ -54,5 +54,4 @@ class Allocation
         }
         $this->dbconn->close();
     }
-
 }

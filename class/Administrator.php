@@ -105,11 +105,12 @@ class Administrator
         $medications = array();
         if ($result->num_rows>0){
             while ($row=$result->fetch_assoc()){
+                $id = $row["MedicationID"];
                 $name = $row["name"];
                 $cost = $row["cost"];
                 $amount = $row["amount"];
                 $date = $row["prescriptiondate"];
-                $medication = array("name"=>$name, "cost"=>$cost, "amount"=>$amount, "prescriptiondate"=>$date);
+                $medication = array("id"=>$id, "name"=>$name, "cost"=>$cost, "amount"=>$amount, "prescriptiondate"=>$date);
                 array_push($medications,$medication);
             }
         }

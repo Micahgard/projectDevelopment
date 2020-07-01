@@ -277,7 +277,88 @@
     </div>
 
     <div id="removePrescription" class="container tab-pane fade"><br>
-
+        <script>
+            $.ajax({
+                type: 'GET',
+                url: "../api/apiAllocationPrescription.php",
+                dataType: "JSON",
+                success: function (data) {
+                    i = 0;
+                    while (i < data.length){
+                        if (data[i].medication.length > 0) {
+                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        }
+                        i++;
+                    }
+                    $("#getRemoveAdmissions").change(function() {
+                        i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getRemoveAdmissions").val()) {
+                                $("#removeAdmissionId").val(data[i].id);
+                                $("#removeDescription").val(data[i].description);
+                                $("#removePatientLastname").val(data[i].patient.lastname);
+                                $("#removePatientFirstname").val(data[i].patient.firstname);
+                                m = 0;
+                                $("#getRemoveMedications").html("");
+                                while (m < data[i].medication.length) {
+                                    $("#getRemoveMedications").append("<option value='" + data[i].medication[m].id + "'>" + data[i].medication[m].name + ", " +
+                                        data[i].medication[m].prescriptiondate + ", " + data[i].medication[m].amount + "</option>");
+                                    m++;
+                                }
+                            }
+                            i++;
+                        }
+                    });
+                },
+                error: function () {
+                    alert("Not connected");
+                }
+            });
+        </script>
+        <form action="../api/apiDeletePrescription.php" method="post">
+            <h1>Remove Prescription</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admissions:* </span>
+                </div>
+                <select class="form-control" id="getRemoveAdmissions" name="admissionID" required>
+                    <option disabled value="" selected hidden>Select an Admission</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Admission Id: </span>
+                </div>
+                <input type="text" class="form-control" id="removeAdmissionId" name="admissionID" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Description: </span>
+                </div>
+                <input type="text" class="form-control" id="removeDescription" name="description" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient Last Name: </span>
+                </div>
+                <input type="text" class="form-control" id="removePatientLastname" name="patientLastname" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Patient First Name: </span>
+                </div>
+                <input type="text" class="form-control" id="removePatientFirstname" name="patientFirstname" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Prescribed Medications:* </span>
+                </div>
+                <select class="form-control" id="getRemoveMedications" name="medicationID" required>
+                    <option disabled value="" selected hidden>Select a Medication</option>
+                </select>
+            </div>
+            <i class="grey">* Required Fields</i>
+            <div class="d-flex justify-content-around">
+                <input class="btn btn-outline-primary" type="submit" value="Remove Prescription">
+                <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
+            </div>
+        </form>
     </div>
 </div>
 
