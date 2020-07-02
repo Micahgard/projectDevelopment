@@ -39,7 +39,7 @@
                     url: "../api/apiAllPatients.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#getPatient").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                             i++;
@@ -54,7 +54,7 @@
                     url: "../api/apiAllWards.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#getWard").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                             i++;
@@ -110,7 +110,7 @@
                     url: "../api/apiCurrentAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#getUpdateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                             i++;
@@ -207,7 +207,7 @@
                     url: "../api/apiCloseAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#getDeleteAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                             i++;
@@ -278,12 +278,12 @@
                     url: "../api/apiAdmissionsReport.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].id+" </td><td>"+data[i].description+"</td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Status: "+data[i].status+"</td><td>Date: "+data[i].admissiondate+"</td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Patient: "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr></table>");
-                            m = 0;
+                            var m = 0;
                             while (m < data[i].medication.length) {
                                 $("#report").append("<table class='table table-borderless'><tr><td>Medication: "+data[i].medication[m].name+"</td></tr></table>");
                                 m++;
@@ -312,7 +312,7 @@
                     url: "../api/apiCompleteAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length) {
                             $("#getInvoice").append("<option value='" + data[i].AdmissionID + "'>" + data[i].AdmissionID + " " + data[i].description + "</option>");
                             i++;
@@ -321,35 +321,34 @@
                             i = 0;
                             while (i < data.length) {
                                 if (data[i].AdmissionID == $("#getInvoice").val()) {
-                                    $("#invoice").html("<table class='table table-borderless'>");
-                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Patient Details:</td></tr>");
+                                    $("#invoice").html("<table class='table table-sm table-borderless'><tr><td><b>Patient Details:</b></td></tr></table>");
                                     $("#invoice").append("<hr>");
                                     $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].patient.patient
                                         + " &nbsp;&nbsp;&nbsp;" + data[i].patient.firstname + " " + data[i].patient.lastname
-                                        + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr>");
+                                        + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr></table>");
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-sm table-borderless' style='table-layout: fixed'><tr style='font-weight: bold'><td>Medication(s)</td><td style='text-align: center'>Quantity</td><td style='float: right'>Cost</td></tr>");
+                                    $("#invoice").append("<table class='table table-sm table-borderless' style='table-layout: fixed'><tr style='font-weight: bold'><td>Medication(s)</td><td style='text-align: center'>Quantity</td><td style='float: right'>Cost</td></tr></table>");
                                     $("#invoice").append("<hr>");
-                                    m = 0;
-                                    subtotal = 0;
+                                    var m = 0;
+                                    var med = 0;
                                     while (m < data[i].medication.length) {
-                                        $("#invoice").append("<table class='table table-borderless table-sm' style='table-layout: fixed'><tr><td>" + data[i].medication[m].name + "</td><td style='text-align: center'>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr>");
-                                        subtotal += (data[i].medication[m].cost) * (data[i].medication[m].amount);
+                                        $("#invoice").append("<table class='table table-borderless table-sm' style='table-layout: fixed'><tr><td>" + data[i].medication[m].name + "</td><td style='text-align: center'>" + data[i].medication[m].amount + "</td><td style='float: right'>$" + data[i].medication[m].cost + "</td></tr></table>");
+                                        med += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Doctor(s)</td><td style='float: right'>Fee</td></tr>");
+                                    $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Doctor(s)</td><td style='float: right'>Fee</td></tr></table>");
                                     $("#invoice").append("<hr>");
-                                    d = 0;
-                                    fee = 0;
+                                    var d = 0;
+                                    var fee = 0;
                                     while (d < data[i].doctor.length) {
-                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td style='float: right'>$" + data[i].doctor[d].fee + "</td></tr>");
+                                        $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + "</td><td style='float: right'>$" + data[i].doctor[d].fee + "</td></tr></table>");
                                         fee += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
-                                    due = subtotal + fee;
+                                    var due = med + fee;
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr style='float: right'><td style='font-weight: bold'>Total Due: " + "</td><td>$ " + due + "</td></tr></table>");
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr><td style='float: right'><b>Total Due:</b> $ " + due + "</td></tr></table>");
                                 }
                                 i++;
                             }
@@ -391,7 +390,7 @@
                     url: "../api/apiBilledAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var pay, due, i = 0;
                         while (i < data.length){
                             $("#getCloseAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                             i++;
@@ -404,39 +403,38 @@
                                     $("#closeDescription").val(data[i].description);
                                     $("#closeAdmissiondate").val(data[i].admissiondate);
 
-                                    m = 0;
-                                    med = 0;
+                                    var m = 0;
+                                    var med = 0;
                                     while (m < data[i].medication.length) {
                                         med += (data[i].medication[m].cost) * (data[i].medication[m].amount);
                                         m++;
                                     }
 
-                                    d = 0;
-                                    doc = 0;
+                                    var d = 0;
+                                    var doc = 0;
                                     while (d < data[i].doctor.length) {
                                         doc += parseFloat(data[i].doctor[d].fee);
                                         d++;
                                     }
 
-                                    amountdue = med + doc;
+                                    due = med + doc;
 
-                                    p = 0;
-                                    amountpay = 0;
+                                    var p = 0;
                                     while (p < data[i].payment.length) {
-                                        amountpay += parseFloat(data[i].payment[p].amount);
+                                        pay += parseFloat(data[i].payment[p].amount);
                                         p++;
                                     }
                                 }
                                 i++;
                             }
-                            // $("#amountpay").html("<label>test pay: " + amountpay + "</label>"); //for test
-                            // $("#amountdue").html("<label>test due: " + amountdue + "</label>"); //for test
+                            $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
+                            $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
                         });
 
                         $(function() {
                             $("#closeForm").on("submit",function() {
-                                if (amountpay < amountdue) {
-                                    alert('Full payment has not been made yet. The admission cannot be closed');
+                                if (pay < due) {
+                                    alert('Full payment has not been made yet. This admission cannot be closed');
                                     return false; // cancel submit
                                 }
                                 return true; // allow submit
@@ -481,10 +479,10 @@
                 <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
-<!--        <div id="amountdue"> for test-->
-<!--        </div>-->
-<!--        <div id="amountpay"> for test-->
-<!--        </div>-->
+        <div id="amountdue"> for test
+        </div>
+        <div id="amountpay"> for test
+        </div>
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
@@ -494,7 +492,7 @@
                 url: "../api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
-                    i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getAllocateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                         i++;
@@ -509,7 +507,7 @@
                 url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
-                    i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getAllocateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                         if (data[i].doctor.length > 0) {
@@ -526,8 +524,8 @@
                                 $("#allocateDescription").val(data[i].description);
                                 $("#allocatePatientLastname").val(data[i].patient.lastname);
                                 $("#allocatePatientFirstname").val(data[i].patient.firstname);
-                                d = 0;
-                                info = "";
+                                var d = 0;
+                                var info = "";
                                 while (d < data[i].doctor.length) {
                                     info += (data[i].doctor[d].doctor + " , " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname +
                                         " , " + data[i].doctor[d].role + " | ");
@@ -547,7 +545,7 @@
                                 $("#removeDescription").val(data[i].description);
                                 $("#removePatientLastname").val(data[i].patient.lastname);
                                 $("#removePatientFirstname").val(data[i].patient.firstname);
-                                d = 0;
+                                var d = 0;
                                 $("#getRemoveDoctors").html("");
                                 while (d < data[i].doctor.length) {
                                     $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].allocation + "'>" + data[i].doctor[d].doctor + ", " +

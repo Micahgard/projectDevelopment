@@ -77,13 +77,13 @@
                 url: "../api/apiAllDoctors.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getUpdateDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getUpdateDoctors").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateDoctors").val()) {
                                 $("#updateDoctorId").val(data[i].id);
@@ -174,13 +174,13 @@
                 url: "../api/apiDoctorsNoAllocation.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getDeleteDoctors").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
                         i = i + 1;
                     }
                     $("#getDeleteDoctors").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeleteDoctors").val()) {
                                 $("#deleteDoctorId").val(data[i].id);
@@ -273,7 +273,7 @@
                     url: "../api/apiDoctorsReport.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
                             $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].DoctorID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
                             $("#report").append("<table class='table table-borderless'><tr><td>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");

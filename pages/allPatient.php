@@ -80,13 +80,13 @@
                 url: "../api/apiAllPatients.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getUpdatePatients").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getUpdatePatients").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdatePatients").val()) {
                                 $("#updatePatientId").val(data[i].id);
@@ -177,13 +177,13 @@
                 url: "../api/apiPatientsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getDeletePatients").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].firstname + " " + data[i].lastname + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getDeletePatients").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeletePatients").val()) {
                                 $("#deletePatientId").val(data[i].id);
@@ -276,14 +276,14 @@
                     url: "../api/apiPatientsReport.php",
                     dataType: "JSON",
                     success: function (data) {
-                        i = 0;
+                        var i = 0;
                         while (i < data.length){
-                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].PatientID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Email: "+data[i].email+" </td><td>Phone Number: "+data[i].phone+" </td><td>Insurance Code: "+data[i].insurcode+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Complete Admissions: "+data[i].complete+" </td><td>Current Admissions: "+data[i].current+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].PatientID+" </td><td><b>Patient Name:</b> "+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td><b>Address:</b> "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td><b>Email:</b> "+data[i].email+" </td><td><b>Phone Number</b>: "+data[i].phone+" </td><td><b>Insurance Code</b>: "+data[i].insurcode+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless'><tr><td><b>Complete Admissions:</b> "+data[i].complete+" </td><td></b>Current Admissions:</b> "+data[i].current+"</td></tr></table>");
                             $("#report").append("<hr>");
-                            i = i+1;
+                            i++;
                         }
                     },
                     error: function () {

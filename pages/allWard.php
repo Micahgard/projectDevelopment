@@ -50,13 +50,13 @@
                 url: "../api/apiAllWards.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getUpdateWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getUpdateWards").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getUpdateWards").val()) {
                                 $("#updateWardId").val(data[i].id);
@@ -118,13 +118,13 @@
                 url: "../api/apiWardsNoAdmission.php",
                 dataType: "JSON",
                 success: function (data) {
-                    let i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getDeleteWards").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
-                        i = i + 1;
+                        i++;
                     }
                     $("#getDeleteWards").change(function() {
-                        var i = 0;
+                        i = 0;
                         while (i < data.length) {
                             if (data[i].id == $("#getDeleteWards").val()) {
                                 $("#deleteWardId").val(data[i].id);

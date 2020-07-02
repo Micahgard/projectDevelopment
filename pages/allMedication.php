@@ -52,7 +52,7 @@
                 url: "../api/apiAllMedications.php",
                 dataType: "JSON",
                 success: function (data) {
-                    i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getUpdateMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                         $("#getPrescibeMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + " " + data[i].cost + "</option>");
@@ -117,7 +117,7 @@
                 url: "../api/apiMedicationsNoPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
-                    i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getDeleteMedications").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].name + "</option>");
                         i++;
@@ -180,7 +180,7 @@
                 url: "../api/apiAllocationPrescription.php",
                 dataType: "JSON",
                 success: function (data) {
-                    i = 0;
+                    var i = 0;
                     while (i < data.length){
                         $("#getPrescibeAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                         if (data[i].medication.length > 0) {
@@ -195,9 +195,9 @@
                             if (data[i].id == $("#getPrescibeAdmissions").val()) {
                                 $("#prescribeAdmissionId").val(data[i].id);
                                 $("#prescribeDescription").val(data[i].description);
-                                $("#PrescribePatientLastname").val(data[i].patient.lastname);
-                                $("#PrescribePatientFirstname").val(data[i].patient.firstname);
-                                m = 0;
+                                $("#prescribePatientLastname").val(data[i].patient.lastname);
+                                $("#prescribePatientFirstname").val(data[i].patient.firstname);
+                                var m = 0;
                                 info = "";
                                 while (m < data[i].medication.length) {
                                     info += (data[i].medication[m].name + " , " + data[i].medication[m].amount + " , " + data[i].medication[m].prescriptiondate + " | ");
@@ -217,7 +217,7 @@
                                 $("#removeDescription").val(data[i].description);
                                 $("#removePatientLastname").val(data[i].patient.lastname);
                                 $("#removePatientFirstname").val(data[i].patient.firstname);
-                                m = 0;
+                                var m = 0;
                                 $("#getRemoveMedications").html("");
                                 while (m < data[i].medication.length) {
                                     $("#getRemoveMedications").append("<option value='" + data[i].medication[m].prescription + "'>" + data[i].medication[m].name + ", " +
