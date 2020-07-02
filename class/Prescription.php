@@ -26,20 +26,9 @@ class Prescription
     }
 
     public function save(){
-        //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Prescription values (null, '$this->prescriptiondate', $this->amount, $this->admissionid, $this->medicationid)";
-            mysqli_query($this->dbconn, $query);
-        }
-        $this->dbconn->close();
-    }
-
-    public function update(){
-        $this->dbconn = (new DB())->conn ;
-        if (!is_null($this->id)){
-            $query = "UPDATE Prescription SET prescriptiondate='$this->prescriptiondate', amount=$this->amount, admissionid=$this->admissionid, 
-medicationid=$this->medicationid WHERE PrescriptionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();

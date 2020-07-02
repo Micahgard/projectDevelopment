@@ -27,19 +27,9 @@ class Allocation
     }
 
     public function save(){
-        //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Allocation values (null, '$this->fee', '$this->role', '$this->doctorid', '$this->admissionid')";
-            mysqli_query($this->dbconn, $query);
-        }
-        $this->dbconn->close();
-    }
-
-    public function update(){
-        $this->dbconn = (new DB())->conn ;
-        if (!is_null($this->id)){
-            $query = "UPDATE Allocation SET fee='$this->fee', role='$this->role', doctorID='$this->doctorid', admissionID='$this->admissionid' WHERE AllocationID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();

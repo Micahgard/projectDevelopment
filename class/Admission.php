@@ -27,7 +27,6 @@ class Admission
     }
 
     public function save(){
-        //if I don't have this object in my database, I will register him first
         $this->dbconn = (new DB())->conn ;
         if (is_null($this->id)){
             $query = "insert into Admission values (null, '$this->description', '$this->admissiondate', '$this->status', $this->patientID, $this->wardID)";
