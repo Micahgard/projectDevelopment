@@ -430,8 +430,8 @@
                             }
                             // $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
                             // $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
-                            $("#amountdue").html(due);
-                            $("#amountpay").html(pay);
+                            $("#amountdue").val(due);
+                            $("#amountpay").val(pay);
                         });
 
                         $(function() {
@@ -478,13 +478,13 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Amount Due: </span>
+                    <span class="input-group-text">Amount Due($): </span>
                 </div>
                 <input type="text" class="form-control" id="amountdue" name="due" readonly>
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Amount Pay: </span>
+                    <span class="input-group-text">Amount Pay($): </span>
                 </div>
-                <input type="date" class="form-control" id="amountpay" name="pay" readonly>
+                <input type="text" class="form-control" id="amountpay" name="pay" readonly>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
