@@ -429,8 +429,8 @@
                                 }
                                 i++;
                             }
-                            $("#amountpay").html("<label>pay: " + amountpay + "</label>");
-                            $("#amountdue").html("<label>due: " + amountdue + "</label>");
+                            // $("#amountpay").html("<label>test pay: " + amountpay + "</label>"); //for test
+                            // $("#amountdue").html("<label>test due: " + amountdue + "</label>"); //for test
                         });
 
                         $(function() {
@@ -481,10 +481,10 @@
                 <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
-        <div id="amountdue">
-        </div>
-        <div id="amountpay">
-        </div>
+<!--        <div id="amountdue"> for test-->
+<!--        </div>-->
+<!--        <div id="amountpay"> for test-->
+<!--        </div>-->
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
@@ -551,7 +551,7 @@
                                 $("#getRemoveDoctors").html("");
                                 while (d < data[i].doctor.length) {
                                     $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].allocation + "'>" + data[i].doctor[d].doctor + ", " +
-                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + "</option>");
+                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + ", " + data[i].doctor[d].fee + "</option>");
                                     d++;
                                 }
                             }
