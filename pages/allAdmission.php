@@ -281,7 +281,7 @@
                         var i = 0;
                         while (i < data.length){
                             $("#report").append("<hr>");
-                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%; margin-bottom: -15px'><tr><td><b>Admission ID:</b> "+data[i].id+" </td><td><b>Description:</b> "+data[i].description+"</td><td></td></tr> " +
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%; margin-bottom: -10px'><tr><td><b>Admission ID:</b> "+data[i].id+" </td><td><b>Description:</b> "+data[i].description+"</td><td></td></tr> " +
                                 "<tr><td><b>Status:</b> "+data[i].status+"</td><td><b>Date:</b> "+data[i].admissiondate+"</td><td><b>Patient:</b> "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr> " +
                                 "<tr><td><b>Medication(s):</b></td></tr></table>");
                             var m = 0;
