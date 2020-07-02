@@ -512,8 +512,12 @@
                     i = 0;
                     while (i < data.length){
                         $("#getAllocateAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        if (data[i].doctor.length > 0) {
+                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        }
                         i++;
                     }
+
                     $("#getAllocateAdmissions").change(function() {
                         i = 0;
                         while (i < data.length) {
@@ -530,6 +534,26 @@
                                     d++;
                                 }
                                 $("#allocateDoctorInfo").val(info);
+                            }
+                            i++;
+                        }
+                    });
+
+                    $("#getRemoveAdmissions").change(function() {
+                        i = 0;
+                        while (i < data.length) {
+                            if (data[i].id == $("#getRemoveAdmissions").val()) {
+                                $("#removeAdmissionId").val(data[i].id);
+                                $("#removeDescription").val(data[i].description);
+                                $("#removePatientLastname").val(data[i].patient.lastname);
+                                $("#removePatientFirstname").val(data[i].patient.firstname);
+                                d = 0;
+                                $("#getRemoveDoctors").html("");
+                                while (d < data[i].doctor.length) {
+                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].allocation + "'>" + data[i].doctor[d].allocation + ", " +
+                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + "</option>");
+                                    d++;
+                                }
                             }
                             i++;
                         }
@@ -606,44 +630,6 @@
     </div>
 
     <div id="removeDoctor" class="container tab-pane fade"><br>
-        <script>
-            $.ajax({
-                type: 'GET',
-                url: "../api/apiAllocationPrescription.php",
-                dataType: "JSON",
-                success: function (data) {
-                    i = 0;
-                    while (i < data.length){
-                        if (data[i].doctor.length > 0) {
-                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                        }
-                        i++;
-                    }
-                    $("#getRemoveAdmissions").change(function() {
-                        i = 0;
-                        while (i < data.length) {
-                            if (data[i].id == $("#getRemoveAdmissions").val()) {
-                                $("#removeAdmissionId").val(data[i].id);
-                                $("#removeDescription").val(data[i].description);
-                                $("#removePatientLastname").val(data[i].patient.lastname);
-                                $("#removePatientFirstname").val(data[i].patient.firstname);
-                                d = 0;
-                                $("#getRemoveDoctors").html("");
-                                while (d < data[i].doctor.length) {
-                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].id + "'>" + data[i].doctor[d].id + ", " +
-                                        data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + "</option>");
-                                    d++;
-                                }
-                            }
-                            i++;
-                        }
-                    });
-                },
-                error: function () {
-                    alert("Not connected");
-                }
-            });
-        </script>
         <form action="../api/apiDeleteAllocation.php" method="post">
             <h1>Remove Doctor</h1>
             <div class="input-group mb-3">
@@ -678,7 +664,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Allocated Doctors:* </span>
                 </div>
-                <select class="form-control" id="getRemoveDoctors" name="doctorID" required>
+                <select class="form-control" id="getRemoveDoctors" name="allocationID" required>
                     <option disabled value="" selected hidden>Select a Doctor</option>
                 </select>
             </div>

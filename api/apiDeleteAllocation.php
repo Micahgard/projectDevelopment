@@ -10,8 +10,8 @@ include_once "../class/Allocation.php";
 include_once "../pages/head.php";
 include_once "../pages/head-child.php";
 
-if (isset($_POST['doctorID'], $_POST["admissionID"])) {
-    $allocation = new Allocation("", "", "", $_POST["doctorID"], $_POST["admissionID"]);
+if (isset($_POST['allocationID'])) {
+    $allocation = new Allocation($_POST["allocationID"], "", "", "", "");
     $allocation->delete();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Allocation has been Successfully Deleted!</div>

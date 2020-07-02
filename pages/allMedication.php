@@ -183,7 +183,9 @@
                     i = 0;
                     while (i < data.length){
                         $("#getPrescibeAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
-                        $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        if (data[i].medication.length > 0) {
+                            $("#getRemoveAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
+                        }
                         i++;
                     }
 

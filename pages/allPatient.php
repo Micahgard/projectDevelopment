@@ -320,7 +320,7 @@
                                 a = 0;
                                 $("#getPaymentAdmissions").html("");
                                 while (a < data[i].admission.length) {
-                                    $("#getPaymentAdmissions").append("<option value='" + data[i].admission[a].id + "'>" + data[i].admission[a].id + " " + data[i].admission[a].description + "</option>");
+                                    $("#getPaymentAdmissions").append("<option value='" + data[i].admission[a].admission + "'>" + data[i].admission[a].admission + " " + data[i].admission[a].description + "</option>");
                                     a++;
                                 }
                             }
