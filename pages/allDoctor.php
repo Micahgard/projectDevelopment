@@ -275,10 +275,11 @@
                     success: function (data) {
                         var i = 0;
                         while (i < data.length){
-                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].DoctorID+" </td><td>"+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Address: "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Phone Number: "+data[i].phone+" </td><td>Speciality: "+data[i].speciality+" </td><td>Salary($): "+data[i].salary+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Admissions: "+data[i].admission+" </td><td>Research Projects: "+data[i].project+"</td></tr></table>");
+                            $("#report").append("<hr>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Doctor ID:</b> "+data[i].DoctorID+" </td><td><b>Doctor Name:</b> "+data[i].firstname+" "+data[i].lastname+" </td><td></td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Address:</b> "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Phone Number:</b> "+data[i].phone+" </td><td><b>Speciality:</b> "+data[i].speciality+" </td><td><b>Salary($):</b> "+data[i].salary+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Admissions:</b> "+data[i].admission+" </td><td><b>Research Projects:</b> "+data[i].project+"</td><td></td></tr></table>");
                             $("#report").append("<hr>");
                             i++;
                         }

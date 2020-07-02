@@ -278,10 +278,11 @@
                     success: function (data) {
                         var i = 0;
                         while (i < data.length){
-                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].PatientID+" </td><td><b>Patient Name:</b> "+data[i].firstname+" "+data[i].lastname+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td><b>Address:</b> "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td><b>Email:</b> "+data[i].email+" </td><td><b>Phone Number</b>: "+data[i].phone+" </td><td><b>Insurance Code</b>: "+data[i].insurcode+" </td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td><b>Complete Admissions:</b> "+data[i].complete+" </td><td></b>Current Admissions:</b> "+data[i].current+"</td></tr></table>");
+                            $("#report").append("<hr>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Patient ID:</b> "+data[i].PatientID+" </td><td><b>Patient Name:</b> "+data[i].firstname+" "+data[i].lastname+" </td><td></td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Address:</b> "+data[i].street+", "+data[i].suburb+", "+data[i].city+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Email:</b> "+data[i].email+" </td><td><b>Phone Number</b>: "+data[i].phone+" </td><td><b>Insurance Code</b>: "+data[i].insurcode+" </td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Complete Admissions:</b> "+data[i].complete+" </td><td><b>Current Admissions:</b> "+data[i].current+"</td><td></td></tr></table>");
                             $("#report").append("<hr>");
                             i++;
                         }

@@ -1,3 +1,8 @@
+<style>
+    p {
+        text-align: center;
+    }
+</style>
 <?php
 include_once '../pages/head.php';
 include_once "../class/Administrator.php";
