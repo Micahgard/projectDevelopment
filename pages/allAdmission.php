@@ -428,8 +428,10 @@
                                 }
                                 i++;
                             }
-                            $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
-                            $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
+                            // $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
+                            // $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
+                            $("#amountdue").html(due);
+                            $("#amountpay").html(pay);
                         });
 
                         $(function() {
@@ -462,17 +464,27 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Id: </span>
                 </div>
-                <input type="text" class="form-control" id="closeAdmissionId" name="closeAdmissionId" placeholder="Admission Id" readonly>
+                <input type="text" class="form-control" id="closeAdmissionId" name="id" readonly>
                 <div class="input-group-prepend">
                     <span class="input-group-text">Admission Date: </span>
                 </div>
-                <input type="date" class="form-control" id="closeAdmissiondate" name="admissiondate" placeholder="Admission Date" readonly>
+                <input type="date" class="form-control" id="closeAdmissiondate" name="admissiondate" readonly>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Description: </span>
                 </div>
-                <input type="text" class="form-control" id="closeDescription" name="closeDescription" placeholder="Description" readonly>
+                <input type="text" class="form-control" id="closeDescription" name="description" readonly>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Amount Due: </span>
+                </div>
+                <input type="text" class="form-control" id="amountdue" name="due" readonly>
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Amount Pay: </span>
+                </div>
+                <input type="date" class="form-control" id="amountpay" name="pay" readonly>
             </div>
             <i class="grey">* Required Fields</i>
             <div class="d-flex justify-content-around">
@@ -480,10 +492,6 @@
                 <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
-        <div id="amountdue"> for test
-        </div>
-        <div id="amountpay"> for test
-        </div>
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
