@@ -39,7 +39,7 @@ class Admission
     public function update(){
         $this->dbconn = (new DB())->conn ;
         if (!is_null($this->id)){
-            $query = "UPDATE Admission SET description='$this->description', admissiondate='$this->admissiondate', status='$this->status', patientID=$this->patientID, wardID=$this->wardID WHERE AdmissionID=$this->id";
+            $query = "UPDATE Admission SET description='$this->description', admissiondate='$this->admissiondate', status='$this->status' WHERE AdmissionID=$this->id";
             mysqli_query($this->dbconn, $query);
         }
         $this->dbconn->close();

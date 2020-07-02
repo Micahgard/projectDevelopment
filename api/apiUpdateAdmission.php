@@ -15,9 +15,7 @@ if (isset($_POST['id'])) {
     $description = $_POST['description'];
     $admissiondate = $_POST['admissiondate'];
     $status = $_POST['status'];
-    $patientID = $_POST['patientID'];
-    $wardID = $_POST['wardID'];
-    $admission = new Admission($id, $description, $admissiondate, $status, $patientID, $wardID);
+    $admission = new Admission($id, $description, $admissiondate, $status, "", "");
     $admission->update();
     ?><div class="container">
         <div class="success-notification"><b style="font-size: 20px;">✓</b>&nbsp; Admission has been Successfully Updated!</div>
