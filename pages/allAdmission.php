@@ -428,8 +428,6 @@
                                 }
                                 i++;
                             }
-                            // $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
-                            // $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
                             $("#amountdue").val(due);
                             $("#amountpay").val(pay);
                         });
@@ -603,7 +601,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Allocated Doctors: </span>
+                    <span class="input-group-text">Allocated Doctor(s): </span>
                 </div>
                 <input type="text" maxlength="50" class="form-control" id="allocateDoctorInfo" name="doctor" readonly>
             </div>
@@ -669,7 +667,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Allocated Doctors:* </span>
+                    <span class="input-group-text">Allocated Doctor(s):* </span>
                 </div>
                 <select class="form-control" id="getRemoveDoctors" name="allocationID" required>
                     <option disabled value="" selected hidden>Select a Doctor</option>

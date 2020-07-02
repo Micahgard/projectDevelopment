@@ -359,7 +359,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Admissions:* </span>
+                    <span class="input-group-text">Admission(s):* </span>
                 </div>
                 <select class="form-control" id="getPaymentAdmissions" name="admissionID" required>
                     <option disabled value="" selected hidden>Select an Admission</option>

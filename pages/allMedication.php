@@ -266,7 +266,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Prescribed Medications: </span>
+                    <span class="input-group-text">Prescribed Medication(s): </span>
                 </div>
                 <input type="text" maxlength="50" class="form-control" id="prescribeMedicationInfo" name="medication" readonly>
             </div>
@@ -325,7 +325,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text">Prescribed Medications:* </span>
+                    <span class="input-group-text">Prescribed Medication(s):* </span>
                 </div>
                 <select class="form-control" id="getRemoveMedications" name="prescriptionID" required>
                     <option disabled value="" selected hidden>Select a Medication</option>
