@@ -284,13 +284,13 @@
                             $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Admission ID:</b> "+data[i].id+" </td><td><b>Description:</b> "+data[i].description+"</td><td></td></tr></table>");
                             $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Status:</b> "+data[i].status+"</td><td><b>Date:</b> "+data[i].admissiondate+"</td>" +
                                 "<td><b>Patient:</b> "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Medication(s):</b> </td>");
+                            $("#report").append("<table class='table table-borderless' style='width: 125%'><tr><td><b>Medication(s):</b> </td>");
                             var m = 0;
                             while (m < data[i].medication.length) {
                                 $("#report").append("<td>"+data[i].medication[m].name+"</td>");
                                 m++;
                             }
-                            $("#report").append("</tr></table><hr>");
+                            $("#report").append("<hr>");
                             i++;
                         }
                     },
