@@ -280,15 +280,17 @@
                     success: function (data) {
                         var i = 0;
                         while (i < data.length){
-                            $("#report").append("<table class='table table-borderless'><tr><td>"+data[i].id+" </td><td>"+data[i].description+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Status: "+data[i].status+"</td><td>Date: "+data[i].admissiondate+"</td></tr></table>");
-                            $("#report").append("<table class='table table-borderless'><tr><td>Patient: "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr></table>");
+                            $("#report").append("<hr>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Admission ID:</b> "+data[i].id+" </td><td><b>Description:</b> "+data[i].description+"</td><td></td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Status:</b> "+data[i].status+"</td><td><b>Date:</b> "+data[i].admissiondate+"</td>" +
+                                "<td><b>Patient:</b> "+data[i].patient.firstname+" "+data[i].patient.lastname+"</td></tr></table>");
+                            $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Medication(s):</b> </td>");
                             var m = 0;
                             while (m < data[i].medication.length) {
-                                $("#report").append("<table class='table table-borderless'><tr><td>Medication: "+data[i].medication[m].name+"</td></tr></table>");
+                                $("#report").append("<tb>"+data[i].medication[m].name+"</td>");
                                 m++;
                             }
-                            $("#report").append("<hr>");
+                            $("#report").append("</tr></table><hr>");
                             i++;
                         }
                     },
