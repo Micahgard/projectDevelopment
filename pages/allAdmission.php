@@ -324,7 +324,7 @@
                                     $("#invoice").html("<table class='table table-borderless'>");
                                     $("#invoice").append("<table class='table table-sm table-borderless'><tr style='font-weight: bold'><td>Patient Details:</td></tr>");
                                     $("#invoice").append("<hr>");
-                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].patient.id
+                                    $("#invoice").append("<table class='table table-borderless table-sm'><tr><td>" + data[i].patient.patient
                                         + " &nbsp;&nbsp;&nbsp;" + data[i].patient.firstname + " " + data[i].patient.lastname
                                         + "</td></tr><tr><td>" + data[i].patient.address + "</td></tr>");
                                     $("#invoice").append("<hr>");
@@ -423,14 +423,14 @@
                                     p = 0;
                                     amountpay = 0;
                                     while (p < data[i].payment.length) {
-                                        amountpay += parseFloat(data[i].payment[p]);
+                                        amountpay += parseFloat(data[i].payment[p].amount);
                                         p++;
                                     }
                                 }
                                 i++;
                             }
-                            // $("#amountpay").html("<label>" + amountpay + "</label>");
-                            // $("#amountdue").html("<label>" + amountdue + "</label>");
+                            $("#amountpay").html("<label>pay: " + amountpay + "</label>");
+                            $("#amountdue").html("<label>due: " + amountdue + "</label>");
                         });
 
                         $(function() {
@@ -481,10 +481,10 @@
                 <input class="btn btn-outline-primary" onclick="goBack()" value="Return">
             </div>
         </form>
-<!--        <div id="amountdue">-->
-<!--        </div>-->
-<!--        <div id="amountpay">-->
-<!--        </div>-->
+        <div id="amountdue">
+        </div>
+        <div id="amountpay">
+        </div>
     </div>
 
     <div id="allocateDoctor" class="container tab-pane fade"><br>
@@ -529,7 +529,7 @@
                                 d = 0;
                                 info = "";
                                 while (d < data[i].doctor.length) {
-                                    info += (data[i].doctor[d].id + " , " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname +
+                                    info += (data[i].doctor[d].doctor + " , " + data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname +
                                         " , " + data[i].doctor[d].role + " | ");
                                     d++;
                                 }
@@ -550,7 +550,7 @@
                                 d = 0;
                                 $("#getRemoveDoctors").html("");
                                 while (d < data[i].doctor.length) {
-                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].allocation + "'>" + data[i].doctor[d].allocation + ", " +
+                                    $("#getRemoveDoctors").append("<option value='" + data[i].doctor[d].allocation + "'>" + data[i].doctor[d].doctor + ", " +
                                         data[i].doctor[d].firstname + " " + data[i].doctor[d].lastname + ", " + data[i].doctor[d].role + "</option>");
                                     d++;
                                 }
