@@ -420,7 +420,7 @@
                                     due = med + doc;
 
                                     var p = 0;
-
+                                    pay = 0;
                                     while (p < data[i].payment.length) {
                                         pay += parseFloat(data[i].payment[p].amount);
                                         p++;
