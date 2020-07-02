@@ -390,7 +390,7 @@
                     url: "../api/apiBilledAdmissions.php",
                     dataType: "JSON",
                     success: function (data) {
-                        var pay, due, i = 0;
+                        var due, pay, i = 0;
                         while (i < data.length){
                             $("#getCloseAdmissions").append("<option value='" + data[i].id + "'>" + data[i].id + " " + data[i].description + "</option>");
                             i++;
@@ -420,6 +420,7 @@
                                     due = med + doc;
 
                                     var p = 0;
+
                                     while (p < data[i].payment.length) {
                                         pay += parseFloat(data[i].payment[p].amount);
                                         p++;
@@ -427,8 +428,8 @@
                                 }
                                 i++;
                             }
-                            $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
                             $("#amountdue").html("<label>test due: " + due + "</label>"); //for test
+                            $("#amountpay").html("<label>test pay: " + pay + "</label>"); //for test
                         });
 
                         $(function() {
