@@ -287,7 +287,7 @@
                             $("#report").append("<table class='table table-borderless' style='table-layout: fixed; width: 125%'><tr><td><b>Medication(s):</b> </td>");
                             var m = 0;
                             while (m < data[i].medication.length) {
-                                $("#report").append("<tb>"+data[i].medication[m].name+"</td>");
+                                $("#report").append("<td>"+data[i].medication[m].name+"</td>");
                                 m++;
                             }
                             $("#report").append("</tr></table><hr>");
